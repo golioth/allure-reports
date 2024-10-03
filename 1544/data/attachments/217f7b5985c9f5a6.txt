@@ -1,0 +1,368 @@
+DEBUG    twister_harness.device.factory:factory.py:37 Get device type "hardware"
+DEBUG    httpx:_config.py:82 load_ssl_context verify=True cert=None trust_env=True http2=False
+DEBUG    httpx:_config.py:148 load_verify_locations cafile='/usr/local/lib/python3.11/dist-packages/certifi/cacert.pem'
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff7f61cc10>
+DEBUG    httpcore.connection:_trace.py:85 start_tls.started ssl_context=<ssl.SSLContext object at 0xffff7f6f3e30> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:85 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff7f437e10>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Access-Control-Expose-Headers', b'Content-Range'), (b'Content-Length', b'193'), (b'Content-Range', b'projects 0-1/1'), (b'Content-Type', b'application/json'), (b'Date', b'Thu, 03 Oct 2024 16:11:59 GMT'), (b'Grpc-Metadata-Access-Control-Expose-Headers', b'Content-Range'), (b'Grpc-Metadata-Content-Type', b'application/grpc'), (b'Via', b'kong/2.5.2'), (b'X-Kong-Proxy-Latency', b'1'), (b'X-Kong-Upstream-Latency', b'31')])
+INFO     httpx:_client.py:1786 HTTP Request: GET https://api.golioth.io/v1/projects "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:85 response_closed.started
+DEBUG    httpcore.http11:_trace.py:85 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:85 close.started
+DEBUG    httpcore.connection:_trace.py:85 close.complete
+DEBUG    httpx:_config.py:82 load_ssl_context verify=True cert=None trust_env=True http2=False
+DEBUG    httpx:_config.py:148 load_verify_locations cafile='/usr/local/lib/python3.11/dist-packages/certifi/cacert.pem'
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff7f6015d0>
+DEBUG    httpcore.connection:_trace.py:85 start_tls.started ssl_context=<ssl.SSLContext object at 0xffff7f5fd130> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:85 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff7f45e910>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.started request=<Request [b'POST']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.started request=<Request [b'POST']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.started request=<Request [b'POST']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Length', b'849'), (b'Content-Type', b'application/json'), (b'Date', b'Thu, 03 Oct 2024 16:12:00 GMT'), (b'Grpc-Metadata-Content-Type', b'application/grpc'), (b'Via', b'kong/2.5.2'), (b'X-Kong-Proxy-Latency', b'16'), (b'X-Kong-Upstream-Latency', b'17')])
+INFO     httpx:_client.py:1786 HTTP Request: POST https://api.golioth.io/v1/projects/firmware_ci/certificates "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.started request=<Request [b'POST']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:85 response_closed.started
+DEBUG    httpcore.http11:_trace.py:85 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:85 close.started
+DEBUG    httpcore.connection:_trace.py:85 close.complete
+DEBUG    twister_harness.device.hardware_adapter:utils.py:37 Flashing command: /usr/local/bin/west flash --skip-rebuild --build-dir /__w/golioth-firmware-sdk/golioth-firmware-sdk/twister-out/rak5010_nrf52840/certificate_provisioning/sample.golioth.certificate_provisioning --runner blackmagicprobe -- --gdb=/usr/bin/gdb
+DEBUG    twister_harness.device.hardware_adapter:hardware_adapter.py:131 Flashing finished
+DEBUG    twister_harness.device.hardware_adapter:hardware_adapter.py:139 Opening serial connection for /dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00
+ERROR    twister_harness.device.hardware_adapter:hardware_adapter.py:150 Cannot open connection: [Errno 2] could not open port /dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/__w/golioth-firmware-sdk/golioth-firmware-sdk/zephyr/scripts/pylib/pytest-twister-harness/src/twister_harness/device/hardware_adapter.py", line 141, in _connect_device
+    self._serial_connection = serial.Serial(
+                              ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/local/lib/python3.11/dist-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00'
+DEBUG    twister_harness.device.hardware_adapter:hardware_adapter.py:139 Opening serial connection for /dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00
+ERROR    twister_harness.device.hardware_adapter:hardware_adapter.py:150 Cannot open connection: [Errno 2] could not open port /dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/__w/golioth-firmware-sdk/golioth-firmware-sdk/zephyr/scripts/pylib/pytest-twister-harness/src/twister_harness/device/hardware_adapter.py", line 141, in _connect_device
+    self._serial_connection = serial.Serial(
+                              ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/local/lib/python3.11/dist-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00'
+DEBUG    twister_harness.device.hardware_adapter:hardware_adapter.py:139 Opening serial connection for /dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00
+ERROR    twister_harness.device.hardware_adapter:hardware_adapter.py:150 Cannot open connection: [Errno 2] could not open port /dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/__w/golioth-firmware-sdk/golioth-firmware-sdk/zephyr/scripts/pylib/pytest-twister-harness/src/twister_harness/device/hardware_adapter.py", line 141, in _connect_device
+    self._serial_connection = serial.Serial(
+                              ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/local/lib/python3.11/dist-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00'
+DEBUG    twister_harness.device.hardware_adapter:hardware_adapter.py:139 Opening serial connection for /dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00
+ERROR    twister_harness.device.hardware_adapter:hardware_adapter.py:150 Cannot open connection: [Errno 2] could not open port /dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/__w/golioth-firmware-sdk/golioth-firmware-sdk/zephyr/scripts/pylib/pytest-twister-harness/src/twister_harness/device/hardware_adapter.py", line 141, in _connect_device
+    self._serial_connection = serial.Serial(
+                              ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/local/lib/python3.11/dist-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00'
+DEBUG    twister_harness.device.hardware_adapter:hardware_adapter.py:139 Opening serial connection for /dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00
+ERROR    twister_harness.device.hardware_adapter:hardware_adapter.py:150 Cannot open connection: [Errno 2] could not open port /dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/__w/golioth-firmware-sdk/golioth-firmware-sdk/zephyr/scripts/pylib/pytest-twister-harness/src/twister_harness/device/hardware_adapter.py", line 141, in _connect_device
+    self._serial_connection = serial.Serial(
+                              ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/local/lib/python3.11/dist-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00'
+DEBUG    twister_harness.device.hardware_adapter:hardware_adapter.py:139 Opening serial connection for /dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00
+ERROR    twister_harness.device.hardware_adapter:hardware_adapter.py:150 Cannot open connection: [Errno 2] could not open port /dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/__w/golioth-firmware-sdk/golioth-firmware-sdk/zephyr/scripts/pylib/pytest-twister-harness/src/twister_harness/device/hardware_adapter.py", line 141, in _connect_device
+    self._serial_connection = serial.Serial(
+                              ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/local/lib/python3.11/dist-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00'
+DEBUG    twister_harness.device.hardware_adapter:hardware_adapter.py:139 Opening serial connection for /dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00
+ERROR    twister_harness.device.hardware_adapter:hardware_adapter.py:150 Cannot open connection: [Errno 2] could not open port /dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/__w/golioth-firmware-sdk/golioth-firmware-sdk/zephyr/scripts/pylib/pytest-twister-harness/src/twister_harness/device/hardware_adapter.py", line 141, in _connect_device
+    self._serial_connection = serial.Serial(
+                              ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/local/lib/python3.11/dist-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00'
+DEBUG    twister_harness.device.hardware_adapter:hardware_adapter.py:139 Opening serial connection for /dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00
+INFO     twister_harness.fixtures:fixtures.py:61 Wait for prompt
+DEBUG    twister_harness.helpers.shell:shell.py:47 Got prompt
+DEBUG    httpx:_config.py:82 load_ssl_context verify=True cert=None trust_env=True http2=False
+DEBUG    httpx:_config.py:148 load_verify_locations cafile='/usr/local/lib/python3.11/dist-packages/certifi/cacert.pem'
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff7f5e3690>
+DEBUG    httpcore.connection:_trace.py:85 start_tls.started ssl_context=<ssl.SSLContext object at 0xffff7ffb9ac0> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:85 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff7f4bf490>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Access-Control-Expose-Headers', b'Content-Range'), (b'Content-Length', b'47'), (b'Content-Range', b'devices 0-0/0'), (b'Content-Type', b'application/json'), (b'Date', b'Thu, 03 Oct 2024 16:12:43 GMT'), (b'Grpc-Metadata-Access-Control-Expose-Headers', b'Content-Range'), (b'Grpc-Metadata-Content-Type', b'application/grpc'), (b'Via', b'kong/2.5.2'), (b'X-Kong-Proxy-Latency', b'0'), (b'X-Kong-Upstream-Latency', b'55')])
+INFO     httpx:_client.py:1786 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/devices?deviceName=certificate-vfpQJOXMZXeRMMED "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:85 response_closed.started
+DEBUG    httpcore.http11:_trace.py:85 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:85 close.started
+DEBUG    httpcore.connection:_trace.py:85 close.complete
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [msettings set wifi/ssid "***MIKES_ORANGE_PI_WIFI_SSID***"
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: Setting wifi/ssid to ***MIKES_ORANGE_PI_WIFI_SSID***
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;31mFailed to set runtime setting: wifi/ssid:***MIKES_ORANGE_PI_WIFI_SSID***
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [m[1;32muart:~$ [m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [msettings set wifi/psk "***MIKES_ORANGE_PI_WIFI_PSK***"
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: Setting wifi/psk to ***MIKES_ORANGE_PI_WIFI_PSK***
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;31mFailed to set runtime setting: wifi/psk:***MIKES_ORANGE_PI_WIFI_PSK***
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [m[1;32muart:~$ [m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J*** Booting Zephyr OS build 36940db938a8 ***
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:00.613,037] [0m<inf> golioth_settings_autoload: Initializing settings subsystem[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:00.613,098] [0m<inf> golioth_settings_autoload: Loading settings[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:00.613,311] [1;31m<err> fs: file open error (-2)[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:00.613,769] [0m<dbg> cert_provisioning: main: Start certificate provisioning sample[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:00.613,769] [0m<inf> golioth_samples: Bringing up network interface[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:00.613,800] [0m<inf> golioth_samples: Waiting to obtain IP address[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:21.942,199] [1;33m<wrn> modem_chat: quectel_bg95_init_chat_script: timed out[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:00:37.102,478] [1;33m<wrn> cert_provisioning: Could not stat /lfs1/credentials/client_cert.der, err: -2[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [mfs mkdir /lfs1/credentials
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [mlog halt
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m
+INFO     test_sample:test_sample.py:23 mcumgr crt stdout: 302
+365
+Done
+
+INFO     test_sample:test_sample.py:23 mcumgr key stdout: 121
+Done
+
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [mlog go
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:42.104,522] [0m<inf> cert_provisioning: Read 365 bytes from /lfs1/credentials/client_cert.der[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:42.106,231] [0m<inf> cert_provisioning: Read 121 bytes from /lfs1/credentials/private_key.der[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:42.106,750] [0m<inf> golioth_mbox: Mbox created, bufsize: 1232, num_items: 10, item_size: 112[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:00:47.044,860] [1;31m<err> net_pkt: Data buffer (127) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[1;31m--- 1 messages dropped ---
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [m[00:00:47.044,860] [1;33m<wrn> modem_ppp: Failed to alloc buffer[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:47.186,523] [1;31m<err> net_pkt: Data buffer (127) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:47.186,553] [1;33m<wrn> modem_ppp: Failed to alloc buffer[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:48.723,999] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:48.885,009] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:49.006,195] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:49.026,062] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:49.187,103] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:49.673,828] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:49.787,048] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:49.948,059] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:50.691,894] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:50.804,046] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:50.965,057] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:52.430,877] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:52.587,005] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:52.748,016] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:52.869,201] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:52.889,099] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:53.687,866] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:53.924,133] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:54.157,012] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:54.691,986] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:56.757,171] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:57.077,331] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:57.271,240] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:57.412,078] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:57.477,355] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:57.685,241] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:57.972,351] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:58.308,319] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:58.724,121] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:59.044,281] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:59.302,459] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:01:00.612,152] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:01:00.884,307] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:01:01.046,264] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:01:01.187,133] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:01:01.238,342] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:01:01.444,305] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:01:01.717,163] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:01:02.052,398] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:01:02.267,181] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:01:02.724,151] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:01:02.932,403] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:01:03.093,383] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:01:05.231,109] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:01:05.364,318] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:01:05.525,421] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:01:05.666,320] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:01:05.666,809] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:01:05.827,453] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:01:05.877,685] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:01:06.038,726] [1;33m<wrn> modem_ppp: Dropped frame, no net_pkt available[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:07.581,024] [0m<inf> golioth_coap_client_zephyr: Golioth CoAP client connected[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:01:07.581,237] [0m<inf> cert_provisioning: Sending hello! 0[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:07.581,298] [0m<inf> cert_provisioning: Golioth client connected[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:01:07.581,298] [0m<inf> golioth_coap_client_zephyr: Entering CoAP I/O loop[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:12.581,329] [0m<inf> cert_provisioning: Sending hello! 1[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:17.581,420] [0m<inf> cert_provisioning: Sending hello! 2[0m
+DEBUG    httpx:_config.py:82 load_ssl_context verify=True cert=None trust_env=True http2=False
+DEBUG    httpx:_config.py:148 load_verify_locations cafile='/usr/local/lib/python3.11/dist-packages/certifi/cacert.pem'
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff7f4be010>
+DEBUG    httpcore.connection:_trace.py:85 start_tls.started ssl_context=<ssl.SSLContext object at 0xffff7ffb9ac0> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:85 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff7f4d72d0>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Access-Control-Expose-Headers', b'Content-Range'), (b'Content-Length', b'584'), (b'Content-Range', b'devices 0-1/1'), (b'Content-Type', b'application/json'), (b'Date', b'Thu, 03 Oct 2024 16:14:01 GMT'), (b'Grpc-Metadata-Access-Control-Expose-Headers', b'Content-Range'), (b'Grpc-Metadata-Content-Type', b'application/grpc'), (b'Via', b'kong/2.5.2'), (b'X-Kong-Proxy-Latency', b'1'), (b'X-Kong-Upstream-Latency', b'138')])
+INFO     httpx:_client.py:1786 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/devices?deviceName=certificate-vfpQJOXMZXeRMMED "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:85 response_closed.started
+DEBUG    httpcore.http11:_trace.py:85 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:85 close.started
+DEBUG    httpcore.connection:_trace.py:85 close.complete
+DEBUG    twister_harness.device.hardware_adapter:hardware_adapter.py:186 Closed serial connection for /dev/serial/by-id/usb-ZEPHYR_RAK5010_Zephyr_A79B173FF273CE6E-if00
+DEBUG    httpx:_config.py:82 load_ssl_context verify=True cert=None trust_env=True http2=False
+DEBUG    httpx:_config.py:148 load_verify_locations cafile='/usr/local/lib/python3.11/dist-packages/certifi/cacert.pem'
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff7f4cbc10>
+DEBUG    httpcore.connection:_trace.py:85 start_tls.started ssl_context=<ssl.SSLContext object at 0xffff7f5fd400> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:85 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff7f4eec10>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Length', b'2'), (b'Content-Type', b'application/json'), (b'Date', b'Thu, 03 Oct 2024 16:14:01 GMT'), (b'Grpc-Metadata-Content-Type', b'application/grpc'), (b'Via', b'kong/2.5.2'), (b'X-Kong-Proxy-Latency', b'1'), (b'X-Kong-Upstream-Latency', b'14')])
+INFO     httpx:_client.py:1786 HTTP Request: DELETE https://api.golioth.io/v1/projects/firmware_ci/certificates/66fec2502860a8ee0e30361e "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:85 response_closed.started
+DEBUG    httpcore.http11:_trace.py:85 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:85 close.started
+DEBUG    httpcore.connection:_trace.py:85 close.complete
+DEBUG    httpx:_config.py:82 load_ssl_context verify=True cert=None trust_env=True http2=False
+DEBUG    httpx:_config.py:148 load_verify_locations cafile='/usr/local/lib/python3.11/dist-packages/certifi/cacert.pem'
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff7f4cbb10>
+DEBUG    httpcore.connection:_trace.py:85 start_tls.started ssl_context=<ssl.SSLContext object at 0xffff7f6f2f00> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:85 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff7f481450>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Access-Control-Expose-Headers', b'Content-Range'), (b'Content-Length', b'584'), (b'Content-Range', b'devices 0-1/1'), (b'Content-Type', b'application/json'), (b'Date', b'Thu, 03 Oct 2024 16:14:02 GMT'), (b'Grpc-Metadata-Access-Control-Expose-Headers', b'Content-Range'), (b'Grpc-Metadata-Content-Type', b'application/grpc'), (b'Via', b'kong/2.5.2'), (b'X-Kong-Proxy-Latency', b'0'), (b'X-Kong-Upstream-Latency', b'151')])
+INFO     httpx:_client.py:1786 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/devices?deviceName=certificate-vfpQJOXMZXeRMMED "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:85 response_closed.started
+DEBUG    httpcore.http11:_trace.py:85 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:85 close.started
+DEBUG    httpcore.connection:_trace.py:85 close.complete
+DEBUG    httpx:_config.py:82 load_ssl_context verify=True cert=None trust_env=True http2=False
+DEBUG    httpx:_config.py:148 load_verify_locations cafile='/usr/local/lib/python3.11/dist-packages/certifi/cacert.pem'
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff7f5c0a10>
+DEBUG    httpcore.connection:_trace.py:85 start_tls.started ssl_context=<ssl.SSLContext object at 0xffff7f4b5010> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:85 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff7f4883d0>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Length', b'2'), (b'Content-Type', b'application/json'), (b'Date', b'Thu, 03 Oct 2024 16:14:02 GMT'), (b'Grpc-Metadata-Content-Type', b'application/grpc'), (b'Via', b'kong/2.5.2'), (b'X-Kong-Proxy-Latency', b'0'), (b'X-Kong-Upstream-Latency', b'186')])
+INFO     httpx:_client.py:1786 HTTP Request: DELETE https://api.golioth.io/v1/projects/firmware_ci/devices/66fec2bc2860a8ee0e30367b "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:85 response_closed.started
+DEBUG    httpcore.http11:_trace.py:85 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:85 close.started
+DEBUG    httpcore.connection:_trace.py:85 close.complete
