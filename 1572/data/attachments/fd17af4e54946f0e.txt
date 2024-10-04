@@ -1,0 +1,173 @@
+DEBUG    twister_harness.device.factory:factory.py:37 Get device type "hardware"
+DEBUG    httpx:_config.py:82 load_ssl_context verify=True cert=None trust_env=True http2=False
+DEBUG    httpx:_config.py:148 load_verify_locations cafile='/usr/local/lib/python3.11/dist-packages/certifi/cacert.pem'
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff939f4910>
+DEBUG    httpcore.connection:_trace.py:85 start_tls.started ssl_context=<ssl.SSLContext object at 0xffff93a28170> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:85 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff93863450>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Access-Control-Expose-Headers', b'Content-Range'), (b'Content-Length', b'193'), (b'Content-Range', b'projects 0-1/1'), (b'Content-Type', b'application/json'), (b'Date', b'Fri, 04 Oct 2024 08:21:59 GMT'), (b'Grpc-Metadata-Access-Control-Expose-Headers', b'Content-Range'), (b'Grpc-Metadata-Content-Type', b'application/grpc'), (b'Via', b'kong/2.5.2'), (b'X-Kong-Proxy-Latency', b'0'), (b'X-Kong-Upstream-Latency', b'17')])
+INFO     httpx:_client.py:1786 HTTP Request: GET https://api.golioth.io/v1/projects "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:85 response_closed.started
+DEBUG    httpcore.http11:_trace.py:85 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:85 close.started
+DEBUG    httpcore.connection:_trace.py:85 close.complete
+DEBUG    httpx:_config.py:82 load_ssl_context verify=True cert=None trust_env=True http2=False
+DEBUG    httpx:_config.py:148 load_verify_locations cafile='/usr/local/lib/python3.11/dist-packages/certifi/cacert.pem'
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff939f5ed0>
+DEBUG    httpcore.connection:_trace.py:85 start_tls.started ssl_context=<ssl.SSLContext object at 0xffff93a29250> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:85 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff93a14190>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.started request=<Request [b'POST']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.started request=<Request [b'POST']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.started request=<Request [b'POST']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Length', b'849'), (b'Content-Type', b'application/json'), (b'Date', b'Fri, 04 Oct 2024 08:21:59 GMT'), (b'Grpc-Metadata-Content-Type', b'application/grpc'), (b'Via', b'kong/2.5.2'), (b'X-Kong-Proxy-Latency', b'4'), (b'X-Kong-Upstream-Latency', b'21')])
+INFO     httpx:_client.py:1786 HTTP Request: POST https://api.golioth.io/v1/projects/firmware_ci/certificates "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.started request=<Request [b'POST']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:85 response_closed.started
+DEBUG    httpcore.http11:_trace.py:85 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:85 close.started
+DEBUG    httpcore.connection:_trace.py:85 close.complete
+DEBUG    twister_harness.device.hardware_adapter:hardware_adapter.py:139 Opening serial connection for /dev/serial/by-id/usb-SEGGER_J-Link_000960047329-if00
+DEBUG    twister_harness.device.hardware_adapter:utils.py:37 Flashing command: /usr/local/bin/west flash --skip-rebuild --build-dir /__w/golioth-firmware-sdk/golioth-firmware-sdk/twister-out/nrf9160dk_nrf9160_ns/certificate_provisioning/sample.golioth.certificate_provisioning -- --dev-id=960047329
+DEBUG    twister_harness.device.hardware_adapter:hardware_adapter.py:131 Flashing finished
+INFO     twister_harness.fixtures:fixtures.py:61 Wait for prompt
+DEBUG    twister_harness.helpers.shell:shell.py:47 Got prompt
+DEBUG    httpx:_config.py:82 load_ssl_context verify=True cert=None trust_env=True http2=False
+DEBUG    httpx:_config.py:148 load_verify_locations cafile='/usr/local/lib/python3.11/dist-packages/certifi/cacert.pem'
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff93890410>
+DEBUG    httpcore.connection:_trace.py:85 start_tls.started ssl_context=<ssl.SSLContext object at 0xffff943ed9a0> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:85 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff938b7a90>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Access-Control-Expose-Headers', b'Content-Range'), (b'Content-Length', b'47'), (b'Content-Range', b'devices 0-0/0'), (b'Content-Type', b'application/json'), (b'Date', b'Fri, 04 Oct 2024 08:22:31 GMT'), (b'Grpc-Metadata-Access-Control-Expose-Headers', b'Content-Range'), (b'Grpc-Metadata-Content-Type', b'application/grpc'), (b'Via', b'kong/2.5.2'), (b'X-Kong-Proxy-Latency', b'0'), (b'X-Kong-Upstream-Latency', b'24')])
+INFO     httpx:_client.py:1786 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/devices?deviceName=certificate-fFxSQXCmxFTYgVta "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:85 response_closed.started
+DEBUG    httpcore.http11:_trace.py:85 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:85 close.started
+DEBUG    httpcore.connection:_trace.py:85 close.complete
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [msettings set wifi/ssid "***SAMS_ORANGE_PI_WIFI_SSID***"
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: Setting wifi/ssid to ***SAMS_ORANGE_PI_WIFI_SSID***
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;31mFailed to set runtime setting: wifi/ssid:***SAMS_ORANGE_PI_WIFI_SSID***
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [m[1;32muart:~$ [m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [msettings set wifi/psk "***SAMS_ORANGE_PI_WIFI_PSK***"
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: Setting wifi/psk to ***SAMS_ORANGE_PI_WIFI_PSK***
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;31mFailed to set runtime setting: wifi/psk:***SAMS_ORANGE_PI_WIFI_PSK***
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [m[1;32muart:~$ [m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:02.622,650] [0m<inf> lte_monitor: Network: Searching[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:00:04.979,003] [0m<inf> lte_monitor: Network: Registered (roaming)[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:04.979,492] [1;33m<wrn> cert_provisioning: Could not stat /lfs1/credentials/client_cert.der, err: -2[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [mfs mkdir /lfs1/credentials
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [mlog halt
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m
+INFO     test_sample:test_sample.py:23 mcumgr crt stdout: 302
+365
+Done
+
+INFO     test_sample:test_sample.py:23 mcumgr key stdout: 121
+Done
+
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [mlog go
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:09.981,384] [0m<inf> cert_provisioning: Read 365 bytes from /lfs1/credentials/client_cert.der[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:09.983,032] [0m<inf> cert_provisioning: Read 121 bytes from /lfs1/credentials/private_key.der[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:09.983,581] [0m<inf> golioth_mbox: Mbox created, bufsize: 1320, num_items: 10, item_size: 120[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:00:16.114,593] [0m<inf> golioth_coap_client_zephyr: Golioth CoAP client connected[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:16.114,837] [0m<inf> cert_provisioning: Sending hello! 0[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:16.114,898] [0m<inf> cert_provisioning: Golioth client connected[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[00:00:16.114,990] [0m<inf> golioth_coap_client_zephyr: Entering CoAP I/O loop[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:00:21.114,898] [0m<inf> cert_provisioning: Sending hello! 1[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:148 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:00:26.114,990] [0m<inf> cert_provisioning: Sending hello! 2[0m
+DEBUG    httpx:_config.py:82 load_ssl_context verify=True cert=None trust_env=True http2=False
+DEBUG    httpx:_config.py:148 load_verify_locations cafile='/usr/local/lib/python3.11/dist-packages/certifi/cacert.pem'
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff938b5210>
+DEBUG    httpcore.connection:_trace.py:85 start_tls.started ssl_context=<ssl.SSLContext object at 0xffff93a29fd0> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:85 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff938d1710>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Access-Control-Expose-Headers', b'Content-Range'), (b'Content-Length', b'584'), (b'Content-Range', b'devices 0-1/1'), (b'Content-Type', b'application/json'), (b'Date', b'Fri, 04 Oct 2024 08:22:58 GMT'), (b'Grpc-Metadata-Access-Control-Expose-Headers', b'Content-Range'), (b'Grpc-Metadata-Content-Type', b'application/grpc'), (b'Via', b'kong/2.5.2'), (b'X-Kong-Proxy-Latency', b'1'), (b'X-Kong-Upstream-Latency', b'25')])
+INFO     httpx:_client.py:1786 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/devices?deviceName=certificate-fFxSQXCmxFTYgVta "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:85 response_closed.started
+DEBUG    httpcore.http11:_trace.py:85 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:85 close.started
+DEBUG    httpcore.connection:_trace.py:85 close.complete
+DEBUG    twister_harness.device.hardware_adapter:hardware_adapter.py:186 Closed serial connection for /dev/serial/by-id/usb-SEGGER_J-Link_000960047329-if00
+DEBUG    httpx:_config.py:82 load_ssl_context verify=True cert=None trust_env=True http2=False
+DEBUG    httpx:_config.py:148 load_verify_locations cafile='/usr/local/lib/python3.11/dist-packages/certifi/cacert.pem'
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff938b7590>
+DEBUG    httpcore.connection:_trace.py:85 start_tls.started ssl_context=<ssl.SSLContext object at 0xffff93a29520> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:85 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff938b5a50>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Length', b'2'), (b'Content-Type', b'application/json'), (b'Date', b'Fri, 04 Oct 2024 08:22:58 GMT'), (b'Grpc-Metadata-Content-Type', b'application/grpc'), (b'Via', b'kong/2.5.2'), (b'X-Kong-Proxy-Latency', b'0'), (b'X-Kong-Upstream-Latency', b'54')])
+INFO     httpx:_client.py:1786 HTTP Request: DELETE https://api.golioth.io/v1/projects/firmware_ci/certificates/66ffa5a71b3c084061ccf4c8 "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:85 response_closed.started
+DEBUG    httpcore.http11:_trace.py:85 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:85 close.started
+DEBUG    httpcore.connection:_trace.py:85 close.complete
+DEBUG    httpx:_config.py:82 load_ssl_context verify=True cert=None trust_env=True http2=False
+DEBUG    httpx:_config.py:148 load_verify_locations cafile='/usr/local/lib/python3.11/dist-packages/certifi/cacert.pem'
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff95a48650>
+DEBUG    httpcore.connection:_trace.py:85 start_tls.started ssl_context=<ssl.SSLContext object at 0xffff93b27ec0> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:85 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff938d05d0>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Access-Control-Expose-Headers', b'Content-Range'), (b'Content-Length', b'584'), (b'Content-Range', b'devices 0-1/1'), (b'Content-Type', b'application/json'), (b'Date', b'Fri, 04 Oct 2024 08:22:59 GMT'), (b'Grpc-Metadata-Access-Control-Expose-Headers', b'Content-Range'), (b'Grpc-Metadata-Content-Type', b'application/grpc'), (b'Via', b'kong/2.5.2'), (b'X-Kong-Proxy-Latency', b'0'), (b'X-Kong-Upstream-Latency', b'75')])
+INFO     httpx:_client.py:1786 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/devices?deviceName=certificate-fFxSQXCmxFTYgVta "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:85 response_closed.started
+DEBUG    httpcore.http11:_trace.py:85 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:85 close.started
+DEBUG    httpcore.connection:_trace.py:85 close.complete
+DEBUG    httpx:_config.py:82 load_ssl_context verify=True cert=None trust_env=True http2=False
+DEBUG    httpx:_config.py:148 load_verify_locations cafile='/usr/local/lib/python3.11/dist-packages/certifi/cacert.pem'
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:85 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff938c7c10>
+DEBUG    httpcore.connection:_trace.py:85 start_tls.started ssl_context=<ssl.SSLContext object at 0xffff93a28200> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:85 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffff938d6390>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:85 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Length', b'2'), (b'Content-Type', b'application/json'), (b'Date', b'Fri, 04 Oct 2024 08:23:00 GMT'), (b'Grpc-Metadata-Content-Type', b'application/grpc'), (b'Via', b'kong/2.5.2'), (b'X-Kong-Proxy-Latency', b'1'), (b'X-Kong-Upstream-Latency', b'23')])
+INFO     httpx:_client.py:1786 HTTP Request: DELETE https://api.golioth.io/v1/projects/firmware_ci/devices/66ffa5d61b3c084061ccf4cb "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:85 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:85 response_closed.started
+DEBUG    httpcore.http11:_trace.py:85 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:85 close.started
+DEBUG    httpcore.connection:_trace.py:85 close.complete
