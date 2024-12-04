@@ -1,0 +1,497 @@
+{
+  "uid" : "acfc0d8b76f496df",
+  "name" : "test_block_operations",
+  "fullName" : "modules.lib.golioth-firmware-sdk.tests.hil.tests.ota.test_ota#test_block_operations",
+  "historyId" : "a76b1d475804c3133a955dfe5719d173",
+  "time" : {
+    "start" : 1733326708898,
+    "stop" : 1733326708898,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "statusMessage" : "httpx.HTTPStatusError: Server error '502 Bad Gateway' for url 'https://api.golioth.io/v1/projects'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502",
+  "statusTrace" : "item = <Function test_block_operations>\n\n    @pytest.hookimpl(wrapper=True)\n    def pytest_runtest_setup(item):\n        board_name = item.config.getoption(\"--allure-board\") or item.config.getoption(\"--board\")\n        platform_name = item.config.getoption(\"--platform\")\n        suitename = item.config.getoption(\"--custom-suitename\") or \"hil\"\n    \n        allure.dynamic.tag(board_name)\n        allure.dynamic.tag(platform_name)\n        allure.dynamic.parameter(\"board_name\", board_name)\n        allure.dynamic.parameter(\"platform_name\", platform_name)\n        allure.dynamic.parent_suite(f\"{suitename}.{platform_name}.{board_name}\")\n    \n        if runner_name is not None:\n            allure.dynamic.tag(item.config.getoption(\"--runner-name\"))\n    \n>       yield\n\n/usr/local/lib/python3.11/dist-packages/plugin.py:128: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/local/lib/python3.11/dist-packages/anyio/pytest_plugin.py:100: in wrapper\n    yield runner.run_fixture(local_func, kwargs)\n/usr/local/lib/python3.11/dist-packages/anyio/_backends/_trio.py:961: in run_fixture\n    return self._call_in_runner_task(fixture_func, **kwargs)\n/usr/local/lib/python3.11/dist-packages/anyio/_backends/_trio.py:936: in _call_in_runner_task\n    return outcome_holder[0].unwrap()\n/usr/local/lib/python3.11/dist-packages/outcome/_impl.py:213: in unwrap\n    raise captured_error\n/usr/local/lib/python3.11/dist-packages/anyio/_backends/_trio.py:906: in _run_tests_and_fixtures\n    retval = await coro\n/usr/local/lib/python3.11/dist-packages/golioth/pytest_plugin.py:50: in project\n    project = (await client.get_projects())[0]\n/usr/local/lib/python3.11/dist-packages/golioth/golioth.py:137: in get_projects\n    resp = await self.get('projects')\n/usr/local/lib/python3.11/dist-packages/golioth/golioth.py:83: in wrapper\n    resp.raise_for_status()\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <Response [502 Bad Gateway]>\n\n    def raise_for_status(self) -> Response:\n        \"\"\"\n        Raise the `HTTPStatusError` if one occurred.\n        \"\"\"\n        request = self._request\n        if request is None:\n            raise RuntimeError(\n                \"Cannot call `raise_for_status` as the request \"\n                \"instance has not been set on this response.\"\n            )\n    \n        if self.is_success:\n            return self\n    \n        if self.has_redirect_location:\n            message = (\n                \"{error_type} '{0.status_code} {0.reason_phrase}' for url '{0.url}'\\n\"\n                \"Redirect location: '{0.headers[location]}'\\n\"\n                \"For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/{0.status_code}\"\n            )\n        else:\n            message = (\n                \"{error_type} '{0.status_code} {0.reason_phrase}' for url '{0.url}'\\n\"\n                \"For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/{0.status_code}\"\n            )\n    \n        status_class = self.status_code // 100\n        error_types = {\n            1: \"Informational response\",\n            3: \"Redirect response\",\n            4: \"Client error\",\n            5: \"Server error\",\n        }\n        error_type = error_types.get(status_class, \"Invalid status code\")\n        message = message.format(self, error_type=error_type)\n>       raise HTTPStatusError(message, request=request, response=self)\nE       httpx.HTTPStatusError: Server error '502 Bad Gateway' for url 'https://api.golioth.io/v1/projects'\nE       For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502\n\n/usr/local/lib/python3.11/dist-packages/httpx/_models.py:829: HTTPStatusError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "fw_image",
+    "time" : {
+      "start" : 1733326708465,
+      "stop" : 1733326708465,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "board_name",
+    "time" : {
+      "start" : 1733326708465,
+      "stop" : 1733326708465,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "anyio_backend",
+    "time" : {
+      "start" : 1733326708465,
+      "stop" : 1733326708465,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "api_url",
+    "time" : {
+      "start" : 1733326708465,
+      "stop" : 1733326708465,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_name",
+    "time" : {
+      "start" : 1733326708466,
+      "stop" : 1733326708466,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "board",
+    "time" : {
+      "start" : 1733326708466,
+      "stop" : 1733326708511,
+      "duration" : 45
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "project",
+    "time" : {
+      "start" : 1733326708511,
+      "stop" : 1733326708735,
+      "duration" : 224
+    },
+    "status" : "broken",
+    "statusMessage" : "httpx.HTTPStatusError: Server error '502 Bad Gateway' for url 'https://api.golioth.io/v1/projects'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502\n",
+    "statusTrace" : "  File \"/usr/local/lib/python3.11/dist-packages/pluggy/_callers.py\", line 167, in _multicall\n    teardown.throw(outcome._exception)\n  File \"/usr/local/lib/python3.11/dist-packages/_pytest/setuponly.py\", line 36, in pytest_fixture_setup\n    return (yield)\n            ^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/pluggy/_callers.py\", line 103, in _multicall\n    res = hook_impl.function(*args)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/_pytest/fixtures.py\", line 1140, in pytest_fixture_setup\n    result = call_fixture_func(fixturefunc, request, kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/_pytest/fixtures.py\", line 891, in call_fixture_func\n    fixture_result = next(generator)\n                     ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/anyio/pytest_plugin.py\", line 100, in wrapper\n    yield runner.run_fixture(local_func, kwargs)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/anyio/_backends/_trio.py\", line 961, in run_fixture\n    return self._call_in_runner_task(fixture_func, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/anyio/_backends/_trio.py\", line 936, in _call_in_runner_task\n    return outcome_holder[0].unwrap()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/outcome/_impl.py\", line 213, in unwrap\n    raise captured_error\n  File \"/usr/local/lib/python3.11/dist-packages/anyio/_backends/_trio.py\", line 906, in _run_tests_and_fixtures\n    retval = await coro\n             ^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/golioth/pytest_plugin.py\", line 50, in project\n    project = (await client.get_projects())[0]\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/golioth/golioth.py\", line 137, in get_projects\n    resp = await self.get('projects')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/golioth/golioth.py\", line 83, in wrapper\n    resp.raise_for_status()\n  File \"/usr/local/lib/python3.11/dist-packages/httpx/_models.py\", line 829, in raise_for_status\n    raise HTTPStatusError(message, request=request, response=self)\n",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  }, {
+    "name" : "bmp_port",
+    "time" : {
+      "start" : 1733326708465,
+      "stop" : 1733326708465,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "wifi_ssid",
+    "time" : {
+      "start" : 1733326708465,
+      "stop" : 1733326708465,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "serial_number",
+    "time" : {
+      "start" : 1733326708465,
+      "stop" : 1733326708465,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "port",
+    "time" : {
+      "start" : 1733326708465,
+      "stop" : 1733326708465,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "api_key",
+    "time" : {
+      "start" : 1733326708465,
+      "stop" : 1733326708465,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "wifi_psk",
+    "time" : {
+      "start" : 1733326708465,
+      "stop" : 1733326708465,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "baud",
+    "time" : {
+      "start" : 1733326708465,
+      "stop" : 1733326708465,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "board::0",
+    "time" : {
+      "start" : 1733326709136,
+      "stop" : 1733326709151,
+      "duration" : 15
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "native_sim_64"
+  }, {
+    "name" : "tag",
+    "value" : "zephyr"
+  }, {
+    "name" : "parentSuite",
+    "value" : "hil.zephyr.native_sim_64"
+  }, {
+    "name" : "tag"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.usefixtures('anyio_backend')"
+  }, {
+    "name" : "tag",
+    "value" : "anyio"
+  }, {
+    "name" : "suite",
+    "value" : "test_ota"
+  }, {
+    "name" : "host",
+    "value" : "93a2d920b040"
+  }, {
+    "name" : "thread",
+    "value" : "7710-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "modules.lib.golioth-firmware-sdk.tests.hil.tests.ota.test_ota"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "board_name",
+    "value" : "'native_sim_64'"
+  }, {
+    "name" : "platform_name",
+    "value" : "'zephyr'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 1,
+        "skipped" : 0,
+        "passed" : 108,
+        "unknown" : 0,
+        "total" : 109
+      },
+      "items" : [ {
+        "uid" : "d993b2766d55a458",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1862/#testresult/d993b2766d55a458",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733252124945,
+          "stop" : 1733252126492,
+          "duration" : 1547
+        }
+      }, {
+        "uid" : "d5e907a64eb36831",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1860/#testresult/d5e907a64eb36831",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733188554580,
+          "stop" : 1733188555945,
+          "duration" : 1365
+        }
+      }, {
+        "uid" : "11c9b71c6e912e9b",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1848/#testresult/11c9b71c6e912e9b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732727071141,
+          "stop" : 1732727072200,
+          "duration" : 1059
+        }
+      }, {
+        "uid" : "d1cae9ae2f53acac",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1852//#testresult/d1cae9ae2f53acac",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732747580387,
+          "stop" : 1732747581587,
+          "duration" : 1200
+        }
+      }, {
+        "uid" : "ef0c23a5fe940263",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1848/#testresult/ef0c23a5fe940263",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732727071141,
+          "stop" : 1732727072200,
+          "duration" : 1059
+        }
+      }, {
+        "uid" : "e14447f239c4c085",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1847//#testresult/e14447f239c4c085",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732721872578,
+          "stop" : 1732721873467,
+          "duration" : 889
+        }
+      }, {
+        "uid" : "1cf01498f0423482",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1844//#testresult/1cf01498f0423482",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732629177101,
+          "stop" : 1732629178618,
+          "duration" : 1517
+        }
+      }, {
+        "uid" : "94052c246645280f",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1844//#testresult/94052c246645280f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732629177101,
+          "stop" : 1732629178618,
+          "duration" : 1517
+        }
+      }, {
+        "uid" : "cccee13fb2051e85",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1841//#testresult/cccee13fb2051e85",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732557951975,
+          "stop" : 1732557953633,
+          "duration" : 1658
+        }
+      }, {
+        "uid" : "ab3016960f1797e6",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1841//#testresult/ab3016960f1797e6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732557951975,
+          "stop" : 1732557953633,
+          "duration" : 1658
+        }
+      }, {
+        "uid" : "25aadea7c8ba8483",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1840//#testresult/25aadea7c8ba8483",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732552206060,
+          "stop" : 1732552207440,
+          "duration" : 1380
+        }
+      }, {
+        "uid" : "b6e3de62f6d053d",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1839//#testresult/b6e3de62f6d053d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732506894148,
+          "stop" : 1732506895280,
+          "duration" : 1132
+        }
+      }, {
+        "uid" : "1eb84123b97f897b",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1839//#testresult/1eb84123b97f897b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732506894148,
+          "stop" : 1732506895280,
+          "duration" : 1132
+        }
+      }, {
+        "uid" : "355e2f6d9ee176ee",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1835//#testresult/355e2f6d9ee176ee",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732308728960,
+          "stop" : 1732308729560,
+          "duration" : 600
+        }
+      }, {
+        "uid" : "eee535d77d803d86",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1835//#testresult/eee535d77d803d86",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732308728960,
+          "stop" : 1732308729560,
+          "duration" : 600
+        }
+      }, {
+        "uid" : "9d8b1127661b84b",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1835//#testresult/9d8b1127661b84b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732308728960,
+          "stop" : 1732308729560,
+          "duration" : 600
+        }
+      }, {
+        "uid" : "85edfa13ada9f77a",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1835//#testresult/85edfa13ada9f77a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732308728960,
+          "stop" : 1732308729560,
+          "duration" : 600
+        }
+      }, {
+        "uid" : "396bd12755182ea6",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1832//#testresult/396bd12755182ea6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732299291486,
+          "stop" : 1732299292379,
+          "duration" : 893
+        }
+      }, {
+        "uid" : "bc7944aed8da06cc",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1832//#testresult/bc7944aed8da06cc",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732299291486,
+          "stop" : 1732299292379,
+          "duration" : 893
+        }
+      }, {
+        "uid" : "6ce9554086f4a061",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1832//#testresult/6ce9554086f4a061",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732299291486,
+          "stop" : 1732299292379,
+          "duration" : 893
+        }
+      } ]
+    },
+    "tags" : [ null, "native_sim_64", "anyio", "@pytest.mark.usefixtures('anyio_backend')", "zephyr" ]
+  },
+  "source" : "acfc0d8b76f496df.json",
+  "parameterValues" : [ "'native_sim_64'", "'zephyr'" ]
+}
