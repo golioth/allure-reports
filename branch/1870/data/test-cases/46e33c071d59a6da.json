@@ -1,0 +1,589 @@
+{
+  "uid" : "46e33c071d59a6da",
+  "name" : "test_block_upload",
+  "fullName" : "tests.hil.tests.stream.test_stream#test_block_upload",
+  "historyId" : "bf5aaea165a010a9ece478740708b5e9",
+  "time" : {
+    "start" : 1733440125811,
+    "stop" : 1733440133737,
+    "duration" : 7926
+  },
+  "status" : "broken",
+  "statusMessage" : "IndexError: list index out of range",
+  "statusTrace" : "board = <espidfboard.ESPIDFBoard object at 0xffff96992390>\ndevice = <golioth.golioth.Device object at 0xffff9673fc90>\n\n    async def test_block_upload(board, device):\n        assert None != await board.wait_for_regex_in_line('Block upload successful', timeout_s=20)\n    \n        # Wait for stream to propagate from CDG to LightDB Stream\n        await trio.sleep(6)\n    \n        # Get Stream entry of the block upload from cloud\n        stream = await device.stream.get(path=BLOCK_UPLOAD_PATH, interval=\"1m\")\n        print(stream)\n        assert 'list' in stream and len(stream.keys()) > 0\n    \n>       blockwise_json = stream['list'][0]['data'][BLOCK_UPLOAD_PATH]\nE       IndexError: list index out of range\n\ntests/hil/tests/stream/test_stream.py:50: IndexError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "board_name",
+    "time" : {
+      "start" : 1733440079348,
+      "stop" : 1733440079349,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "anyio_backend",
+    "time" : {
+      "start" : 1733440079347,
+      "stop" : 1733440079348,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "serial_number",
+    "time" : {
+      "start" : 1733440079354,
+      "stop" : 1733440079354,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "baud",
+    "time" : {
+      "start" : 1733440079351,
+      "stop" : 1733440079351,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "api_url",
+    "time" : {
+      "start" : 1733440079355,
+      "stop" : 1733440079356,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "api_key",
+    "time" : {
+      "start" : 1733440079355,
+      "stop" : 1733440079355,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "port",
+    "time" : {
+      "start" : 1733440079350,
+      "stop" : 1733440079350,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "device",
+    "time" : {
+      "start" : 1733440122340,
+      "stop" : 1733440123182,
+      "duration" : 842
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "fw_image",
+    "time" : {
+      "start" : 1733440079353,
+      "stop" : 1733440079353,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "wifi_ssid",
+    "time" : {
+      "start" : 1733440079352,
+      "stop" : 1733440079352,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "setup",
+    "time" : {
+      "start" : 1733440123182,
+      "stop" : 1733440125808,
+      "duration" : 2626
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "wifi_psk",
+    "time" : {
+      "start" : 1733440079353,
+      "stop" : 1733440079353,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "project",
+    "time" : {
+      "start" : 1733440121831,
+      "stop" : 1733440122339,
+      "duration" : 508
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "device_name",
+    "time" : {
+      "start" : 1733440079354,
+      "stop" : 1733440079355,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "bmp_port",
+    "time" : {
+      "start" : 1733440079354,
+      "stop" : 1733440079354,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "board",
+    "time" : {
+      "start" : 1733440079356,
+      "stop" : 1733440121829,
+      "duration" : 42473
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "IndexError: list index out of range",
+    "statusTrace" : "board = <espidfboard.ESPIDFBoard object at 0xffff96992390>\ndevice = <golioth.golioth.Device object at 0xffff9673fc90>\n\n    async def test_block_upload(board, device):\n        assert None != await board.wait_for_regex_in_line('Block upload successful', timeout_s=20)\n    \n        # Wait for stream to propagate from CDG to LightDB Stream\n        await trio.sleep(6)\n    \n        # Get Stream entry of the block upload from cloud\n        stream = await device.stream.get(path=BLOCK_UPLOAD_PATH, interval=\"1m\")\n        print(stream)\n        assert 'list' in stream and len(stream.keys()) > 0\n    \n>       blockwise_json = stream['list'][0]['data'][BLOCK_UPLOAD_PATH]\nE       IndexError: list index out of range\n\ntests/hil/tests/stream/test_stream.py:50: IndexError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "8ba556d4e93cabea",
+      "name" : "stdout",
+      "source" : "8ba556d4e93cabea.txt",
+      "type" : "text/plain",
+      "size" : 8112
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true,
+    "stepsCount" : 0
+  },
+  "afterStages" : [ {
+    "name" : "device::0",
+    "time" : {
+      "start" : 1733440133941,
+      "stop" : 1733440134302,
+      "duration" : 361
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "setup::0",
+    "time" : {
+      "start" : 1733440133938,
+      "stop" : 1733440133939,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "project::0",
+    "time" : {
+      "start" : 1733440134304,
+      "stop" : 1733440134305,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "board::0",
+    "time" : {
+      "start" : 1733440134307,
+      "stop" : 1733440134310,
+      "duration" : 3
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "esp32_devkitc_wrover_espidf"
+  }, {
+    "name" : "tag",
+    "value" : "esp-idf"
+  }, {
+    "name" : "parentSuite",
+    "value" : "hil.esp-idf.esp32_devkitc_wrover_espidf"
+  }, {
+    "name" : "tag",
+    "value" : "tims_orange_pi"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.usefixtures('anyio_backend')"
+  }, {
+    "name" : "tag",
+    "value" : "anyio"
+  }, {
+    "name" : "suite",
+    "value" : "test_stream"
+  }, {
+    "name" : "host",
+    "value" : "e3a20c9b9463"
+  }, {
+    "name" : "thread",
+    "value" : "267-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.hil.tests.stream.test_stream"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "board_name",
+    "value" : "'esp32_devkitc_wrover_espidf'"
+  }, {
+    "name" : "platform_name",
+    "value" : "'esp-idf'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 2,
+        "skipped" : 0,
+        "passed" : 102,
+        "unknown" : 0,
+        "total" : 104
+      },
+      "items" : [ {
+        "uid" : "e78b7f1080f80243",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1868/#testresult/e78b7f1080f80243",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733412647505,
+          "stop" : 1733412655612,
+          "duration" : 8107
+        }
+      }, {
+        "uid" : "109bb671c552486e",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1865/#testresult/109bb671c552486e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733351128828,
+          "stop" : 1733351136945,
+          "duration" : 8117
+        }
+      }, {
+        "uid" : "90945ecfb366094d",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1864/#testresult/90945ecfb366094d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733327256274,
+          "stop" : 1733327264437,
+          "duration" : 8163
+        }
+      }, {
+        "uid" : "cc1a1cc6c91ae5f2",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1862/#testresult/cc1a1cc6c91ae5f2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733252871093,
+          "stop" : 1733252879542,
+          "duration" : 8449
+        }
+      }, {
+        "uid" : "e5abc6fea227996d",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1860/#testresult/e5abc6fea227996d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733189304890,
+          "stop" : 1733189313068,
+          "duration" : 8178
+        }
+      }, {
+        "uid" : "bcc49c71635884fe",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1848/#testresult/bcc49c71635884fe",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732727808670,
+          "stop" : 1732727816822,
+          "duration" : 8152
+        }
+      }, {
+        "uid" : "a90ed9c1a93f6229",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1852//#testresult/a90ed9c1a93f6229",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732748331900,
+          "stop" : 1732748339852,
+          "duration" : 7952
+        }
+      }, {
+        "uid" : "fb177a1fa5bef158",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1848/#testresult/fb177a1fa5bef158",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732727808670,
+          "stop" : 1732727816822,
+          "duration" : 8152
+        }
+      }, {
+        "uid" : "be7424f2980cc0dd",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1847//#testresult/be7424f2980cc0dd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732722637420,
+          "stop" : 1732722645360,
+          "duration" : 7940
+        }
+      }, {
+        "uid" : "fda9d0a343703f78",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1844//#testresult/fda9d0a343703f78",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732629947837,
+          "stop" : 1732629955798,
+          "duration" : 7961
+        }
+      }, {
+        "uid" : "b14303dba6a2d1c8",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1844//#testresult/b14303dba6a2d1c8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732629947837,
+          "stop" : 1732629955798,
+          "duration" : 7961
+        }
+      }, {
+        "uid" : "2da2802448e482b4",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1841//#testresult/2da2802448e482b4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732558701760,
+          "stop" : 1732558709721,
+          "duration" : 7961
+        }
+      }, {
+        "uid" : "80a783ff477c3092",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1841//#testresult/80a783ff477c3092",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732558701760,
+          "stop" : 1732558709721,
+          "duration" : 7961
+        }
+      }, {
+        "uid" : "9531751fc06b2e6e",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1840//#testresult/9531751fc06b2e6e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732552936896,
+          "stop" : 1732552944982,
+          "duration" : 8086
+        }
+      }, {
+        "uid" : "f9e22fc312b2fe8d",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1839//#testresult/f9e22fc312b2fe8d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732507661503,
+          "stop" : 1732507669699,
+          "duration" : 8196
+        }
+      }, {
+        "uid" : "f609f7845bb6607b",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1839//#testresult/f609f7845bb6607b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732507661503,
+          "stop" : 1732507669699,
+          "duration" : 8196
+        }
+      }, {
+        "uid" : "a83ced62da542d48",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1835//#testresult/a83ced62da542d48",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732311671060,
+          "stop" : 1732311679238,
+          "duration" : 8178
+        }
+      }, {
+        "uid" : "79b17b1545ddb740",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1835//#testresult/79b17b1545ddb740",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732311671060,
+          "stop" : 1732311679238,
+          "duration" : 8178
+        }
+      }, {
+        "uid" : "93f0e538e5b1cf47",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1835//#testresult/93f0e538e5b1cf47",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732311671060,
+          "stop" : 1732311679238,
+          "duration" : 8178
+        }
+      }, {
+        "uid" : "459be423ea2453bb",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1835//#testresult/459be423ea2453bb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732311671060,
+          "stop" : 1732311679238,
+          "duration" : 8178
+        }
+      } ]
+    },
+    "tags" : [ "esp-idf", "anyio", "tims_orange_pi", "esp32_devkitc_wrover_espidf", "@pytest.mark.usefixtures('anyio_backend')" ]
+  },
+  "source" : "46e33c071d59a6da.json",
+  "parameterValues" : [ "'esp32_devkitc_wrover_espidf'", "'esp-idf'" ]
+}
