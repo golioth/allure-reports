@@ -1,0 +1,561 @@
+{
+  "uid" : "2451460d3cd7ef8f",
+  "name" : "test_hello",
+  "fullName" : "examples.esp_idf.hello.pytest.test_sample#test_hello",
+  "historyId" : "38bf6e633dc99475bab8d042bff56ad7",
+  "time" : {
+    "start" : 1733447091523,
+    "stop" : 1733447117389,
+    "duration" : 25866
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: Unable to find all Hello messages on server\nassert 0 == 3",
+  "statusTrace" : "board = <espidfboard.ESPIDFBoard object at 0xffffa7bc1dd0>\ndevice = <golioth.golioth.Device object at 0xffffa7b5d390>\n\n    async def test_hello(board, device):\n        # Set Golioth credential\n        golioth_cred = (await device.credentials.list())[0]\n        await board.set_golioth_psk_credentials(golioth_cred.identity, golioth_cred.key)\n    \n        # Record timestamp and wait for fourth hello message\n        start = datetime.datetime.utcnow()\n        await board.wait_for_regex_in_line('.*Sending hello! 3', timeout_s=90.0)\n    \n        # Check logs for hello messages\n        end = datetime.datetime.utcnow()\n        logs = await device.get_logs({'start': start.strftime('%Y-%m-%dT%H:%M:%S.%fZ'), 'end': end.strftime('%Y-%m-%dT%H:%M:%S.%fZ')})\n    \n        # Test logs received from server\n        LOGGER.info(\"Searching log messages from end to start:\")\n        test_idx = 2\n        test_hits = 0\n        for m in reversed(logs):\n    \n            if m.message == f\"Sending hello! {test_idx}\":\n                LOGGER.info(\"### MATCH FOUND! ---> {0}\".format(m.message))\n                test_hits += 1\n                test_idx -= 1\n                if test_idx < 0:\n                    break\n            else:\n                LOGGER.info(m.message)\n    \n>       assert test_hits == 3, 'Unable to find all Hello messages on server'\nE       AssertionError: Unable to find all Hello messages on server\nE       assert 0 == 3\n\nexamples/esp_idf/hello/pytest/test_sample.py:42: AssertionError",
+  "flaky" : false,
+  "newFailed" : true,
+  "beforeStages" : [ {
+    "name" : "device_name",
+    "time" : {
+      "start" : 1733447045751,
+      "stop" : 1733447045751,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "api_url",
+    "time" : {
+      "start" : 1733447045752,
+      "stop" : 1733447045752,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "project",
+    "time" : {
+      "start" : 1733447086054,
+      "stop" : 1733447088700,
+      "duration" : 2646
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "baud",
+    "time" : {
+      "start" : 1733447045746,
+      "stop" : 1733447045746,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "api_key",
+    "time" : {
+      "start" : 1733447045751,
+      "stop" : 1733447045751,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "board",
+    "time" : {
+      "start" : 1733447045752,
+      "stop" : 1733447086052,
+      "duration" : 40300
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "port",
+    "time" : {
+      "start" : 1733447045745,
+      "stop" : 1733447045745,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "serial_number",
+    "time" : {
+      "start" : 1733447045749,
+      "stop" : 1733447045749,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "anyio_backend",
+    "time" : {
+      "start" : 1733447045743,
+      "stop" : 1733447045743,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "board_name",
+    "time" : {
+      "start" : 1733447045744,
+      "stop" : 1733447045744,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "bmp_port",
+    "time" : {
+      "start" : 1733447045750,
+      "stop" : 1733447045750,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "wifi_psk",
+    "time" : {
+      "start" : 1733447045747,
+      "stop" : 1733447045748,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device",
+    "time" : {
+      "start" : 1733447088701,
+      "stop" : 1733447091514,
+      "duration" : 2813
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "fw_image",
+    "time" : {
+      "start" : 1733447045748,
+      "stop" : 1733447045748,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "wifi_ssid",
+    "time" : {
+      "start" : 1733447045747,
+      "stop" : 1733447045747,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: Unable to find all Hello messages on server\nassert 0 == 3",
+    "statusTrace" : "board = <espidfboard.ESPIDFBoard object at 0xffffa7bc1dd0>\ndevice = <golioth.golioth.Device object at 0xffffa7b5d390>\n\n    async def test_hello(board, device):\n        # Set Golioth credential\n        golioth_cred = (await device.credentials.list())[0]\n        await board.set_golioth_psk_credentials(golioth_cred.identity, golioth_cred.key)\n    \n        # Record timestamp and wait for fourth hello message\n        start = datetime.datetime.utcnow()\n        await board.wait_for_regex_in_line('.*Sending hello! 3', timeout_s=90.0)\n    \n        # Check logs for hello messages\n        end = datetime.datetime.utcnow()\n        logs = await device.get_logs({'start': start.strftime('%Y-%m-%dT%H:%M:%S.%fZ'), 'end': end.strftime('%Y-%m-%dT%H:%M:%S.%fZ')})\n    \n        # Test logs received from server\n        LOGGER.info(\"Searching log messages from end to start:\")\n        test_idx = 2\n        test_hits = 0\n        for m in reversed(logs):\n    \n            if m.message == f\"Sending hello! {test_idx}\":\n                LOGGER.info(\"### MATCH FOUND! ---> {0}\".format(m.message))\n                test_hits += 1\n                test_idx -= 1\n                if test_idx < 0:\n                    break\n            else:\n                LOGGER.info(m.message)\n    \n>       assert test_hits == 3, 'Unable to find all Hello messages on server'\nE       AssertionError: Unable to find all Hello messages on server\nE       assert 0 == 3\n\nexamples/esp_idf/hello/pytest/test_sample.py:42: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "a37dc8bcd5c0c3f6",
+      "name" : "stdout",
+      "source" : "a37dc8bcd5c0c3f6.txt",
+      "type" : "text/plain",
+      "size" : 8286
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "project::0",
+    "time" : {
+      "start" : 1733447121900,
+      "stop" : 1733447121900,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "board::0",
+    "time" : {
+      "start" : 1733447121905,
+      "stop" : 1733447121916,
+      "duration" : 11
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device::0",
+    "time" : {
+      "start" : 1733447117656,
+      "stop" : 1733447121894,
+      "duration" : 4238
+    },
+    "status" : "broken",
+    "statusMessage" : "httpx.ConnectError: [Errno -5] No address associated with hostname\n",
+    "statusTrace" : "  File \"/usr/local/lib/python3.11/dist-packages/allure_commons/_allure.py\", line 221, in __call__\n    return self._fixture_function(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/_pytest/fixtures.py\", line 907, in _teardown_yield_fixture\n    next(it)\n  File \"/usr/local/lib/python3.11/dist-packages/anyio/pytest_plugin.py\", line 81, in wrapper\n    yield from runner.run_asyncgen_fixture(func, kwargs)\n  File \"/usr/local/lib/python3.11/dist-packages/anyio/_backends/_trio.py\", line 934, in run_asyncgen_fixture\n    self._call_in_runner_task(asyncgen.asend, None)\n  File \"/usr/local/lib/python3.11/dist-packages/anyio/_backends/_trio.py\", line 921, in _call_in_runner_task\n    return outcome_holder[0].unwrap()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/outcome/_impl.py\", line 213, in unwrap\n    raise captured_error\n  File \"/usr/local/lib/python3.11/dist-packages/anyio/_backends/_trio.py\", line 891, in _run_tests_and_fixtures\n    retval = await coro\n             ^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/golioth/pytest_plugin.py\", line 68, in device\n    await project.delete_device(device)\n  File \"/usr/local/lib/python3.11/dist-packages/golioth/golioth.py\", line 257, in delete_device\n    await self.delete_device_by_id(dev.id)\n  File \"/usr/local/lib/python3.11/dist-packages/golioth/golioth.py\", line 254, in delete_device_by_id\n    await self.delete(f'devices/{id}')\n  File \"/usr/local/lib/python3.11/dist-packages/golioth/golioth.py\", line 80, in wrapper\n    resp: httpx.Response = await func(*args, **kwargs)\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/golioth/golioth.py\", line 118, in delete\n    return await c.delete(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/httpx/_client.py\", line 2012, in delete\n    return await self.request(\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/httpx/_client.py\", line 1585, in request\n    return await self.send(request, auth=auth, follow_redirects=follow_redirects)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/httpx/_client.py\", line 1674, in send\n    response = await self._send_handling_auth(\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/httpx/_client.py\", line 1702, in _send_handling_auth\n    response = await self._send_handling_redirects(\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/httpx/_client.py\", line 1739, in _send_handling_redirects\n    response = await self._send_single_request(request)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/httpx/_client.py\", line 1776, in _send_single_request\n    response = await transport.handle_async_request(request)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/httpx/_transports/default.py\", line 376, in handle_async_request\n    with map_httpcore_exceptions():\n  File \"/usr/lib/python3.11/contextlib.py\", line 155, in __exit__\n    self.gen.throw(typ, value, traceback)\n  File \"/usr/local/lib/python3.11/dist-packages/httpx/_transports/default.py\", line 89, in map_httpcore_exceptions\n    raise mapped_exc(message) from exc\n",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "esp32s3_devkitc_espidf"
+  }, {
+    "name" : "tag",
+    "value" : "esp-idf"
+  }, {
+    "name" : "parentSuite",
+    "value" : "sample.esp-idf.esp32s3_devkitc_espidf"
+  }, {
+    "name" : "tag",
+    "value" : "sams_orange_pi"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.usefixtures('anyio_backend')"
+  }, {
+    "name" : "tag",
+    "value" : "anyio"
+  }, {
+    "name" : "suite",
+    "value" : "test_sample"
+  }, {
+    "name" : "host",
+    "value" : "916baecbb566"
+  }, {
+    "name" : "thread",
+    "value" : "260-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "examples.esp_idf.hello.pytest.test_sample"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "board_name",
+    "value" : "'esp32s3_devkitc_espidf'"
+  }, {
+    "name" : "platform_name",
+    "value" : "'esp-idf'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 84,
+        "unknown" : 0,
+        "total" : 85
+      },
+      "items" : [ {
+        "uid" : "3c2200f2ede999ac",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1867/#testresult/3c2200f2ede999ac",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733410089566,
+          "stop" : 1733410113527,
+          "duration" : 23961
+        }
+      }, {
+        "uid" : "233b011a4d285880",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1866/#testresult/233b011a4d285880",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733360427660,
+          "stop" : 1733360447659,
+          "duration" : 19999
+        }
+      }, {
+        "uid" : "13697bdde9cac8e7",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1863/#testresult/13697bdde9cac8e7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733274297299,
+          "stop" : 1733274317458,
+          "duration" : 20159
+        }
+      }, {
+        "uid" : "1f3f40e86282fcba",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1859/#testresult/1f3f40e86282fcba",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733187780810,
+          "stop" : 1733187801715,
+          "duration" : 20905
+        }
+      }, {
+        "uid" : "77bae34e1c994c99",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1858/#testresult/77bae34e1c994c99",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733162601603,
+          "stop" : 1733162622685,
+          "duration" : 21082
+        }
+      }, {
+        "uid" : "107b2c07ae6f35e0",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1857//#testresult/107b2c07ae6f35e0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733101143853,
+          "stop" : 1733101164729,
+          "duration" : 20876
+        }
+      }, {
+        "uid" : "54842d8cd1d262d8",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1856//#testresult/54842d8cd1d262d8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733015246092,
+          "stop" : 1733015265562,
+          "duration" : 19470
+        }
+      }, {
+        "uid" : "caacf9dcac5612d9",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1855//#testresult/caacf9dcac5612d9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732928503774,
+          "stop" : 1732928523001,
+          "duration" : 19227
+        }
+      }, {
+        "uid" : "345d619b6477960a",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1854//#testresult/345d619b6477960a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732842118248,
+          "stop" : 1732842137209,
+          "duration" : 18961
+        }
+      }, {
+        "uid" : "c23a4af8110f97ab",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1853//#testresult/c23a4af8110f97ab",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732755405970,
+          "stop" : 1732755425214,
+          "duration" : 19244
+        }
+      }, {
+        "uid" : "a52a8a33c015d444",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1846//#testresult/a52a8a33c015d444",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732668969584,
+          "stop" : 1732668988741,
+          "duration" : 19157
+        }
+      }, {
+        "uid" : "5f0509487dfdca3e",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1845//#testresult/5f0509487dfdca3e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732643176192,
+          "stop" : 1732643196903,
+          "duration" : 20711
+        }
+      }, {
+        "uid" : "aa5986ac0c15372e",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1842//#testresult/aa5986ac0c15372e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732568295275,
+          "stop" : 1732568314537,
+          "duration" : 19262
+        }
+      }, {
+        "uid" : "d58ffbc5cc6a0de3",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1842//#testresult/d58ffbc5cc6a0de3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732568295275,
+          "stop" : 1732568314537,
+          "duration" : 19262
+        }
+      }, {
+        "uid" : "27ca7fd1b0c1aa3f",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1843//#testresult/27ca7fd1b0c1aa3f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732582741662,
+          "stop" : 1732582761555,
+          "duration" : 19893
+        }
+      }, {
+        "uid" : "7c06f47a87e63f53",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1842//#testresult/7c06f47a87e63f53",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732568295275,
+          "stop" : 1732568314537,
+          "duration" : 19262
+        }
+      }, {
+        "uid" : "98f8d7cd2109f80c",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1842//#testresult/98f8d7cd2109f80c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732568295275,
+          "stop" : 1732568314537,
+          "duration" : 19262
+        }
+      }, {
+        "uid" : "fcfa9ad0e0e0fa9d",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1842//#testresult/fcfa9ad0e0e0fa9d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732568295275,
+          "stop" : 1732568314537,
+          "duration" : 19262
+        }
+      }, {
+        "uid" : "1afce7acd33f13d6",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1838//#testresult/1afce7acd33f13d6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732496194280,
+          "stop" : 1732496216175,
+          "duration" : 21895
+        }
+      }, {
+        "uid" : "4a292067da6102d",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1837//#testresult/4a292067da6102d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732410301544,
+          "stop" : 1732410324536,
+          "duration" : 22992
+        }
+      } ]
+    },
+    "tags" : [ "esp32s3_devkitc_espidf", "esp-idf", "anyio", "sams_orange_pi", "@pytest.mark.usefixtures('anyio_backend')" ]
+  },
+  "source" : "2451460d3cd7ef8f.json",
+  "parameterValues" : [ "'esp32s3_devkitc_espidf'", "'esp-idf'" ]
+}
