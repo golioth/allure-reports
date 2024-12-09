@@ -1,0 +1,529 @@
+{
+  "uid" : "166e1ee7ee3d18d0",
+  "name" : "test_logging",
+  "fullName" : "modules.lib.golioth-firmware-sdk.examples.zephyr.logging.pytest.test_sample#test_logging",
+  "historyId" : "ddc2f31d085089b8b5f25dfb44556fd5",
+  "time" : {
+    "start" : 1733783027272,
+    "stop" : 1733783045681,
+    "duration" : 18409
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: Unable to find all Log messages on server\nassert 6 == 0\n +  where 6 = len([<[KeyError('timestamp') raised in repr()] LogEntry object at 0xffff880331d0>, <[KeyError('timestamp') raised in repr()] LogEntry object at 0xffff88033210>, <[KeyError('timestamp') raised in repr()] LogEntry object at 0xffff88033250>, <[KeyError('timestamp') raised in repr()] LogEntry object at 0xffff88033290>, <[KeyError('timestamp') raised in repr()] LogEntry object at 0xffff88032bd0>, <[KeyError('timestamp') raised in repr()] LogEntry object at 0xffff88033110>])",
+  "statusTrace" : "shell = <twister_harness.helpers.shell.Shell object at 0xffff88004a10>\ndevice = <golioth.golioth.Device object at 0xffff87ffa510>\nwifi_ssid = '***MIKES_ORANGE_PI_WIFI_SSID***', wifi_psk = '***MIKES_ORANGE_PI_WIFI_PSK***'\n\n    async def test_logging(shell, device, wifi_ssid, wifi_psk):\n        await trio.sleep(2)\n    \n        # Set Golioth credential\n    \n        golioth_cred = (await device.credentials.list())[0]\n        shell.exec_command(f\"settings set golioth/psk-id {golioth_cred.identity}\")\n        shell.exec_command(f\"settings set golioth/psk {golioth_cred.key}\")\n    \n        # Set WiFi credential\n    \n        if wifi_ssid is not None:\n            shell.exec_command(f\"settings set wifi/ssid \\\"{wifi_ssid}\\\"\")\n    \n        if wifi_psk is not None:\n            shell.exec_command(f\"settings set wifi/psk \\\"{wifi_psk}\\\"\")\n    \n        # Record timestamp and wait for fourth hello message\n    \n        start = datetime.datetime.utcnow()\n        shell._device.readlines_until(regex=\".*Debug info! 2\", timeout=90.0)\n    \n        # Check logs for hello messages\n    \n        end = datetime.datetime.utcnow()\n    \n        logs = await device.get_logs({'start': start.strftime('%Y-%m-%dT%H:%M:%S.%fZ'), 'end': end.strftime('%Y-%m-%dT%H:%M:%S.%fZ')})\n    \n        # Test logs received from server\n    \n>       verify_log_messages(logs)\n\nmodules/lib/golioth-firmware-sdk/examples/zephyr/logging/pytest/test_sample.py:83: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nlogs = []\n\n    def verify_log_messages(logs):\n    \n        expected_logs = [\n                         LogEntry( { 'level': LogLevel.DBG, 'message': \"main: Debug info! 0\"}),\n                         LogEntry( { 'level': LogLevel.DBG, 'message': \"func_1: Log 1: 0\"}),\n                         LogEntry( { 'level': LogLevel.DBG, 'message': \"func_2: Log 2: 0\"}),\n                         LogEntry( { 'level': LogLevel.WRN, 'message': \"Warn: 0\"}),\n                         LogEntry( { 'level': LogLevel.ERR, 'message': \"Err: 0\"}),\n                         # A current known issue is that hexdump doesn't include second line on cloud\n                         # logs. We still test for this message and verify INF type is working.\n                         LogEntry( { 'level': LogLevel.INF, 'message': \"Counter hexdump\"})\n                         ]\n    \n        LOGGER.info(\"Searching log messages:\")\n    \n        for m in logs:\n            message = m.message\n    \n            for i, e in enumerate(expected_logs):\n                if m.message == e.message and m.level == e.level:\n                    message = \"### MATCH FOUND! ---> {0}\".format(m.message)\n                    expected_logs.pop(i)\n                    break\n    \n            LOGGER.info(message)\n    \n            if len(expected_logs) == 0:\n                break\n    \n        num_missing = len(expected_logs)\n        if num_missing > 0:\n            LOGGER.error(\"XXX Unable to find {0} Log messages:\".format(num_missing))\n            for m in expected_logs:\n                LOGGER.error(\"XXX Not FOUND ---> {0}\".format(m.message))\n        else:\n            LOGGER.info(\"### All expected Log messages found!\")\n    \n>       assert len(expected_logs) == 0, 'Unable to find all Log messages on server'\nE       AssertionError: Unable to find all Log messages on server\nE       assert 6 == 0\nE        +  where 6 = len([<[KeyError('timestamp') raised in repr()] LogEntry object at 0xffff880331d0>, <[KeyError('timestamp') raised in repr()] LogEntry object at 0xffff88033210>, <[KeyError('timestamp') raised in repr()] LogEntry object at 0xffff88033250>, <[KeyError('timestamp') raised in repr()] LogEntry object at 0xffff88033290>, <[KeyError('timestamp') raised in repr()] LogEntry object at 0xffff88032bd0>, <[KeyError('timestamp') raised in repr()] LogEntry object at 0xffff88033110>])\n\nmodules/lib/golioth-firmware-sdk/examples/zephyr/logging/pytest/test_sample.py:50: AssertionError",
+  "flaky" : false,
+  "newFailed" : true,
+  "beforeStages" : [ {
+    "name" : "anyio_backend",
+    "time" : {
+      "start" : 1733783017934,
+      "stop" : 1733783017934,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "wifi_ssid",
+    "time" : {
+      "start" : 1733783017934,
+      "stop" : 1733783017935,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "api_url",
+    "time" : {
+      "start" : 1733783017940,
+      "stop" : 1733783017940,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_object",
+    "time" : {
+      "start" : 1733783017937,
+      "stop" : 1733783017939,
+      "duration" : 2
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "project",
+    "time" : {
+      "start" : 1733783017940,
+      "stop" : 1733783018351,
+      "duration" : 411
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "twister_harness_config",
+    "time" : {
+      "start" : 1733783017936,
+      "stop" : 1733783017936,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_name",
+    "time" : {
+      "start" : 1733783017935,
+      "stop" : 1733783017936,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "api_key",
+    "time" : {
+      "start" : 1733783017939,
+      "stop" : 1733783017940,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "dut",
+    "time" : {
+      "start" : 1733783019191,
+      "stop" : 1733783026736,
+      "duration" : 7545
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "shell",
+    "time" : {
+      "start" : 1733783026736,
+      "stop" : 1733783027269,
+      "duration" : 533
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "wifi_psk",
+    "time" : {
+      "start" : 1733783017935,
+      "stop" : 1733783017935,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device",
+    "time" : {
+      "start" : 1733783018351,
+      "stop" : 1733783019190,
+      "duration" : 839
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: Unable to find all Log messages on server\nassert 6 == 0\n +  where 6 = len([<[KeyError('timestamp') raised in repr()] LogEntry object at 0xffff880331d0>, <[KeyError('timestamp') raised in repr()] LogEntry object at 0xffff88033210>, <[KeyError('timestamp') raised in repr()] LogEntry object at 0xffff88033250>, <[KeyError('timestamp') raised in repr()] LogEntry object at 0xffff88033290>, <[KeyError('timestamp') raised in repr()] LogEntry object at 0xffff88032bd0>, <[KeyError('timestamp') raised in repr()] LogEntry object at 0xffff88033110>])",
+    "statusTrace" : "shell = <twister_harness.helpers.shell.Shell object at 0xffff88004a10>\ndevice = <golioth.golioth.Device object at 0xffff87ffa510>\nwifi_ssid = '***MIKES_ORANGE_PI_WIFI_SSID***', wifi_psk = '***MIKES_ORANGE_PI_WIFI_PSK***'\n\n    async def test_logging(shell, device, wifi_ssid, wifi_psk):\n        await trio.sleep(2)\n    \n        # Set Golioth credential\n    \n        golioth_cred = (await device.credentials.list())[0]\n        shell.exec_command(f\"settings set golioth/psk-id {golioth_cred.identity}\")\n        shell.exec_command(f\"settings set golioth/psk {golioth_cred.key}\")\n    \n        # Set WiFi credential\n    \n        if wifi_ssid is not None:\n            shell.exec_command(f\"settings set wifi/ssid \\\"{wifi_ssid}\\\"\")\n    \n        if wifi_psk is not None:\n            shell.exec_command(f\"settings set wifi/psk \\\"{wifi_psk}\\\"\")\n    \n        # Record timestamp and wait for fourth hello message\n    \n        start = datetime.datetime.utcnow()\n        shell._device.readlines_until(regex=\".*Debug info! 2\", timeout=90.0)\n    \n        # Check logs for hello messages\n    \n        end = datetime.datetime.utcnow()\n    \n        logs = await device.get_logs({'start': start.strftime('%Y-%m-%dT%H:%M:%S.%fZ'), 'end': end.strftime('%Y-%m-%dT%H:%M:%S.%fZ')})\n    \n        # Test logs received from server\n    \n>       verify_log_messages(logs)\n\nmodules/lib/golioth-firmware-sdk/examples/zephyr/logging/pytest/test_sample.py:83: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nlogs = []\n\n    def verify_log_messages(logs):\n    \n        expected_logs = [\n                         LogEntry( { 'level': LogLevel.DBG, 'message': \"main: Debug info! 0\"}),\n                         LogEntry( { 'level': LogLevel.DBG, 'message': \"func_1: Log 1: 0\"}),\n                         LogEntry( { 'level': LogLevel.DBG, 'message': \"func_2: Log 2: 0\"}),\n                         LogEntry( { 'level': LogLevel.WRN, 'message': \"Warn: 0\"}),\n                         LogEntry( { 'level': LogLevel.ERR, 'message': \"Err: 0\"}),\n                         # A current known issue is that hexdump doesn't include second line on cloud\n                         # logs. We still test for this message and verify INF type is working.\n                         LogEntry( { 'level': LogLevel.INF, 'message': \"Counter hexdump\"})\n                         ]\n    \n        LOGGER.info(\"Searching log messages:\")\n    \n        for m in logs:\n            message = m.message\n    \n            for i, e in enumerate(expected_logs):\n                if m.message == e.message and m.level == e.level:\n                    message = \"### MATCH FOUND! ---> {0}\".format(m.message)\n                    expected_logs.pop(i)\n                    break\n    \n            LOGGER.info(message)\n    \n            if len(expected_logs) == 0:\n                break\n    \n        num_missing = len(expected_logs)\n        if num_missing > 0:\n            LOGGER.error(\"XXX Unable to find {0} Log messages:\".format(num_missing))\n            for m in expected_logs:\n                LOGGER.error(\"XXX Not FOUND ---> {0}\".format(m.message))\n        else:\n            LOGGER.info(\"### All expected Log messages found!\")\n    \n>       assert len(expected_logs) == 0, 'Unable to find all Log messages on server'\nE       AssertionError: Unable to find all Log messages on server\nE       assert 6 == 0\nE        +  where 6 = len([<[KeyError('timestamp') raised in repr()] LogEntry object at 0xffff880331d0>, <[KeyError('timestamp') raised in repr()] LogEntry object at 0xffff88033210>, <[KeyError('timestamp') raised in repr()] LogEntry object at 0xffff88033250>, <[KeyError('timestamp') raised in repr()] LogEntry object at 0xffff88033290>, <[KeyError('timestamp') raised in repr()] LogEntry object at 0xffff88032bd0>, <[KeyError('timestamp') raised in repr()] LogEntry object at 0xffff88033110>])\n\nmodules/lib/golioth-firmware-sdk/examples/zephyr/logging/pytest/test_sample.py:50: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "5f962163b374550b",
+      "name" : "log",
+      "source" : "5f962163b374550b.txt",
+      "type" : "text/plain",
+      "size" : 20169
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "device_object::0",
+    "time" : {
+      "start" : 1733783046430,
+      "stop" : 1733783046430,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "project::0",
+    "time" : {
+      "start" : 1733783046423,
+      "stop" : 1733783046425,
+      "duration" : 2
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "dut::0",
+    "time" : {
+      "start" : 1733783045864,
+      "stop" : 1733783045873,
+      "duration" : 9
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device::0",
+    "time" : {
+      "start" : 1733783045874,
+      "stop" : 1733783046421,
+      "duration" : 547
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "mimxrt1024_evk"
+  }, {
+    "name" : "tag",
+    "value" : "zephyr"
+  }, {
+    "name" : "parentSuite",
+    "value" : "sample.zephyr.mimxrt1024_evk"
+  }, {
+    "name" : "tag",
+    "value" : "mikes_orange_pi"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.usefixtures('anyio_backend')"
+  }, {
+    "name" : "tag",
+    "value" : "anyio"
+  }, {
+    "name" : "suite",
+    "value" : "test_sample"
+  }, {
+    "name" : "host",
+    "value" : "5f8b63199544"
+  }, {
+    "name" : "thread",
+    "value" : "394-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "modules.lib.golioth-firmware-sdk.examples.zephyr.logging.pytest.test_sample"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "board_name",
+    "value" : "'mimxrt1024_evk'"
+  }, {
+    "name" : "platform_name",
+    "value" : "'zephyr'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 3,
+        "broken" : 7,
+        "skipped" : 0,
+        "passed" : 81,
+        "unknown" : 0,
+        "total" : 91
+      },
+      "items" : [ {
+        "uid" : "ff510c066911cbad",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1877/#testresult/ff510c066911cbad",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733761530707,
+          "stop" : 1733761549070,
+          "duration" : 18363
+        }
+      }, {
+        "uid" : "94e5cc2b26fae670",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1876/#testresult/94e5cc2b26fae670",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733706791721,
+          "stop" : 1733706810134,
+          "duration" : 18413
+        }
+      }, {
+        "uid" : "9c79e92ebf4db85f",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1875/#testresult/9c79e92ebf4db85f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733620347943,
+          "stop" : 1733620366470,
+          "duration" : 18527
+        }
+      }, {
+        "uid" : "1005a81fc5865e2a",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1874/#testresult/1005a81fc5865e2a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733533316762,
+          "stop" : 1733533335270,
+          "duration" : 18508
+        }
+      }, {
+        "uid" : "d0b8d5e13928a149",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1871/#testresult/d0b8d5e13928a149",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733446567970,
+          "stop" : 1733446586361,
+          "duration" : 18391
+        }
+      }, {
+        "uid" : "9ae9f4b5be01f991",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1867/#testresult/9ae9f4b5be01f991",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733409899494,
+          "stop" : 1733409917953,
+          "duration" : 18459
+        }
+      }, {
+        "uid" : "3d9f28bec4589d6f",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1866/#testresult/3d9f28bec4589d6f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733359766434,
+          "stop" : 1733359787702,
+          "duration" : 21268
+        }
+      }, {
+        "uid" : "99dc36cd7ae902d8",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1863/#testresult/99dc36cd7ae902d8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733273862381,
+          "stop" : 1733273880919,
+          "duration" : 18538
+        }
+      }, {
+        "uid" : "f5b60de1a8dccf3b",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1859/#testresult/f5b60de1a8dccf3b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733187171697,
+          "stop" : 1733187195025,
+          "duration" : 23328
+        }
+      }, {
+        "uid" : "3d8d97090b75412e",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1858/#testresult/3d8d97090b75412e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733161995254,
+          "stop" : 1733162018530,
+          "duration" : 23276
+        }
+      }, {
+        "uid" : "2f8d7dad0e93adaa",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1857//#testresult/2f8d7dad0e93adaa",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733100563416,
+          "stop" : 1733100582949,
+          "duration" : 19533
+        }
+      }, {
+        "uid" : "59b2ed92078fb788",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1856//#testresult/59b2ed92078fb788",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733015006600,
+          "stop" : 1733015026098,
+          "duration" : 19498
+        }
+      }, {
+        "uid" : "32f15634c7ccc1ea",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1855//#testresult/32f15634c7ccc1ea",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732928253080,
+          "stop" : 1732928272481,
+          "duration" : 19401
+        }
+      }, {
+        "uid" : "a5299e44ada9f6d1",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1854//#testresult/a5299e44ada9f6d1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732842594150,
+          "stop" : 1732842613668,
+          "duration" : 19518
+        }
+      }, {
+        "uid" : "be42313e4ee256f7",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1853//#testresult/be42313e4ee256f7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732754826172,
+          "stop" : 1732754845803,
+          "duration" : 19631
+        }
+      }, {
+        "uid" : "f563a937438bd7df",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1846//#testresult/f563a937438bd7df",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732668414663,
+          "stop" : 1732668436720,
+          "duration" : 22057
+        }
+      }, {
+        "uid" : "6c5b9d476bb9c763",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1845//#testresult/6c5b9d476bb9c763",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732642603809,
+          "stop" : 1732642626797,
+          "duration" : 22988
+        }
+      }, {
+        "uid" : "191603a4603c696e",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1842//#testresult/191603a4603c696e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732575867427,
+          "stop" : 1732575882082,
+          "duration" : 14655
+        }
+      }, {
+        "uid" : "6f9485b235e29ea7",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1842//#testresult/6f9485b235e29ea7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732575867427,
+          "stop" : 1732575882082,
+          "duration" : 14655
+        }
+      }, {
+        "uid" : "1840b6afdd3ddf48",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1843//#testresult/1840b6afdd3ddf48",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732582079529,
+          "stop" : 1732582105180,
+          "duration" : 25651
+        }
+      } ]
+    },
+    "tags" : [ "mikes_orange_pi", "anyio", "@pytest.mark.usefixtures('anyio_backend')", "mimxrt1024_evk", "zephyr" ]
+  },
+  "source" : "166e1ee7ee3d18d0.json",
+  "parameterValues" : [ "'mimxrt1024_evk'", "'zephyr'" ]
+}
