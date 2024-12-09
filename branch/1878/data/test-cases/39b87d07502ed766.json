@@ -1,0 +1,532 @@
+{
+  "uid" : "39b87d07502ed766",
+  "name" : "test_lightdb_delete",
+  "fullName" : "modules.lib.golioth-firmware-sdk.examples.zephyr.lightdb.delete.pytest.test_sample#test_lightdb_delete",
+  "historyId" : "f1e2c2234d7dcc518bcd25346bf33416",
+  "time" : {
+    "start" : 1733767170149,
+    "stop" : 1733767263665,
+    "duration" : 93516
+  },
+  "status" : "broken",
+  "statusMessage" : "twister_harness.exceptions.TwisterHarnessTimeoutException: Read from device timeout occurred",
+  "statusTrace" : "shell = <twister_harness.helpers.shell.Shell object at 0xffff9f7fb310>\ndevice = <golioth.golioth.Device object at 0xffff9f8121d0>\nwifi_ssid = '***MIKES_ORANGE_PI_WIFI_SSID***', wifi_psk = '***MIKES_ORANGE_PI_WIFI_PSK***'\n\n    async def test_lightdb_delete(shell, device, wifi_ssid, wifi_psk):\n        # Set counter in lightdb state\n    \n        await counter_set_and_verify(device, 34)\n    \n        await trio.sleep(2)\n    \n        # Set Golioth credential\n    \n        golioth_cred = (await device.credentials.list())[0]\n        shell.exec_command(f\"settings set golioth/psk-id {golioth_cred.identity}\")\n        shell.exec_command(f\"settings set golioth/psk {golioth_cred.key}\")\n    \n        # Set WiFi credential\n    \n        if wifi_ssid is not None:\n            shell.exec_command(f\"settings set wifi/ssid \\\"{wifi_ssid}\\\"\")\n    \n        if wifi_psk is not None:\n            shell.exec_command(f\"settings set wifi/psk \\\"{wifi_psk}\\\"\")\n    \n        # Wait for Golioth connection\n    \n>       shell._device.readlines_until(regex=\".*Golioth CoAP client connected\", timeout=90.0)\n\nmodules/lib/golioth-firmware-sdk/examples/zephyr/lightdb/delete/pytest/test_sample.py:44: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = HardwareAdapter(), regex = '.*Golioth CoAP client connected'\nnum_of_lines = None, timeout = 90.0, print_output = True\n\n    def readlines_until(\n            self,\n            regex: str | None = None,\n            num_of_lines: int | None = None,\n            timeout: float | None = None,\n            print_output: bool = True,\n    ) -> list[str]:\n        \"\"\"\n        Read available output lines produced by device from internal buffer\n        until following conditions:\n    \n        1. If regex is provided - read until regex regex is found in read\n           line (or until timeout).\n        2. If num_of_lines is provided - read until number of read lines is\n           equal to num_of_lines (or until timeout).\n        3. If none of above is provided - return immediately lines collected so\n           far in internal buffer.\n    \n        If timeout is not provided, then use base_timeout.\n        \"\"\"\n        timeout = timeout or self.base_timeout\n        if regex:\n            regex_compiled = re.compile(regex)\n        lines: list[str] = []\n        if regex or num_of_lines:\n            timeout_time: float = time.time() + timeout\n            while time.time() < timeout_time:\n                try:\n                    line = self.readline(0.1, print_output)\n                except TwisterHarnessTimeoutException:\n                    continue\n                lines.append(line)\n                if regex and regex_compiled.search(line):\n                    break\n                if num_of_lines and len(lines) == num_of_lines:\n                    break\n            else:\n                msg = 'Read from device timeout occurred'\n                logger.error(msg)\n>               raise TwisterHarnessTimeoutException(msg)\nE               twister_harness.exceptions.TwisterHarnessTimeoutException: Read from device timeout occurred\n\nzephyr/scripts/pylib/pytest-twister-harness/src/twister_harness/device/device_adapter.py:190: TwisterHarnessTimeoutException",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "api_key",
+    "time" : {
+      "start" : 1733767140872,
+      "stop" : 1733767140872,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "anyio_backend",
+    "time" : {
+      "start" : 1733767140866,
+      "stop" : 1733767140866,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "wifi_ssid",
+    "time" : {
+      "start" : 1733767140867,
+      "stop" : 1733767140867,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "dut",
+    "time" : {
+      "start" : 1733767142304,
+      "stop" : 1733767169082,
+      "duration" : 26778
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "wifi_psk",
+    "time" : {
+      "start" : 1733767140867,
+      "stop" : 1733767140867,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_name",
+    "time" : {
+      "start" : 1733767140868,
+      "stop" : 1733767140868,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device",
+    "time" : {
+      "start" : 1733767141295,
+      "stop" : 1733767142303,
+      "duration" : 1008
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_object",
+    "time" : {
+      "start" : 1733767140869,
+      "stop" : 1733767140871,
+      "duration" : 2
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "project",
+    "time" : {
+      "start" : 1733767140873,
+      "stop" : 1733767141294,
+      "duration" : 421
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "api_url",
+    "time" : {
+      "start" : 1733767140872,
+      "stop" : 1733767140873,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "twister_harness_config",
+    "time" : {
+      "start" : 1733767140869,
+      "stop" : 1733767140869,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "shell",
+    "time" : {
+      "start" : 1733767169083,
+      "stop" : 1733767170144,
+      "duration" : 1061
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "twister_harness.exceptions.TwisterHarnessTimeoutException: Read from device timeout occurred",
+    "statusTrace" : "shell = <twister_harness.helpers.shell.Shell object at 0xffff9f7fb310>\ndevice = <golioth.golioth.Device object at 0xffff9f8121d0>\nwifi_ssid = '***MIKES_ORANGE_PI_WIFI_SSID***', wifi_psk = '***MIKES_ORANGE_PI_WIFI_PSK***'\n\n    async def test_lightdb_delete(shell, device, wifi_ssid, wifi_psk):\n        # Set counter in lightdb state\n    \n        await counter_set_and_verify(device, 34)\n    \n        await trio.sleep(2)\n    \n        # Set Golioth credential\n    \n        golioth_cred = (await device.credentials.list())[0]\n        shell.exec_command(f\"settings set golioth/psk-id {golioth_cred.identity}\")\n        shell.exec_command(f\"settings set golioth/psk {golioth_cred.key}\")\n    \n        # Set WiFi credential\n    \n        if wifi_ssid is not None:\n            shell.exec_command(f\"settings set wifi/ssid \\\"{wifi_ssid}\\\"\")\n    \n        if wifi_psk is not None:\n            shell.exec_command(f\"settings set wifi/psk \\\"{wifi_psk}\\\"\")\n    \n        # Wait for Golioth connection\n    \n>       shell._device.readlines_until(regex=\".*Golioth CoAP client connected\", timeout=90.0)\n\nmodules/lib/golioth-firmware-sdk/examples/zephyr/lightdb/delete/pytest/test_sample.py:44: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = HardwareAdapter(), regex = '.*Golioth CoAP client connected'\nnum_of_lines = None, timeout = 90.0, print_output = True\n\n    def readlines_until(\n            self,\n            regex: str | None = None,\n            num_of_lines: int | None = None,\n            timeout: float | None = None,\n            print_output: bool = True,\n    ) -> list[str]:\n        \"\"\"\n        Read available output lines produced by device from internal buffer\n        until following conditions:\n    \n        1. If regex is provided - read until regex regex is found in read\n           line (or until timeout).\n        2. If num_of_lines is provided - read until number of read lines is\n           equal to num_of_lines (or until timeout).\n        3. If none of above is provided - return immediately lines collected so\n           far in internal buffer.\n    \n        If timeout is not provided, then use base_timeout.\n        \"\"\"\n        timeout = timeout or self.base_timeout\n        if regex:\n            regex_compiled = re.compile(regex)\n        lines: list[str] = []\n        if regex or num_of_lines:\n            timeout_time: float = time.time() + timeout\n            while time.time() < timeout_time:\n                try:\n                    line = self.readline(0.1, print_output)\n                except TwisterHarnessTimeoutException:\n                    continue\n                lines.append(line)\n                if regex and regex_compiled.search(line):\n                    break\n                if num_of_lines and len(lines) == num_of_lines:\n                    break\n            else:\n                msg = 'Read from device timeout occurred'\n                logger.error(msg)\n>               raise TwisterHarnessTimeoutException(msg)\nE               twister_harness.exceptions.TwisterHarnessTimeoutException: Read from device timeout occurred\n\nzephyr/scripts/pylib/pytest-twister-harness/src/twister_harness/device/device_adapter.py:190: TwisterHarnessTimeoutException",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "2b6baa9ba651a855",
+      "name" : "log",
+      "source" : "2b6baa9ba651a855.txt",
+      "type" : "text/plain",
+      "size" : 19852
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "dut::0",
+    "time" : {
+      "start" : 1733767263956,
+      "stop" : 1733767263979,
+      "duration" : 23
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device::0",
+    "time" : {
+      "start" : 1733767263981,
+      "stop" : 1733767264357,
+      "duration" : 376
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_object::0",
+    "time" : {
+      "start" : 1733767264366,
+      "stop" : 1733767264366,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "project::0",
+    "time" : {
+      "start" : 1733767264359,
+      "stop" : 1733767264361,
+      "duration" : 2
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "nrf9160dk"
+  }, {
+    "name" : "tag",
+    "value" : "zephyr"
+  }, {
+    "name" : "parentSuite",
+    "value" : "sample.zephyr.nrf9160dk"
+  }, {
+    "name" : "tag",
+    "value" : "mikes_orange_pi"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.usefixtures('anyio_backend')"
+  }, {
+    "name" : "tag",
+    "value" : "anyio"
+  }, {
+    "name" : "suite",
+    "value" : "test_sample"
+  }, {
+    "name" : "host",
+    "value" : "182f063fa470"
+  }, {
+    "name" : "thread",
+    "value" : "696-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "modules.lib.golioth-firmware-sdk.examples.zephyr.lightdb.delete.pytest.test_sample"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "board_name",
+    "value" : "'nrf9160dk'"
+  }, {
+    "name" : "platform_name",
+    "value" : "'zephyr'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 6,
+        "skipped" : 0,
+        "passed" : 50,
+        "unknown" : 0,
+        "total" : 56
+      },
+      "items" : [ {
+        "uid" : "9b0d0073e03a5710",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/35/#testresult/9b0d0073e03a5710",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733557294940,
+          "stop" : 1733557319449,
+          "duration" : 24509
+        }
+      }, {
+        "uid" : "67125d874569a4a3",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1873/#testresult/67125d874569a4a3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733524753153,
+          "stop" : 1733524783174,
+          "duration" : 30021
+        }
+      }, {
+        "uid" : "3787af0bce095f5d",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1870/#testresult/3787af0bce095f5d",
+        "status" : "broken",
+        "statusDetails" : "twister_harness.exceptions.TwisterHarnessTimeoutException: Read from device timeout occurred",
+        "time" : {
+          "start" : 1733443477492,
+          "stop" : 1733443571128,
+          "duration" : 93636
+        }
+      }, {
+        "uid" : "71c15f5e0af9e2b",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1868/#testresult/71c15f5e0af9e2b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733416417931,
+          "stop" : 1733416454173,
+          "duration" : 36242
+        }
+      }, {
+        "uid" : "ccc0b47ab1b4bea",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1865/#testresult/ccc0b47ab1b4bea",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733354056530,
+          "stop" : 1733354074558,
+          "duration" : 18028
+        }
+      }, {
+        "uid" : "c42a5746818c49c6",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1864/#testresult/c42a5746818c49c6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733329945706,
+          "stop" : 1733329964572,
+          "duration" : 18866
+        }
+      }, {
+        "uid" : "f6d9f292e50ad536",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1862/#testresult/f6d9f292e50ad536",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733255799908,
+          "stop" : 1733255816172,
+          "duration" : 16264
+        }
+      }, {
+        "uid" : "3f6dc7dd1ed0e99",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1860/#testresult/3f6dc7dd1ed0e99",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733192595870,
+          "stop" : 1733192613331,
+          "duration" : 17461
+        }
+      }, {
+        "uid" : "f5b51f443e677a00",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1848/#testresult/f5b51f443e677a00",
+        "status" : "broken",
+        "statusDetails" : "twister_harness.exceptions.TwisterHarnessTimeoutException: Read from device timeout occurred",
+        "time" : {
+          "start" : 1732802926151,
+          "stop" : 1732803019791,
+          "duration" : 93640
+        }
+      }, {
+        "uid" : "c870ef73915e27f5",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1852//#testresult/c870ef73915e27f5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732751279756,
+          "stop" : 1732751295972,
+          "duration" : 16216
+        }
+      }, {
+        "uid" : "6f291a7bc1324af2",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1848/#testresult/6f291a7bc1324af2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732730977612,
+          "stop" : 1732731006309,
+          "duration" : 28697
+        }
+      }, {
+        "uid" : "fd98f6417b6e3780",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1847//#testresult/fd98f6417b6e3780",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732725381793,
+          "stop" : 1732725413270,
+          "duration" : 31477
+        }
+      }, {
+        "uid" : "99489cd6e04b3843",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1844//#testresult/99489cd6e04b3843",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732632980367,
+          "stop" : 1732632997397,
+          "duration" : 17030
+        }
+      }, {
+        "uid" : "2d3dab593d9f9908",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1844//#testresult/2d3dab593d9f9908",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732632980367,
+          "stop" : 1732632997397,
+          "duration" : 17030
+        }
+      }, {
+        "uid" : "3a5056340027b2cd",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1841//#testresult/3a5056340027b2cd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732564127581,
+          "stop" : 1732564144547,
+          "duration" : 16966
+        }
+      }, {
+        "uid" : "224be048c2395db2",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1841//#testresult/224be048c2395db2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732561943608,
+          "stop" : 1732561977729,
+          "duration" : 34121
+        }
+      }, {
+        "uid" : "5cd581f30e4ae9e8",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1840//#testresult/5cd581f30e4ae9e8",
+        "status" : "broken",
+        "statusDetails" : "twister_harness.exceptions.TwisterHarnessTimeoutException: Read from device timeout occurred",
+        "time" : {
+          "start" : 1732556058837,
+          "stop" : 1732556152451,
+          "duration" : 93614
+        }
+      }, {
+        "uid" : "b6ddc7857dd4c52a",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1839//#testresult/b6ddc7857dd4c52a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732550048340,
+          "stop" : 1732550064989,
+          "duration" : 16649
+        }
+      }, {
+        "uid" : "c279b5c84eb33145",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1835//#testresult/c279b5c84eb33145",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732467632290,
+          "stop" : 1732467657331,
+          "duration" : 25041
+        }
+      }, {
+        "uid" : "ddc40c4a467c2525",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1835//#testresult/ddc40c4a467c2525",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732408709275,
+          "stop" : 1732408735836,
+          "duration" : 26561
+        }
+      } ]
+    },
+    "tags" : [ "mikes_orange_pi", "nrf9160dk", "anyio", "@pytest.mark.usefixtures('anyio_backend')", "zephyr" ]
+  },
+  "source" : "39b87d07502ed766.json",
+  "parameterValues" : [ "'nrf9160dk'", "'zephyr'" ]
+}

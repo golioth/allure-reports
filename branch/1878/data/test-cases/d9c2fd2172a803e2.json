@@ -1,0 +1,681 @@
+{
+  "uid" : "d9c2fd2172a803e2",
+  "name" : "test_fw_update",
+  "fullName" : "modules.lib.golioth-firmware-sdk.examples.zephyr.fw_update.pytest.test_sample#test_fw_update",
+  "historyId" : "ae1c7e14b29d468f72319f0a6ff27eb0",
+  "time" : {
+    "start" : 1733766675483,
+    "stop" : 1733766776229,
+    "duration" : 100746
+  },
+  "status" : "broken",
+  "statusMessage" : "twister_harness.exceptions.TwisterHarnessTimeoutException: Read from device timeout occurred",
+  "statusTrace" : "shell = <twister_harness.helpers.shell.Shell object at 0xffffa6a65750>\nproject = <golioth.golioth.Project object at 0xffffa6c352d0>\ndevice = <golioth.golioth.Device object at 0xffffa6a66f90>\nwifi_ssid = '***MIKES_ORANGE_PI_WIFI_SSID***', wifi_psk = '***MIKES_ORANGE_PI_WIFI_PSK***'\nfw_info = {'package': 'main', 'version': '255.8.9'}\nrelease = Release <67572df591f07cb855104c9c, release_tags=[], device_tags=['67572df491f07cb855104c9b'], artifact_ids=['674e19a8509873c6f7445232'], rollout=False>\n\n    async def test_fw_update(shell, project, device, wifi_ssid, wifi_psk, fw_info, release):\n    \n        # Wait for app to start running or 10 seconds to pass so runtime settings are ready.\n    \n        try:\n            shell._device.readlines_until(regex=\".*Start FW Update sample.\", timeout=10.0)\n        except:\n            pass\n    \n        # Set Golioth credential\n    \n        golioth_cred = (await device.credentials.list())[0]\n        shell.exec_command(f\"settings set golioth/psk-id {golioth_cred.identity}\")\n        shell.exec_command(f\"settings set golioth/psk {golioth_cred.key}\")\n    \n        # Set WiFi credential\n    \n        if wifi_ssid is not None:\n            shell.exec_command(f\"settings set wifi/ssid \\\"{wifi_ssid}\\\"\")\n    \n        if wifi_psk is not None:\n            shell.exec_command(f\"settings set wifi/psk \\\"{wifi_psk}\\\"\")\n    \n        # Wait for first manifest to arrive (no update expected)\n    \n>       shell._device.readlines_until(regex=\".*Nothing to do.\", timeout=90.0)\n\nmodules/lib/golioth-firmware-sdk/examples/zephyr/fw_update/pytest/test_sample.py:35: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = HardwareAdapter(), regex = '.*Nothing to do.', num_of_lines = None\ntimeout = 90.0, print_output = True\n\n    def readlines_until(\n            self,\n            regex: str | None = None,\n            num_of_lines: int | None = None,\n            timeout: float | None = None,\n            print_output: bool = True,\n    ) -> list[str]:\n        \"\"\"\n        Read available output lines produced by device from internal buffer\n        until following conditions:\n    \n        1. If regex is provided - read until regex regex is found in read\n           line (or until timeout).\n        2. If num_of_lines is provided - read until number of read lines is\n           equal to num_of_lines (or until timeout).\n        3. If none of above is provided - return immediately lines collected so\n           far in internal buffer.\n    \n        If timeout is not provided, then use base_timeout.\n        \"\"\"\n        timeout = timeout or self.base_timeout\n        if regex:\n            regex_compiled = re.compile(regex)\n        lines: list[str] = []\n        if regex or num_of_lines:\n            timeout_time: float = time.time() + timeout\n            while time.time() < timeout_time:\n                try:\n                    line = self.readline(0.1, print_output)\n                except TwisterHarnessTimeoutException:\n                    continue\n                lines.append(line)\n                if regex and regex_compiled.search(line):\n                    break\n                if num_of_lines and len(lines) == num_of_lines:\n                    break\n            else:\n                msg = 'Read from device timeout occurred'\n                logger.error(msg)\n>               raise TwisterHarnessTimeoutException(msg)\nE               twister_harness.exceptions.TwisterHarnessTimeoutException: Read from device timeout occurred\n\nzephyr/scripts/pylib/pytest-twister-harness/src/twister_harness/device/device_adapter.py:190: TwisterHarnessTimeoutException",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "anyio_backend",
+    "time" : {
+      "start" : 1733766641651,
+      "stop" : 1733766641651,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "blueprint_id",
+    "time" : {
+      "start" : 1733766643111,
+      "stop" : 1733766643474,
+      "duration" : 363
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "artifact",
+    "time" : {
+      "start" : 1733766643475,
+      "stop" : 1733766643861,
+      "duration" : 386
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_name",
+    "time" : {
+      "start" : 1733766641783,
+      "stop" : 1733766641783,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_object",
+    "time" : {
+      "start" : 1733766641784,
+      "stop" : 1733766641787,
+      "duration" : 3
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device",
+    "time" : {
+      "start" : 1733766642220,
+      "stop" : 1733766643110,
+      "duration" : 890
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "wifi_psk",
+    "time" : {
+      "start" : 1733766641652,
+      "stop" : 1733766641652,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "shell",
+    "time" : {
+      "start" : 1733766674419,
+      "stop" : 1733766675480,
+      "duration" : 1061
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "release",
+    "time" : {
+      "start" : 1733766645088,
+      "stop" : 1733766645480,
+      "duration" : 392
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "project",
+    "time" : {
+      "start" : 1733766641788,
+      "stop" : 1733766642220,
+      "duration" : 432
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "wifi_ssid",
+    "time" : {
+      "start" : 1733766641651,
+      "stop" : 1733766641651,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "dut",
+    "time" : {
+      "start" : 1733766645481,
+      "stop" : 1733766674418,
+      "duration" : 28937
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "tag",
+    "time" : {
+      "start" : 1733766643862,
+      "stop" : 1733766645087,
+      "duration" : 1225
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "twister_harness_config",
+    "time" : {
+      "start" : 1733766641784,
+      "stop" : 1733766641784,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "api_key",
+    "time" : {
+      "start" : 1733766641782,
+      "stop" : 1733766641782,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "fw_info",
+    "time" : {
+      "start" : 1733766641652,
+      "stop" : 1733766641781,
+      "duration" : 129
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "api_url",
+    "time" : {
+      "start" : 1733766641782,
+      "stop" : 1733766641783,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "twister_harness.exceptions.TwisterHarnessTimeoutException: Read from device timeout occurred",
+    "statusTrace" : "shell = <twister_harness.helpers.shell.Shell object at 0xffffa6a65750>\nproject = <golioth.golioth.Project object at 0xffffa6c352d0>\ndevice = <golioth.golioth.Device object at 0xffffa6a66f90>\nwifi_ssid = '***MIKES_ORANGE_PI_WIFI_SSID***', wifi_psk = '***MIKES_ORANGE_PI_WIFI_PSK***'\nfw_info = {'package': 'main', 'version': '255.8.9'}\nrelease = Release <67572df591f07cb855104c9c, release_tags=[], device_tags=['67572df491f07cb855104c9b'], artifact_ids=['674e19a8509873c6f7445232'], rollout=False>\n\n    async def test_fw_update(shell, project, device, wifi_ssid, wifi_psk, fw_info, release):\n    \n        # Wait for app to start running or 10 seconds to pass so runtime settings are ready.\n    \n        try:\n            shell._device.readlines_until(regex=\".*Start FW Update sample.\", timeout=10.0)\n        except:\n            pass\n    \n        # Set Golioth credential\n    \n        golioth_cred = (await device.credentials.list())[0]\n        shell.exec_command(f\"settings set golioth/psk-id {golioth_cred.identity}\")\n        shell.exec_command(f\"settings set golioth/psk {golioth_cred.key}\")\n    \n        # Set WiFi credential\n    \n        if wifi_ssid is not None:\n            shell.exec_command(f\"settings set wifi/ssid \\\"{wifi_ssid}\\\"\")\n    \n        if wifi_psk is not None:\n            shell.exec_command(f\"settings set wifi/psk \\\"{wifi_psk}\\\"\")\n    \n        # Wait for first manifest to arrive (no update expected)\n    \n>       shell._device.readlines_until(regex=\".*Nothing to do.\", timeout=90.0)\n\nmodules/lib/golioth-firmware-sdk/examples/zephyr/fw_update/pytest/test_sample.py:35: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = HardwareAdapter(), regex = '.*Nothing to do.', num_of_lines = None\ntimeout = 90.0, print_output = True\n\n    def readlines_until(\n            self,\n            regex: str | None = None,\n            num_of_lines: int | None = None,\n            timeout: float | None = None,\n            print_output: bool = True,\n    ) -> list[str]:\n        \"\"\"\n        Read available output lines produced by device from internal buffer\n        until following conditions:\n    \n        1. If regex is provided - read until regex regex is found in read\n           line (or until timeout).\n        2. If num_of_lines is provided - read until number of read lines is\n           equal to num_of_lines (or until timeout).\n        3. If none of above is provided - return immediately lines collected so\n           far in internal buffer.\n    \n        If timeout is not provided, then use base_timeout.\n        \"\"\"\n        timeout = timeout or self.base_timeout\n        if regex:\n            regex_compiled = re.compile(regex)\n        lines: list[str] = []\n        if regex or num_of_lines:\n            timeout_time: float = time.time() + timeout\n            while time.time() < timeout_time:\n                try:\n                    line = self.readline(0.1, print_output)\n                except TwisterHarnessTimeoutException:\n                    continue\n                lines.append(line)\n                if regex and regex_compiled.search(line):\n                    break\n                if num_of_lines and len(lines) == num_of_lines:\n                    break\n            else:\n                msg = 'Read from device timeout occurred'\n                logger.error(msg)\n>               raise TwisterHarnessTimeoutException(msg)\nE               twister_harness.exceptions.TwisterHarnessTimeoutException: Read from device timeout occurred\n\nzephyr/scripts/pylib/pytest-twister-harness/src/twister_harness/device/device_adapter.py:190: TwisterHarnessTimeoutException",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "79b92cc0a96167ca",
+      "name" : "log",
+      "source" : "79b92cc0a96167ca.txt",
+      "type" : "text/plain",
+      "size" : 34378
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "blueprint_id::0",
+    "time" : {
+      "start" : 1733766777900,
+      "stop" : 1733766777900,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "artifact::0",
+    "time" : {
+      "start" : 1733766777897,
+      "stop" : 1733766777898,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_object::0",
+    "time" : {
+      "start" : 1733766778299,
+      "stop" : 1733766778299,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device::0",
+    "time" : {
+      "start" : 1733766777902,
+      "stop" : 1733766778295,
+      "duration" : 393
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "release::0",
+    "time" : {
+      "start" : 1733766776759,
+      "stop" : 1733766777123,
+      "duration" : 364
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "project::0",
+    "time" : {
+      "start" : 1733766778297,
+      "stop" : 1733766778297,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "dut::0",
+    "time" : {
+      "start" : 1733766776708,
+      "stop" : 1733766776757,
+      "duration" : 49
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "tag::0",
+    "time" : {
+      "start" : 1733766777125,
+      "stop" : 1733766777895,
+      "duration" : 770
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "fw_info::0",
+    "time" : {
+      "start" : 1733766778307,
+      "stop" : 1733766778309,
+      "duration" : 2
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "nrf9160dk"
+  }, {
+    "name" : "tag",
+    "value" : "zephyr"
+  }, {
+    "name" : "parentSuite",
+    "value" : "sample.zephyr.nrf9160dk"
+  }, {
+    "name" : "tag",
+    "value" : "mikes_orange_pi"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.usefixtures('anyio_backend')"
+  }, {
+    "name" : "tag",
+    "value" : "anyio"
+  }, {
+    "name" : "suite",
+    "value" : "test_sample"
+  }, {
+    "name" : "host",
+    "value" : "182f063fa470"
+  }, {
+    "name" : "thread",
+    "value" : "451-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "modules.lib.golioth-firmware-sdk.examples.zephyr.fw_update.pytest.test_sample"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "board_name",
+    "value" : "'nrf9160dk'"
+  }, {
+    "name" : "platform_name",
+    "value" : "'zephyr'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 14,
+        "skipped" : 0,
+        "passed" : 41,
+        "unknown" : 0,
+        "total" : 56
+      },
+      "items" : [ {
+        "uid" : "f7809d73fb034fd8",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/35/#testresult/f7809d73fb034fd8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733556689054,
+          "stop" : 1733556992376,
+          "duration" : 303322
+        }
+      }, {
+        "uid" : "5d43ef65b93aa538",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1873/#testresult/5d43ef65b93aa538",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733524119111,
+          "stop" : 1733524440778,
+          "duration" : 321667
+        }
+      }, {
+        "uid" : "f3e6352b45d6332a",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1870/#testresult/f3e6352b45d6332a",
+        "status" : "broken",
+        "statusDetails" : "twister_harness.exceptions.TwisterHarnessTimeoutException: Read from device timeout occurred",
+        "time" : {
+          "start" : 1733442963202,
+          "stop" : 1733443064100,
+          "duration" : 100898
+        }
+      }, {
+        "uid" : "e86f0d940ac42f11",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1868/#testresult/e86f0d940ac42f11",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733415806429,
+          "stop" : 1733416106186,
+          "duration" : 299757
+        }
+      }, {
+        "uid" : "eddfc610020d0230",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1865/#testresult/eddfc610020d0230",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733353552723,
+          "stop" : 1733353847420,
+          "duration" : 294697
+        }
+      }, {
+        "uid" : "c84ced859404e707",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1864/#testresult/c84ced859404e707",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733329426506,
+          "stop" : 1733329731725,
+          "duration" : 305219
+        }
+      }, {
+        "uid" : "b756c35ea33d59a2",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1862/#testresult/b756c35ea33d59a2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733255339176,
+          "stop" : 1733255585967,
+          "duration" : 246791
+        }
+      }, {
+        "uid" : "40bf326bb31b45e7",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1860/#testresult/40bf326bb31b45e7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733192103960,
+          "stop" : 1733192387797,
+          "duration" : 283837
+        }
+      }, {
+        "uid" : "a520bde73f18e2c8",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1848/#testresult/a520bde73f18e2c8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732802282033,
+          "stop" : 1732802572795,
+          "duration" : 290762
+        }
+      }, {
+        "uid" : "5492b973124a7bc2",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1852//#testresult/5492b973124a7bc2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732750806749,
+          "stop" : 1732751073237,
+          "duration" : 266488
+        }
+      }, {
+        "uid" : "8577c1a9b6fb9c1c",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1848/#testresult/8577c1a9b6fb9c1c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732730336715,
+          "stop" : 1732730743806,
+          "duration" : 407091
+        }
+      }, {
+        "uid" : "b5036675a185478",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1847//#testresult/b5036675a185478",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732724772957,
+          "stop" : 1732725059353,
+          "duration" : 286396
+        }
+      }, {
+        "uid" : "927bca9378acba59",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1844//#testresult/927bca9378acba59",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732632477360,
+          "stop" : 1732632769154,
+          "duration" : 291794
+        }
+      }, {
+        "uid" : "15a10a593e265229",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1844//#testresult/15a10a593e265229",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732632477360,
+          "stop" : 1732632769154,
+          "duration" : 291794
+        }
+      }, {
+        "uid" : "445c369d1fdea106",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1841//#testresult/445c369d1fdea106",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732563552870,
+          "stop" : 1732563902547,
+          "duration" : 349677
+        }
+      }, {
+        "uid" : "f55fb527eb708420",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1841//#testresult/f55fb527eb708420",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732561329307,
+          "stop" : 1732561635564,
+          "duration" : 306257
+        }
+      }, {
+        "uid" : "ddd5d00151739459",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1840//#testresult/ddd5d00151739459",
+        "status" : "broken",
+        "statusDetails" : "twister_harness.exceptions.TwisterHarnessTimeoutException: Read from device timeout occurred",
+        "time" : {
+          "start" : 1732555497644,
+          "stop" : 1732555842827,
+          "duration" : 345183
+        }
+      }, {
+        "uid" : "2450551961aa1423",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1839//#testresult/2450551961aa1423",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732549483810,
+          "stop" : 1732549768666,
+          "duration" : 284856
+        }
+      }, {
+        "uid" : "39001536f546d40a",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1835//#testresult/39001536f546d40a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732467076063,
+          "stop" : 1732467365019,
+          "duration" : 288956
+        }
+      }, {
+        "uid" : "eb1f1139c7a5b363",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1835//#testresult/eb1f1139c7a5b363",
+        "status" : "passed",
+        "time" : {
+          "start" : 1732408155705,
+          "stop" : 1732408449275,
+          "duration" : 293570
+        }
+      } ]
+    },
+    "tags" : [ "mikes_orange_pi", "nrf9160dk", "anyio", "@pytest.mark.usefixtures('anyio_backend')", "zephyr" ]
+  },
+  "source" : "d9c2fd2172a803e2.json",
+  "parameterValues" : [ "'nrf9160dk'", "'zephyr'" ]
+}
