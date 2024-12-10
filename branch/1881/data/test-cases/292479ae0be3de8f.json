@@ -1,0 +1,332 @@
+{
+  "uid" : "292479ae0be3de8f",
+  "name" : "test_hello",
+  "fullName" : "modules.lib.golioth-firmware-sdk.examples.zephyr.hello.pytest.test_sample#test_hello",
+  "historyId" : "d8989de114c223477a1d53d831d12112",
+  "time" : {
+    "start" : 1733787750859,
+    "stop" : 1733787772696,
+    "duration" : 21837
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: Unable to find all Hello messages on server\nassert 0 == 3",
+  "statusTrace" : "shell = <twister_harness.helpers.shell.Shell object at 0x7fb2087a1fd0>\ndevice = <golioth.golioth.Device object at 0x7fb20878f010>, wifi_ssid = None\nwifi_psk = None\n\n    async def test_hello(shell, device, wifi_ssid, wifi_psk):\n        await trio.sleep(2)\n    \n        # Set Golioth credential\n    \n        golioth_cred = (await device.credentials.list())[0]\n        shell.exec_command(f\"settings set golioth/psk-id {golioth_cred.identity}\")\n        shell.exec_command(f\"settings set golioth/psk {golioth_cred.key}\")\n    \n        # Set WiFi credential\n    \n        if wifi_ssid is not None:\n            shell.exec_command(f\"settings set wifi/ssid \\\"{wifi_ssid}\\\"\")\n    \n        if wifi_psk is not None:\n            shell.exec_command(f\"settings set wifi/psk \\\"{wifi_psk}\\\"\")\n    \n        # Record timestamp and wait for fourth hello message\n    \n        start = datetime.datetime.utcnow()\n        shell._device.readlines_until(regex=\".*Sending hello! 3\", timeout=110.0)\n    \n        # Check logs for hello messages\n    \n        end = datetime.datetime.utcnow()\n    \n        logs = await device.get_logs({'start': start.strftime('%Y-%m-%dT%H:%M:%S.%fZ'), 'end': end.strftime('%Y-%m-%dT%H:%M:%S.%fZ')})\n    \n        # Test logs received from server\n    \n        LOGGER.info(\"Searching log messages from end to start:\")\n        test_idx = 2\n        test_hits = 0\n        for m in reversed(logs):\n    \n            if m.message == f\"Sending hello! {test_idx}\":\n                LOGGER.info(\"### MATCH FOUND! ---> {0}\".format(m.message))\n                test_hits += 1\n                test_idx -= 1\n                if test_idx < 0:\n                    break\n            else:\n                LOGGER.info(m.message)\n    \n>       assert test_hits == 3, 'Unable to find all Hello messages on server'\nE       AssertionError: Unable to find all Hello messages on server\nE       assert 0 == 3\n\nmodules/lib/golioth-firmware-sdk/examples/zephyr/hello/pytest/test_sample.py:54: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "device",
+    "time" : {
+      "start" : 1733787749995,
+      "stop" : 1733787750732,
+      "duration" : 737
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_object",
+    "time" : {
+      "start" : 1733787749596,
+      "stop" : 1733787749597,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "project",
+    "time" : {
+      "start" : 1733787749597,
+      "stop" : 1733787749995,
+      "duration" : 398
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "api_url",
+    "time" : {
+      "start" : 1733787749597,
+      "stop" : 1733787749597,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_name",
+    "time" : {
+      "start" : 1733787749596,
+      "stop" : 1733787749596,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "dut",
+    "time" : {
+      "start" : 1733787750732,
+      "stop" : 1733787750750,
+      "duration" : 18
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "api_key",
+    "time" : {
+      "start" : 1733787749597,
+      "stop" : 1733787749597,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "twister_harness_config",
+    "time" : {
+      "start" : 1733787749596,
+      "stop" : 1733787749596,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "wifi_psk",
+    "time" : {
+      "start" : 1733787749596,
+      "stop" : 1733787749596,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "shell",
+    "time" : {
+      "start" : 1733787750751,
+      "stop" : 1733787750859,
+      "duration" : 108
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "wifi_ssid",
+    "time" : {
+      "start" : 1733787749596,
+      "stop" : 1733787749596,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "anyio_backend",
+    "time" : {
+      "start" : 1733787749595,
+      "stop" : 1733787749595,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: Unable to find all Hello messages on server\nassert 0 == 3",
+    "statusTrace" : "shell = <twister_harness.helpers.shell.Shell object at 0x7fb2087a1fd0>\ndevice = <golioth.golioth.Device object at 0x7fb20878f010>, wifi_ssid = None\nwifi_psk = None\n\n    async def test_hello(shell, device, wifi_ssid, wifi_psk):\n        await trio.sleep(2)\n    \n        # Set Golioth credential\n    \n        golioth_cred = (await device.credentials.list())[0]\n        shell.exec_command(f\"settings set golioth/psk-id {golioth_cred.identity}\")\n        shell.exec_command(f\"settings set golioth/psk {golioth_cred.key}\")\n    \n        # Set WiFi credential\n    \n        if wifi_ssid is not None:\n            shell.exec_command(f\"settings set wifi/ssid \\\"{wifi_ssid}\\\"\")\n    \n        if wifi_psk is not None:\n            shell.exec_command(f\"settings set wifi/psk \\\"{wifi_psk}\\\"\")\n    \n        # Record timestamp and wait for fourth hello message\n    \n        start = datetime.datetime.utcnow()\n        shell._device.readlines_until(regex=\".*Sending hello! 3\", timeout=110.0)\n    \n        # Check logs for hello messages\n    \n        end = datetime.datetime.utcnow()\n    \n        logs = await device.get_logs({'start': start.strftime('%Y-%m-%dT%H:%M:%S.%fZ'), 'end': end.strftime('%Y-%m-%dT%H:%M:%S.%fZ')})\n    \n        # Test logs received from server\n    \n        LOGGER.info(\"Searching log messages from end to start:\")\n        test_idx = 2\n        test_hits = 0\n        for m in reversed(logs):\n    \n            if m.message == f\"Sending hello! {test_idx}\":\n                LOGGER.info(\"### MATCH FOUND! ---> {0}\".format(m.message))\n                test_hits += 1\n                test_idx -= 1\n                if test_idx < 0:\n                    break\n            else:\n                LOGGER.info(m.message)\n    \n>       assert test_hits == 3, 'Unable to find all Hello messages on server'\nE       AssertionError: Unable to find all Hello messages on server\nE       assert 0 == 3\n\nmodules/lib/golioth-firmware-sdk/examples/zephyr/hello/pytest/test_sample.py:54: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "1fbe34d9469fbc34",
+      "name" : "log",
+      "source" : "1fbe34d9469fbc34.txt",
+      "type" : "text/plain",
+      "size" : 15281
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "device::0",
+    "time" : {
+      "start" : 1733787773357,
+      "stop" : 1733787773621,
+      "duration" : 264
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_object::0",
+    "time" : {
+      "start" : 1733787773624,
+      "stop" : 1733787773624,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "project::0",
+    "time" : {
+      "start" : 1733787773622,
+      "stop" : 1733787773622,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "dut::0",
+    "time" : {
+      "start" : 1733787772844,
+      "stop" : 1733787773356,
+      "duration" : 512
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "native_sim_64"
+  }, {
+    "name" : "tag",
+    "value" : "zephyr"
+  }, {
+    "name" : "parentSuite",
+    "value" : "sample.zephyr.native_sim_64"
+  }, {
+    "name" : "tag",
+    "value" : "GitHub Actions 22"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.usefixtures('anyio_backend')"
+  }, {
+    "name" : "tag",
+    "value" : "anyio"
+  }, {
+    "name" : "suite",
+    "value" : "test_sample"
+  }, {
+    "name" : "host",
+    "value" : "95a83e9852ba"
+  }, {
+    "name" : "thread",
+    "value" : "43650-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "modules.lib.golioth-firmware-sdk.examples.zephyr.hello.pytest.test_sample"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "board_name",
+    "value" : "'native_sim_64'"
+  }, {
+    "name" : "platform_name",
+    "value" : "'zephyr'"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ "GitHub Actions 22", "native_sim_64", "anyio", "@pytest.mark.usefixtures('anyio_backend')", "zephyr" ]
+  },
+  "source" : "292479ae0be3de8f.json",
+  "parameterValues" : [ "'native_sim_64'", "'zephyr'" ]
+}
