@@ -1,0 +1,489 @@
+{
+  "uid" : "952ba1599c2a72fa",
+  "name" : "test_hello",
+  "fullName" : "modules.lib.golioth-firmware-sdk.examples.zephyr.hello_nrf91_offloaded.pytest.test_sample#test_hello",
+  "historyId" : "e124f10389952e3c52fb82b67fe5598b",
+  "time" : {
+    "start" : 1734035222114,
+    "stop" : 1734035222114,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "statusMessage" : "twister_harness.exceptions.TwisterHarnessException: Could not flash device None",
+  "statusTrace" : "item = <Function test_hello>\n\n    @pytest.hookimpl(wrapper=True)\n    def pytest_runtest_setup(item):\n        if item.config.getoption(\"--hil-board\") is not None:\n            hil_board = item.config.getoption(\"--hil-board\")\n        elif 'hil_board' in os.environ:\n            hil_board = os.environ['hil_board']\n        else:\n            hil_board = item.config.option.device_serial\n    \n        allure.dynamic.tag(hil_board)\n        allure.dynamic.tag(\"zephyr\")\n        allure.dynamic.parameter(\"board_name\", hil_board)\n        allure.dynamic.parameter(\"platform_name\", \"zephyr\")\n        allure.dynamic.parent_suite(f\"sample.zephyr.{hil_board}\")\n    \n        if runner_name is not None:\n            allure.dynamic.tag(item.config.getoption(\"--runner-name\"))\n    \n>       yield\n\n/usr/local/lib/python3.11/dist-packages/plugin.py:47: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nzephyr/scripts/pylib/pytest-twister-harness/src/twister_harness/fixtures.py:62: in dut\n    device_object.launch()\nzephyr/scripts/pylib/pytest-twister-harness/src/twister_harness/device/device_adapter.py:90: in launch\n    self._flash_and_run()\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = HardwareAdapter()\n\n    def _flash_and_run(self) -> None:\n        \"\"\"Flash application on a device.\"\"\"\n        if not self.command:\n            msg = 'Flash command is empty, please verify if it was generated properly.'\n            logger.error(msg)\n            raise TwisterHarnessException(msg)\n    \n        if self.device_config.pre_script:\n            self._run_custom_script(self.device_config.pre_script, self.base_timeout)\n    \n        if self.device_config.id:\n            logger.debug('Flashing device %s', self.device_config.id)\n        log_command(logger, 'Flashing command', self.command, level=logging.DEBUG)\n    \n        process = stdout = None\n        try:\n            process = subprocess.Popen(self.command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, env=self.env)\n            stdout, _ = process.communicate(timeout=self._flashing_timeout)\n        except subprocess.TimeoutExpired as exc:\n            process.kill()\n            msg = f'Timeout occurred ({self._flashing_timeout}s) during flashing.'\n            logger.error(msg)\n            raise TwisterHarnessTimeoutException(msg) from exc\n        except subprocess.SubprocessError as exc:\n            msg = f'Flashing subprocess failed due to SubprocessError {exc}'\n            logger.error(msg)\n            raise TwisterHarnessTimeoutException(msg) from exc\n        finally:\n            if stdout is not None:\n                stdout_decoded = stdout.decode(errors='ignore')\n                with open(self.device_log_path, 'a+') as log_file:\n                    log_file.write(stdout_decoded)\n            if self.device_config.post_flash_script:\n                self._run_custom_script(self.device_config.post_flash_script, self.base_timeout)\n            if process is not None and process.returncode == 0:\n                logger.debug('Flashing finished')\n            else:\n                msg = f'Could not flash device {self.device_config.id}'\n                logger.error(msg)\n>               raise TwisterHarnessException(msg)\nE               twister_harness.exceptions.TwisterHarnessException: Could not flash device None\n\nzephyr/scripts/pylib/pytest-twister-harness/src/twister_harness/device/hardware_adapter.py:136: TwisterHarnessException",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "device",
+    "time" : {
+      "start" : 1734035222576,
+      "stop" : 1734035223448,
+      "duration" : 872
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "anyio_backend",
+    "time" : {
+      "start" : 1734035222117,
+      "stop" : 1734035222117,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "api_key",
+    "time" : {
+      "start" : 1734035222139,
+      "stop" : 1734035222139,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "project",
+    "time" : {
+      "start" : 1734035222140,
+      "stop" : 1734035222575,
+      "duration" : 435
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "twister_harness_config",
+    "time" : {
+      "start" : 1734035222135,
+      "stop" : 1734035222135,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "dut",
+    "time" : {
+      "start" : 1734035223449,
+      "stop" : 1734035225960,
+      "duration" : 2511
+    },
+    "status" : "broken",
+    "statusMessage" : "twister_harness.exceptions.TwisterHarnessException: Could not flash device None\n",
+    "statusTrace" : "  File \"/usr/local/lib/python3.11/dist-packages/pluggy/_callers.py\", line 167, in _multicall\n    teardown.throw(outcome._exception)\n  File \"/usr/local/lib/python3.11/dist-packages/_pytest/setuponly.py\", line 36, in pytest_fixture_setup\n    return (yield)\n            ^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/pluggy/_callers.py\", line 103, in _multicall\n    res = hook_impl.function(*args)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/_pytest/fixtures.py\", line 1140, in pytest_fixture_setup\n    result = call_fixture_func(fixturefunc, request, kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/_pytest/fixtures.py\", line 891, in call_fixture_func\n    fixture_result = next(generator)\n                     ^^^^^^^^^^^^^^^\n  File \"/__w/golioth-firmware-sdk/golioth-firmware-sdk/zephyr/scripts/pylib/pytest-twister-harness/src/twister_harness/fixtures.py\", line 62, in dut\n    device_object.launch()\n  File \"/__w/golioth-firmware-sdk/golioth-firmware-sdk/zephyr/scripts/pylib/pytest-twister-harness/src/twister_harness/device/device_adapter.py\", line 90, in launch\n    self._flash_and_run()\n  File \"/__w/golioth-firmware-sdk/golioth-firmware-sdk/zephyr/scripts/pylib/pytest-twister-harness/src/twister_harness/device/hardware_adapter.py\", line 136, in _flash_and_run\n    raise TwisterHarnessException(msg)\n",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  }, {
+    "name" : "api_url",
+    "time" : {
+      "start" : 1734035222139,
+      "stop" : 1734035222139,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "build_conf",
+    "time" : {
+      "start" : 1734035222118,
+      "stop" : 1734035222134,
+      "duration" : 16
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_name",
+    "time" : {
+      "start" : 1734035222134,
+      "stop" : 1734035222135,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_object",
+    "time" : {
+      "start" : 1734035222136,
+      "stop" : 1734035222138,
+      "duration" : 2
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "twister_harness.exceptions.TwisterHarnessException: Could not flash device None",
+    "statusTrace" : "item = <Function test_hello>\n\n    @pytest.hookimpl(wrapper=True)\n    def pytest_runtest_setup(item):\n        if item.config.getoption(\"--hil-board\") is not None:\n            hil_board = item.config.getoption(\"--hil-board\")\n        elif 'hil_board' in os.environ:\n            hil_board = os.environ['hil_board']\n        else:\n            hil_board = item.config.option.device_serial\n    \n        allure.dynamic.tag(hil_board)\n        allure.dynamic.tag(\"zephyr\")\n        allure.dynamic.parameter(\"board_name\", hil_board)\n        allure.dynamic.parameter(\"platform_name\", \"zephyr\")\n        allure.dynamic.parent_suite(f\"sample.zephyr.{hil_board}\")\n    \n        if runner_name is not None:\n            allure.dynamic.tag(item.config.getoption(\"--runner-name\"))\n    \n>       yield\n\n/usr/local/lib/python3.11/dist-packages/plugin.py:47: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nzephyr/scripts/pylib/pytest-twister-harness/src/twister_harness/fixtures.py:62: in dut\n    device_object.launch()\nzephyr/scripts/pylib/pytest-twister-harness/src/twister_harness/device/device_adapter.py:90: in launch\n    self._flash_and_run()\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = HardwareAdapter()\n\n    def _flash_and_run(self) -> None:\n        \"\"\"Flash application on a device.\"\"\"\n        if not self.command:\n            msg = 'Flash command is empty, please verify if it was generated properly.'\n            logger.error(msg)\n            raise TwisterHarnessException(msg)\n    \n        if self.device_config.pre_script:\n            self._run_custom_script(self.device_config.pre_script, self.base_timeout)\n    \n        if self.device_config.id:\n            logger.debug('Flashing device %s', self.device_config.id)\n        log_command(logger, 'Flashing command', self.command, level=logging.DEBUG)\n    \n        process = stdout = None\n        try:\n            process = subprocess.Popen(self.command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, env=self.env)\n            stdout, _ = process.communicate(timeout=self._flashing_timeout)\n        except subprocess.TimeoutExpired as exc:\n            process.kill()\n            msg = f'Timeout occurred ({self._flashing_timeout}s) during flashing.'\n            logger.error(msg)\n            raise TwisterHarnessTimeoutException(msg) from exc\n        except subprocess.SubprocessError as exc:\n            msg = f'Flashing subprocess failed due to SubprocessError {exc}'\n            logger.error(msg)\n            raise TwisterHarnessTimeoutException(msg) from exc\n        finally:\n            if stdout is not None:\n                stdout_decoded = stdout.decode(errors='ignore')\n                with open(self.device_log_path, 'a+') as log_file:\n                    log_file.write(stdout_decoded)\n            if self.device_config.post_flash_script:\n                self._run_custom_script(self.device_config.post_flash_script, self.base_timeout)\n            if process is not None and process.returncode == 0:\n                logger.debug('Flashing finished')\n            else:\n                msg = f'Could not flash device {self.device_config.id}'\n                logger.error(msg)\n>               raise TwisterHarnessException(msg)\nE               twister_harness.exceptions.TwisterHarnessException: Could not flash device None\n\nzephyr/scripts/pylib/pytest-twister-harness/src/twister_harness/device/hardware_adapter.py:136: TwisterHarnessException",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "7c77195df8631ee6",
+      "name" : "log",
+      "source" : "7c77195df8631ee6.txt",
+      "type" : "text/plain",
+      "size" : 9446
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "device::0",
+    "time" : {
+      "start" : 1734035226280,
+      "stop" : 1734035226686,
+      "duration" : 406
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "project::0",
+    "time" : {
+      "start" : 1734035226688,
+      "stop" : 1734035226690,
+      "duration" : 2
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_object::0",
+    "time" : {
+      "start" : 1734035226695,
+      "stop" : 1734035226695,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "nrf9160dk"
+  }, {
+    "name" : "tag",
+    "value" : "zephyr"
+  }, {
+    "name" : "parentSuite",
+    "value" : "sample.zephyr.nrf9160dk"
+  }, {
+    "name" : "tag",
+    "value" : "mikes_testbench"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.usefixtures('anyio_backend')"
+  }, {
+    "name" : "tag",
+    "value" : "anyio"
+  }, {
+    "name" : "suite",
+    "value" : "test_sample"
+  }, {
+    "name" : "host",
+    "value" : "a346a52ddc74"
+  }, {
+    "name" : "thread",
+    "value" : "608-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "modules.lib.golioth-firmware-sdk.examples.zephyr.hello_nrf91_offloaded.pytest.test_sample"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "board_name",
+    "value" : "'nrf9160dk'"
+  }, {
+    "name" : "platform_name",
+    "value" : "'zephyr'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 4,
+        "skipped" : 0,
+        "passed" : 17,
+        "unknown" : 0,
+        "total" : 21
+      },
+      "items" : [ {
+        "uid" : "6a07f5d9a1917db3",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1921/#testresult/6a07f5d9a1917db3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734030534851,
+          "stop" : 1734030606400,
+          "duration" : 71549
+        }
+      }, {
+        "uid" : "4237c982da1a9dc2",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1914/#testresult/4237c982da1a9dc2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734026737690,
+          "stop" : 1734026790383,
+          "duration" : 52693
+        }
+      }, {
+        "uid" : "9cf7417ce3b21c6",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1913/#testresult/9cf7417ce3b21c6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734025715705,
+          "stop" : 1734025746893,
+          "duration" : 31188
+        }
+      }, {
+        "uid" : "ac5de21f2772dddd",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1897/#testresult/ac5de21f2772dddd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733947332611,
+          "stop" : 1733947363161,
+          "duration" : 30550
+        }
+      }, {
+        "uid" : "d82497d71e294dc0",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1908/#testresult/d82497d71e294dc0",
+        "status" : "broken",
+        "statusDetails" : "twister_harness.exceptions.TwisterHarnessTimeoutException: Read from device timeout occurred",
+        "time" : {
+          "start" : 1733962531851,
+          "stop" : 1733962644899,
+          "duration" : 113048
+        }
+      }, {
+        "uid" : "6b66f14cc85aaa4d",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1907/#testresult/6b66f14cc85aaa4d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733958945550,
+          "stop" : 1733959044110,
+          "duration" : 98560
+        }
+      }, {
+        "uid" : "6c51f0b8db9f2f98",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1903/#testresult/6c51f0b8db9f2f98",
+        "status" : "broken",
+        "statusDetails" : "twister_harness.exceptions.TwisterHarnessException: Could not flash device None",
+        "time" : {
+          "start" : 1733954953174,
+          "stop" : 1733954953174,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "fc41782209f876f4",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1900/#testresult/fc41782209f876f4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733950826665,
+          "stop" : 1733950857333,
+          "duration" : 30668
+        }
+      }, {
+        "uid" : "333e33cabc6bf895",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1899/#testresult/333e33cabc6bf895",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733950542566,
+          "stop" : 1733950583066,
+          "duration" : 40500
+        }
+      }, {
+        "uid" : "8de30acc8ffc2f58",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1898/#testresult/8de30acc8ffc2f58",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733949194808,
+          "stop" : 1733949233262,
+          "duration" : 38454
+        }
+      }, {
+        "uid" : "457b922c96ded83b",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1897/#testresult/457b922c96ded83b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733947332611,
+          "stop" : 1733947363161,
+          "duration" : 30550
+        }
+      }, {
+        "uid" : "b016b52044ac9c",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1896/#testresult/b016b52044ac9c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733931708766,
+          "stop" : 1733931738096,
+          "duration" : 29330
+        }
+      }, {
+        "uid" : "d707a68c12a50305",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1895/#testresult/d707a68c12a50305",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733930015331,
+          "stop" : 1733930046530,
+          "duration" : 31199
+        }
+      }, {
+        "uid" : "46d12d2e28a538f6",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1896/#testresult/46d12d2e28a538f6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733891902246,
+          "stop" : 1733891946724,
+          "duration" : 44478
+        }
+      }, {
+        "uid" : "ddb8c5560edc1fef",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1895/#testresult/ddb8c5560edc1fef",
+        "status" : "broken",
+        "statusDetails" : "twister_harness.exceptions.TwisterHarnessTimeoutException: Read from device timeout occurred",
+        "time" : {
+          "start" : 1733890817492,
+          "stop" : 1733890930828,
+          "duration" : 113336
+        }
+      }, {
+        "uid" : "bb825f6a06e7ab35",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1892/#testresult/bb825f6a06e7ab35",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733878799169,
+          "stop" : 1733878850121,
+          "duration" : 50952
+        }
+      }, {
+        "uid" : "bac9c5c4fcd21ce7",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1893/#testresult/bac9c5c4fcd21ce7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733878389710,
+          "stop" : 1733878420998,
+          "duration" : 31288
+        }
+      }, {
+        "uid" : "2359c165b71860d",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1887/#testresult/2359c165b71860d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733868041781,
+          "stop" : 1733868072495,
+          "duration" : 30714
+        }
+      }, {
+        "uid" : "1d0fcc05fa49c480",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1888/#testresult/1d0fcc05fa49c480",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733867638229,
+          "stop" : 1733867721138,
+          "duration" : 82909
+        }
+      }, {
+        "uid" : "b2d3bab365e66340",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1884/#testresult/b2d3bab365e66340",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733855220339,
+          "stop" : 1733855272104,
+          "duration" : 51765
+        }
+      } ]
+    },
+    "tags" : [ "nrf9160dk", "anyio", "mikes_testbench", "@pytest.mark.usefixtures('anyio_backend')", "zephyr" ]
+  },
+  "source" : "952ba1599c2a72fa.json",
+  "parameterValues" : [ "'nrf9160dk'", "'zephyr'" ]
+}
