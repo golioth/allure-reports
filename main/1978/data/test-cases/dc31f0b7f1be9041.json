@@ -1,0 +1,709 @@
+{
+  "uid" : "dc31f0b7f1be9041",
+  "name" : "test_reason_and_state",
+  "fullName" : "tests.hil.tests.ota.test_ota#test_reason_and_state",
+  "historyId" : "f9f5fc54eebc09467a311bd3212c0fe3",
+  "time" : {
+    "start" : 1735347432613,
+    "stop" : 1735347467600,
+    "duration" : 34987
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert 1 == 2\n +  where 1 = int('1')",
+  "statusTrace" : "board = <nrf9160dk.nRF9160DK object at 0xffffa434f410>\ndevice = <golioth.golioth.Device object at 0xffffa44ad610>\nproject = <golioth.golioth.Project object at 0xffffa5ba1850>\nreleases = {'test_blocks': Release <676f4cbc6c6d6aa9b9be653d, release_tags=[], device_tags=['676f4cbb6c6d6aa9b9be6536'], artifact...ease_tags=[], device_tags=['676f4cbb6c6d6aa9b9be6536'], artifact_ids=['65f224ee02bfe41201d4b3c9'], rollout=False>, ...}\n\n    async def test_reason_and_state(board, device, project, releases):\n        await project.releases.rollout_set(releases[\"test_reasons\"].id, True)\n        # Test reason and state code updates\n    \n        for i, r in enumerate(golioth_ota_reason):\n            retries_left = 20\n    \n            while retries_left:\n                await trio.sleep(1)\n                retries_left -= 1\n    \n                await device.refresh()\n    \n                try:\n                    latest_reason_code = int(device.metadata['update']['lobster']['reasonCode'])\n                except:\n                    if retries_left == 0:\n                        assert false, \"Unable to get reason/state using REST API\"\n                    continue\n    \n                if retries_left == 0 or latest_reason_code == i:\n                    print(f\"Test reason code: {r}\")\n                    print(f\"Received reason: {device.metadata['update']['lobster']['reason']}\")\n    \n>                   assert int(device.metadata['update']['lobster']['reasonCode']) == i\nE                   AssertionError: assert 1 == 2\nE                    +  where 1 = int('1')\n\ntests/hil/tests/ota/test_ota.py:208: AssertionError",
+  "flaky" : false,
+  "newFailed" : true,
+  "beforeStages" : [ {
+    "name" : "releases_teardown",
+    "time" : {
+      "start" : 1735347432610,
+      "stop" : 1735347432611,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "api_url",
+    "time" : {
+      "start" : 1735347340799,
+      "stop" : 1735347340799,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "anyio_backend",
+    "time" : {
+      "start" : 1735347340790,
+      "stop" : 1735347340791,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "releases",
+    "time" : {
+      "start" : 1735347387468,
+      "stop" : 1735347389410,
+      "duration" : 1942
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "tag",
+    "time" : {
+      "start" : 1735347386736,
+      "stop" : 1735347387468,
+      "duration" : 732
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "serial_number",
+    "time" : {
+      "start" : 1735347340797,
+      "stop" : 1735347340797,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "artifacts",
+    "time" : {
+      "start" : 1735347386253,
+      "stop" : 1735347386735,
+      "duration" : 482
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "board",
+    "time" : {
+      "start" : 1735347340800,
+      "stop" : 1735347355940,
+      "duration" : 15140
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "wifi_psk",
+    "time" : {
+      "start" : 1735347340796,
+      "stop" : 1735347340796,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "fw_image",
+    "time" : {
+      "start" : 1735347340796,
+      "stop" : 1735347340797,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "api_key",
+    "time" : {
+      "start" : 1735347340799,
+      "stop" : 1735347340799,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "port",
+    "time" : {
+      "start" : 1735347340793,
+      "stop" : 1735347340793,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "bmp_port",
+    "time" : {
+      "start" : 1735347340798,
+      "stop" : 1735347340798,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "board_name",
+    "time" : {
+      "start" : 1735347340792,
+      "stop" : 1735347340792,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "project",
+    "time" : {
+      "start" : 1735347355943,
+      "stop" : 1735347356472,
+      "duration" : 529
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "baud",
+    "time" : {
+      "start" : 1735347340794,
+      "stop" : 1735347340794,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "setup",
+    "time" : {
+      "start" : 1735347357295,
+      "stop" : 1735347386250,
+      "duration" : 28955
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_name",
+    "time" : {
+      "start" : 1735347340800,
+      "stop" : 1735347340800,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "wifi_ssid",
+    "time" : {
+      "start" : 1735347340795,
+      "stop" : 1735347340795,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device",
+    "time" : {
+      "start" : 1735347356472,
+      "stop" : 1735347357295,
+      "duration" : 823
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: assert 1 == 2\n +  where 1 = int('1')",
+    "statusTrace" : "board = <nrf9160dk.nRF9160DK object at 0xffffa434f410>\ndevice = <golioth.golioth.Device object at 0xffffa44ad610>\nproject = <golioth.golioth.Project object at 0xffffa5ba1850>\nreleases = {'test_blocks': Release <676f4cbc6c6d6aa9b9be653d, release_tags=[], device_tags=['676f4cbb6c6d6aa9b9be6536'], artifact...ease_tags=[], device_tags=['676f4cbb6c6d6aa9b9be6536'], artifact_ids=['65f224ee02bfe41201d4b3c9'], rollout=False>, ...}\n\n    async def test_reason_and_state(board, device, project, releases):\n        await project.releases.rollout_set(releases[\"test_reasons\"].id, True)\n        # Test reason and state code updates\n    \n        for i, r in enumerate(golioth_ota_reason):\n            retries_left = 20\n    \n            while retries_left:\n                await trio.sleep(1)\n                retries_left -= 1\n    \n                await device.refresh()\n    \n                try:\n                    latest_reason_code = int(device.metadata['update']['lobster']['reasonCode'])\n                except:\n                    if retries_left == 0:\n                        assert false, \"Unable to get reason/state using REST API\"\n                    continue\n    \n                if retries_left == 0 or latest_reason_code == i:\n                    print(f\"Test reason code: {r}\")\n                    print(f\"Received reason: {device.metadata['update']['lobster']['reason']}\")\n    \n>                   assert int(device.metadata['update']['lobster']['reasonCode']) == i\nE                   AssertionError: assert 1 == 2\nE                    +  where 1 = int('1')\n\ntests/hil/tests/ota/test_ota.py:208: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "3041111cd56e3ec2",
+      "name" : "stdout",
+      "source" : "3041111cd56e3ec2.txt",
+      "type" : "text/plain",
+      "size" : 294
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "releases_teardown::0",
+    "time" : {
+      "start" : 1735347467812,
+      "stop" : 1735347468640,
+      "duration" : 828
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "releases::0",
+    "time" : {
+      "start" : 1735347468643,
+      "stop" : 1735347470500,
+      "duration" : 1857
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "tag::0",
+    "time" : {
+      "start" : 1735347470502,
+      "stop" : 1735347471246,
+      "duration" : 744
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "artifacts::0",
+    "time" : {
+      "start" : 1735347471248,
+      "stop" : 1735347471249,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "board::0",
+    "time" : {
+      "start" : 1735347471674,
+      "stop" : 1735347471677,
+      "duration" : 3
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "project::0",
+    "time" : {
+      "start" : 1735347471672,
+      "stop" : 1735347471673,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "setup::0",
+    "time" : {
+      "start" : 1735347471250,
+      "stop" : 1735347471250,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device::0",
+    "time" : {
+      "start" : 1735347471252,
+      "stop" : 1735347471670,
+      "duration" : 418
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "nrf9160dk"
+  }, {
+    "name" : "tag",
+    "value" : "zephyr"
+  }, {
+    "name" : "parentSuite",
+    "value" : "hil.zephyr.nrf9160dk"
+  }, {
+    "name" : "tag",
+    "value" : "mikes_orange_pi"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.usefixtures('anyio_backend')"
+  }, {
+    "name" : "tag",
+    "value" : "anyio"
+  }, {
+    "name" : "suite",
+    "value" : "test_ota"
+  }, {
+    "name" : "host",
+    "value" : "a036f923a324"
+  }, {
+    "name" : "thread",
+    "value" : "240-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.hil.tests.ota.test_ota"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "board_name",
+    "value" : "'nrf9160dk'"
+  }, {
+    "name" : "platform_name",
+    "value" : "'zephyr'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 2,
+        "broken" : 2,
+        "skipped" : 0,
+        "passed" : 21,
+        "unknown" : 0,
+        "total" : 25
+      },
+      "items" : [ {
+        "uid" : "9b8ead94353d9b1a",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1977/#testresult/9b8ead94353d9b1a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735261053940,
+          "stop" : 1735261106736,
+          "duration" : 52796
+        }
+      }, {
+        "uid" : "d09204ca933ad199",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1976/#testresult/d09204ca933ad199",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735172946313,
+          "stop" : 1735172999876,
+          "duration" : 53563
+        }
+      }, {
+        "uid" : "bdad4aac97b7780a",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1975/#testresult/bdad4aac97b7780a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735087670124,
+          "stop" : 1735087725027,
+          "duration" : 54903
+        }
+      }, {
+        "uid" : "f2b2bf561b75b61e",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1974/#testresult/f2b2bf561b75b61e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735000961152,
+          "stop" : 1735001019406,
+          "duration" : 58254
+        }
+      }, {
+        "uid" : "8d38dd45d810d658",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1973/#testresult/8d38dd45d810d658",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734914717195,
+          "stop" : 1734914777409,
+          "duration" : 60214
+        }
+      }, {
+        "uid" : "1f56f9cadf8606da",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1972/#testresult/1f56f9cadf8606da",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734828780756,
+          "stop" : 1734828838266,
+          "duration" : 57510
+        }
+      }, {
+        "uid" : "be18521a30fe3b40",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1969/#testresult/be18521a30fe3b40",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734741803910,
+          "stop" : 1734741858348,
+          "duration" : 54438
+        }
+      }, {
+        "uid" : "4055e92b5f9f5d70",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1965/#testresult/4055e92b5f9f5d70",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734655614352,
+          "stop" : 1734655683133,
+          "duration" : 68781
+        }
+      }, {
+        "uid" : "715b3b0f01dc8186",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1957/#testresult/715b3b0f01dc8186",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734569478387,
+          "stop" : 1734569532774,
+          "duration" : 54387
+        }
+      }, {
+        "uid" : "6b6de7c58747b9c2",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1950/#testresult/6b6de7c58747b9c2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734483031055,
+          "stop" : 1734483086380,
+          "duration" : 55325
+        }
+      }, {
+        "uid" : "1cd19bddc3ff585e",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1949/#testresult/1cd19bddc3ff585e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734469190430,
+          "stop" : 1734469249105,
+          "duration" : 58675
+        }
+      }, {
+        "uid" : "602da32d458127c3",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1946/#testresult/602da32d458127c3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734444749710,
+          "stop" : 1734444807519,
+          "duration" : 57809
+        }
+      }, {
+        "uid" : "ad0a7418d329aa39",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1944/#testresult/ad0a7418d329aa39",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734396967138,
+          "stop" : 1734397022514,
+          "duration" : 55376
+        }
+      }, {
+        "uid" : "b6f2d906d3eda697",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1935/#testresult/b6f2d906d3eda697",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734310682910,
+          "stop" : 1734310737152,
+          "duration" : 54242
+        }
+      }, {
+        "uid" : "12e96642edc40332",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1934/#testresult/12e96642edc40332",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734224387996,
+          "stop" : 1734224446543,
+          "duration" : 58547
+        }
+      }, {
+        "uid" : "2c87b6c06dc0238e",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1933/#testresult/2c87b6c06dc0238e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734137815188,
+          "stop" : 1734137869913,
+          "duration" : 54725
+        }
+      }, {
+        "uid" : "c1dcd1c8b3ca9f65",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1930/#testresult/c1dcd1c8b3ca9f65",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734118426412,
+          "stop" : 1734118481324,
+          "duration" : 54912
+        }
+      }, {
+        "uid" : "6d46e06f7e762ba8",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1929/#testresult/6d46e06f7e762ba8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734051623070,
+          "stop" : 1734051682360,
+          "duration" : 59290
+        }
+      }, {
+        "uid" : "c2bf5f620c5719a0",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1924/#testresult/c2bf5f620c5719a0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734032140324,
+          "stop" : 1734032194829,
+          "duration" : 54505
+        }
+      }, {
+        "uid" : "327d153e2a5ff1",
+        "reportUrl" : "https://golioth.github.io/allure-reports/main/1910/#testresult/327d153e2a5ff1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1733996600598,
+          "stop" : 1733996657039,
+          "duration" : 56441
+        }
+      } ]
+    },
+    "tags" : [ "mikes_orange_pi", "nrf9160dk", "anyio", "@pytest.mark.usefixtures('anyio_backend')", "zephyr" ]
+  },
+  "source" : "dc31f0b7f1be9041.json",
+  "parameterValues" : [ "'nrf9160dk'", "'zephyr'" ]
+}
