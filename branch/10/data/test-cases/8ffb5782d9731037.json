@@ -1,0 +1,636 @@
+{
+  "uid" : "8ffb5782d9731037",
+  "name" : "test_fw_update",
+  "fullName" : "modules.lib.golioth-firmware-sdk.examples.zephyr.fw_update.pytest.test_sample#test_fw_update",
+  "historyId" : "edf5f1012f71cfc9f14f014f109d19a8",
+  "time" : {
+    "start" : 1735926710871,
+    "stop" : 1735926710871,
+    "duration" : 0
+  },
+  "status" : "failed",
+  "statusMessage" : "Failed: Prompt not found",
+  "statusTrace" : "item = <Function test_fw_update>\n\n    @pytest.hookimpl(wrapper=True)\n    def pytest_runtest_setup(item):\n        if item.config.getoption(\"--hil-board\") is not None:\n            hil_board = item.config.getoption(\"--hil-board\")\n        elif 'hil_board' in os.environ:\n            hil_board = os.environ['hil_board']\n        else:\n            hil_board = item.config.option.device_serial\n    \n        allure.dynamic.tag(hil_board)\n        allure.dynamic.tag(\"zephyr\")\n        allure.dynamic.parameter(\"board_name\", hil_board)\n        allure.dynamic.parameter(\"platform_name\", \"zephyr\")\n        allure.dynamic.parent_suite(f\"sample.zephyr.{hil_board}\")\n    \n        if runner_name is not None:\n            allure.dynamic.tag(item.config.getoption(\"--runner-name\"))\n    \n>       yield\n\n/usr/local/lib/python3.11/dist-packages/plugin.py:47: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\ndut = HardwareAdapter()\n\n    @pytest.fixture(scope=determine_scope)\n    def shell(dut: DeviceAdapter) -> Shell:\n        \"\"\"Return ready to use shell interface\"\"\"\n        shell = Shell(dut, timeout=20.0)\n        if prompt := find_in_config(Path(dut.device_config.app_build_dir) / 'zephyr' / '.config',\n                                    'CONFIG_SHELL_PROMPT_UART'):\n            shell.prompt = prompt\n        logger.info('Wait for prompt')\n        if not shell.wait_for_prompt():\n>           pytest.fail('Prompt not found')\nE           Failed: Prompt not found\n\nzephyr/scripts/pylib/pytest-twister-harness/src/twister_harness/fixtures.py:77: Failed",
+  "flaky" : false,
+  "newFailed" : true,
+  "beforeStages" : [ {
+    "name" : "tag",
+    "time" : {
+      "start" : 1735926713083,
+      "stop" : 1735926714287,
+      "duration" : 1204
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "twister_harness_config",
+    "time" : {
+      "start" : 1735926711006,
+      "stop" : 1735926711006,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "dut",
+    "time" : {
+      "start" : 1735926714672,
+      "stop" : 1735926726021,
+      "duration" : 11349
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "wifi_psk",
+    "time" : {
+      "start" : 1735926710875,
+      "stop" : 1735926710875,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "shell",
+    "time" : {
+      "start" : 1735926726021,
+      "stop" : 1735926746055,
+      "duration" : 20034
+    },
+    "status" : "failed",
+    "statusMessage" : "Failed: Prompt not found\n",
+    "statusTrace" : "  File \"/usr/local/lib/python3.11/dist-packages/pluggy/_callers.py\", line 167, in _multicall\n    teardown.throw(outcome._exception)\n  File \"/usr/local/lib/python3.11/dist-packages/_pytest/setuponly.py\", line 36, in pytest_fixture_setup\n    return (yield)\n            ^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/pluggy/_callers.py\", line 103, in _multicall\n    res = hook_impl.function(*args)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/_pytest/fixtures.py\", line 1140, in pytest_fixture_setup\n    result = call_fixture_func(fixturefunc, request, kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/_pytest/fixtures.py\", line 898, in call_fixture_func\n    fixture_result = fixturefunc(**kwargs)\n                     ^^^^^^^^^^^^^^^^^^^^^\n  File \"/__w/golioth-firmware-sdk/golioth-firmware-sdk/zephyr/scripts/pylib/pytest-twister-harness/src/twister_harness/fixtures.py\", line 77, in shell\n    pytest.fail('Prompt not found')\n  File \"/usr/local/lib/python3.11/dist-packages/_pytest/outcomes.py\", line 178, in fail\n    raise Failed(msg=reason, pytrace=pytrace)\n",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  }, {
+    "name" : "wifi_ssid",
+    "time" : {
+      "start" : 1735926710875,
+      "stop" : 1735926710875,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "fw_info",
+    "time" : {
+      "start" : 1735926710876,
+      "stop" : 1735926711003,
+      "duration" : 127
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "api_key",
+    "time" : {
+      "start" : 1735926711004,
+      "stop" : 1735926711004,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "project",
+    "time" : {
+      "start" : 1735926711010,
+      "stop" : 1735926711394,
+      "duration" : 384
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "anyio_backend",
+    "time" : {
+      "start" : 1735926710874,
+      "stop" : 1735926710874,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "blueprint_id",
+    "time" : {
+      "start" : 1735926712315,
+      "stop" : 1735926712684,
+      "duration" : 369
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "artifact",
+    "time" : {
+      "start" : 1735926712684,
+      "stop" : 1735926713082,
+      "duration" : 398
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_object",
+    "time" : {
+      "start" : 1735926711007,
+      "stop" : 1735926711010,
+      "duration" : 3
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "api_url",
+    "time" : {
+      "start" : 1735926711005,
+      "stop" : 1735926711005,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_name",
+    "time" : {
+      "start" : 1735926711006,
+      "stop" : 1735926711006,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "release",
+    "time" : {
+      "start" : 1735926714288,
+      "stop" : 1735926714671,
+      "duration" : 383
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device",
+    "time" : {
+      "start" : 1735926711395,
+      "stop" : 1735926712314,
+      "duration" : 919
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Failed: Prompt not found",
+    "statusTrace" : "item = <Function test_fw_update>\n\n    @pytest.hookimpl(wrapper=True)\n    def pytest_runtest_setup(item):\n        if item.config.getoption(\"--hil-board\") is not None:\n            hil_board = item.config.getoption(\"--hil-board\")\n        elif 'hil_board' in os.environ:\n            hil_board = os.environ['hil_board']\n        else:\n            hil_board = item.config.option.device_serial\n    \n        allure.dynamic.tag(hil_board)\n        allure.dynamic.tag(\"zephyr\")\n        allure.dynamic.parameter(\"board_name\", hil_board)\n        allure.dynamic.parameter(\"platform_name\", \"zephyr\")\n        allure.dynamic.parent_suite(f\"sample.zephyr.{hil_board}\")\n    \n        if runner_name is not None:\n            allure.dynamic.tag(item.config.getoption(\"--runner-name\"))\n    \n>       yield\n\n/usr/local/lib/python3.11/dist-packages/plugin.py:47: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\ndut = HardwareAdapter()\n\n    @pytest.fixture(scope=determine_scope)\n    def shell(dut: DeviceAdapter) -> Shell:\n        \"\"\"Return ready to use shell interface\"\"\"\n        shell = Shell(dut, timeout=20.0)\n        if prompt := find_in_config(Path(dut.device_config.app_build_dir) / 'zephyr' / '.config',\n                                    'CONFIG_SHELL_PROMPT_UART'):\n            shell.prompt = prompt\n        logger.info('Wait for prompt')\n        if not shell.wait_for_prompt():\n>           pytest.fail('Prompt not found')\nE           Failed: Prompt not found\n\nzephyr/scripts/pylib/pytest-twister-harness/src/twister_harness/fixtures.py:77: Failed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "a82426d702ec9437",
+      "name" : "log",
+      "source" : "a82426d702ec9437.txt",
+      "type" : "text/plain",
+      "size" : 29103
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "tag::0",
+    "time" : {
+      "start" : 1735926746882,
+      "stop" : 1735926747662,
+      "duration" : 780
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "dut::0",
+    "time" : {
+      "start" : 1735926746459,
+      "stop" : 1735926746484,
+      "duration" : 25
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "fw_info::0",
+    "time" : {
+      "start" : 1735926748208,
+      "stop" : 1735926748213,
+      "duration" : 5
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "project::0",
+    "time" : {
+      "start" : 1735926748046,
+      "stop" : 1735926748046,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "blueprint_id::0",
+    "time" : {
+      "start" : 1735926747666,
+      "stop" : 1735926747667,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "artifact::0",
+    "time" : {
+      "start" : 1735926747664,
+      "stop" : 1735926747664,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_object::0",
+    "time" : {
+      "start" : 1735926748048,
+      "stop" : 1735926748048,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "release::0",
+    "time" : {
+      "start" : 1735926746486,
+      "stop" : 1735926746880,
+      "duration" : 394
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device::0",
+    "time" : {
+      "start" : 1735926747669,
+      "stop" : 1735926748044,
+      "duration" : 375
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "mimxrt1024_evk"
+  }, {
+    "name" : "tag",
+    "value" : "zephyr"
+  }, {
+    "name" : "parentSuite",
+    "value" : "sample.zephyr.mimxrt1024_evk"
+  }, {
+    "name" : "tag",
+    "value" : "mikes_orange_pi"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.usefixtures('anyio_backend')"
+  }, {
+    "name" : "tag",
+    "value" : "anyio"
+  }, {
+    "name" : "suite",
+    "value" : "test_sample"
+  }, {
+    "name" : "host",
+    "value" : "417c64ff854e"
+  }, {
+    "name" : "thread",
+    "value" : "347-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "modules.lib.golioth-firmware-sdk.examples.zephyr.fw_update.pytest.test_sample"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "board_name",
+    "value" : "'mimxrt1024_evk'"
+  }, {
+    "name" : "platform_name",
+    "value" : "'zephyr'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 15,
+        "unknown" : 0,
+        "total" : 16
+      },
+      "items" : [ {
+        "uid" : "4320e5cbbfda9d25",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/9/#testresult/4320e5cbbfda9d25",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735922462753,
+          "stop" : 1735922509485,
+          "duration" : 46732
+        }
+      }, {
+        "uid" : "bd83bda965371678",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/5/#testresult/bd83bda965371678",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735862192150,
+          "stop" : 1735862240780,
+          "duration" : 48630
+        }
+      }, {
+        "uid" : "7b2e3a89c6a37ec3",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/4/#testresult/7b2e3a89c6a37ec3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735859362453,
+          "stop" : 1735859410263,
+          "duration" : 47810
+        }
+      }, {
+        "uid" : "e7f9f83d1cc24690",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/3/#testresult/e7f9f83d1cc24690",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735851363558,
+          "stop" : 1735851411275,
+          "duration" : 47717
+        }
+      }, {
+        "uid" : "7368ebbd91fb225a",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/2000/#testresult/7368ebbd91fb225a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735847404254,
+          "stop" : 1735847450854,
+          "duration" : 46600
+        }
+      }, {
+        "uid" : "6a99fcdd953a2c90",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1999/#testresult/6a99fcdd953a2c90",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735845921498,
+          "stop" : 1735845969489,
+          "duration" : 47991
+        }
+      }, {
+        "uid" : "82c296f6da3fee0e",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1997/#testresult/82c296f6da3fee0e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735837225580,
+          "stop" : 1735837277591,
+          "duration" : 52011
+        }
+      }, {
+        "uid" : "7ce5705fdeee1474",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1993/#testresult/7ce5705fdeee1474",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735832262005,
+          "stop" : 1735832311066,
+          "duration" : 49061
+        }
+      }, {
+        "uid" : "4d9141ad05cc1347",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1992/#testresult/4d9141ad05cc1347",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735827120535,
+          "stop" : 1735827167525,
+          "duration" : 46990
+        }
+      }, {
+        "uid" : "3e531b0087694133",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1989/#testresult/3e531b0087694133",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735678230709,
+          "stop" : 1735678279559,
+          "duration" : 48850
+        }
+      }, {
+        "uid" : "3f5ab5f99705fff6",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/2/#testresult/3f5ab5f99705fff6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735676768903,
+          "stop" : 1735676818119,
+          "duration" : 49216
+        }
+      }, {
+        "uid" : "df83091e8d2c98e9",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1987/#testresult/df83091e8d2c98e9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735669079719,
+          "stop" : 1735669134473,
+          "duration" : 54754
+        }
+      }, {
+        "uid" : "e037a89da27def03",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1986/#testresult/e037a89da27def03",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735664874863,
+          "stop" : 1735664921917,
+          "duration" : 47054
+        }
+      }, {
+        "uid" : "688a55d37b49ac2d",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1982/#testresult/688a55d37b49ac2d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735574882609,
+          "stop" : 1735574929902,
+          "duration" : 47293
+        }
+      }, {
+        "uid" : "61a3c7f6995be3c4",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1971/#testresult/61a3c7f6995be3c4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734760438659,
+          "stop" : 1734760485639,
+          "duration" : 46980
+        }
+      } ]
+    },
+    "tags" : [ "mikes_orange_pi", "anyio", "@pytest.mark.usefixtures('anyio_backend')", "mimxrt1024_evk", "zephyr" ]
+  },
+  "source" : "8ffb5782d9731037.json",
+  "parameterValues" : [ "'mimxrt1024_evk'", "'zephyr'" ]
+}
