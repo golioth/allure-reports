@@ -1,0 +1,555 @@
+{
+  "uid" : "c6d1fdbb74d459f5",
+  "name" : "test_observation_repeat_restart",
+  "fullName" : "tests.hil.tests.rpc.test_rpc#test_observation_repeat_restart",
+  "historyId" : "d288d6d850cc6568d6c7d8519c57154a",
+  "time" : {
+    "start" : 1735930408856,
+    "stop" : 1735930434277,
+    "duration" : 25421
+  },
+  "status" : "broken",
+  "statusMessage" : "golioth.golioth.RPCTimeout: RPC timeout",
+  "statusTrace" : "@contextlib.contextmanager\n    def map_httpcore_exceptions() -> typing.Iterator[None]:\n        try:\n>           yield\n\n/usr/local/lib/python3.11/dist-packages/httpx/_transports/default.py:72: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/local/lib/python3.11/dist-packages/httpx/_transports/default.py:377: in handle_async_request\n    resp = await self._pool.handle_async_request(req)\n/usr/local/lib/python3.11/dist-packages/httpcore/_async/connection_pool.py:216: in handle_async_request\n    raise exc from None\n/usr/local/lib/python3.11/dist-packages/httpcore/_async/connection_pool.py:196: in handle_async_request\n    response = await connection.handle_async_request(\n/usr/local/lib/python3.11/dist-packages/httpcore/_async/connection.py:101: in handle_async_request\n    return await self._connection.handle_async_request(request)\n/usr/local/lib/python3.11/dist-packages/httpcore/_async/http11.py:143: in handle_async_request\n    raise exc\n/usr/local/lib/python3.11/dist-packages/httpcore/_async/http11.py:113: in handle_async_request\n    ) = await self._receive_response_headers(**kwargs)\n/usr/local/lib/python3.11/dist-packages/httpcore/_async/http11.py:186: in _receive_response_headers\n    event = await self._receive_event(timeout=timeout)\n/usr/local/lib/python3.11/dist-packages/httpcore/_async/http11.py:224: in _receive_event\n    data = await self._network_stream.read(\n/usr/local/lib/python3.11/dist-packages/httpcore/_backends/trio.py:32: in read\n    with map_exceptions(exc_map):\n/usr/lib/python3.11/contextlib.py:155: in __exit__\n    self.gen.throw(typ, value, traceback)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmap = {<class 'trio.TooSlowError'>: <class 'httpcore.ReadTimeout'>, <class 'trio.BrokenResourceError'>: <class 'httpcore.ReadError'>, <class 'trio.ClosedResourceError'>: <class 'httpcore.ReadError'>}\n\n    @contextlib.contextmanager\n    def map_exceptions(map: ExceptionMapping) -> Iterator[None]:\n        try:\n            yield\n        except Exception as exc:  # noqa: PIE786\n            for from_exc, to_exc in map.items():\n                if isinstance(exc, from_exc):\n>                   raise to_exc(exc) from exc\nE                   httpcore.ReadTimeout\n\n/usr/local/lib/python3.11/dist-packages/httpcore/_exceptions.py:14: ReadTimeout\n\nThe above exception was the direct cause of the following exception:\n\nself = <golioth.golioth.DeviceRPC object at 0xffff8bcf6010>\nmethod = 'disconnect', params = []\n\n    async def call(self, method: str, params: Union[list, dict]):\n        async with self.http_client as c:\n            try:\n>               response = await c.post('rpc', json={\n                    \"method\": method,\n                    \"params\": params,\n                })\n\n/usr/local/lib/python3.11/dist-packages/golioth/golioth.py:633: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/local/lib/python3.11/dist-packages/httpx/_client.py:1905: in post\n    return await self.request(\n/usr/local/lib/python3.11/dist-packages/httpx/_client.py:1585: in request\n    return await self.send(request, auth=auth, follow_redirects=follow_redirects)\n/usr/local/lib/python3.11/dist-packages/httpx/_client.py:1674: in send\n    response = await self._send_handling_auth(\n/usr/local/lib/python3.11/dist-packages/httpx/_client.py:1702: in _send_handling_auth\n    response = await self._send_handling_redirects(\n/usr/local/lib/python3.11/dist-packages/httpx/_client.py:1739: in _send_handling_redirects\n    response = await self._send_single_request(request)\n/usr/local/lib/python3.11/dist-packages/httpx/_client.py:1776: in _send_single_request\n    response = await transport.handle_async_request(request)\n/usr/local/lib/python3.11/dist-packages/httpx/_transports/default.py:376: in handle_async_request\n    with map_httpcore_exceptions():\n/usr/lib/python3.11/contextlib.py:155: in __exit__\n    self.gen.throw(typ, value, traceback)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n    @contextlib.contextmanager\n    def map_httpcore_exceptions() -> typing.Iterator[None]:\n        try:\n            yield\n        except Exception as exc:\n            mapped_exc = None\n    \n            for from_exc, to_exc in HTTPCORE_EXC_MAP.items():\n                if not isinstance(exc, from_exc):\n                    continue\n                # We want to map to the most specific exception we can find.\n                # Eg if `exc` is an `httpcore.ReadTimeout`, we want to map to\n                # `httpx.ReadTimeout`, not just `httpx.TimeoutException`.\n                if mapped_exc is None or issubclass(to_exc, mapped_exc):\n                    mapped_exc = to_exc\n    \n            if mapped_exc is None:  # pragma: no cover\n                raise\n    \n            message = str(exc)\n>           raise mapped_exc(message) from exc\nE           httpx.ReadTimeout\n\n/usr/local/lib/python3.11/dist-packages/httpx/_transports/default.py:89: ReadTimeout\n\nThe above exception was the direct cause of the following exception:\n\nboard = <rak5010.RAK5010 object at 0xffff8bcda990>\ndevice = <golioth.golioth.Device object at 0xffff8bcf6bd0>\n\n    async def test_observation_repeat_restart(board, device):\n        for i in range(3):\n>           rsp = await device.rpc.disconnect()\n\ntests/hil/tests/rpc/test_rpc.py:75: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/local/lib/python3.11/dist-packages/golioth/golioth.py:656: in call_method\n    return await self.call(name, params)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <golioth.golioth.DeviceRPC object at 0xffff8bcf6010>\nmethod = 'disconnect', params = []\n\n    async def call(self, method: str, params: Union[list, dict]):\n        async with self.http_client as c:\n            try:\n                response = await c.post('rpc', json={\n                    \"method\": method,\n                    \"params\": params,\n                })\n            except httpx.ReadTimeout as e:\n>               raise RPCTimeout() from e\nE               golioth.golioth.RPCTimeout: RPC timeout\n\n/usr/local/lib/python3.11/dist-packages/golioth/golioth.py:638: RPCTimeout",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "wifi_ssid",
+    "time" : {
+      "start" : 1735930338515,
+      "stop" : 1735930338515,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "board_name",
+    "time" : {
+      "start" : 1735930338513,
+      "stop" : 1735930338513,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "project",
+    "time" : {
+      "start" : 1735930338519,
+      "stop" : 1735930339149,
+      "duration" : 630
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "setup",
+    "time" : {
+      "start" : 1735930359206,
+      "stop" : 1735930390241,
+      "duration" : 31035
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "api_url",
+    "time" : {
+      "start" : 1735930338519,
+      "stop" : 1735930338519,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "serial_number",
+    "time" : {
+      "start" : 1735930338517,
+      "stop" : 1735930338517,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "bmp_port",
+    "time" : {
+      "start" : 1735930338517,
+      "stop" : 1735930338517,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "baud",
+    "time" : {
+      "start" : 1735930338514,
+      "stop" : 1735930338515,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device",
+    "time" : {
+      "start" : 1735930358278,
+      "stop" : 1735930359205,
+      "duration" : 927
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "wifi_psk",
+    "time" : {
+      "start" : 1735930338516,
+      "stop" : 1735930338516,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "fw_image",
+    "time" : {
+      "start" : 1735930338516,
+      "stop" : 1735930338516,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "board",
+    "time" : {
+      "start" : 1735930339150,
+      "stop" : 1735930358277,
+      "duration" : 19127
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "anyio_backend",
+    "time" : {
+      "start" : 1735930338512,
+      "stop" : 1735930338512,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_name",
+    "time" : {
+      "start" : 1735930338518,
+      "stop" : 1735930338518,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "port",
+    "time" : {
+      "start" : 1735930338514,
+      "stop" : 1735930338514,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "api_key",
+    "time" : {
+      "start" : 1735930338518,
+      "stop" : 1735930338518,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "golioth.golioth.RPCTimeout: RPC timeout",
+    "statusTrace" : "@contextlib.contextmanager\n    def map_httpcore_exceptions() -> typing.Iterator[None]:\n        try:\n>           yield\n\n/usr/local/lib/python3.11/dist-packages/httpx/_transports/default.py:72: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/local/lib/python3.11/dist-packages/httpx/_transports/default.py:377: in handle_async_request\n    resp = await self._pool.handle_async_request(req)\n/usr/local/lib/python3.11/dist-packages/httpcore/_async/connection_pool.py:216: in handle_async_request\n    raise exc from None\n/usr/local/lib/python3.11/dist-packages/httpcore/_async/connection_pool.py:196: in handle_async_request\n    response = await connection.handle_async_request(\n/usr/local/lib/python3.11/dist-packages/httpcore/_async/connection.py:101: in handle_async_request\n    return await self._connection.handle_async_request(request)\n/usr/local/lib/python3.11/dist-packages/httpcore/_async/http11.py:143: in handle_async_request\n    raise exc\n/usr/local/lib/python3.11/dist-packages/httpcore/_async/http11.py:113: in handle_async_request\n    ) = await self._receive_response_headers(**kwargs)\n/usr/local/lib/python3.11/dist-packages/httpcore/_async/http11.py:186: in _receive_response_headers\n    event = await self._receive_event(timeout=timeout)\n/usr/local/lib/python3.11/dist-packages/httpcore/_async/http11.py:224: in _receive_event\n    data = await self._network_stream.read(\n/usr/local/lib/python3.11/dist-packages/httpcore/_backends/trio.py:32: in read\n    with map_exceptions(exc_map):\n/usr/lib/python3.11/contextlib.py:155: in __exit__\n    self.gen.throw(typ, value, traceback)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmap = {<class 'trio.TooSlowError'>: <class 'httpcore.ReadTimeout'>, <class 'trio.BrokenResourceError'>: <class 'httpcore.ReadError'>, <class 'trio.ClosedResourceError'>: <class 'httpcore.ReadError'>}\n\n    @contextlib.contextmanager\n    def map_exceptions(map: ExceptionMapping) -> Iterator[None]:\n        try:\n            yield\n        except Exception as exc:  # noqa: PIE786\n            for from_exc, to_exc in map.items():\n                if isinstance(exc, from_exc):\n>                   raise to_exc(exc) from exc\nE                   httpcore.ReadTimeout\n\n/usr/local/lib/python3.11/dist-packages/httpcore/_exceptions.py:14: ReadTimeout\n\nThe above exception was the direct cause of the following exception:\n\nself = <golioth.golioth.DeviceRPC object at 0xffff8bcf6010>\nmethod = 'disconnect', params = []\n\n    async def call(self, method: str, params: Union[list, dict]):\n        async with self.http_client as c:\n            try:\n>               response = await c.post('rpc', json={\n                    \"method\": method,\n                    \"params\": params,\n                })\n\n/usr/local/lib/python3.11/dist-packages/golioth/golioth.py:633: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/local/lib/python3.11/dist-packages/httpx/_client.py:1905: in post\n    return await self.request(\n/usr/local/lib/python3.11/dist-packages/httpx/_client.py:1585: in request\n    return await self.send(request, auth=auth, follow_redirects=follow_redirects)\n/usr/local/lib/python3.11/dist-packages/httpx/_client.py:1674: in send\n    response = await self._send_handling_auth(\n/usr/local/lib/python3.11/dist-packages/httpx/_client.py:1702: in _send_handling_auth\n    response = await self._send_handling_redirects(\n/usr/local/lib/python3.11/dist-packages/httpx/_client.py:1739: in _send_handling_redirects\n    response = await self._send_single_request(request)\n/usr/local/lib/python3.11/dist-packages/httpx/_client.py:1776: in _send_single_request\n    response = await transport.handle_async_request(request)\n/usr/local/lib/python3.11/dist-packages/httpx/_transports/default.py:376: in handle_async_request\n    with map_httpcore_exceptions():\n/usr/lib/python3.11/contextlib.py:155: in __exit__\n    self.gen.throw(typ, value, traceback)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n    @contextlib.contextmanager\n    def map_httpcore_exceptions() -> typing.Iterator[None]:\n        try:\n            yield\n        except Exception as exc:\n            mapped_exc = None\n    \n            for from_exc, to_exc in HTTPCORE_EXC_MAP.items():\n                if not isinstance(exc, from_exc):\n                    continue\n                # We want to map to the most specific exception we can find.\n                # Eg if `exc` is an `httpcore.ReadTimeout`, we want to map to\n                # `httpx.ReadTimeout`, not just `httpx.TimeoutException`.\n                if mapped_exc is None or issubclass(to_exc, mapped_exc):\n                    mapped_exc = to_exc\n    \n            if mapped_exc is None:  # pragma: no cover\n                raise\n    \n            message = str(exc)\n>           raise mapped_exc(message) from exc\nE           httpx.ReadTimeout\n\n/usr/local/lib/python3.11/dist-packages/httpx/_transports/default.py:89: ReadTimeout\n\nThe above exception was the direct cause of the following exception:\n\nboard = <rak5010.RAK5010 object at 0xffff8bcda990>\ndevice = <golioth.golioth.Device object at 0xffff8bcf6bd0>\n\n    async def test_observation_repeat_restart(board, device):\n        for i in range(3):\n>           rsp = await device.rpc.disconnect()\n\ntests/hil/tests/rpc/test_rpc.py:75: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/local/lib/python3.11/dist-packages/golioth/golioth.py:656: in call_method\n    return await self.call(name, params)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <golioth.golioth.DeviceRPC object at 0xffff8bcf6010>\nmethod = 'disconnect', params = []\n\n    async def call(self, method: str, params: Union[list, dict]):\n        async with self.http_client as c:\n            try:\n                response = await c.post('rpc', json={\n                    \"method\": method,\n                    \"params\": params,\n                })\n            except httpx.ReadTimeout as e:\n>               raise RPCTimeout() from e\nE               golioth.golioth.RPCTimeout: RPC timeout\n\n/usr/local/lib/python3.11/dist-packages/golioth/golioth.py:638: RPCTimeout",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "dc3fbc97cfc2d021",
+      "name" : "stdout",
+      "source" : "dc3fbc97cfc2d021.txt",
+      "type" : "text/plain",
+      "size" : 3016
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "project::0",
+    "time" : {
+      "start" : 1735930442936,
+      "stop" : 1735930442938,
+      "duration" : 2
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "setup::0",
+    "time" : {
+      "start" : 1735930441739,
+      "stop" : 1735930441739,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device::0",
+    "time" : {
+      "start" : 1735930441742,
+      "stop" : 1735930442906,
+      "duration" : 1164
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "board::0",
+    "time" : {
+      "start" : 1735930442908,
+      "stop" : 1735930442933,
+      "duration" : 25
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "rak5010"
+  }, {
+    "name" : "tag",
+    "value" : "zephyr"
+  }, {
+    "name" : "parentSuite",
+    "value" : "hil.zephyr.rak5010"
+  }, {
+    "name" : "tag",
+    "value" : "mikes_orange_pi"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.usefixtures('anyio_backend')"
+  }, {
+    "name" : "tag",
+    "value" : "anyio"
+  }, {
+    "name" : "suite",
+    "value" : "test_rpc"
+  }, {
+    "name" : "host",
+    "value" : "82e6b9801d55"
+  }, {
+    "name" : "thread",
+    "value" : "239-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.hil.tests.rpc.test_rpc"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "board_name",
+    "value" : "'rak5010'"
+  }, {
+    "name" : "platform_name",
+    "value" : "'zephyr'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 3,
+        "skipped" : 0,
+        "passed" : 14,
+        "unknown" : 0,
+        "total" : 17
+      },
+      "items" : [ {
+        "uid" : "4ed082e75f421e3b",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/10/#testresult/4ed082e75f421e3b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735924220323,
+          "stop" : 1735924250040,
+          "duration" : 29717
+        }
+      }, {
+        "uid" : "fac25d4665638fb8",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/9/#testresult/fac25d4665638fb8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735922032511,
+          "stop" : 1735922062214,
+          "duration" : 29703
+        }
+      }, {
+        "uid" : "b85bd4cd517e331b",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/5/#testresult/b85bd4cd517e331b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735858549684,
+          "stop" : 1735858580324,
+          "duration" : 30640
+        }
+      }, {
+        "uid" : "48d8e29d27966a06",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/4/#testresult/48d8e29d27966a06",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735855924433,
+          "stop" : 1735855955542,
+          "duration" : 31109
+        }
+      }, {
+        "uid" : "bdb831d038775fa",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/3/#testresult/bdb831d038775fa",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735849790581,
+          "stop" : 1735849821261,
+          "duration" : 30680
+        }
+      }, {
+        "uid" : "2713567bfdbe1c96",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/2000/#testresult/2713567bfdbe1c96",
+        "status" : "broken",
+        "statusDetails" : "golioth.golioth.RPCTimeout: RPC timeout",
+        "time" : {
+          "start" : 1735844979036,
+          "stop" : 1735844994603,
+          "duration" : 15567
+        }
+      }, {
+        "uid" : "b73ea00916b7ff4c",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1999/#testresult/b73ea00916b7ff4c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735841256814,
+          "stop" : 1735841286780,
+          "duration" : 29966
+        }
+      }, {
+        "uid" : "a10f9c22bdbd0032",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1997/#testresult/a10f9c22bdbd0032",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735834716016,
+          "stop" : 1735834746475,
+          "duration" : 30459
+        }
+      }, {
+        "uid" : "e5c041e025bc9b36",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1993/#testresult/e5c041e025bc9b36",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735831740250,
+          "stop" : 1735831773213,
+          "duration" : 32963
+        }
+      }, {
+        "uid" : "6b4bb9ebc8054462",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1992/#testresult/6b4bb9ebc8054462",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735825187913,
+          "stop" : 1735825217998,
+          "duration" : 30085
+        }
+      }, {
+        "uid" : "6e44f359108fad79",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1989/#testresult/6e44f359108fad79",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735671855336,
+          "stop" : 1735671885742,
+          "duration" : 30406
+        }
+      }, {
+        "uid" : "2bb9c8290dd9de01",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/2/#testresult/2bb9c8290dd9de01",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735674158776,
+          "stop" : 1735674188892,
+          "duration" : 30116
+        }
+      }, {
+        "uid" : "24ac5cfef012ae64",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1987/#testresult/24ac5cfef012ae64",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735666797955,
+          "stop" : 1735666828724,
+          "duration" : 30769
+        }
+      }, {
+        "uid" : "eef5acebf01e243",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1986/#testresult/eef5acebf01e243",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735663632666,
+          "stop" : 1735663662600,
+          "duration" : 29934
+        }
+      }, {
+        "uid" : "a7ee3ee93b9c0dfc",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1982/#testresult/a7ee3ee93b9c0dfc",
+        "status" : "broken",
+        "statusDetails" : "golioth.golioth.RPCTimeout: RPC timeout",
+        "time" : {
+          "start" : 1735573402791,
+          "stop" : 1735573428171,
+          "duration" : 25380
+        }
+      }, {
+        "uid" : "1a7ea7cbe079b6b0",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1971/#testresult/1a7ea7cbe079b6b0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734758734039,
+          "stop" : 1734758763963,
+          "duration" : 29924
+        }
+      } ]
+    },
+    "tags" : [ "mikes_orange_pi", "anyio", "@pytest.mark.usefixtures('anyio_backend')", "rak5010", "zephyr" ]
+  },
+  "source" : "c6d1fdbb74d459f5.json",
+  "parameterValues" : [ "'rak5010'", "'zephyr'" ]
+}
