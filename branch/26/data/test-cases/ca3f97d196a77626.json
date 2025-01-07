@@ -1,0 +1,539 @@
+{
+  "uid" : "ca3f97d196a77626",
+  "name" : "test_hello",
+  "fullName" : "modules.lib.golioth-firmware-sdk.examples.zephyr.hello.pytest.test_sample#test_hello",
+  "historyId" : "62f122e1e892b6a4ca7700385fbbf6dd",
+  "time" : {
+    "start" : 1736278618077,
+    "stop" : 1736278639628,
+    "duration" : 21551
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: Unable to find all Hello messages on server\nassert 0 == 3",
+  "statusTrace" : "shell = <twister_harness.helpers.shell.Shell object at 0x7f83a33a4250>\ndevice = <golioth.golioth.Device object at 0x7f83a3389250>, wifi_ssid = None\nwifi_psk = None\n\n    async def test_hello(shell, device, wifi_ssid, wifi_psk):\n        await trio.sleep(2)\n    \n        # Set Golioth credential\n    \n        golioth_cred = (await device.credentials.list())[0]\n        shell.exec_command(f\"settings set golioth/psk-id {golioth_cred.identity}\")\n        shell.exec_command(f\"settings set golioth/psk {golioth_cred.key}\")\n    \n        # Set WiFi credential\n    \n        if wifi_ssid is not None:\n            shell.exec_command(f\"settings set wifi/ssid \\\"{wifi_ssid}\\\"\")\n    \n        if wifi_psk is not None:\n            shell.exec_command(f\"settings set wifi/psk \\\"{wifi_psk}\\\"\")\n    \n        # Record timestamp and wait for fourth hello message\n    \n        start = datetime.datetime.utcnow()\n        shell._device.readlines_until(regex=\".*Sending hello! 3\", timeout=110.0)\n    \n        # Check logs for hello messages\n    \n        end = datetime.datetime.utcnow()\n    \n        logs = await device.get_logs({'start': start.strftime('%Y-%m-%dT%H:%M:%S.%fZ'), 'end': end.strftime('%Y-%m-%dT%H:%M:%S.%fZ')})\n    \n        # Test logs received from server\n    \n        LOGGER.info(\"Searching log messages from end to start:\")\n        test_idx = 2\n        test_hits = 0\n        for m in reversed(logs):\n    \n            if m.message == f\"Sending hello! {test_idx}\":\n                LOGGER.info(\"### MATCH FOUND! ---> {0}\".format(m.message))\n                test_hits += 1\n                test_idx -= 1\n                if test_idx < 0:\n                    break\n            else:\n                LOGGER.info(m.message)\n    \n>       assert test_hits == 3, 'Unable to find all Hello messages on server'\nE       AssertionError: Unable to find all Hello messages on server\nE       assert 0 == 3\n\nmodules/lib/golioth-firmware-sdk/examples/zephyr/hello/pytest/test_sample.py:54: AssertionError",
+  "flaky" : false,
+  "newFailed" : true,
+  "beforeStages" : [ {
+    "name" : "dut",
+    "time" : {
+      "start" : 1736278617965,
+      "stop" : 1736278617978,
+      "duration" : 13
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_name",
+    "time" : {
+      "start" : 1736278616842,
+      "stop" : 1736278616842,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "twister_harness_config",
+    "time" : {
+      "start" : 1736278616843,
+      "stop" : 1736278616843,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "project",
+    "time" : {
+      "start" : 1736278616844,
+      "stop" : 1736278617185,
+      "duration" : 341
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_object",
+    "time" : {
+      "start" : 1736278616843,
+      "stop" : 1736278616843,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "anyio_backend",
+    "time" : {
+      "start" : 1736278616842,
+      "stop" : 1736278616842,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "wifi_psk",
+    "time" : {
+      "start" : 1736278616842,
+      "stop" : 1736278616842,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "shell",
+    "time" : {
+      "start" : 1736278617979,
+      "stop" : 1736278618076,
+      "duration" : 97
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "api_url",
+    "time" : {
+      "start" : 1736278616844,
+      "stop" : 1736278616844,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device",
+    "time" : {
+      "start" : 1736278617185,
+      "stop" : 1736278617965,
+      "duration" : 780
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "wifi_ssid",
+    "time" : {
+      "start" : 1736278616842,
+      "stop" : 1736278616842,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "api_key",
+    "time" : {
+      "start" : 1736278616843,
+      "stop" : 1736278616843,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: Unable to find all Hello messages on server\nassert 0 == 3",
+    "statusTrace" : "shell = <twister_harness.helpers.shell.Shell object at 0x7f83a33a4250>\ndevice = <golioth.golioth.Device object at 0x7f83a3389250>, wifi_ssid = None\nwifi_psk = None\n\n    async def test_hello(shell, device, wifi_ssid, wifi_psk):\n        await trio.sleep(2)\n    \n        # Set Golioth credential\n    \n        golioth_cred = (await device.credentials.list())[0]\n        shell.exec_command(f\"settings set golioth/psk-id {golioth_cred.identity}\")\n        shell.exec_command(f\"settings set golioth/psk {golioth_cred.key}\")\n    \n        # Set WiFi credential\n    \n        if wifi_ssid is not None:\n            shell.exec_command(f\"settings set wifi/ssid \\\"{wifi_ssid}\\\"\")\n    \n        if wifi_psk is not None:\n            shell.exec_command(f\"settings set wifi/psk \\\"{wifi_psk}\\\"\")\n    \n        # Record timestamp and wait for fourth hello message\n    \n        start = datetime.datetime.utcnow()\n        shell._device.readlines_until(regex=\".*Sending hello! 3\", timeout=110.0)\n    \n        # Check logs for hello messages\n    \n        end = datetime.datetime.utcnow()\n    \n        logs = await device.get_logs({'start': start.strftime('%Y-%m-%dT%H:%M:%S.%fZ'), 'end': end.strftime('%Y-%m-%dT%H:%M:%S.%fZ')})\n    \n        # Test logs received from server\n    \n        LOGGER.info(\"Searching log messages from end to start:\")\n        test_idx = 2\n        test_hits = 0\n        for m in reversed(logs):\n    \n            if m.message == f\"Sending hello! {test_idx}\":\n                LOGGER.info(\"### MATCH FOUND! ---> {0}\".format(m.message))\n                test_hits += 1\n                test_idx -= 1\n                if test_idx < 0:\n                    break\n            else:\n                LOGGER.info(m.message)\n    \n>       assert test_hits == 3, 'Unable to find all Hello messages on server'\nE       AssertionError: Unable to find all Hello messages on server\nE       assert 0 == 3\n\nmodules/lib/golioth-firmware-sdk/examples/zephyr/hello/pytest/test_sample.py:54: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "cdc5d47fceb55304",
+      "name" : "log",
+      "source" : "cdc5d47fceb55304.txt",
+      "type" : "text/plain",
+      "size" : 15331
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "dut::0",
+    "time" : {
+      "start" : 1736278639687,
+      "stop" : 1736278640189,
+      "duration" : 502
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "project::0",
+    "time" : {
+      "start" : 1736278640430,
+      "stop" : 1736278640430,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_object::0",
+    "time" : {
+      "start" : 1736278640431,
+      "stop" : 1736278640431,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device::0",
+    "time" : {
+      "start" : 1736278640189,
+      "stop" : 1736278640429,
+      "duration" : 240
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "native_sim_32"
+  }, {
+    "name" : "tag",
+    "value" : "zephyr"
+  }, {
+    "name" : "parentSuite",
+    "value" : "sample.zephyr.native_sim_32"
+  }, {
+    "name" : "tag",
+    "value" : "GitHub Actions 8"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.usefixtures('anyio_backend')"
+  }, {
+    "name" : "tag",
+    "value" : "anyio"
+  }, {
+    "name" : "suite",
+    "value" : "test_sample"
+  }, {
+    "name" : "host",
+    "value" : "936f3c1729e9"
+  }, {
+    "name" : "thread",
+    "value" : "46241-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "modules.lib.golioth-firmware-sdk.examples.zephyr.hello.pytest.test_sample"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "board_name",
+    "value" : "'native_sim_32'"
+  }, {
+    "name" : "platform_name",
+    "value" : "'zephyr'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "f47e9dd9b4ea9a9",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: Unable to find all Hello messages on server\nassert 0 == 3",
+      "time" : {
+        "start" : 1736278615899,
+        "stop" : 1736278637662,
+        "duration" : 21763
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 1,
+        "skipped" : 0,
+        "passed" : 24,
+        "unknown" : 0,
+        "total" : 26
+      },
+      "items" : [ {
+        "uid" : "49f1da1202c5037a",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/25//#testresult/49f1da1202c5037a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1736269071608,
+          "stop" : 1736269093124,
+          "duration" : 21516
+        }
+      }, {
+        "uid" : "f34e28a3d90b8c33",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/24/#testresult/f34e28a3d90b8c33",
+        "status" : "passed",
+        "time" : {
+          "start" : 1736264466010,
+          "stop" : 1736264487264,
+          "duration" : 21254
+        }
+      }, {
+        "uid" : "6b26a56ad32482c1",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1/#testresult/6b26a56ad32482c1",
+        "status" : "broken",
+        "statusDetails" : "twister_harness.exceptions.TwisterHarnessException: No connection to the device and no more data to read.",
+        "time" : {
+          "start" : 1736221413734,
+          "stop" : 1736221419705,
+          "duration" : 5971
+        }
+      }, {
+        "uid" : "3463d27bed6219c1",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/20/#testresult/3463d27bed6219c1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1736204697928,
+          "stop" : 1736204719336,
+          "duration" : 21408
+        }
+      }, {
+        "uid" : "ae2f4f659c46219a",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/20/#testresult/ae2f4f659c46219a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1736204697928,
+          "stop" : 1736204719336,
+          "duration" : 21408
+        }
+      }, {
+        "uid" : "b3eccb8b98caca3",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/13/#testresult/b3eccb8b98caca3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735943997127,
+          "stop" : 1735944018601,
+          "duration" : 21474
+        }
+      }, {
+        "uid" : "5ec6dd82e1d21edb",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/10/#testresult/5ec6dd82e1d21edb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735921949529,
+          "stop" : 1735921971066,
+          "duration" : 21537
+        }
+      }, {
+        "uid" : "596624e748ba534d",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/12/#testresult/596624e748ba534d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735928594743,
+          "stop" : 1735928616256,
+          "duration" : 21513
+        }
+      }, {
+        "uid" : "cfaed2d6fa0903ad",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/10/#testresult/cfaed2d6fa0903ad",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735921949529,
+          "stop" : 1735921971066,
+          "duration" : 21537
+        }
+      }, {
+        "uid" : "89b2245c4c855db0",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/9/#testresult/89b2245c4c855db0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735919849459,
+          "stop" : 1735919871011,
+          "duration" : 21552
+        }
+      }, {
+        "uid" : "ba3db1ce475b6c1f",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/5/#testresult/ba3db1ce475b6c1f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735853951416,
+          "stop" : 1735853972961,
+          "duration" : 21545
+        }
+      }, {
+        "uid" : "1c9bfc08d64f21ad",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/4/#testresult/1c9bfc08d64f21ad",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735853786216,
+          "stop" : 1735853807912,
+          "duration" : 21696
+        }
+      }, {
+        "uid" : "68d3d1d5ec36be47",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/3/#testresult/68d3d1d5ec36be47",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735847790466,
+          "stop" : 1735847811884,
+          "duration" : 21418
+        }
+      }, {
+        "uid" : "b55935802a5608ea",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/2000/#testresult/b55935802a5608ea",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735840959422,
+          "stop" : 1735840981289,
+          "duration" : 21867
+        }
+      }, {
+        "uid" : "40b391d3db9a1612",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1999/#testresult/40b391d3db9a1612",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735840826189,
+          "stop" : 1735840847673,
+          "duration" : 21484
+        }
+      }, {
+        "uid" : "19d89902f0fb6d56",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1997/#testresult/19d89902f0fb6d56",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735831844425,
+          "stop" : 1735831865908,
+          "duration" : 21483
+        }
+      }, {
+        "uid" : "c38a8e9149518d13",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1993/#testresult/c38a8e9149518d13",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735830327937,
+          "stop" : 1735830349374,
+          "duration" : 21437
+        }
+      }, {
+        "uid" : "fa24f67a493315cc",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1992/#testresult/fa24f67a493315cc",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735824770801,
+          "stop" : 1735824792282,
+          "duration" : 21481
+        }
+      }, {
+        "uid" : "2f3caa07a9899d85",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1989/#testresult/2f3caa07a9899d85",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735671319603,
+          "stop" : 1735671341189,
+          "duration" : 21586
+        }
+      }, {
+        "uid" : "d7b7ee00b65cb9d7",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/2/#testresult/d7b7ee00b65cb9d7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735671329279,
+          "stop" : 1735671350730,
+          "duration" : 21451
+        }
+      } ]
+    },
+    "tags" : [ "GitHub Actions 8", "anyio", "native_sim_32", "@pytest.mark.usefixtures('anyio_backend')", "zephyr" ]
+  },
+  "source" : "ca3f97d196a77626.json",
+  "parameterValues" : [ "'native_sim_32'", "'zephyr'" ]
+}
