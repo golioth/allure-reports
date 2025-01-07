@@ -1,0 +1,401 @@
+{
+  "uid" : "c337d39bbb7f0181",
+  "name" : "test_malformed_response",
+  "fullName" : "tests.hil.tests.rpc.test_rpc#test_malformed_response",
+  "historyId" : "8c364a30ea4b03aa42ac303c27d85406",
+  "time" : {
+    "start" : 1736221183271,
+    "stop" : 1736221188374,
+    "duration" : 5103
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "device",
+    "time" : {
+      "start" : 1736221177643,
+      "stop" : 1736221178351,
+      "duration" : 708
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "api_key",
+    "time" : {
+      "start" : 1736221177319,
+      "stop" : 1736221177319,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_name",
+    "time" : {
+      "start" : 1736221177319,
+      "stop" : 1736221177319,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "setup",
+    "time" : {
+      "start" : 1736221178351,
+      "stop" : 1736221179135,
+      "duration" : 784
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "project",
+    "time" : {
+      "start" : 1736221177319,
+      "stop" : 1736221177643,
+      "duration" : 324
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "api_url",
+    "time" : {
+      "start" : 1736221177319,
+      "stop" : 1736221177319,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "device::0",
+    "time" : {
+      "start" : 1736221209155,
+      "stop" : 1736221209180,
+      "duration" : 25
+    },
+    "status" : "broken",
+    "statusMessage" : "trio.Cancelled: Cancelled\n",
+    "statusTrace" : "  File \"/home/runner/.local/lib/python3.12/site-packages/allure_commons/_allure.py\", line 221, in __call__\n    return self._fixture_function(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/.local/lib/python3.12/site-packages/_pytest/fixtures.py\", line 907, in _teardown_yield_fixture\n    next(it)\n  File \"/home/runner/.local/lib/python3.12/site-packages/anyio/pytest_plugin.py\", line 98, in wrapper\n    yield from runner.run_asyncgen_fixture(local_func, kwargs)\n  File \"/home/runner/.local/lib/python3.12/site-packages/anyio/_backends/_trio.py\", line 953, in run_asyncgen_fixture\n    self._call_in_runner_task(asyncgen.asend, None)\n  File \"/home/runner/.local/lib/python3.12/site-packages/anyio/_backends/_trio.py\", line 940, in _call_in_runner_task\n    return outcome_holder[0].unwrap()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/.local/lib/python3.12/site-packages/outcome/_impl.py\", line 213, in unwrap\n    raise captured_error\n  File \"/home/runner/.local/lib/python3.12/site-packages/anyio/_backends/_trio.py\", line 910, in _run_tests_and_fixtures\n    retval = await coro\n             ^^^^^^^^^^\n  File \"/home/runner/.local/lib/python3.12/site-packages/golioth/pytest_plugin.py\", line 68, in device\n    await project.delete_device(device)\n  File \"/home/runner/.local/lib/python3.12/site-packages/golioth/golioth.py\", line 257, in delete_device\n    await self.delete_device_by_id(dev.id)\n  File \"/home/runner/.local/lib/python3.12/site-packages/golioth/golioth.py\", line 254, in delete_device_by_id\n    await self.delete(f'devices/{id}')\n  File \"/home/runner/.local/lib/python3.12/site-packages/golioth/golioth.py\", line 80, in wrapper\n    resp: httpx.Response = await func(*args, **kwargs)\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/.local/lib/python3.12/site-packages/golioth/golioth.py\", line 118, in delete\n    return await c.delete(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/.local/lib/python3.12/site-packages/httpx/_client.py\", line 1966, in delete\n    return await self.request(\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/.local/lib/python3.12/site-packages/httpx/_client.py\", line 1540, in request\n    return await self.send(request, auth=auth, follow_redirects=follow_redirects)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/.local/lib/python3.12/site-packages/httpx/_client.py\", line 1629, in send\n    response = await self._send_handling_auth(\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/.local/lib/python3.12/site-packages/httpx/_client.py\", line 1657, in _send_handling_auth\n    response = await self._send_handling_redirects(\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/.local/lib/python3.12/site-packages/httpx/_client.py\", line 1694, in _send_handling_redirects\n    response = await self._send_single_request(request)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/.local/lib/python3.12/site-packages/httpx/_client.py\", line 1730, in _send_single_request\n    response = await transport.handle_async_request(request)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/.local/lib/python3.12/site-packages/httpx/_transports/default.py\", line 394, in handle_async_request\n    resp = await self._pool.handle_async_request(req)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/.local/lib/python3.12/site-packages/httpcore/_async/connection_pool.py\", line 256, in handle_async_request\n    raise exc from None\n  File \"/home/runner/.local/lib/python3.12/site-packages/httpcore/_async/connection_pool.py\", line 236, in handle_async_request\n    response = await connection.handle_async_request(\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/.local/lib/python3.12/site-packages/httpcore/_async/connection.py\", line 101, in handle_async_request\n    raise exc\n  File \"/home/runner/.local/lib/python3.12/site-packages/httpcore/_async/connection.py\", line 78, in handle_async_request\n    stream = await self._connect(request)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/.local/lib/python3.12/site-packages/httpcore/_async/connection.py\", line 124, in _connect\n    stream = await self._network_backend.connect_tcp(**kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/.local/lib/python3.12/site-packages/httpcore/_backends/auto.py\", line 31, in connect_tcp\n    return await self._backend.connect_tcp(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/.local/lib/python3.12/site-packages/httpcore/_backends/trio.py\", line 130, in connect_tcp\n    stream: trio.abc.Stream = await trio.open_tcp_stream(\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/.local/lib/python3.12/site-packages/trio/_highlevel_open_tcp_stream.py\", line 278, in open_tcp_stream\n    targets = await getaddrinfo(host, port, type=SOCK_STREAM)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/.local/lib/python3.12/site-packages/trio/_socket.py\", line 211, in getaddrinfo\n    async with _try_sync(numeric_only_failure):\n  File \"/home/runner/.local/lib/python3.12/site-packages/trio/_socket.py\", line 76, in __aenter__\n    await trio.lowlevel.checkpoint_if_cancelled()\n  File \"/home/runner/.local/lib/python3.12/site-packages/trio/_core/_run.py\", line 2773, in checkpoint_if_cancelled\n    await _core.checkpoint()\n  File \"/home/runner/.local/lib/python3.12/site-packages/trio/_core/_run.py\", line 2751, in checkpoint\n    await _core.wait_task_rescheduled(lambda _: _core.Abort.SUCCEEDED)\n  File \"/home/runner/.local/lib/python3.12/site-packages/trio/_core/_traps.py\", line 178, in wait_task_rescheduled\n    return (await _async_yield(WaitTaskRescheduled(abort_func))).unwrap()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/.local/lib/python3.12/site-packages/outcome/_impl.py\", line 213, in unwrap\n    raise captured_error\n  File \"/home/runner/.local/lib/python3.12/site-packages/trio/_core/_run.py\", line 1437, in raise_cancel\n    raise Cancelled._create()\n",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  }, {
+    "name" : "setup::0",
+    "time" : {
+      "start" : 1736221209154,
+      "stop" : 1736221209154,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "project::0",
+    "time" : {
+      "start" : 1736221209368,
+      "stop" : 1736221209368,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "linux"
+  }, {
+    "name" : "tag",
+    "value" : "linux"
+  }, {
+    "name" : "parentSuite",
+    "value" : "hil.linux.linux"
+  }, {
+    "name" : "tag"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.usefixtures('anyio_backend')"
+  }, {
+    "name" : "tag",
+    "value" : "anyio"
+  }, {
+    "name" : "suite",
+    "value" : "test_rpc"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1120-328"
+  }, {
+    "name" : "thread",
+    "value" : "3779-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.hil.tests.rpc.test_rpc"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "board_name",
+    "value" : "'linux'"
+  }, {
+    "name" : "platform_name",
+    "value" : "'linux'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 22,
+        "unknown" : 0,
+        "total" : 22
+      },
+      "items" : [ {
+        "uid" : "818ad4f8ab1b1a2e",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/20/#testresult/818ad4f8ab1b1a2e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1736204471064,
+          "stop" : 1736204476166,
+          "duration" : 5102
+        }
+      }, {
+        "uid" : "5705ac48825d2b30",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/20/#testresult/5705ac48825d2b30",
+        "status" : "passed",
+        "time" : {
+          "start" : 1736204471064,
+          "stop" : 1736204476166,
+          "duration" : 5102
+        }
+      }, {
+        "uid" : "d4cd537ff3776d58",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/13/#testresult/d4cd537ff3776d58",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735943835147,
+          "stop" : 1735943840246,
+          "duration" : 5099
+        }
+      }, {
+        "uid" : "fe670117e6bbb519",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/10/#testresult/fe670117e6bbb519",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735921719284,
+          "stop" : 1735921724383,
+          "duration" : 5099
+        }
+      }, {
+        "uid" : "c8cad52170fbbce8",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/12/#testresult/c8cad52170fbbce8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735928440219,
+          "stop" : 1735928445290,
+          "duration" : 5071
+        }
+      }, {
+        "uid" : "3a4b5861180c3a7d",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/10/#testresult/3a4b5861180c3a7d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735921719284,
+          "stop" : 1735921724383,
+          "duration" : 5099
+        }
+      }, {
+        "uid" : "69403cdd13fda288",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/9/#testresult/69403cdd13fda288",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735919702763,
+          "stop" : 1735919708023,
+          "duration" : 5260
+        }
+      }, {
+        "uid" : "212826792ab94140",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/5/#testresult/212826792ab94140",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735853967579,
+          "stop" : 1735853972678,
+          "duration" : 5099
+        }
+      }, {
+        "uid" : "466cf98e210abc09",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/4/#testresult/466cf98e210abc09",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735853635487,
+          "stop" : 1735853640600,
+          "duration" : 5113
+        }
+      }, {
+        "uid" : "4d52f69856898369",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/3/#testresult/4d52f69856898369",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735847630307,
+          "stop" : 1735847635428,
+          "duration" : 5121
+        }
+      }, {
+        "uid" : "4c829e4c7811ce33",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/2000/#testresult/4c829e4c7811ce33",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735840812250,
+          "stop" : 1735840817472,
+          "duration" : 5222
+        }
+      }, {
+        "uid" : "8e71c8e9de6d953a",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1999/#testresult/8e71c8e9de6d953a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735840663822,
+          "stop" : 1735840668932,
+          "duration" : 5110
+        }
+      }, {
+        "uid" : "60c5a26f8d0a8774",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1997/#testresult/60c5a26f8d0a8774",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735831683096,
+          "stop" : 1735831688213,
+          "duration" : 5117
+        }
+      }, {
+        "uid" : "18f7d4110d194e56",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1993/#testresult/18f7d4110d194e56",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735830180054,
+          "stop" : 1735830185127,
+          "duration" : 5073
+        }
+      }, {
+        "uid" : "d3b3d05d5708b9f1",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1992/#testresult/d3b3d05d5708b9f1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735824765045,
+          "stop" : 1735824770197,
+          "duration" : 5152
+        }
+      }, {
+        "uid" : "e9271b75730149dc",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1989/#testresult/e9271b75730149dc",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735671301760,
+          "stop" : 1735671306906,
+          "duration" : 5146
+        }
+      }, {
+        "uid" : "49053f55be250064",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/2/#testresult/49053f55be250064",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735671351966,
+          "stop" : 1735671357072,
+          "duration" : 5106
+        }
+      }, {
+        "uid" : "e7da4827a01e2d5e",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1987/#testresult/e7da4827a01e2d5e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735664962347,
+          "stop" : 1735664967452,
+          "duration" : 5105
+        }
+      }, {
+        "uid" : "6ac83cb5ba6edcff",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1986/#testresult/6ac83cb5ba6edcff",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735661471623,
+          "stop" : 1735661476885,
+          "duration" : 5262
+        }
+      }, {
+        "uid" : "c82a8d86d4874c6",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1982/#testresult/c82a8d86d4874c6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735571958198,
+          "stop" : 1735571963312,
+          "duration" : 5114
+        }
+      } ]
+    },
+    "tags" : [ null, "linux", "anyio", "@pytest.mark.usefixtures('anyio_backend')" ]
+  },
+  "source" : "c337d39bbb7f0181.json",
+  "parameterValues" : [ "'linux'", "'linux'" ]
+}
