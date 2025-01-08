@@ -1,0 +1,967 @@
+esptool.py v4.8.1
+Serial port /dev/serial/by-id/usb-Silicon_Labs_CP2102N_USB_to_UART_Bridge_Controller_ca317d585c76eb11ba0a87abb7be2ba5-if00-port0
+Connecting....
+Detecting chip type... ESP32-C3
+Chip is ESP32-C3 (QFN32) (revision v0.3)
+Features: WiFi, BLE, Embedded Flash 4MB (XMC)
+Crystal is 40MHz
+MAC: 84:f7:03:09:96:10
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Erasing flash (this may take a while)...
+Chip erase completed successfully in 20.3s
+Compressed 1058960 bytes to 621115...
+Writing at 0x00000000... (2 %)
+Writing at 0x0001201e... (5 %)
+Writing at 0x0001f6a9... (7 %)
+Writing at 0x0002c71e... (10 %)
+Writing at 0x0003349c... (13 %)
+Writing at 0x000384b8... (15 %)
+Writing at 0x00041532... (18 %)
+Writing at 0x0004772f... (21 %)
+Writing at 0x0004dc44... (23 %)
+Writing at 0x00054160... (26 %)
+Writing at 0x00059aaf... (28 %)
+Writing at 0x0005f733... (31 %)
+Writing at 0x00065f96... (34 %)
+Writing at 0x0006bffe... (36 %)
+Writing at 0x00071df2... (39 %)
+Writing at 0x0007827e... (42 %)
+Writing at 0x0007df6f... (44 %)
+Writing at 0x00083e26... (47 %)
+Writing at 0x000895af... (50 %)
+Writing at 0x0008ee6c... (52 %)
+Writing at 0x000955f6... (55 %)
+Writing at 0x0009afd6... (57 %)
+Writing at 0x000a0b59... (60 %)
+Writing at 0x000a6508... (63 %)
+Writing at 0x000ac7f2... (65 %)
+Writing at 0x000b2cd3... (68 %)
+Writing at 0x000b8d26... (71 %)
+Writing at 0x000bed6d... (73 %)
+Writing at 0x000c4cd0... (76 %)
+Writing at 0x000ca3e1... (78 %)
+Writing at 0x000d0157... (81 %)
+Writing at 0x000d5dfb... (84 %)
+Writing at 0x000dcbf3... (86 %)
+Writing at 0x000e3304... (89 %)
+Writing at 0x000ea2d2... (92 %)
+Writing at 0x000f0dd0... (94 %)
+Writing at 0x000f6ba6... (97 %)
+Writing at 0x000fd2c5... (100 %)
+Wrote 1058960 bytes (621115 compressed) at 0x00000000 in 20.0 seconds (effective 424.5 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+Build:Feb  7 2021
+rst:0x1 (POWERON),boot:0xc (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1738
+load:0x403cc710,len:0xb9c
+load:0x403ce710,len:0x2ec8
+entry 0x403cc71a
+[0;32mI (30) boot: ESP-IDF v5.3 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Jan  8 2025 15:31:13[0m
+[0;32mI (30) boot: chip revision: v0.3[0m
+[0;32mI (33) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (38) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (56) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (71) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (78) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (86) boot:  3 ota_0            OTA app          00 10 00010000 00190000[0m
+[0;32mI (93) boot:  4 ota_1            OTA app          00 11 001a0000 00190000[0m
+[0;32mI (101) boot: End of partition table[0m
+[0;32mI (105) boot: No factory image, trying OTA 0[0m
+[0;32mI (110) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=2ea5ch (191068) map[0m
+[0;32mI (148) esp_image: segment 1: paddr=0003ea84 vaddr=3fc92800 size=01594h (  5524) load[0m
+[0;32mI (150) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=ae634h (714292) map[0m
+[0;32mI (266) esp_image: segment 3: paddr=000ee65c vaddr=3fc93d94 size=01a34h (  6708) load[0m
+[0;32mI (267) esp_image: segment 4: paddr=000f0098 vaddr=40380000 size=127d0h ( 75728) load[0m
+[0;32mI (292) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (363) boot: Set actual ota_seq=1 in otadata[0][0m
+[0;32mI (363) boot: Disabling RNG early entropy source...[0m
+[0;32mI (374) cpu_start: Unicore app[0m
+[0;32mI (382) cpu_start: Pro cpu start user code[0m
+[0;32mI (382) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (382) app_init: Application information:[0m
+[0;32mI (385) app_init: Project name:     fw_update[0m
+[0;32mI (390) app_init: App version:      7e6d39a-dirty[0m
+[0;32mI (396) app_init: Compile time:     Jan  8 2025 15:31:08[0m
+[0;32mI (402) app_init: ELF file SHA256:  39fd758e2...[0m
+[0;32mI (407) app_init: ESP-IDF:          v5.3[0m
+[0;32mI (412) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (416) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (421) efuse_init: Chip rev:         v0.3[0m
+[0;32mI (426) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (433) heap_init: At 3FC9D730 len 000228D0 (138 KiB): RAM[0m
+[0;32mI (439) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (446) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (453) heap_init: At 50000200 len 00001DE8 (7 KiB): RTCRAM[0m
+[0;32mI (461) spi_flash: detected chip: generic[0m
+[0;32mI (464) spi_flash: flash io: dio[0m
+[0;32mI (469) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (475) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (482) main_task: Started on CPU0[0m
+[0;32mI (502) main_task: Calling app_main()[0m
+[0;32mI (502) fw_update: Start FW Update sample.[0m
+[5n
+Type 'help' to get the list of commands.
+Use UP/DOWN arrows to navigate through command history.
+Press TAB when typing command name to auto-complete.
+
+Your terminal application does not support escape sequences.
+
+Line editing and history features are disabled.
+
+On Windows, try using Putty instead.
+esp32> [0;33mW (1012) fw_update: WiFi credentials are not set. Use the shell settings commands to set them.[0m
+
+esp32> 
+esp32> 
+esp32> 
+esp32> settings set wifi/ssid "***JONS_ORANGE_PI_WIFI_SSID***"
+Setting wifi/ssid saved
+esp32> 
+esp32> 
+esp32> 
+esp32> 
+esp32> 
+esp32> settings set wifi/psk "***JONS_ORANGE_PI_WIFI_PSK***"
+Setting wifi/psk saved
+esp32> 
+esp32> ::add-mask::generated-aFtPlwSrVdyFGcHQ
+
+esp32> 
+esp32> 
+esp32> 
+esp32> settings set golioth/psk-id "generated-aFtPlwSrVdyFGcHQ@firmware_ci"
+Setting golioth/psk-id saved
+esp32> 
+esp32> 
+esp32> 
+esp32> 
+esp32> 
+esp32> settings set golioth/psk "generated-aFtPlwSrVdyFGcHQ"
+Setting golioth/psk saved
+esp32> 
+esp32> [0;32mI (21032) pp: pp rom version: 9387209[0m
+[0;32mI (21032) net80211: net80211 rom version: 9387209[0m
+[0;32mI (21052) wifi_init: rx ba win: 6[0m
+[0;32mI (21052) wifi_init: accept mbox: 6[0m
+[0;32mI (21052) wifi_init: tcpip mbox: 32[0m
+[0;32mI (21052) wifi_init: udp mbox: 6[0m
+[0;32mI (21062) wifi_init: tcp mbox: 6[0m
+[0;32mI (21062) wifi_init: tcp tx win: 5760[0m
+[0;32mI (21072) wifi_init: tcp rx win: 5760[0m
+[0;32mI (21072) wifi_init: tcp mss: 1440[0m
+[0;32mI (21072) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (21082) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (21082) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;33mW (21102) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration[0m
+[0;33mW (21142) phy_init: saving new calibration data because of checksum failure, mode(2)[0m
+[0;32mI (22522) esp_netif_handlers: sta ip: 192.168.8.141, mask: 255.255.255.0, gw: 192.168.8.1[0m
+[0;32mI (22522) example_wifi: WiFi Connected. Got IP:192.168.8.141[0m
+[0;32mI (22532) example_wifi: Connected to AP SSID: ***JONS_ORANGE_PI_WIFI_SSID***[0m
+[0;32mI (22532) golioth_mbox: Mbox created, bufsize: 2520, num_items: 20, item_size: 120[0m
+[0;33mW (22542) fw_update: Waiting for connection to Golioth...[0m
+[0;32mI (22572) golioth_coap_client_libcoap: Start CoAP session with host: coaps://coap.golioth.io[0m
+[0;32mI (22572) golioth_coap_client_libcoap: Session PSK-ID: generated-aFtPlwSrVdyFGcHQ@firmware_ci[0m
+[0;32mI (22592) libcoap: Setting PSK key
+[0m
+[0;32mI (22592) golioth_coap_client_libcoap: Entering CoAP I/O loop[0m
+[0;32mI (23182) golioth_coap_client_libcoap: Golioth CoAP client connected[0m
+[0;32mI (23182) fw_update: Golioth client connected[0m
+[0;33mW (23182) fw_update: Current FW Version: 1.2.3[0m
+[0;32mI (23192) golioth_fw_update: Current firmware version: main - 1.2.3[0m
+[0;32mI (23202) golioth_fw_update: State = Idle[0m
+[0;32mI (23202) main_task: Returned from app_main()[0m
+[0;32mI (24732) golioth_fw_update: Waiting to receive OTA manifest[0m
+[0;32mI (24732) golioth_fw_update: State = Idle[0m
+[0;32mI (25232) golioth_fw_update: Received OTA manifest[0m
+[0;32mI (25232) golioth_fw_update: Manifest does not contain target component: main[0m
+[0;32mI (25232) golioth_fw_update: Manifest does not contain different firmware version. Nothing to do.[0m
+[0;32mI (25242) golioth_fw_update: State = Idle[0m
+[0;32mI (27052) golioth_fw_update: Received OTA manifest[0m
+[0;32mI (27052) golioth_fw_update: Current version = 1.2.3, Target version = 255.8.9[0m
+[0;32mI (27052) golioth_fw_update: State = Downloading[0m
+[0;33mW (27532) golioth_coap_client_libcoap: Ignoring request that has aged out, type 2, path /.u/c/main@255.8.9[0m
+Guru Meditation Error: Core  0 panic'ed (Load access fault). Exception was unhandled.
+
+Core  0 register dump:
+MEPC    : 0x4200e6ec  RA      : 0x4200f6d4  SP      : 0x3fcb22c0  GP      : 0x3fc93000  
+TP      : 0x3fcb25e0  T0      : 0x4201d5fc  T1      : 0x4200e6a2  T2      : 0x134d84c2  
+S0/FP   : 0x00000000  S1      : 0x00000000  A0      : 0x3fcafe1c  A1      : 0x00000000  
+A2      : 0x00000011  A3      : 0x3fcb22ec  A4      : 0x00000001  A5      : 0xfffffffd  
+A6      : 0x00000013  A7      : 0x00000001  S2      : 0x3fcafe1c  S3      : 0x3fcb92f8  
+S4      : 0x00000011  S5      : 0x3fc98000  S6      : 0x000038bc  S7      : 0x00000000  
+S8      : 0x00000001  S9      : 0x3fc9870c  S10     : 0x0000003f  S11     : 0x3c0b7000  
+T3      : 0x00000000  T4      : 0x3f000000  T5      : 0x80000000  T6      : 0x00fff000  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000005  MTVAL   : 0x0000000c  
+MHARTID : 0x00000000  
+
+Stack memory:
+3fcb22c0: 0x00000046 0x00000001 0x3fcb2508 0x4200f6d4 0x00000000 0x00000000 0x3fcafdbc 0x403866c0
+3fcb22e0: 0x00000000 0x00000000 0x00000014 0x00010404 0x3fcb95f4 0x00000013 0x00000008 0x3fcb95ea
+3fcb2300: 0x00000000 0x00060000 0xc0380000 0x3c0b7000 0x0000003f 0x3fc9870c 0x00000001 0x00000000
+3fcb2320: 0x000038bc 0x3fc98000 0x3fcb2744 0x3fcb3e74 0x3fcb2744 0x3fcb92f8 0x3fcb2c30 0x4201c738
+3fcb2340: 0x3fcb95f4 0x00000013 0x00000106 0x3fcb3f00 0x3fcb3f90 0x00000046 0x00000015 0x00000000
+3fcb2360: 0x00000000 0x00000000 0x00000001 0x00000000 0x000038bc 0x0000001d 0x00000002 0x3fc97b0c
+3fcb2380: 0x00000021 0x00000004 0x3fcb92f8 0x00000000 0x000038bc 0x3fc98000 0x3fcb2744 0x00000021
+3fcb23a0: 0x3fc97b0c 0x3fcb92f8 0x3fcb2c30 0x4201c948 0x000038bc 0x3fc98000 0x00000046 0x3fc9d000
+3fcb23c0: 0x3fcb322c 0x00000021 0x3fcb2c30 0x4201a08a 0x00000000 0x00000800 0x3fc9870c 0x00000001
+3fcb23e0: 0x3fc9d000 0x3fc98000 0x3fcb2c30 0x4201ca5a 0x3fcb2450 0x00000000 0x3fc9d000 0x00000000
+3fcb2400: 0x3fcb2744 0x3fca70f0 0x3fc9d000 0x40381718 0x3fcb2748 0x000003e8 0x3fc9814c 0x00000046
+3fcb2420: 0x3fcb2450 0x00000000 0x3fc9d000 0x3c0b7000 0x0000003f 0x00000000 0x00000001 0x00000000
+3fcb2440: 0x00000001 0x00000800 0x3fcb2744 0x00000000 0x000038bc 0x00000000 0x3fcb2c30 0x4201cdb8
+3fcb2460: 0x3fcb2498 0x00000000 0x00000001 0x00000000 0x3fcb2748 0x000003e8 0x00000001 0x00000000
+3fcb2480: 0x00000000 0x00000000 0x3fcb2744 0x420187e4 0x000037e0 0x00000000 0x000038bc 0x00000000
+3fcb24a0: 0x00000001 0x00000000 0x00000000 0x4201df14 0x00002710 0x00000000 0x3fcb2508 0x00002710
+3fcb24c0: 0x3fcb2744 0x3c0b7000 0x3fcafe1c 0x420105d6 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5
+3fcb24e0: 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5 0x3fcb2c30 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5 0x3fcb2c30
+3fcb2500: 0xa5a5a5a5 0xa5a5a5a5 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb2520: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb2540: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb2560: 0x00000000 0x00000000 0xffffffff 0xffffffff 0x00000001 0x00000000 0x4200e6a2 0x00000000
+3fcb2580: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb25a0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb25c0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5
+3fcb25e0: 0xa5a5a5a5 0x00000158 0x3fcb22c0 0x00000e89 0x3fc959d8 0x3fc959d8 0x3fcb25e8 0x3fc959d0
+3fcb2600: 0x00000014 0x3fcb297c 0x3fcb297c 0x3fcb25e8 0x00000000 0x00000005 0x3fcb0de4 0x70616f63
+3fcb2620: 0x696c635f 0x00746e65 0x00000000 0x3fcb25e0 0x00000009 0x00000000 0x00000005 0x00000002
+3fcb2640: 0x3fcb29b0 0x420048da 0x0000000b 0x3fc9df34 0x3fc9df9c 0x3fc9e004 0x00000000 0x00000000
+3fcb2660: 0x00000001 0x00000000 0x00000000 0x00000000 0x42004078 0x00000000 0x00000000 0x00000000
+3fcb2680: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb26a0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+
+
+
+ELF file SHA256: 39fd758e2
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40380794
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1738
+load:0x403cc710,len:0xb9c
+load:0x403ce710,len:0x2ec8
+entry 0x403cc71a
+[0;32mI (35) boot: ESP-IDF v5.3 2nd stage bootloader[0m
+[0;32mI (35) boot: compile time Jan  8 2025 15:31:13[0m
+[0;32mI (35) boot: chip revision: v0.3[0m
+[0;32mI (38) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (43) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (47) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (68) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (76) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (83) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (91) boot:  3 ota_0            OTA app          00 10 00010000 00190000[0m
+[0;32mI (98) boot:  4 ota_1            OTA app          00 11 001a0000 00190000[0m
+[0;32mI (106) boot: End of partition table[0m
+[0;32mI (110) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=2ea5ch (191068) map[0m
+[0;32mI (148) esp_image: segment 1: paddr=0003ea84 vaddr=3fc92800 size=01594h (  5524) load[0m
+[0;32mI (150) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=ae634h (714292) map[0m
+[0;32mI (266) esp_image: segment 3: paddr=000ee65c vaddr=3fc93d94 size=01a34h (  6708) load[0m
+[0;32mI (267) esp_image: segment 4: paddr=000f0098 vaddr=40380000 size=127d0h ( 75728) load[0m
+[0;32mI (292) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (292) boot: Disabling RNG early entropy source...[0m
+[0;32mI (303) cpu_start: Unicore app[0m
+[0;32mI (312) cpu_start: Pro cpu start user code[0m
+[0;32mI (312) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (312) app_init: Application information:[0m
+[0;32mI (315) app_init: Project name:     fw_update[0m
+[0;32mI (320) app_init: App version:      7e6d39a-dirty[0m
+[0;32mI (325) app_init: Compile time:     Jan  8 2025 15:31:08[0m
+[0;32mI (331) app_init: ELF file SHA256:  39fd758e2...[0m
+[0;32mI (337) app_init: ESP-IDF:          v5.3[0m
+[0;32mI (341) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (346) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (351) efuse_init: Chip rev:         v0.3[0m
+[0;32mI (356) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (363) heap_init: At 3FC9D730 len 000228D0 (138 KiB): RAM[0m
+[0;32mI (369) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (376) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (383) heap_init: At 50000200 len 00001DE8 (7 KiB): RTCRAM[0m
+[0;32mI (390) spi_flash: detected chip: generic[0m
+[0;32mI (394) spi_flash: flash io: dio[0m
+[0;32mI (398) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (405) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (412) main_task: Started on CPU0[0m
+[0;32mI (432) main_task: Calling app_main()[0m
+[0;32mI (432) fw_update: Start FW Update sample.[0m
+[5n
+Type 'help' to get the list of commands.
+Use UP/DOWN arrows to navigate through command history.
+Press TAB when typing command name to auto-complete.
+
+Your terminal application does not support escape sequences.
+
+Line editing and history features are disabled.
+
+On Windows, try using Putty instead.
+esp32> [0;32mI (942) pp: pp rom version: 9387209[0m
+[0;32mI (962) net80211: net80211 rom version: 9387209[0m
+[0;32mI (982) wifi_init: rx ba win: 6[0m
+[0;32mI (982) wifi_init: accept mbox: 6[0m
+[0;32mI (982) wifi_init: tcpip mbox: 32[0m
+[0;32mI (982) wifi_init: udp mbox: 6[0m
+[0;32mI (992) wifi_init: tcp mbox: 6[0m
+[0;32mI (992) wifi_init: tcp tx win: 5760[0m
+[0;32mI (992) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1002) wifi_init: tcp mss: 1440[0m
+[0;32mI (1002) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1012) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1012) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;32mI (2432) esp_netif_handlers: sta ip: 192.168.8.141, mask: 255.255.255.0, gw: 192.168.8.1[0m
+[0;32mI (2432) example_wifi: WiFi Connected. Got IP:192.168.8.141[0m
+[0;32mI (2442) example_wifi: Connected to AP SSID: ***JONS_ORANGE_PI_WIFI_SSID***[0m
+[0;32mI (2442) golioth_mbox: Mbox created, bufsize: 2520, num_items: 20, item_size: 120[0m
+[0;33mW (2452) fw_update: Waiting for connection to Golioth...[0m
+[0;32mI (2462) golioth_coap_client_libcoap: Start CoAP session with host: coaps://coap.golioth.io[0m
+[0;32mI (2462) golioth_coap_client_libcoap: Session PSK-ID: generated-aFtPlwSrVdyFGcHQ@firmware_ci[0m
+[0;32mI (2482) libcoap: Setting PSK key
+[0m
+[0;32mI (2482) golioth_coap_client_libcoap: Entering CoAP I/O loop[0m
+[0;32mI (3062) golioth_coap_client_libcoap: Golioth CoAP client connected[0m
+[0;32mI (3062) fw_update: Golioth client connected[0m
+[0;33mW (3072) fw_update: Current FW Version: 1.2.3[0m
+[0;32mI (3082) golioth_fw_update: Current firmware version: main - 1.2.3[0m
+[0;32mI (3082) golioth_fw_update: State = Idle[0m
+[0;32mI (3082) main_task: Returned from app_main()[0m
+[0;32mI (5112) golioth_fw_update: Waiting to receive OTA manifest[0m
+[0;32mI (5112) golioth_fw_update: State = Idle[0m
+[0;32mI (5732) golioth_fw_update: Received OTA manifest[0m
+[0;32mI (5732) golioth_fw_update: Current version = 1.2.3, Target version = 255.8.9[0m
+[0;32mI (5732) golioth_fw_update: State = Downloading[0m
+[0;33mW (6542) golioth_coap_client_libcoap: Ignoring request that has aged out, type 2, path /.u/c/main@255.8.9[0m
+Guru Meditation Error: Core  0 panic'ed (Load access fault). Exception was unhandled.
+
+Core  0 register dump:
+MEPC    : 0x4200e6ec  RA      : 0x4200f6d4  SP      : 0x3fcb2110  GP      : 0x3fc93000  
+TP      : 0x3fcb2430  T0      : 0x4201d5fc  T1      : 0x4200e6a2  T2      : 0x2e952eb3  
+S0/FP   : 0x00000000  S1      : 0x00000000  A0      : 0x3fcafc70  A1      : 0x00000000  
+A2      : 0x00000011  A3      : 0x3fcb213c  A4      : 0x00000001  A5      : 0xfffffffd  
+A6      : 0x00000013  A7      : 0x00000001  S2      : 0x3fcafc70  S3      : 0x3fcb3cf4  
+S4      : 0x00000011  S5      : 0x3fc98000  S6      : 0x0000364f  S7      : 0x00000000  
+S8      : 0x00000001  S9      : 0x3fc9870c  S10     : 0x0000003f  S11     : 0x3c0b7000  
+T3      : 0x00000000  T4      : 0x3f000000  T5      : 0x80000000  T6      : 0x00fff000  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000005  MTVAL   : 0x0000000c  
+MHARTID : 0x00000000  
+
+Stack memory:
+3fcb2110: 0x3fcb2430 0x00000001 0x3fcb2358 0x4200f6d4 0x00000000 0x00000000 0x3fcb3080 0x3fcb3de4
+3fcb2130: 0x00000046 0x3fcb2194 0x00000014 0x00010404 0x3fcb9448 0x00000013 0x00000008 0x3fcb943e
+3fcb2150: 0x00000000 0x00060000 0xc0380000 0x3c0b7000 0x0000003f 0x3fc9870c 0x00000001 0x00000000
+3fcb2170: 0x0000364f 0x3fc98000 0x3fcb2598 0x3fcb2860 0x3fcb2598 0x3fcb3cf4 0x3fcb2a84 0x4201c738
+3fcb2190: 0x3fcb9448 0x00000013 0x00000106 0x3fcb3cc8 0x3fcb3de4 0x00000046 0x00000015 0x00000000
+3fcb21b0: 0x00000000 0x00000000 0x00000001 0x00000000 0x0000364f 0x0000001d 0x00000002 0x3fc97b0c
+3fcb21d0: 0x00000021 0x00000004 0x3fcb3cf4 0x00000000 0x0000364f 0x3fc98000 0x3fcb2598 0x00000021
+3fcb21f0: 0x3fc97b0c 0x3fcb3cf4 0x3fcb2a84 0x4201c948 0x0000364f 0x3fc98000 0x00000046 0x3fc9d000
+3fcb2210: 0x3fcb3080 0x00000021 0x3fcb2a84 0x4201a08a 0x00000000 0x00000800 0x3fc9870c 0x00000001
+3fcb2230: 0x3fc9d000 0x3fc98000 0x3fcb2a84 0x4201ca5a 0x3fcb22a0 0x00000000 0x3fc9d000 0x00000000
+3fcb2250: 0x3fcb2598 0x3fcb3d68 0x3fc9d000 0x40381718 0x3fcb259c 0x000003e8 0x3fc9814c 0x00000046
+3fcb2270: 0x3fcb22a0 0x00000000 0x3fc9d000 0x3c0b7000 0x0000003f 0x00000000 0x00000001 0x00000000
+3fcb2290: 0x00000001 0x00000800 0x3fcb2598 0x00000000 0x0000364f 0x00000000 0x3fcb2a84 0x4201cdb8
+3fcb22b0: 0x3fcb22e8 0x00000000 0x00000001 0x00000000 0x3fcb259c 0x000003e8 0x00000001 0x00000000
+3fcb22d0: 0x00000000 0x00000000 0x3fcb2598 0x420187e4 0x00003576 0x00000000 0x0000364f 0x00000000
+3fcb22f0: 0x00000001 0x00000000 0x00000000 0x4201df14 0x00002710 0x00000000 0x3fcb2358 0x00002710
+3fcb2310: 0x3fcb2598 0x3c0b7000 0x3fcafc70 0x420105d6 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5
+3fcb2330: 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5 0x3fcb2a84 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5 0x3fcb2a84
+3fcb2350: 0xa5a5a5a5 0xa5a5a5a5 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb2370: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb2390: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb23b0: 0x00000000 0x00000000 0xffffffff 0xffffffff 0x00000001 0x00000000 0x4200e6a2 0x00000000
+3fcb23d0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb23f0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb2410: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5
+3fcb2430: 0xa5a5a5a5 0xa5a5a5a5 0x00000158 0x3fcb2100 0x00000663 0x3fc959d8 0x3fc959d8 0x3fcb243c
+3fcb2450: 0x3fc959d0 0x00000014 0x3fcb27d0 0x3fcb27d0 0x3fcb243c 0x00000000 0x00000005 0x3fcb0c38
+3fcb2470: 0x70616f63 0x696c635f 0x00746e65 0x00000000 0x3fcb2430 0x00000009 0x00000000 0x00000005
+3fcb2490: 0x00000002 0x3fcb2804 0x420048da 0x0000000b 0x3fc9df34 0x3fc9df9c 0x3fc9e004 0x00000000
+3fcb24b0: 0x00000000 0x00000001 0x00000000 0x00000000 0x00000000 0x42004078 0x00000000 0x00000000
+3fcb24d0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb24f0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+
+
+
+ELF file SHA256: 39fd758e2
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40380794
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1738
+load:0x403cc710,len:0xb9c
+load:0x403ce710,len:0x2ec8
+entry 0x403cc71a
+[0;32mI (35) boot: ESP-IDF v5.3 2nd stage bootloader[0m
+[0;32mI (35) boot: compile time Jan  8 2025 15:31:13[0m
+[0;32mI (35) boot: chip revision: v0.3[0m
+[0;32mI (38) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (43) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (47) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (68) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (76) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (83) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (91) boot:  3 ota_0            OTA app          00 10 00010000 00190000[0m
+[0;32mI (98) boot:  4 ota_1            OTA app          00 11 001a0000 00190000[0m
+[0;32mI (106) boot: End of partition table[0m
+[0;32mI (110) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=2ea5ch (191068) map[0m
+[0;32mI (148) esp_image: segment 1: paddr=0003ea84 vaddr=3fc92800 size=01594h (  5524) load[0m
+[0;32mI (150) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=ae634h (714292) map[0m
+[0;32mI (266) esp_image: segment 3: paddr=000ee65c vaddr=3fc93d94 size=01a34h (  6708) load[0m
+[0;32mI (267) esp_image: segment 4: paddr=000f0098 vaddr=40380000 size=127d0h ( 75728) load[0m
+[0;32mI (292) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (292) boot: Disabling RNG early entropy source...[0m
+[0;32mI (303) cpu_start: Unicore app[0m
+[0;32mI (312) cpu_start: Pro cpu start user code[0m
+[0;32mI (312) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (312) app_init: Application information:[0m
+[0;32mI (315) app_init: Project name:     fw_update[0m
+[0;32mI (320) app_init: App version:      7e6d39a-dirty[0m
+[0;32mI (325) app_init: Compile time:     Jan  8 2025 15:31:08[0m
+[0;32mI (331) app_init: ELF file SHA256:  39fd758e2...[0m
+[0;32mI (337) app_init: ESP-IDF:          v5.3[0m
+[0;32mI (341) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (346) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (351) efuse_init: Chip rev:         v0.3[0m
+[0;32mI (356) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (363) heap_init: At 3FC9D730 len 000228D0 (138 KiB): RAM[0m
+[0;32mI (369) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (376) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (383) heap_init: At 50000200 len 00001DE8 (7 KiB): RTCRAM[0m
+[0;32mI (390) spi_flash: detected chip: generic[0m
+[0;32mI (394) spi_flash: flash io: dio[0m
+[0;32mI (398) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (405) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (412) main_task: Started on CPU0[0m
+[0;32mI (432) main_task: Calling app_main()[0m
+[0;32mI (432) fw_update: Start FW Update sample.[0m
+[5n
+Type 'help' to get the list of commands.
+Use UP/DOWN arrows to navigate through command history.
+Press TAB when typing command name to auto-complete.
+
+Your terminal application does not support escape sequences.
+
+Line editing and history features are disabled.
+
+On Windows, try using Putty instead.
+esp32> [0;32mI (942) pp: pp rom version: 9387209[0m
+[0;32mI (962) net80211: net80211 rom version: 9387209[0m
+[0;32mI (982) wifi_init: rx ba win: 6[0m
+[0;32mI (982) wifi_init: accept mbox: 6[0m
+[0;32mI (982) wifi_init: tcpip mbox: 32[0m
+[0;32mI (982) wifi_init: udp mbox: 6[0m
+[0;32mI (992) wifi_init: tcp mbox: 6[0m
+[0;32mI (992) wifi_init: tcp tx win: 5760[0m
+[0;32mI (992) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1002) wifi_init: tcp mss: 1440[0m
+[0;32mI (1002) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1012) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1012) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;32mI (2422) esp_netif_handlers: sta ip: 192.168.8.141, mask: 255.255.255.0, gw: 192.168.8.1[0m
+[0;32mI (2422) example_wifi: WiFi Connected. Got IP:192.168.8.141[0m
+[0;32mI (2432) example_wifi: Connected to AP SSID: ***JONS_ORANGE_PI_WIFI_SSID***[0m
+[0;32mI (2432) golioth_mbox: Mbox created, bufsize: 2520, num_items: 20, item_size: 120[0m
+[0;33mW (2442) fw_update: Waiting for connection to Golioth...[0m
+[0;32mI (2452) golioth_coap_client_libcoap: Start CoAP session with host: coaps://coap.golioth.io[0m
+[0;32mI (2462) golioth_coap_client_libcoap: Session PSK-ID: generated-aFtPlwSrVdyFGcHQ@firmware_ci[0m
+[0;32mI (2462) libcoap: Setting PSK key
+[0m
+[0;32mI (2472) golioth_coap_client_libcoap: Entering CoAP I/O loop[0m
+[0;32mI (2942) golioth_coap_client_libcoap: Golioth CoAP client connected[0m
+[0;32mI (2942) fw_update: Golioth client connected[0m
+[0;33mW (2942) fw_update: Current FW Version: 1.2.3[0m
+[0;32mI (2952) golioth_fw_update: Current firmware version: main - 1.2.3[0m
+[0;32mI (2962) golioth_fw_update: State = Idle[0m
+[0;32mI (2962) main_task: Returned from app_main()[0m
+[0;32mI (4702) golioth_fw_update: Waiting to receive OTA manifest[0m
+[0;32mI (4702) golioth_fw_update: State = Idle[0m
+[0;32mI (5112) golioth_fw_update: Received OTA manifest[0m
+[0;32mI (5112) golioth_fw_update: Current version = 1.2.3, Target version = 255.8.9[0m
+[0;32mI (5112) golioth_fw_update: State = Downloading[0m
+[0;33mW (5932) golioth_coap_client_libcoap: Ignoring request that has aged out, type 2, path /.u/c/main@255.8.9[0m
+Guru Meditation Error: Core  0 panic'ed (Load access fault). Exception was unhandled.
+
+Core  0 register dump:
+MEPC    : 0x4200e6ec  RA      : 0x4200f6d4  SP      : 0x3fcb2110  GP      : 0x3fc93000  
+TP      : 0x3fcb2430  T0      : 0x4201d5fc  T1      : 0x4200e6a2  T2      : 0xcdcca8bb  
+S0/FP   : 0x00000000  S1      : 0x00000000  A0      : 0x3fcafc70  A1      : 0x00000000  
+A2      : 0x00000011  A3      : 0x3fcb213c  A4      : 0x00000001  A5      : 0xfffffffd  
+A6      : 0x00000013  A7      : 0x00000001  S2      : 0x3fcafc70  S3      : 0x3fcb3cf4  
+S4      : 0x00000011  S5      : 0x3fc98000  S6      : 0x0000356c  S7      : 0x00000000  
+S8      : 0x00000001  S9      : 0x3fc9870c  S10     : 0x0000003f  S11     : 0x3c0b7000  
+T3      : 0x00000000  T4      : 0x3f000000  T5      : 0x80000000  T6      : 0x00fff000  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000005  MTVAL   : 0x0000000c  
+MHARTID : 0x00000000  
+
+Stack memory:
+3fcb2110: 0x3fcb2430 0x00000001 0x3fcb2358 0x4200f6d4 0x00000000 0x00000000 0x3fcafc10 0x403866c0
+3fcb2130: 0x00000000 0x00000000 0x00000014 0x00010404 0x3fcb9448 0x00000013 0x00000008 0x3fcb943e
+3fcb2150: 0x00000000 0x00060000 0xc0380000 0x3c0b7000 0x0000003f 0x3fc9870c 0x00000001 0x00000000
+3fcb2170: 0x0000356c 0x3fc98000 0x3fcb2598 0x3fcb2860 0x3fcb2598 0x3fcb3cf4 0x3fcb2a84 0x4201c738
+3fcb2190: 0x3fcb9448 0x00000013 0x00000106 0x3fcb3cc8 0x3fcb3de4 0x00000046 0x00000015 0x00000000
+3fcb21b0: 0x00000000 0x00000000 0x00000001 0x00000000 0x0000356c 0x0000001d 0x00000002 0x3fc97b0c
+3fcb21d0: 0x00000021 0x00000004 0x3fcb3cf4 0x00000000 0x0000356c 0x3fc98000 0x3fcb2598 0x00000021
+3fcb21f0: 0x3fc97b0c 0x3fcb3cf4 0x3fcb2a84 0x4201c948 0x0000356c 0x3fc98000 0x00000046 0x3fc9d000
+3fcb2210: 0x3fcb3080 0x00000021 0x3fcb2a84 0x4201a08a 0x00000000 0x00000800 0x3fc9870c 0x00000001
+3fcb2230: 0x3fc9d000 0x3fc98000 0x3fcb2a84 0x4201ca5a 0x3fcb22a0 0x00000000 0x3fc9d000 0x00000000
+3fcb2250: 0x3fcb2598 0x3fcb28b0 0x3fc9d000 0x40381718 0x3fcb259c 0x000003e8 0x3fc9814c 0x00000046
+3fcb2270: 0x3fcb22a0 0x00000000 0x3fc9d000 0x3c0b7000 0x0000003f 0x00000000 0x00000001 0x00000000
+3fcb2290: 0x00000001 0x00000800 0x3fcb2598 0x00000000 0x0000356c 0x00000000 0x3fcb2a84 0x4201cdb8
+3fcb22b0: 0x3fcb22e8 0x00000000 0x00000001 0x00000000 0x3fcb259c 0x000003e8 0x00000001 0x00000000
+3fcb22d0: 0x00000000 0x00000000 0x3fcb2598 0x420187e4 0x00003493 0x00000000 0x0000356c 0x00000000
+3fcb22f0: 0x00000001 0x00000000 0x00000000 0x4201df14 0x00002710 0x00000000 0x3fcb2358 0x00002710
+3fcb2310: 0x3fcb2598 0x3c0b7000 0x3fcafc70 0x420105d6 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5
+3fcb2330: 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5 0x3fcb2a84 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5 0x3fcb2a84
+3fcb2350: 0xa5a5a5a5 0xa5a5a5a5 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb2370: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb2390: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb23b0: 0x00000000 0x00000000 0xffffffff 0xffffffff 0x00000001 0x00000000 0x4200e6a2 0x00000000
+3fcb23d0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb23f0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb2410: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5
+3fcb2430: 0xa5a5a5a5 0xa5a5a5a5 0x00000158 0x3fcb2100 0x00000625 0x3fc959d8 0x3fc959d8 0x3fcb243c
+3fcb2450: 0x3fc959d0 0x00000014 0x3fcb27d0 0x3fcb27d0 0x3fcb243c 0x00000000 0x00000005 0x3fcb0c38
+3fcb2470: 0x70616f63 0x696c635f 0x00746e65 0x00000000 0x3fcb2430 0x00000009 0x00000000 0x00000005
+3fcb2490: 0x00000002 0x3fcb2804 0x420048da 0x0000000b 0x3fc9df34 0x3fc9df9c 0x3fc9e004 0x00000000
+3fcb24b0: 0x00000000 0x00000001 0x00000000 0x00000000 0x00000000 0x42004078 0x00000000 0x00000000
+3fcb24d0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb24f0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+
+
+
+ELF file SHA256: 39fd758e2
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40380794
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1738
+load:0x403cc710,len:0xb9c
+load:0x403ce710,len:0x2ec8
+entry 0x403cc71a
+[0;32mI (35) boot: ESP-IDF v5.3 2nd stage bootloader[0m
+[0;32mI (35) boot: compile time Jan  8 2025 15:31:13[0m
+[0;32mI (35) boot: chip revision: v0.3[0m
+[0;32mI (38) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (43) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (47) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (68) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (76) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (83) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (91) boot:  3 ota_0            OTA app          00 10 00010000 00190000[0m
+[0;32mI (98) boot:  4 ota_1            OTA app          00 11 001a0000 00190000[0m
+[0;32mI (106) boot: End of partition table[0m
+[0;32mI (110) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=2ea5ch (191068) map[0m
+[0;32mI (148) esp_image: segment 1: paddr=0003ea84 vaddr=3fc92800 size=01594h (  5524) load[0m
+[0;32mI (150) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=ae634h (714292) map[0m
+[0;32mI (266) esp_image: segment 3: paddr=000ee65c vaddr=3fc93d94 size=01a34h (  6708) load[0m
+[0;32mI (267) esp_image: segment 4: paddr=000f0098 vaddr=40380000 size=127d0h ( 75728) load[0m
+[0;32mI (292) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (292) boot: Disabling RNG early entropy source...[0m
+[0;32mI (303) cpu_start: Unicore app[0m
+[0;32mI (312) cpu_start: Pro cpu start user code[0m
+[0;32mI (312) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (312) app_init: Application information:[0m
+[0;32mI (315) app_init: Project name:     fw_update[0m
+[0;32mI (320) app_init: App version:      7e6d39a-dirty[0m
+[0;32mI (325) app_init: Compile time:     Jan  8 2025 15:31:08[0m
+[0;32mI (331) app_init: ELF file SHA256:  39fd758e2...[0m
+[0;32mI (337) app_init: ESP-IDF:          v5.3[0m
+[0;32mI (341) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (346) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (351) efuse_init: Chip rev:         v0.3[0m
+[0;32mI (356) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (363) heap_init: At 3FC9D730 len 000228D0 (138 KiB): RAM[0m
+[0;32mI (369) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (376) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (383) heap_init: At 50000200 len 00001DE8 (7 KiB): RTCRAM[0m
+[0;32mI (390) spi_flash: detected chip: generic[0m
+[0;32mI (394) spi_flash: flash io: dio[0m
+[0;32mI (398) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (405) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (412) main_task: Started on CPU0[0m
+[0;32mI (432) main_task: Calling app_main()[0m
+[0;32mI (432) fw_update: Start FW Update sample.[0m
+[5n
+Type 'help' to get the list of commands.
+Use UP/DOWN arrows to navigate through command history.
+Press TAB when typing command name to auto-complete.
+
+Your terminal application does not support escape sequences.
+
+Line editing and history features are disabled.
+
+On Windows, try using Putty instead.
+esp32> [0;32mI (942) pp: pp rom version: 9387209[0m
+[0;32mI (962) net80211: net80211 rom version: 9387209[0m
+[0;32mI (982) wifi_init: rx ba win: 6[0m
+[0;32mI (982) wifi_init: accept mbox: 6[0m
+[0;32mI (982) wifi_init: tcpip mbox: 32[0m
+[0;32mI (982) wifi_init: udp mbox: 6[0m
+[0;32mI (992) wifi_init: tcp mbox: 6[0m
+[0;32mI (992) wifi_init: tcp tx win: 5760[0m
+[0;32mI (992) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1002) wifi_init: tcp mss: 1440[0m
+[0;32mI (1002) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1012) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1012) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;32mI (2422) esp_netif_handlers: sta ip: 192.168.8.141, mask: 255.255.255.0, gw: 192.168.8.1[0m
+[0;32mI (2422) example_wifi: WiFi Connected. Got IP:192.168.8.141[0m
+[0;32mI (2432) example_wifi: Connected to AP SSID: ***JONS_ORANGE_PI_WIFI_SSID***[0m
+[0;32mI (2432) golioth_mbox: Mbox created, bufsize: 2520, num_items: 20, item_size: 120[0m
+[0;33mW (2442) fw_update: Waiting for connection to Golioth...[0m
+[0;32mI (2452) golioth_coap_client_libcoap: Start CoAP session with host: coaps://coap.golioth.io[0m
+[0;32mI (2452) golioth_coap_client_libcoap: Session PSK-ID: generated-aFtPlwSrVdyFGcHQ@firmware_ci[0m
+[0;32mI (2472) libcoap: Setting PSK key
+[0m
+[0;32mI (2472) golioth_coap_client_libcoap: Entering CoAP I/O loop[0m
+[0;32mI (2922) golioth_coap_client_libcoap: Golioth CoAP client connected[0m
+[0;32mI (2922) fw_update: Golioth client connected[0m
+[0;33mW (2932) fw_update: Current FW Version: 1.2.3[0m
+[0;32mI (2942) golioth_fw_update: Current firmware version: main - 1.2.3[0m
+[0;32mI (2942) golioth_fw_update: State = Idle[0m
+[0;32mI (2942) main_task: Returned from app_main()[0m
+[0;32mI (4292) golioth_fw_update: Waiting to receive OTA manifest[0m
+[0;32mI (4302) golioth_fw_update: State = Idle[0m
+[0;32mI (4912) golioth_fw_update: Received OTA manifest[0m
+[0;32mI (4912) golioth_fw_update: Current version = 1.2.3, Target version = 255.8.9[0m
+[0;32mI (4912) golioth_fw_update: State = Downloading[0m
+[0;33mW (5522) golioth_coap_client_libcoap: Ignoring request that has aged out, type 2, path /.u/c/main@255.8.9[0m
+Guru Meditation Error: Core  0 panic'ed (Load access fault). Exception was unhandled.
+
+Core  0 register dump:
+MEPC    : 0x4200e6ec  RA      : 0x4200f6d4  SP      : 0x3fcb2110  GP      : 0x3fc93000  
+TP      : 0x3fcb2430  T0      : 0x4201d5fc  T1      : 0x4200e6a2  T2      : 0x0d4da93b  
+S0/FP   : 0x00000000  S1      : 0x00000000  A0      : 0x3fcafc70  A1      : 0x00000000  
+A2      : 0x00000011  A3      : 0x3fcb213c  A4      : 0x00000001  A5      : 0xfffffffd  
+A6      : 0x00000013  A7      : 0x00000001  S2      : 0x3fcafc70  S3      : 0x3fcb2824  
+S4      : 0x00000011  S5      : 0x3fc98000  S6      : 0x00003245  S7      : 0x00000000  
+S8      : 0x00000001  S9      : 0x3fc9870c  S10     : 0x0000003f  S11     : 0x3c0b7000  
+T3      : 0x00000000  T4      : 0x3f000000  T5      : 0x80000000  T6      : 0x00fff000  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000005  MTVAL   : 0x0000000c  
+MHARTID : 0x00000000  
+
+Stack memory:
+3fcb2110: 0x00000046 0x00000001 0x3fcb2358 0x4200f6d4 0x00000000 0x00000000 0x3fcafc10 0x403866c0
+3fcb2130: 0x00000000 0x00000000 0x00000014 0x00010404 0x3fc9f7c4 0x00000013 0x00000008 0x3fc9f7ba
+3fcb2150: 0x00000000 0x00060000 0xc0380000 0x3c0b7000 0x0000003f 0x3fc9870c 0x00000001 0x00000000
+3fcb2170: 0x00003245 0x3fc98000 0x3fcb2598 0x3fcb9178 0x3fcb2598 0x3fcb2824 0x3fcb2a84 0x4201c738
+3fcb2190: 0x3fc9f7c4 0x00000013 0x00000106 0x3fcb3ce0 0x3fcb3dfc 0x00000046 0x00000015 0x00000000
+3fcb21b0: 0x00000000 0x00000000 0x00000001 0x00000000 0x00003245 0x0000001d 0x00000002 0x3fc97b0c
+3fcb21d0: 0x00000021 0x00000004 0x3fcb2824 0x00000000 0x00003245 0x3fc98000 0x3fcb2598 0x00000021
+3fcb21f0: 0x3fc97b0c 0x3fcb2824 0x3fcb2a84 0x4201c948 0x00003245 0x3fc98000 0x00000046 0x3fc9d000
+3fcb2210: 0x3fcb3098 0x00000021 0x3fcb2a84 0x4201a08a 0x00000000 0x00000800 0x3fc9870c 0x00000001
+3fcb2230: 0x3fc9d000 0x3fc98000 0x3fcb2a84 0x4201ca5a 0x3fcb22a0 0x00000000 0x3fc9d000 0x00000000
+3fcb2250: 0x3fcb2598 0x3fcb91c8 0x3fc9d000 0x40381718 0x3fcb259c 0x000003e8 0x3fc9814c 0x00000046
+3fcb2270: 0x3fcb22a0 0x00000000 0x3fc9d000 0x3c0b7000 0x0000003f 0x00000000 0x00000001 0x00000000
+3fcb2290: 0x00000001 0x00000800 0x3fcb2598 0x00000000 0x00003245 0x00000000 0x3fcb2a84 0x4201cdb8
+3fcb22b0: 0x3fcb22e8 0x00000000 0x00000001 0x00000000 0x3fcb259c 0x000003e8 0x00000001 0x00000000
+3fcb22d0: 0x00000000 0x00000000 0x3fcb2598 0x420187e4 0x00003213 0x00000000 0x00003245 0x00000000
+3fcb22f0: 0x00000001 0x00000000 0x00000000 0x4201df14 0x00002710 0x00000000 0x3fcb2358 0x00002710
+3fcb2310: 0x3fcb2598 0x3c0b7000 0x3fcafc70 0x420105d6 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5
+3fcb2330: 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5 0x3fcb2a84 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5 0x3fcb2a84
+3fcb2350: 0xa5a5a5a5 0xa5a5a5a5 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb2370: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb2390: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb23b0: 0x00000000 0x00000000 0xffffffff 0xffffffff 0x00000001 0x00000000 0x4200e6a2 0x00000000
+3fcb23d0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb23f0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb2410: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5
+3fcb2430: 0xa5a5a5a5 0xa5a5a5a5 0x00000158 0x3fcb2110 0x000005fc 0x3fc959d8 0x3fc959d8 0x3fcb243c
+3fcb2450: 0x3fc959d0 0x00000014 0x3fcb27d0 0x3fcb27d0 0x3fcb243c 0x00000000 0x00000005 0x3fcb0c38
+3fcb2470: 0x70616f63 0x696c635f 0x00746e65 0x00000000 0x3fcb2430 0x00000009 0x00000000 0x00000005
+3fcb2490: 0x00000002 0x3fcb2804 0x420048da 0x0000000b 0x3fc9df34 0x3fc9df9c 0x3fc9e004 0x00000000
+3fcb24b0: 0x00000000 0x00000001 0x00000000 0x00000000 0x00000000 0x42004078 0x00000000 0x00000000
+3fcb24d0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb24f0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+
+
+
+ELF file SHA256: 39fd758e2
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40380794
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1738
+load:0x403cc710,len:0xb9c
+load:0x403ce710,len:0x2ec8
+entry 0x403cc71a
+[0;32mI (35) boot: ESP-IDF v5.3 2nd stage bootloader[0m
+[0;32mI (35) boot: compile time Jan  8 2025 15:31:13[0m
+[0;32mI (35) boot: chip revision: v0.3[0m
+[0;32mI (38) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (43) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (47) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (68) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (76) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (83) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (91) boot:  3 ota_0            OTA app          00 10 00010000 00190000[0m
+[0;32mI (98) boot:  4 ota_1            OTA app          00 11 001a0000 00190000[0m
+[0;32mI (106) boot: End of partition table[0m
+[0;32mI (110) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=2ea5ch (191068) map[0m
+[0;32mI (148) esp_image: segment 1: paddr=0003ea84 vaddr=3fc92800 size=01594h (  5524) load[0m
+[0;32mI (150) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=ae634h (714292) map[0m
+[0;32mI (266) esp_image: segment 3: paddr=000ee65c vaddr=3fc93d94 size=01a34h (  6708) load[0m
+[0;32mI (267) esp_image: segment 4: paddr=000f0098 vaddr=40380000 size=127d0h ( 75728) load[0m
+[0;32mI (292) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (292) boot: Disabling RNG early entropy source...[0m
+[0;32mI (303) cpu_start: Unicore app[0m
+[0;32mI (312) cpu_start: Pro cpu start user code[0m
+[0;32mI (312) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (312) app_init: Application information:[0m
+[0;32mI (315) app_init: Project name:     fw_update[0m
+[0;32mI (320) app_init: App version:      7e6d39a-dirty[0m
+[0;32mI (325) app_init: Compile time:     Jan  8 2025 15:31:08[0m
+[0;32mI (331) app_init: ELF file SHA256:  39fd758e2...[0m
+[0;32mI (337) app_init: ESP-IDF:          v5.3[0m
+[0;32mI (341) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (346) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (351) efuse_init: Chip rev:         v0.3[0m
+[0;32mI (356) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (363) heap_init: At 3FC9D730 len 000228D0 (138 KiB): RAM[0m
+[0;32mI (369) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (376) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (383) heap_init: At 50000200 len 00001DE8 (7 KiB): RTCRAM[0m
+[0;32mI (390) spi_flash: detected chip: generic[0m
+[0;32mI (394) spi_flash: flash io: dio[0m
+[0;32mI (398) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (405) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (412) main_task: Started on CPU0[0m
+[0;32mI (432) main_task: Calling app_main()[0m
+[0;32mI (432) fw_update: Start FW Update sample.[0m
+[5n
+Type 'help' to get the list of commands.
+Use UP/DOWN arrows to navigate through command history.
+Press TAB when typing command name to auto-complete.
+
+Your terminal application does not support escape sequences.
+
+Line editing and history features are disabled.
+
+On Windows, try using Putty instead.
+esp32> [0;32mI (942) pp: pp rom version: 9387209[0m
+[0;32mI (962) net80211: net80211 rom version: 9387209[0m
+[0;32mI (982) wifi_init: rx ba win: 6[0m
+[0;32mI (982) wifi_init: accept mbox: 6[0m
+[0;32mI (982) wifi_init: tcpip mbox: 32[0m
+[0;32mI (982) wifi_init: udp mbox: 6[0m
+[0;32mI (992) wifi_init: tcp mbox: 6[0m
+[0;32mI (992) wifi_init: tcp tx win: 5760[0m
+[0;32mI (992) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1002) wifi_init: tcp mss: 1440[0m
+[0;32mI (1002) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1012) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1012) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;32mI (2422) esp_netif_handlers: sta ip: 192.168.8.141, mask: 255.255.255.0, gw: 192.168.8.1[0m
+[0;32mI (2422) example_wifi: WiFi Connected. Got IP:192.168.8.141[0m
+[0;32mI (2432) example_wifi: Connected to AP SSID: ***JONS_ORANGE_PI_WIFI_SSID***[0m
+[0;32mI (2432) golioth_mbox: Mbox created, bufsize: 2520, num_items: 20, item_size: 120[0m
+[0;33mW (2442) fw_update: Waiting for connection to Golioth...[0m
+[0;32mI (2462) golioth_coap_client_libcoap: Start CoAP session with host: coaps://coap.golioth.io[0m
+[0;32mI (2462) golioth_coap_client_libcoap: Session PSK-ID: generated-aFtPlwSrVdyFGcHQ@firmware_ci[0m
+[0;32mI (2472) libcoap: Setting PSK key
+[0m
+[0;32mI (2482) golioth_coap_client_libcoap: Entering CoAP I/O loop[0m
+[0;32mI (2942) golioth_coap_client_libcoap: Golioth CoAP client connected[0m
+[0;32mI (2942) fw_update: Golioth client connected[0m
+[0;33mW (2942) fw_update: Current FW Version: 1.2.3[0m
+[0;32mI (2962) golioth_fw_update: Current firmware version: main - 1.2.3[0m
+[0;32mI (2962) golioth_fw_update: State = Idle[0m
+[0;32mI (2962) main_task: Returned from app_main()[0m
+[0;32mI (4662) golioth_fw_update: Waiting to receive OTA manifest[0m
+[0;32mI (4672) golioth_fw_update: State = Idle[0m
+[0;32mI (5752) golioth_fw_update: Received OTA manifest[0m
+[0;32mI (5752) golioth_fw_update: Current version = 1.2.3, Target version = 255.8.9[0m
+[0;32mI (5752) golioth_fw_update: State = Downloading[0m
+[0;33mW (6512) golioth_coap_client_libcoap: Ignoring request that has aged out, type 2, path /.u/c/main@255.8.9[0m
+Guru Meditation Error: Core  0 panic'ed (Load access fault). Exception was unhandled.
+
+Core  0 register dump:
+MEPC    : 0x4200e6ec  RA      : 0x4200f6d4  SP      : 0x3fcb2110  GP      : 0x3fc93000  
+TP      : 0x3fcb2430  T0      : 0x4201d5fc  T1      : 0x4200e6a2  T2      : 0x72480c2a  
+S0/FP   : 0x00000000  S1      : 0x00000000  A0      : 0x3fcafc70  A1      : 0x00000000  
+A2      : 0x00000011  A3      : 0x3fcb213c  A4      : 0x00000001  A5      : 0xfffffffd  
+A6      : 0x00000013  A7      : 0x00000001  S2      : 0x3fcafc70  S3      : 0x3fcb2e74  
+S4      : 0x00000011  S5      : 0x3fc98000  S6      : 0x00003ecb  S7      : 0x00000000  
+S8      : 0x00000001  S9      : 0x3fc9870c  S10     : 0x0000003f  S11     : 0x3c0b7000  
+T3      : 0x00000000  T4      : 0x3f000000  T5      : 0x80000000  T6      : 0x00fff000  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000005  MTVAL   : 0x0000000c  
+MHARTID : 0x00000000  
+
+Stack memory:
+3fcb2110: 0x00000046 0x00000001 0x3fcb2358 0x4200f6d4 0x00000000 0x00000000 0x3fcafc10 0x403866c0
+3fcb2130: 0x00000000 0x00000000 0x00000014 0x00010404 0x3fcb94dc 0x00000013 0x00000008 0x3fcb94d2
+3fcb2150: 0x00000000 0x00060000 0xc0380000 0x3c0b7000 0x0000003f 0x3fc9870c 0x00000001 0x00000000
+3fcb2170: 0x00003ecb 0x3fc98000 0x3fcb2598 0x3fcb2860 0x3fcb2598 0x3fcb2e74 0x3fcb2a84 0x4201c738
+3fcb2190: 0x3fcb94dc 0x00000013 0x00000106 0x3fcb3d98 0x3fcb3de4 0x00000046 0x00000015 0x00000000
+3fcb21b0: 0x00000000 0x00000000 0x00000001 0x00000000 0x00003ecb 0x0000001d 0x00000002 0x3fc97b0c
+3fcb21d0: 0x00000021 0x00000004 0x3fcb2e74 0x00000000 0x00003ecb 0x3fc98000 0x3fcb2598 0x00000021
+3fcb21f0: 0x3fc97b0c 0x3fcb2e74 0x3fcb2a84 0x4201c948 0x00003ecb 0x3fc98000 0x00000046 0x3fc9d000
+3fcb2210: 0x3fcb3080 0x00000021 0x3fcb2a84 0x4201a08a 0x00000000 0x00000800 0x3fc9870c 0x00000001
+3fcb2230: 0x3fc9d000 0x3fc98000 0x3fcb2a84 0x4201ca5a 0x3fcb22a0 0x00000000 0x3fc9d000 0x00000000
+3fcb2250: 0x3fcb2598 0x3fcb2ee8 0x3fc9d000 0x40381718 0x3fcb259c 0x000003e8 0x3fc9814c 0x00000046
+3fcb2270: 0x3fcb22a0 0x00000000 0x3fc9d000 0x3c0b7000 0x0000003f 0x00000000 0x00000001 0x00000000
+3fcb2290: 0x00000001 0x00000800 0x3fcb2598 0x00000000 0x00003ecb 0x00000000 0x3fcb2a84 0x4201cdb8
+3fcb22b0: 0x3fcb22e8 0x00000000 0x00000001 0x00000000 0x3fcb259c 0x000003e8 0x00000001 0x00000000
+3fcb22d0: 0x00000000 0x00000000 0x3fcb2598 0x420187e4 0x00003ea0 0x00000000 0x00003ecb 0x00000000
+3fcb22f0: 0x00000000 0x00000000 0x000c2560 0x4201df14 0x00002710 0x000007e1 0x3fcb2358 0x00002710
+3fcb2310: 0x3fcb2598 0x3c0b7000 0x3fcafc70 0x420105d6 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5
+3fcb2330: 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5 0x3fcb2a84 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5 0x3fcb2a84
+3fcb2350: 0xa5a5a5a5 0xa5a5a5a5 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb2370: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb2390: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb23b0: 0x00000000 0x00000000 0xffffffff 0xffffffff 0x00000001 0x00000000 0x4200e6a2 0x00000000
+3fcb23d0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb23f0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb2410: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5
+3fcb2430: 0xa5a5a5a5 0xa5a5a5a5 0x00000158 0x3fcb2110 0x00000715 0x3fc959d8 0x3fc959d8 0x3fcb243c
+3fcb2450: 0x3fc959d0 0x00000014 0x3fcb27d0 0x3fcb27d0 0x3fcb243c 0x00000000 0x00000005 0x3fcb0c38
+3fcb2470: 0x70616f63 0x696c635f 0x00746e65 0x00000000 0x3fcb2430 0x00000009 0x00000000 0x00000005
+3fcb2490: 0x00000002 0x3fcb2804 0x420048da 0x0000000b 0x3fc9df34 0x3fc9df9c 0x3fc9e004 0x00000000
+3fcb24b0: 0x00000000 0x00000001 0x00000000 0x00000000 0x00000000 0x42004078 0x00000000 0x00000000
+3fcb24d0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb24f0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+
+
+
+ELF file SHA256: 39fd758e2
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40380794
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1738
+load:0x403cc710,len:0xb9c
+load:0x403ce710,len:0x2ec8
+entry 0x403cc71a
+[0;32mI (35) boot: ESP-IDF v5.3 2nd stage bootloader[0m
+[0;32mI (35) boot: compile time Jan  8 2025 15:31:13[0m
+[0;32mI (35) boot: chip revision: v0.3[0m
+[0;32mI (38) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (43) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (47) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (68) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (76) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (83) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (91) boot:  3 ota_0            OTA app          00 10 00010000 00190000[0m
+[0;32mI (98) boot:  4 ota_1            OTA app          00 11 001a0000 00190000[0m
+[0;32mI (106) boot: End of partition table[0m
+[0;32mI (110) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=2ea5ch (191068) map[0m
+[0;32mI (148) esp_image: segment 1: paddr=0003ea84 vaddr=3fc92800 size=01594h (  5524) load[0m
+[0;32mI (150) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=ae634h (714292) map[0m
+[0;32mI (266) esp_image: segment 3: paddr=000ee65c vaddr=3fc93d94 size=01a34h (  6708) load[0m
+[0;32mI (267) esp_image: segment 4: paddr=000f0098 vaddr=40380000 size=127d0h ( 75728) load[0m
+[0;32mI (292) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (292) boot: Disabling RNG early entropy source...[0m
+[0;32mI (303) cpu_start: Unicore app[0m
+[0;32mI (312) cpu_start: Pro cpu start user code[0m
+[0;32mI (312) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (312) app_init: Application information:[0m
+[0;32mI (315) app_init: Project name:     fw_update[0m
+[0;32mI (320) app_init: App version:      7e6d39a-dirty[0m
+[0;32mI (325) app_init: Compile time:     Jan  8 2025 15:31:08[0m
+[0;32mI (331) app_init: ELF file SHA256:  39fd758e2...[0m
+[0;32mI (337) app_init: ESP-IDF:          v5.3[0m
+[0;32mI (341) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (346) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (351) efuse_init: Chip rev:         v0.3[0m
+[0;32mI (356) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (363) heap_init: At 3FC9D730 len 000228D0 (138 KiB): RAM[0m
+[0;32mI (369) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (376) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (383) heap_init: At 50000200 len 00001DE8 (7 KiB): RTCRAM[0m
+[0;32mI (390) spi_flash: detected chip: generic[0m
+[0;32mI (394) spi_flash: flash io: dio[0m
+[0;32mI (398) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (405) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (412) main_task: Started on CPU0[0m
+[0;32mI (432) main_task: Calling app_main()[0m
+[0;32mI (432) fw_update: Start FW Update sample.[0m
+[5n
+Type 'help' to get the list of commands.
+Use UP/DOWN arrows to navigate through command history.
+Press TAB when typing command name to auto-complete.
+
+Your terminal application does not support escape sequences.
+
+Line editing and history features are disabled.
+
+On Windows, try using Putty instead.
+esp32> [0;32mI (942) pp: pp rom version: 9387209[0m
+[0;32mI (962) net80211: net80211 rom version: 9387209[0m
+[0;32mI (982) wifi_init: rx ba win: 6[0m
+[0;32mI (982) wifi_init: accept mbox: 6[0m
+[0;32mI (982) wifi_init: tcpip mbox: 32[0m
+[0;32mI (982) wifi_init: udp mbox: 6[0m
+[0;32mI (992) wifi_init: tcp mbox: 6[0m
+[0;32mI (992) wifi_init: tcp tx win: 5760[0m
+[0;32mI (992) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1002) wifi_init: tcp mss: 1440[0m
+[0;32mI (1002) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1012) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1012) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;32mI (2422) esp_netif_handlers: sta ip: 192.168.8.141, mask: 255.255.255.0, gw: 192.168.8.1[0m
+[0;32mI (2422) example_wifi: WiFi Connected. Got IP:192.168.8.141[0m
+[0;32mI (2432) example_wifi: Connected to AP SSID: ***JONS_ORANGE_PI_WIFI_SSID***[0m
+[0;32mI (2432) golioth_mbox: Mbox created, bufsize: 2520, num_items: 20, item_size: 120[0m
+[0;33mW (2442) fw_update: Waiting for connection to Golioth...[0m
+[0;32mI (2462) golioth_coap_client_libcoap: Start CoAP session with host: coaps://coap.golioth.io[0m
+[0;32mI (2462) golioth_coap_client_libcoap: Session PSK-ID: generated-aFtPlwSrVdyFGcHQ@firmware_ci[0m
+[0;32mI (2472) libcoap: Setting PSK key
+[0m
+[0;32mI (2482) golioth_coap_client_libcoap: Entering CoAP I/O loop[0m
+[0;32mI (3692) golioth_coap_client_libcoap: Golioth CoAP client connected[0m
+[0;32mI (3692) fw_update: Golioth client connected[0m
+[0;33mW (3702) fw_update: Current FW Version: 1.2.3[0m
+[0;32mI (3712) golioth_fw_update: Current firmware version: main - 1.2.3[0m
+[0;32mI (3712) golioth_fw_update: State = Idle[0m
+[0;32mI (3712) main_task: Returned from app_main()[0m
+[0;32mI (5732) golioth_fw_update: Waiting to receive OTA manifest[0m
+[0;32mI (5732) golioth_fw_update: State = Idle[0m
+[0;32mI (6342) golioth_fw_update: Received OTA manifest[0m
+[0;32mI (6342) golioth_fw_update: Current version = 1.2.3, Target version = 255.8.9[0m
+[0;32mI (6342) golioth_fw_update: State = Downloading[0m
+[0;33mW (6752) golioth_coap_client_libcoap: Ignoring request that has aged out, type 2, path /.u/c/main@255.8.9[0m

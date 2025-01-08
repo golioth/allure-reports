@@ -1,0 +1,559 @@
+{
+  "uid" : "3fa1bc9a7a576ded",
+  "name" : "test_set_int_range_out_max",
+  "fullName" : "tests.hil.tests.settings.test_settings#test_set_int_range_out_max",
+  "historyId" : "8403aefb301a9b3c2bc5aa9cecd1d81e",
+  "time" : {
+    "start" : 1736351720935,
+    "stop" : 1736351720935,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "statusMessage" : "trio.TooSlowError",
+  "statusTrace" : "deadline = 40586.331507435774\n\n    def fail_at(deadline: float) -> AbstractContextManager[trio.CancelScope]:  # type: ignore[misc]\n        \"\"\"Creates a cancel scope with the given deadline, and raises an error if it\n        is actually cancelled.\n    \n        This function and :func:`move_on_at` are similar in that both create a\n        cancel scope with a given absolute deadline, and if the deadline expires\n        then both will cause :exc:`Cancelled` to be raised within the scope. The\n        difference is that when the :exc:`Cancelled` exception reaches\n        :func:`move_on_at`, it's caught and discarded. When it reaches\n        :func:`fail_at`, then it's caught and :exc:`TooSlowError` is raised in its\n        place.\n    \n        Args:\n          deadline (float): The deadline.\n    \n        Raises:\n          TooSlowError: if a :exc:`Cancelled` exception is raised in this scope\n            and caught by the context manager.\n          ValueError: if deadline is NaN.\n    \n        \"\"\"\n        with move_on_at(deadline) as scope:\n>           yield scope\n\n/usr/local/lib/python3.11/dist-packages/trio/_timeouts.py:121: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/local/lib/python3.11/dist-packages/board.py:72: in wait_for_regex_in_line\n    chunk = await self.receive_some()\n/usr/local/lib/python3.11/dist-packages/board.py:46: in receive_some\n    return await self.serial.receive_some()\n/usr/local/lib/python3.11/dist-packages/trio_serial/abstract.py:215: in receive_some\n    return bytes(await self._recv(max_bytes))\n/usr/local/lib/python3.11/dist-packages/trio_serial/posix.py:159: in _recv\n    await trio.lowlevel.wait_readable(self.fd)\n/usr/local/lib/python3.11/dist-packages/trio/_core/_generated_io_epoll.py:45: in wait_readable\n    return await GLOBAL_RUN_CONTEXT.runner.io_manager.wait_readable(fd)\n/usr/local/lib/python3.11/dist-packages/trio/_core/_io_epoll.py:334: in wait_readable\n    await self._epoll_wait(fd, \"read_task\")\n/usr/local/lib/python3.11/dist-packages/trio/_core/_io_epoll.py:309: in _epoll_wait\n    await _core.wait_task_rescheduled(abort)\n/usr/local/lib/python3.11/dist-packages/trio/_core/_traps.py:178: in wait_task_rescheduled\n    return (await _async_yield(WaitTaskRescheduled(abort_func))).unwrap()\n/usr/local/lib/python3.11/dist-packages/outcome/_impl.py:213: in unwrap\n    raise captured_error\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n    def raise_cancel() -> NoReturn:\n>       raise Cancelled._create()\nE       trio.Cancelled: Cancelled\n\n/usr/local/lib/python3.11/dist-packages/trio/_core/_run.py:1437: Cancelled\n\nDuring handling of the above exception, another exception occurred:\n\nproject = <golioth.golioth.Project object at 0xffffaef3a750>\nboard = <espidfboard.ESPIDFBoard object at 0xffffaf6e2010>\ndevice = <golioth.golioth.Device object at 0xffffaddb15d0>\n\n    @pytest.fixture(autouse=True, scope=\"module\")\n    async def setup(project, board, device):\n        # Delete any existing device-level settings\n    \n        settings = await device.settings.get_all()\n        for setting in settings:\n            if 'deviceId' in setting:\n                await device.settings.delete(setting['key'])\n    \n        # Ensure the project-level settings exist\n    \n        await project.settings.set('TEST_INT', 1)\n        await project.settings.set('TEST_INT_RANGE', 1)\n        await project.settings.set('TEST_BOOL', False)\n        await project.settings.set('TEST_FLOAT', 1.23)\n        await project.settings.set('TEST_STRING', \"foo\")\n        await project.settings.set('TEST_NOT_REGISTERED', 27)\n        await project.settings.set('TEST_WRONG_TYPE', \"wrong\")\n        await project.settings.set('TEST_CANCEL', False)\n        await project.settings.set('TEST_RESTART', False)\n    \n        # Set Golioth credentials\n        golioth_cred = (await device.credentials.list())[0]\n        await board.set_golioth_psk_credentials(golioth_cred.identity, golioth_cred.key)\n    \n        # Confirm connection to Golioth\n>       assert None != await board.wait_for_regex_in_line('Golioth CoAP client connected', timeout_s=120)\n\ntests/hil/tests/settings/test_settings.py:42: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/local/lib/python3.11/dist-packages/board.py:54: in wait_for_regex_in_line\n    with trio.fail_after(timeout_s):\n/usr/lib/python3.11/contextlib.py:155: in __exit__\n    self.gen.throw(typ, value, traceback)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\ndeadline = 40586.331507435774\n\n    def fail_at(deadline: float) -> AbstractContextManager[trio.CancelScope]:  # type: ignore[misc]\n        \"\"\"Creates a cancel scope with the given deadline, and raises an error if it\n        is actually cancelled.\n    \n        This function and :func:`move_on_at` are similar in that both create a\n        cancel scope with a given absolute deadline, and if the deadline expires\n        then both will cause :exc:`Cancelled` to be raised within the scope. The\n        difference is that when the :exc:`Cancelled` exception reaches\n        :func:`move_on_at`, it's caught and discarded. When it reaches\n        :func:`fail_at`, then it's caught and :exc:`TooSlowError` is raised in its\n        place.\n    \n        Args:\n          deadline (float): The deadline.\n    \n        Raises:\n          TooSlowError: if a :exc:`Cancelled` exception is raised in this scope\n            and caught by the context manager.\n          ValueError: if deadline is NaN.\n    \n        \"\"\"\n        with move_on_at(deadline) as scope:\n            yield scope\n        if scope.cancelled_caught:\n>           raise TooSlowError\nE           trio.TooSlowError\n\n/usr/local/lib/python3.11/dist-packages/trio/_timeouts.py:123: TooSlowError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "baud",
+    "time" : {
+      "start" : 1736351537414,
+      "stop" : 1736351537414,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "port",
+    "time" : {
+      "start" : 1736351537413,
+      "stop" : 1736351537413,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "fw_image",
+    "time" : {
+      "start" : 1736351537417,
+      "stop" : 1736351537417,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "wifi_psk",
+    "time" : {
+      "start" : 1736351537416,
+      "stop" : 1736351537416,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "serial_number",
+    "time" : {
+      "start" : 1736351537418,
+      "stop" : 1736351537418,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "api_key",
+    "time" : {
+      "start" : 1736351537419,
+      "stop" : 1736351537419,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device_name",
+    "time" : {
+      "start" : 1736351537419,
+      "stop" : 1736351537419,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "project",
+    "time" : {
+      "start" : 1736351537420,
+      "stop" : 1736351537882,
+      "duration" : 462
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "anyio_backend",
+    "time" : {
+      "start" : 1736351537411,
+      "stop" : 1736351537412,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "bmp_port",
+    "time" : {
+      "start" : 1736351537418,
+      "stop" : 1736351537418,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "wifi_ssid",
+    "time" : {
+      "start" : 1736351537415,
+      "stop" : 1736351537415,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "setup",
+    "time" : {
+      "start" : 1736351589838,
+      "stop" : 1736351718159,
+      "duration" : 128321
+    },
+    "status" : "broken",
+    "statusMessage" : "trio.TooSlowError\n",
+    "statusTrace" : "  File \"/usr/local/lib/python3.11/dist-packages/pluggy/_callers.py\", line 167, in _multicall\n    teardown.throw(outcome._exception)\n  File \"/usr/local/lib/python3.11/dist-packages/_pytest/setuponly.py\", line 36, in pytest_fixture_setup\n    return (yield)\n            ^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/pluggy/_callers.py\", line 103, in _multicall\n    res = hook_impl.function(*args)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/_pytest/fixtures.py\", line 1140, in pytest_fixture_setup\n    result = call_fixture_func(fixturefunc, request, kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/_pytest/fixtures.py\", line 891, in call_fixture_func\n    fixture_result = next(generator)\n                     ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/anyio/pytest_plugin.py\", line 83, in wrapper\n    yield runner.run_fixture(func, kwargs)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/anyio/_backends/_trio.py\", line 946, in run_fixture\n    return self._call_in_runner_task(fixture_func, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/anyio/_backends/_trio.py\", line 921, in _call_in_runner_task\n    return outcome_holder[0].unwrap()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/outcome/_impl.py\", line 213, in unwrap\n    raise captured_error\n  File \"/usr/local/lib/python3.11/dist-packages/anyio/_backends/_trio.py\", line 891, in _run_tests_and_fixtures\n    retval = await coro\n             ^^^^^^^^^^\n  File \"/__w/golioth-firmware-sdk/golioth-firmware-sdk/tests/hil/tests/settings/test_settings.py\", line 42, in setup\n    assert None != await board.wait_for_regex_in_line('Golioth CoAP client connected', timeout_s=120)\n  File \"/usr/local/lib/python3.11/dist-packages/board.py\", line 54, in wait_for_regex_in_line\n    with trio.fail_after(timeout_s):\n  File \"/usr/lib/python3.11/contextlib.py\", line 155, in __exit__\n    self.gen.throw(typ, value, traceback)\n  File \"/usr/local/lib/python3.11/dist-packages/trio/_timeouts.py\", line 123, in fail_at\n    raise TooSlowError\n",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  }, {
+    "name" : "device",
+    "time" : {
+      "start" : 1736351588790,
+      "stop" : 1736351589838,
+      "duration" : 1048
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "board_name",
+    "time" : {
+      "start" : 1736351537412,
+      "stop" : 1736351537413,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "board",
+    "time" : {
+      "start" : 1736351537883,
+      "stop" : 1736351588789,
+      "duration" : 50906
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "api_url",
+    "time" : {
+      "start" : 1736351537420,
+      "stop" : 1736351537420,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "project::0",
+    "time" : {
+      "start" : 1736351724659,
+      "stop" : 1736351724661,
+      "duration" : 2
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "device::0",
+    "time" : {
+      "start" : 1736351724248,
+      "stop" : 1736351724653,
+      "duration" : 405
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "board::0",
+    "time" : {
+      "start" : 1736351724655,
+      "stop" : 1736351724657,
+      "duration" : 2
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "esp32c3_devkitm_espidf"
+  }, {
+    "name" : "tag",
+    "value" : "esp-idf"
+  }, {
+    "name" : "parentSuite",
+    "value" : "hil.esp-idf.esp32c3_devkitm_espidf"
+  }, {
+    "name" : "tag",
+    "value" : "jons_orange_pi"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.usefixtures('anyio_backend')"
+  }, {
+    "name" : "tag",
+    "value" : "anyio"
+  }, {
+    "name" : "suite",
+    "value" : "test_settings"
+  }, {
+    "name" : "host",
+    "value" : "014c34ad1589"
+  }, {
+    "name" : "thread",
+    "value" : "263-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.hil.tests.settings.test_settings"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "board_name",
+    "value" : "'esp32c3_devkitm_espidf'"
+  }, {
+    "name" : "platform_name",
+    "value" : "'esp-idf'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 2,
+        "skipped" : 0,
+        "passed" : 27,
+        "unknown" : 0,
+        "total" : 29
+      },
+      "items" : [ {
+        "uid" : "88ca639258f0e885",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/4/#testresult/88ca639258f0e885",
+        "status" : "passed",
+        "time" : {
+          "start" : 1736350104870,
+          "stop" : 1736350117226,
+          "duration" : 12356
+        }
+      }, {
+        "uid" : "2174eb6af4d1526e",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/29/#testresult/2174eb6af4d1526e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1736355542540,
+          "stop" : 1736355554854,
+          "duration" : 12314
+        }
+      }, {
+        "uid" : "687daa4fea69d4ee",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/27/#testresult/687daa4fea69d4ee",
+        "status" : "passed",
+        "time" : {
+          "start" : 1736280686688,
+          "stop" : 1736280699054,
+          "duration" : 12366
+        }
+      }, {
+        "uid" : "633ebf6b547beb58",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/26/#testresult/633ebf6b547beb58",
+        "status" : "passed",
+        "time" : {
+          "start" : 1736279154896,
+          "stop" : 1736279167199,
+          "duration" : 12303
+        }
+      }, {
+        "uid" : "7a4a5553bcbd168e",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/25//#testresult/7a4a5553bcbd168e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1736271235057,
+          "stop" : 1736271247433,
+          "duration" : 12376
+        }
+      }, {
+        "uid" : "b9684d517d000947",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/24/#testresult/b9684d517d000947",
+        "status" : "passed",
+        "time" : {
+          "start" : 1736264960978,
+          "stop" : 1736264973213,
+          "duration" : 12235
+        }
+      }, {
+        "uid" : "f6eedc84eb63f1d4",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1/#testresult/f6eedc84eb63f1d4",
+        "status" : "broken",
+        "statusDetails" : "trio.TooSlowError",
+        "time" : {
+          "start" : 1736222037371,
+          "stop" : 1736222037371,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "9f7b4109f92356eb",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/20/#testresult/9f7b4109f92356eb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1736205244021,
+          "stop" : 1736205256525,
+          "duration" : 12504
+        }
+      }, {
+        "uid" : "e02cd680db8fcbb7",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/20/#testresult/e02cd680db8fcbb7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1736205244021,
+          "stop" : 1736205256525,
+          "duration" : 12504
+        }
+      }, {
+        "uid" : "bf32777c07794d13",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/13/#testresult/bf32777c07794d13",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735944522872,
+          "stop" : 1735944535159,
+          "duration" : 12287
+        }
+      }, {
+        "uid" : "369335df104e5a25",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/10/#testresult/369335df104e5a25",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735923862326,
+          "stop" : 1735923874715,
+          "duration" : 12389
+        }
+      }, {
+        "uid" : "b778baf98a17e810",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/12/#testresult/b778baf98a17e810",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735929140122,
+          "stop" : 1735929152480,
+          "duration" : 12358
+        }
+      }, {
+        "uid" : "b081e131be0a2bda",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/10/#testresult/b081e131be0a2bda",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735923862326,
+          "stop" : 1735923874715,
+          "duration" : 12389
+        }
+      }, {
+        "uid" : "1d584a275a8256e9",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/9/#testresult/1d584a275a8256e9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735920411039,
+          "stop" : 1735920423377,
+          "duration" : 12338
+        }
+      }, {
+        "uid" : "a00c7efec66eb15c",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/5/#testresult/a00c7efec66eb15c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735855875848,
+          "stop" : 1735855888208,
+          "duration" : 12360
+        }
+      }, {
+        "uid" : "104c3dfa4e195e9d",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/4/#testresult/104c3dfa4e195e9d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735854345950,
+          "stop" : 1735854358208,
+          "duration" : 12258
+        }
+      }, {
+        "uid" : "5417ecc782bcb51e",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/3/#testresult/5417ecc782bcb51e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735848331281,
+          "stop" : 1735848343682,
+          "duration" : 12401
+        }
+      }, {
+        "uid" : "4e00f381537ee95",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/2000/#testresult/4e00f381537ee95",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735842871539,
+          "stop" : 1735842883897,
+          "duration" : 12358
+        }
+      }, {
+        "uid" : "ee489fe9a793084b",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1999/#testresult/ee489fe9a793084b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735841354227,
+          "stop" : 1735841366564,
+          "duration" : 12337
+        }
+      }, {
+        "uid" : "243593b92ab0d38a",
+        "reportUrl" : "https://golioth.github.io/allure-reports/branch/1997/#testresult/243593b92ab0d38a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735834177309,
+          "stop" : 1735834189658,
+          "duration" : 12349
+        }
+      } ]
+    },
+    "tags" : [ "esp-idf", "jons_orange_pi", "anyio", "esp32c3_devkitm_espidf", "@pytest.mark.usefixtures('anyio_backend')" ]
+  },
+  "source" : "3fa1bc9a7a576ded.json",
+  "parameterValues" : [ "'esp32c3_devkitm_espidf'", "'esp-idf'" ]
+}
