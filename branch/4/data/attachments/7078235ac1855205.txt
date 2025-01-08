@@ -1,0 +1,25 @@
+ERROR    trio.async_generator_errors:_asyncgens.py:206 Exception ignored during finalization of async generator 'linuxboard.LinuxBoard.started' -- surround your use of the generator in 'async with aclosing(...):' to raise exceptions like this in the context where they're generated
+  + Exception Group Traceback (most recent call last):
+  |   File "/home/runner/.local/lib/python3.12/site-packages/trio/_core/_asyncgens.py", line 202, in _finalize_one
+  |     with _core.CancelScope(shield=True) as cancel_scope:
+  |   File "/home/runner/.local/lib/python3.12/site-packages/trio/_core/_run.py", line 656, in __exit__
+  |     raise remaining_error_after_cancel_scope
+  |   File "/home/runner/.local/lib/python3.12/site-packages/trio/_core/_asyncgens.py", line 204, in _finalize_one
+  |     await agen.aclose()
+  |   File "/home/runner/.local/lib/python3.12/site-packages/linuxboard.py", line 19, in started
+  |     async with trio.open_nursery() as nursery:
+  |   File "/home/runner/.local/lib/python3.12/site-packages/trio/_core/_run.py", line 971, in __aexit__
+  |     raise combined_error_from_nursery
+  | BaseExceptionGroup: Exceptions from Trio nursery (2 sub-exceptions)
+  | This is a "loose" ExceptionGroup, and may be collapsed by Trio if it only contains one exception - typically after `Cancelled` has been stripped from it. Note this has consequences for exception handling, and strict_exception_groups=True is recommended.
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/runner/.local/lib/python3.12/site-packages/trio/_subprocess.py", line 765, in _run_process
+    |     raise subprocess.CalledProcessError(
+    | subprocess.CalledProcessError: Command '['stdbuf', '-o0', 'build/hil']' died with <Signals.SIGABRT: 6>.
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/runner/.local/lib/python3.12/site-packages/linuxboard.py", line 22, in started
+    |     yield self
+    | GeneratorExit
+    +------------------------------------

@@ -1,0 +1,129 @@
+[0;32mI (24590) test_ota: Manifest received[0m
+[0;32mI (24590) test_ota: Manifest successfully decoded[0m
+[0;32mI (24590) test_ota: Manifest doesn't have main or walrus components, skipping this one.[0m
+[0;32mI (24610) test_ota: Manifest received[0m
+[0;32mI (24610) test_ota: Manifest successfully decoded[0m
+Guru Meditation Error: Core  0 panic'ed (Interrupt wdt timeout on CPU0). 
+
+Core  0 register dump:
+PC      : 0x4008a0fa  PS      : 0x00060c34  A0      : 0x80089d50  A1      : 0x3ffbe260  
+A2      : 0x3ffd6c80  A3      : 0xffffffff  A4      : 0x0d3add7b  A5      : 0x00060c23  
+A6      : 0xb33fffff  A7      : 0x0000cdcd  A8      : 0x8008a104  A9      : 0x3ffbe240  
+A10     : 0x00000000  A11     : 0x83ccbe2a  A12     : 0x2f7341d5  A13     : 0x00000000  
+A14     : 0x3ffb45b8  A15     : 0x3ffb45b8  SAR     : 0x0000001c  EXCCAUSE: 0x00000005  
+EXCVADDR: 0x00000000  LBEG    : 0x4000c2e0  LEND    : 0x4000c2f6  LCOUNT  : 0x00000000  
+
+
+Backtrace: 0x4008a0f7:0x3ffbe260 0x40089d4d:0x3ffbe290 0x400dda03:0x3ffbe2d0 0x400dda4d:0x3ffbe2f0 0x400e0366:0x3ffbe310 0x400dde00:0x3ffbe340 0x400de0fa:0x3ffbe370 0x400de2c9:0x3ffbe420 0x400e01a3:0x3ffbe470 0x400db01e:0x3ffbe4f0 0x400d9ae9:0x3ffbe530 0x4016bbe7:0x3ffbe580
+
+
+Core  1 register dump:
+PC      : 0x400879ee  PS      : 0x00060434  A0      : 0x800d43d9  A1      : 0x3ffbf150  
+A2      : 0x00000000  A3      : 0x00060023  A4      : 0x00060023  A5      : 0x00000001  
+A6      : 0x3ffb0a14  A7      : 0xffffffff  A8      : 0x800ee2fa  A9      : 0x3ffbf110  
+A10     : 0x00000000  A11     : 0x0000abab  A12     : 0x8008a1f1  A13     : 0x3ffbfa60  
+A14     : 0x00000003  A15     : 0x00060023  SAR     : 0x00000000  EXCCAUSE: 0x00000005  
+EXCVADDR: 0x00000000  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+
+Backtrace: 0x400879eb:0x3ffbf150 0x400d43d6:0x3ffbf170 0x4008b23f:0x3ffbf190
+
+
+
+
+ELF file SHA256: 29b6f7855
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15648
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jan  8 2025 15:16:14[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2bab0h (178864) map[0m
+[0;32mI (165) esp_image: segment 1: paddr=0003bad8 vaddr=3ffb0000 size=04064h ( 16484) load[0m
+[0;32mI (172) esp_image: segment 2: paddr=0003fb44 vaddr=40080000 size=004d4h (  1236) load[0m
+[0;32mI (172) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=9dad4h (645844) map[0m
+[0;32mI (401) esp_image: segment 4: paddr=000ddafc vaddr=400804d4 size=1669ch ( 91804) load[0m
+[0;32mI (448) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (448) boot: Disabling RNG early entropy source...[0m
+[0;32mI (460) cpu_start: Multicore app[0m
+[0;32mI (469) cpu_start: Pro cpu start user code[0m
+[0;32mI (469) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (469) app_init: Application information:[0m
+[0;32mI (472) app_init: Project name:     test[0m
+[0;32mI (476) app_init: App version:      592c035-dirty[0m
+[0;32mI (482) app_init: Compile time:     Jan  8 2025 15:16:09[0m
+[0;32mI (488) app_init: ELF file SHA256:  29b6f7855...[0m
+[0;32mI (493) app_init: ESP-IDF:          v5.3[0m
+[0;32mI (498) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (502) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (507) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (512) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (519) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (525) heap_init: At 3FFBC260 len 00023DA0 (143 KiB): DRAM[0m
+[0;32mI (532) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (538) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (544) heap_init: At 40096B70 len 00009490 (37 KiB): IRAM[0m
+[0;32mI (552) spi_flash: detected chip: generic[0m
+[0;32mI (555) spi_flash: flash io: dio[0m
+[0;32mI (560) main_task: Started on CPU0[0m
+[0;32mI (570) main_task: Calling app_main()[0m
+[5n
+Type 'help' to get the list of commands.
+Use UP/DOWN arrows to navigate through command history.
+Press TAB when typing command name to auto-complete.
+
+Your terminal application does not support escape sequences.
+
+Line editing and history features are disabled.
+
+On Windows, try using Putty instead.
+esp32> [0;32mI (1090) wifi_init: rx ba win: 6[0m
+[0;32mI (1110) wifi_init: accept mbox: 6[0m
+[0;32mI (1110) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1110) wifi_init: udp mbox: 6[0m
+[0;32mI (1120) wifi_init: tcp mbox: 6[0m
+[0;32mI (1120) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1120) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1130) wifi_init: tcp mss: 1440[0m
+[0;32mI (1130) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1130) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1140) phy_init: phy_version 4830,54550f7,Jun 20 2024,14:22:08[0m
+[0;32mI (2660) esp_netif_handlers: sta ip: 192.168.8.131, mask: 255.255.255.0, gw: 192.168.8.1[0m
+[0;32mI (2660) example_wifi: WiFi Connected. Got IP:192.168.8.131[0m
+[0;32mI (2670) example_wifi: Connected to AP SSID: ***TIMS_ORANGE_PI_WIFI_SSID***[0m
+[0;32mI (2670) golioth_mbox: Mbox created, bufsize: 2688, num_items: 20, item_size: 128[0m
+[0;32mI (2690) golioth_coap_client_libcoap: Start CoAP session with host: coaps://coap.golioth.io[0m
+[0;32mI (2700) golioth_coap_client_libcoap: Session PSK-ID: generated-CwQimHxRqbQvPkaN@firmware_ci[0m
+[0;32mI (2710) libcoap: Setting PSK key
+[0m
+[0;32mI (2720) golioth_coap_client_libcoap: Entering CoAP I/O loop[0m
+[0;32mI (3380) golioth_coap_client_libcoap: Golioth CoAP client connected[0m
+[0;32mI (3520) test_ota: Manifest received[0m
+[0;32mI (3520) test_ota: Manifest successfully decoded[0m
+[0;32mI (3520) test_ota: Manifest received[0m
+[0;32mI (3520) test_ota: Manifest successfully decoded[0m
+[0;32mI (3590) test_ota: Start resumable blockwise download test[0m
+[0;32mI (3590) test_ota: Starting block download from 0[0m
+[0;33mW (3830) golioth_coap_client_libcoap: Ignoring request that has aged out, type 2, path /.u/c/walrus@0.4.2[0m
