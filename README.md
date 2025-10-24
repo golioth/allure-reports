@@ -13,9 +13,9 @@ user TTT on Stack Overflow](https://stackoverflow.com/a/73000056).
 
 1. `git checkout gh-pages`
 2. Get the branch root commit: `git log gh-pages --reverse`
-    - Call this <old-repo-root-commit-id>
+    - Call this `<old-repo-root-commit-id>`
 3. Get a commit from ~3 weeks ago: `git log`
-    - Call this <new-repo-root-commit-id>
+    - Call this `<new-repo-root-commit-id>`
 4. Run the following commands:
 
     ```
