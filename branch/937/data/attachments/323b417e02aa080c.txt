@@ -1,0 +1,28 @@
+ERROR    trio.async_generator_errors:_asyncgens.py:238 Exception ignored during finalization of async generator 'pytest_hil.native_sim.NativeSimBoard.started' -- surround your use of the generator in 'async with aclosing(...):' to raise exceptions like this in the context where they're generated
+  + Exception Group Traceback (most recent call last):
+  |   File "/root/venv/lib/python3.13/site-packages/trio/_core/_asyncgens.py", line 232, in _finalize_one
+  |     with _core.CancelScope(shield=True) as cancel_scope:
+  |          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  |   File "/root/venv/lib/python3.13/site-packages/trio/_core/_run.py", line 724, in __exit__
+  |     raise remaining_error_after_cancel_scope
+  |   File "/root/venv/lib/python3.13/site-packages/trio/_core/_asyncgens.py", line 236, in _finalize_one
+  |     await agen.aclose()
+  |   File "/root/venv/lib/python3.13/site-packages/pytest_hil/native_sim.py", line 16, in started
+  |     async with trio.open_nursery() as nursery:
+  |                ~~~~~~~~~~~~~~~~~^^
+  |   File "/root/venv/lib/python3.13/site-packages/trio/_core/_run.py", line 1125, in __aexit__
+  |     raise combined_error_from_nursery
+  | BaseExceptionGroup: Exceptions from Trio nursery (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/root/venv/lib/python3.13/site-packages/trio/_subprocess.py", line 775, in _run_process
+    |     raise subprocess.CalledProcessError(
+    |     ...<4 lines>...
+    |     )
+    | subprocess.CalledProcessError: Command '['hil-out/ota/zephyr/zephyr.exe']' died with <Signals.SIGSEGV: 11>.
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "/root/venv/lib/python3.13/site-packages/pytest_hil/native_sim.py", line 24, in started
+    |     yield self
+    | GeneratorExit
+    +------------------------------------
