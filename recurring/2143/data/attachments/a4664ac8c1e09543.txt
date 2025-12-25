@@ -1,0 +1,962 @@
+DEBUG    twister_harness.device.factory:factory.py:37 Get device type "native"
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce416a0>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce2b610> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce54690>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'193'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'projects 0-1/1'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:16:20 GMT'), (b'x-kong-upstream-latency', b'20'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce560d0>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5cf50> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81cfa7a80>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'POST']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'POST']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'POST']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'297'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:16:21 GMT'), (b'x-kong-upstream-latency', b'14'), (b'x-kong-proxy-latency', b'1'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: POST https://api.golioth.io/v1/projects/firmware_ci/devices "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'POST']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81cfa7a80>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5d590> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81cf8a210>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'POST']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'POST']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'POST']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'205'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:16:21 GMT'), (b'x-kong-upstream-latency', b'20'), (b'x-kong-proxy-latency', b'6'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: POST https://api.golioth.io/v1/projects/firmware_ci/devices/694d9b9552ca448f6e67c17c/credentials "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'POST']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    twister_harness.device.binary_adapter:utils.py:37 Running command: /__w/golioth-firmware-sdk/golioth-firmware-sdk/twister-out/native_sim_native_64/host/modules/lib/golioth-firmware-sdk/examples/zephyr/hello/sample.golioth.hello.cid/zephyr/zephyr.exe
+DEBUG    twister_harness.helpers.utils:utils.py:22 Found matching key: CONFIG_SHELL_PROMPT_UART="uart:~$ "
+INFO     twister_harness.fixtures:fixtures.py:79 Wait for prompt
+DEBUG    twister_harness.helpers.shell:shell.py:49 Got prompt
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce67350>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5d9f0> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce67460>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'207'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'credentials 0-1/1'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:16:23 GMT'), (b'x-kong-upstream-latency', b'13'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/devices/694d9b9552ca448f6e67c17c/credentials "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [msettings set golioth/psk-id generated-MlkqIqbCqOJQCOGR@firmware_ci
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: Setting golioth/psk-id to generated-MlkqIqbCqOJQCOGR@firmware_ci
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: Setting golioth/psk-id saved as generated-MlkqIqbCqOJQCOGR@firmware_ci
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [msettings set golioth/psk generated-MlkqIqbCqOJQCOGR
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: Setting golioth/psk to generated-MlkqIqbCqOJQCOGR
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: Setting golioth/psk saved as generated-MlkqIqbCqOJQCOGR
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:00:05.080,003] [0m<inf> golioth_coap_client_zephyr: Golioth CoAP client connected[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:00:05.080,003] [0m<inf> hello_zephyr: Sending hello! 0[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:00:05.080,003] [0m<inf> hello_zephyr: Golioth client connected[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:00:05.080,003] [0m<inf> golioth_coap_client_zephyr: Entering CoAP I/O loop[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:00:10.090,000] [0m<inf> hello_zephyr: Sending hello! 1[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:00:15.100,000] [0m<inf> hello_zephyr: Sending hello! 2[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:00:20.110,000] [0m<inf> hello_zephyr: Sending hello! 3[0m
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce24850>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5e170> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce26550>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:16:42 GMT'), (b'x-kong-upstream-latency', b'20'), (b'x-kong-proxy-latency', b'1'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A16%3A42.393629Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81cf975c0>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5e2b0> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce6c320>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:16:43 GMT'), (b'x-kong-upstream-latency', b'41'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A16%3A43.551022Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce59e10>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5e670> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce5a350>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:16:44 GMT'), (b'x-kong-upstream-latency', b'31'), (b'x-kong-proxy-latency', b'1'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A16%3A44.688972Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce1e270>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5e7b0> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce34410>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:16:45 GMT'), (b'x-kong-upstream-latency', b'31'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A16%3A45.853979Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce34e90>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5ead0> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81cf4bc20>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:16:47 GMT'), (b'x-kong-upstream-latency', b'32'), (b'x-kong-proxy-latency', b'1'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A16%3A47.003969Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81cf4bee0>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5ee90> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce5f070>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:16:48 GMT'), (b'x-kong-upstream-latency', b'40'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A16%3A48.143038Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce5ef30>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5f2f0> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce690a0>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:16:49 GMT'), (b'x-kong-upstream-latency', b'25'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A16%3A49.291008Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81d00bbd0>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5f610> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81d00bc50>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:16:50 GMT'), (b'x-kong-upstream-latency', b'28'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A16%3A50.431854Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce1baf0>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5f6b0> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce1b9a0>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:16:51 GMT'), (b'x-kong-upstream-latency', b'22'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A16%3A51.566997Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce2f650>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5f7f0> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce2fef0>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:16:52 GMT'), (b'x-kong-upstream-latency', b'24'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A16%3A52.711122Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce960d0>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5f570> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce962b0>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:16:53 GMT'), (b'x-kong-upstream-latency', b'32'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A16%3A53.847976Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce96530>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5f930> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce96710>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:16:55 GMT'), (b'x-kong-upstream-latency', b'22'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A16%3A55.008999Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce4fbb0>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5fd90> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce4f7f0>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:16:56 GMT'), (b'x-kong-upstream-latency', b'25'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A16%3A56.143180Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce4d540>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5f570> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce4f7a0>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:16:57 GMT'), (b'x-kong-upstream-latency', b'22'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A16%3A57.333131Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce4fd40>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5f390> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce4f1b0>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:16:58 GMT'), (b'x-kong-upstream-latency', b'44'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A16%3A58.465303Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce95630>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5f2f0> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce954f0>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:16:59 GMT'), (b'x-kong-upstream-latency', b'34'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A16%3A59.598980Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce947d0>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81cedc0f0> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce94190>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:00 GMT'), (b'x-kong-upstream-latency', b'18'), (b'x-kong-proxy-latency', b'1'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A00.714185Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce96990>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5fed0> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce96c60>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:01 GMT'), (b'x-kong-upstream-latency', b'22'), (b'x-kong-proxy-latency', b'1'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A01.827945Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce97160>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81cedcb90> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce96e90>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:03 GMT'), (b'x-kong-upstream-latency', b'39'), (b'x-kong-proxy-latency', b'1'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A02.948025Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce97340>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81cedd3b0> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce97520>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:04 GMT'), (b'x-kong-upstream-latency', b'37'), (b'x-kong-proxy-latency', b'1'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A04.050910Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce977a0>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81cedc550> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce97980>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:05 GMT'), (b'x-kong-upstream-latency', b'24'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A05.152518Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce97c00>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81cedd310> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce97de0>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:06 GMT'), (b'x-kong-upstream-latency', b'29'), (b'x-kong-proxy-latency', b'1'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A06.233126Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce97bb0>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81cedd630> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce97ca0>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:07 GMT'), (b'x-kong-upstream-latency', b'30'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A07.315664Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce96670>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81cedceb0> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce97b60>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:08 GMT'), (b'x-kong-upstream-latency', b'29'), (b'x-kong-proxy-latency', b'2'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A08.400274Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceecb40>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81cedd950> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce97f20>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:09 GMT'), (b'x-kong-upstream-latency', b'31'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A09.487089Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceed0e0>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81cedd8b0> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceed450>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:10 GMT'), (b'x-kong-upstream-latency', b'34'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A10.575478Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceed770>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ceddd10> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceedae0>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:11 GMT'), (b'x-kong-upstream-latency', b'22'), (b'x-kong-proxy-latency', b'1'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A11.665957Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceede00>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ceddc70> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceee170>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:12 GMT'), (b'x-kong-upstream-latency', b'23'), (b'x-kong-proxy-latency', b'1'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A12.740981Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceee490>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81cede170> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceee800>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:13 GMT'), (b'x-kong-upstream-latency', b'31'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A13.822211Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce97b60>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81cede0d0> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce97750>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:15 GMT'), (b'x-kong-upstream-latency', b'24'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A14.906287Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce96f30>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5ead0> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce956d0>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:16 GMT'), (b'x-kong-upstream-latency', b'23'), (b'x-kong-proxy-latency', b'1'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A16.021462Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce96ad0>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5e170> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce96850>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:17 GMT'), (b'x-kong-upstream-latency', b'25'), (b'x-kong-proxy-latency', b'1'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A17.105825Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce966c0>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5f750> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce97c50>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:18 GMT'), (b'x-kong-upstream-latency', b'23'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A18.200327Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce943c0>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5f930> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce973e0>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:19 GMT'), (b'x-kong-upstream-latency', b'26'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A19.301325Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceed3b0>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5e2b0> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce97f70>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:20 GMT'), (b'x-kong-upstream-latency', b'27'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A20.400950Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceece60>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5e350> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce4fa70>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'47'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-0/0'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:21 GMT'), (b'x-kong-upstream-latency', b'29'), (b'x-kong-proxy-latency', b'1'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A21.507956Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceeee40>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5eb70> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceef1b0>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'465'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-2/2'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:22 GMT'), (b'x-kong-upstream-latency', b'26'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A22.624984Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceef700>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5e710> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceef980>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'465'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-2/2'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:23 GMT'), (b'x-kong-upstream-latency', b'28'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A23.726024Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceefca0>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81cede490> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceeffc0>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'465'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-2/2'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:24 GMT'), (b'x-kong-upstream-latency', b'29'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A24.834045Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceeff20>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81cedeb70> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceefde0>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'465'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-2/2'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:26 GMT'), (b'x-kong-upstream-latency', b'27'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A25.930988Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceeeb70>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81cede170> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceef6b0>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'671'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-3/3'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:27 GMT'), (b'x-kong-upstream-latency', b'22'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A27.038154Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb819d39180>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81cede850> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceecf00>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'671'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-3/3'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:28 GMT'), (b'x-kong-upstream-latency', b'27'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A28.139970Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb819d39680>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81cede530> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceeefd0>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'671'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-3/3'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:29 GMT'), (b'x-kong-upstream-latency', b'25'), (b'x-kong-proxy-latency', b'1'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A29.255957Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb819d39cc0>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ceddd10> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceec8c0>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'671'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-3/3'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:30 GMT'), (b'x-kong-upstream-latency', b'25'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A30.356013Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb819d3a300>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81cedd8b0> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb819d3a620>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'671'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-3/3'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:31 GMT'), (b'x-kong-upstream-latency', b'26'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A31.466949Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb819d3a940>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81cedd630> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb819d3ac60>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'877'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-4/4'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:32 GMT'), (b'x-kong-upstream-latency', b'26'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A32.580295Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb819d3b160>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81cedcb90> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb819d3b340>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'877'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-4/4'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:33 GMT'), (b'x-kong-upstream-latency', b'204'), (b'x-kong-proxy-latency', b'1'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A33.702998Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce4f7a0>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81cedd310> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce4f0c0>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'877'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-4/4'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:35 GMT'), (b'x-kong-upstream-latency', b'21'), (b'x-kong-proxy-latency', b'0'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A34.984023Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce96e90>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5f390> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce95900>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'877'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-4/4'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:36 GMT'), (b'x-kong-upstream-latency', b'24'), (b'x-kong-proxy-latency', b'1'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A36.159974Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=10 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce97020>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5f570> server_hostname='api.golioth.io' timeout=10
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ce95630>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'1083'), (b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'logs 0-5/5'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:37 GMT'), (b'x-kong-upstream-latency', b'27'), (b'x-kong-proxy-latency', b'1'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/logs?start=2025-12-25T20%3A16%3A23.541735Z&end=2025-12-25T20%3A17%3A37.278009Z&module=hello_zephyr&deviceId=694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+INFO     test_sample:test_sample.py:60 Searching log messages from end to start:
+INFO     test_sample:test_sample.py:72 Sending hello! 3
+INFO     test_sample:test_sample.py:66 ### MATCH FOUND! ---> Sending hello! 2
+INFO     test_sample:test_sample.py:66 ### MATCH FOUND! ---> Sending hello! 1
+INFO     test_sample:test_sample.py:72 Golioth client connected
+INFO     test_sample:test_sample.py:66 ### MATCH FOUND! ---> Sending hello! 0
+DEBUG    twister_harness.device.binary_adapter:binary_adapter.py:87 Running subprocess finished with return code 0
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceed720>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0x7fb81ce5d3b0> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0x7fb81ceedc20>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'content-length', b'2'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Thu, 25 Dec 2025 20:17:37 GMT'), (b'x-kong-upstream-latency', b'19'), (b'x-kong-proxy-latency', b'1'), (b'via', b'kong/2.5.2, 1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: DELETE https://api.golioth.io/v1/projects/firmware_ci/devices/694d9b9552ca448f6e67c17c "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
