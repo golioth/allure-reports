@@ -1,0 +1,59 @@
+
+==== Test test_cert_provisioning started at 2025-12-30 20:56:23.753186 ====
+[8D[J[00:04:11.649,051] [0m<inf> phy_mc_ksz8081: PHY (2) is entering autonegotiation sequence[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:04:13.951,636] [0m<inf> eth_nxp_enet_mac: Link is up[0m
+[1;32muart:~$ [m[8D[J[00:04:13.951,669] [0m<inf> phy_mc_ksz8081: PHY 2 is up[0m
+[1;32muart:~$ [m[8D[J[00:04:13.951,685] [0m<inf> phy_mc_ksz8081: PHY (2) Link speed 100 Mb, full duplex
+[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[m
+[1;32muart:~$ [m[8D[J[00:04:23.323,102] [0m<inf> littlefs: littlefs partition at /lfs1[0m
+[1;32muart:~$ [m[8D[J[00:04:23.323,188] [0m<inf> littlefs: LittleFS version 2.11, disk version 2.1[0m
+[1;32muart:~$ [m[8D[J[00:04:23.326,032] [0m<inf> littlefs: FS at w25q512jvfiq@0:0x620000 is 14816 0x1000-byte blocks with 512 cycle[0m
+[1;32muart:~$ [m[8D[J[00:04:23.326,037] [0m<inf> littlefs: partition sizes: rd 16 ; pr 16 ; ca 64 ; la 32[0m
+[1;32muart:~$ [m[8D[J[00:04:23.326,186] [1;31m<err> littlefs: WEST_TOPDIR/modules/fs/littlefs/lfs.c:1386: Corrupted dir pair at {0x0, 0x1}[0m
+[1;32muart:~$ [m[8D[J[00:04:23.326,212] [1;33m<wrn> littlefs: can't mount (LFS -84); formatting[0m
+[1;32muart:~$ [m[8D[J[00:04:23.455,032] [0m<inf> littlefs: /lfs1 mounted[0m
+[1;32muart:~$ [m[8D[J[00:04:23.455,082] [0m<inf> littlefs: Automount /lfs1 succeeded[0m
+[1;32muart:~$ [m[8D[J[00:04:23.455,556] [0m<inf> eth_nxp_enet_mac: Link is down[0m
+[1;32muart:~$ [m[8D[J*** Booting Zephyr OS build 3568e1b6d5cd ***
+[1;32muart:~$ [m[8D[J*** Golioth Firmware SDK 2feee4cc4572 ***
+[1;32muart:~$ [m[8D[J[00:04:23.457,575] [0m<dbg> cert_provisioning: main: Start certificate provisioning sample[0m
+[1;32muart:~$ [m[8D[J[00:04:23.457,596] [0m<inf> golioth_samples: Bringing up network interface[0m
+[1;32muart:~$ [m[8D[J[00:04:23.457,616] [0m<inf> golioth_samples: Starting DHCP to obtain IP address[0m
+[1;32muart:~$ [m[8D[J[00:04:23.457,702] [0m<inf> golioth_samples: Waiting to obtain IP address[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m
+[1;32muart:~$ [m[8D[J[00:04:23.823,176] [0m<inf> phy_mc_ksz8081: PHY (2) is entering autonegotiation sequence[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [mwifi cred add -k 1 -s "Le Petiot Canape" -p "***SAMS_ORANGE_PI_WIFI_PSK***"
+[1;31mwifi: command not found
+[m[1;32muart:~$ [m
+[1;32muart:~$ [mwifi cred auto_connect
+[1;31mwifi: command not found
+[m[1;32muart:~$ [m
+[1;32muart:~$ [m[8D[J[00:04:26.125,956] [0m<inf> eth_nxp_enet_mac: Link is up[0m
+[1;32muart:~$ [m[8D[J[00:04:26.125,986] [0m<inf> phy_mc_ksz8081: PHY 2 is up[0m
+[1;32muart:~$ [m[8D[J[00:04:26.126,002] [0m<inf> phy_mc_ksz8081: PHY (2) Link speed 100 Mb, full duplex
+[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:04:29.143,973] [0m<inf> net_dhcpv4: Received: 192.168.0.190[0m
+[1;32muart:~$ [m[8D[J[00:04:29.144,481] [1;33m<wrn> cert_provisioning: Could not stat /lfs1/credentials/crt.der, err: -2[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [mfs mkdir /lfs1/credentials
+[1;32muart:~$ [m
+[1;32muart:~$ [mlog halt
+[1;32muart:~$ [m
+[1;32muart:~$ [mlog go
+[1;32muart:~$ [m
+[1;32muart:~$ [m[8D[J[00:04:34.145,540] [0m<inf> cert_provisioning: Read 437 bytes from /lfs1/credentials/crt.der[0m
+[1;32muart:~$ [m[8D[J[00:04:34.145,980] [0m<inf> cert_provisioning: Read 121 bytes from /lfs1/credentials/key.der[0m
+[1;32muart:~$ [m[8D[J[00:04:34.146,260] [0m<inf> golioth_mbox: Mbox created, bufsize: 1232, num_items: 10, item_size: 112[0m
+[1;32muart:~$ [m[8D[J[00:04:37.282,312] [1;31m<err> net_pkt: Data buffer (1140) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:04:38.321,344] [0m<inf> golioth_coap_client_zephyr: Golioth CoAP client connected[0m
+[1;32muart:~$ [m[8D[J[00:04:38.321,498] [0m<inf> cert_provisioning: Sending hello! 0[0m
+[1;32muart:~$ [m[8D[J[00:04:38.321,607] [0m<inf> cert_provisioning: Golioth client connected[0m
+[1;32muart:~$ [m[8D[J[00:04:38.321,799] [0m<inf> golioth_coap_client_zephyr: Entering CoAP I/O loop[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:04:43.321,668] [0m<inf> cert_provisioning: Sending hello! 1[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:04:48.321,900] [0m<inf> cert_provisioning: Sending hello! 2[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [mfs rm /lfs1/credentials/key.der
+[1;32muart:~$ [m
+[1;32muart:~$ [mfs rm /lfs1/credentials/crt.der
+[1;32muart:~$ [m
+[1;32muart:~$ [mfs rm /lfs1/credentials
+[1;32muart:~$ [m
