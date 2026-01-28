@@ -1,0 +1,62 @@
+
+==== Test test_hello started at 2026-01-28 01:08:59.212577 ====
+[m
+[1;32muart:~$ [m
+[1;32muart:~$ [m[8D[J*** Booting nRF Connect SDK v3.2.1-d8887f6f32df ***
+[1;32muart:~$ [m[8D[J*** Using Zephyr OS v4.2.99-ec78104f1569 ***
+[1;32muart:~$ [m[8D[J*** Golioth Firmware SDK 276479545877 ***
+[1;32muart:~$ [m[8D[J[00:00:00.665,954] [0m<inf> golioth_settings_autoload: Initializing settings subsystem[0m
+[1;32muart:~$ [m[8D[J[00:00:00.673,339] [0m<inf> fs_nvs: 2 Sectors of 4096 bytes[0m
+[1;32muart:~$ [m[8D[J[00:00:00.673,370] [0m<inf> fs_nvs: alloc wra: 0, fe8[0m
+[1;32muart:~$ [m[8D[J[00:00:00.673,370] [0m<inf> fs_nvs: data wra: 0, 0[0m
+[1;32muart:~$ [m[8D[J[00:00:00.673,400] [0m<inf> golioth_settings_autoload: Loading settings[0m
+[1;32muart:~$ [m[8D[J[00:00:00.673,431] [0m<dbg> hello_zephyr: main: start hello sample[0m
+[1;32muart:~$ [m[8D[J[00:00:00.673,431] [0m<inf> golioth_samples: Bringing up network interface[0m
+[1;32muart:~$ [m[8D[J[00:00:00.673,461] [0m<inf> golioth_samples: Waiting to obtain IP address[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [mnrf_modem_at AT+CFUN=4
+OK
+[1;32muart:~$ [m
+[1;32muart:~$ [m[8D[J[00:00:02.444,091] [0m<inf> lte_monitor: Network: Searching[0m
+[1;32muart:~$ [mnrf_modem_at AT%CMNG=1,515765868
+%CMNG: 515765868,3,"73B82763EEB3F37D07FC8D8273803FCB507ABC9ADB71F51F93B21B48ABE91EA2"
+%CMNG: 515765868,4,"5610D08DA3DFD35E7B5CE111173BFED2FCCEC5A41601DDFC831C6D06DBB86A5F"
+OK
+[1;32muart:~$ [m
+[1;32muart:~$ [mnrf_modem_at AT%CMNG=3,515765868,4
+OK
+[1;32muart:~$ [m
+[1;32muart:~$ [mnrf_modem_at AT%CMNG=0,515765868,4,generated-riURqfwvBNnYeJTW@firmware_ci
+OK
+[1;32muart:~$ [m
+[1;32muart:~$ [mnrf_modem_at AT%CMNG=3,515765868,3
+OK
+[1;32muart:~$ [m
+[1;32muart:~$ [mnrf_modem_at AT%CMNG=0,515765868,3,67656e6572617465642d7269555271667776424e6e59654a5457
+OK
+[1;32muart:~$ [m
+[1;32muart:~$ [mkernel reboot cold[m
+[1;32muart:~$ [m[8D[J*** Booting nRF Connect SDK v3.2.1-d8887f6f32df ***
+[1;32muart:~$ [m[8D[J*** Using Zephyr OS v4.2.99-ec78104f1569 ***
+[1;32muart:~$ [m[8D[J*** Golioth Firmware SDK 276479545877 ***
+[1;32muart:~$ [m[8D[J[00:00:00.527,526] [0m<inf> golioth_settings_autoload: Initializing settings subsystem[0m
+[1;32muart:~$ [m[8D[J[00:00:00.534,271] [0m<inf> fs_nvs: 2 Sectors of 4096 bytes[0m
+[1;32muart:~$ [m[8D[J[00:00:00.534,301] [0m<inf> fs_nvs: alloc wra: 0, fe8[0m
+[1;32muart:~$ [m[8D[J[00:00:00.534,301] [0m<inf> fs_nvs: data wra: 0, 0[0m
+[1;32muart:~$ [m[8D[J[00:00:00.534,454] [0m<inf> golioth_settings_autoload: Loading settings[0m
+[1;32muart:~$ [m[8D[J[00:00:00.534,667] [0m<dbg> hello_zephyr: main: start hello sample[0m
+[1;32muart:~$ [m[8D[J[00:00:00.534,667] [0m<inf> golioth_samples: Bringing up network interface[0m
+[1;32muart:~$ [m[8D[J[00:00:00.534,698] [0m<inf> golioth_samples: Waiting to obtain IP address[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:00:02.847,808] [0m<inf> lte_monitor: Network: Searching[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:00:05.762,847] [0m<inf> lte_monitor: Network: Registered (roaming)[0m
+[1;32muart:~$ [m[8D[J[00:00:05.763,916] [0m<inf> golioth_mbox: Mbox created, bufsize: 1232, num_items: 10, item_size: 112[0m
+[1;32muart:~$ [m[8D[J[00:00:05.764,434] [1;33m<wrn> nrf_modem_lib_netif: MTU query failed, error: 0, MTU: 0[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:00:50.770,416] [1;31m<err> golioth_coap_client_zephyr: Fail to get address (coap.golioth.io 5684) -11[0m
+[1;32muart:~$ [m[8D[J[00:00:50.770,416] [1;31m<err> golioth_coap_client_zephyr: Failed to connect: -11[0m
+[1;32muart:~$ [m[8D[J[00:00:50.770,446] [1;33m<wrn> golioth_coap_client_zephyr: Failed to connect: -11[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:02.215,606] [0m<inf> golioth_coap_client_zephyr: Golioth CoAP client connected[0m
+[1;32muart:~$ [m[8D[J[00:01:02.215,850] [0m<inf> hello_zephyr: Sending hello! 0[0m
+[1;32muart:~$ [m[8D[J[00:01:02.215,942] [0m<inf> hello_zephyr: Golioth client connected[0m
+[1;32muart:~$ [m[8D[J[00:01:02.215,942] [0m<inf> golioth_coap_client_zephyr: Entering CoAP I/O loop[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:07.215,972] [0m<inf> hello_zephyr: Sending hello! 1[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:12.216,094] [0m<inf> hello_zephyr: Sending hello! 2[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:17.216,186] [0m<inf> hello_zephyr: Sending hello! 3[0m
