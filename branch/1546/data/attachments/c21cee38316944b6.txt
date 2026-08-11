@@ -1,0 +1,125 @@
+
+==== Test test_cert_provisioning started at 2026-08-11 00:38:28.716883 ====
+[m
+[1;32muart:~$ [m[8D[J[00:01:10.902,443] [0m<inf> littlefs: littlefs partition at /lfs1[0m
+[1;32muart:~$ [m[8D[J[00:01:10.902,532] [0m<inf> littlefs: LittleFS version 2.11, disk version 2.1[0m
+[1;32muart:~$ [m[8D[J[00:01:10.905,377] [0m<inf> littlefs: FS at w25q512jvfiq@0:0x620000 is 14816 0x1000-byte blocks with 512 cycle[0m
+[1;32muart:~$ [m[8D[J[00:01:10.905,382] [0m<inf> littlefs: partition sizes: rd 16 ; pr 16 ; ca 64 ; la 32[0m
+[1;32muart:~$ [m[8D[J[00:01:10.905,524] [1;31m<err> littlefs: WEST_TOPDIR/modules/fs/littlefs/lfs.c:1386: Corrupted dir pair at {0x0, 0x1}[0m
+[1;32muart:~$ [m[8D[J[00:01:10.905,543] [1;33m<wrn> littlefs: can't mount (LFS -84); formatting[0m
+[1;32muart:~$ [m[8D[J[00:01:11.036,670] [0m<inf> littlefs: /lfs1 mounted[0m
+[1;32muart:~$ [m[8D[J[00:01:11.036,722] [0m<inf> littlefs: Automount /lfs1 succeeded[0m
+[1;32muart:~$ [m[8D[J[00:01:11.037,273] [0m<inf> eth_nxp_enet_mac: Link is down[0m
+[1;32muart:~$ [m[8D[J*** Booting Zephyr OS build 3568e1b6d5cd ***
+[1;32muart:~$ [m[8D[J*** Golioth Firmware SDK 5f726460e243 ***
+[1;32muart:~$ [m[8D[J[00:01:11.039,294] [0m<dbg> cert_provisioning: main: Start certificate provisioning sample[0m
+[1;32muart:~$ [m[8D[J[00:01:11.039,322] [0m<inf> golioth_samples: Bringing up network interface[0m
+[1;32muart:~$ [m[8D[J[00:01:11.039,339] [0m<inf> golioth_samples: Starting DHCP to obtain IP address[0m
+[1;32muart:~$ [m[8D[J[00:01:11.039,447] [0m<inf> golioth_samples: Waiting to obtain IP address[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m
+[1;32muart:~$ [m[8D[J[00:01:11.402,584] [0m<inf> phy_mc_ksz8081: PHY (2) is entering autonegotiation sequence[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [mwifi cred add -k 1 -s "***MIKES_ORANGE_PI_WIFI_SSID***" -p "***MIKES_ORANGE_PI_WIFI_PSK***"
+[1;31mwifi: command not found
+[m[1;32muart:~$ [m
+[1;32muart:~$ [mwifi cred auto_connect
+[1;31mwifi: command not found
+[m[1;32muart:~$ [m
+[1;32muart:~$ [m[8D[J[00:01:14.305,919] [0m<inf> eth_nxp_enet_mac: Link is up[0m
+[1;32muart:~$ [m[8D[J[00:01:14.305,951] [0m<inf> phy_mc_ksz8081: PHY 2 is up[0m
+[1;32muart:~$ [m[8D[J[00:01:14.305,967] [0m<inf> phy_mc_ksz8081: PHY (2) Link speed 100 Mb, full duplex
+[0m
+[1;32muart:~$ [m[8D[J[00:01:14.317,058] [0m<inf> net_dhcpv4: Received: 192.168.8.105[0m
+[1;32muart:~$ [m[8D[J[00:01:14.317,515] [1;33m<wrn> cert_provisioning: Could not stat /lfs1/credentials/crt.der, err: -2[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [mfs mkdir /lfs1/credentials
+[1;32muart:~$ [m
+[1;32muart:~$ [mlog halt
+[1;32muart:~$ [m
+[1;32muart:~$ [mlog go
+[1;32muart:~$ [m
+[1;32muart:~$ [m[8D[J[00:01:19.318,343] [0m<inf> cert_provisioning: Read 438 bytes from /lfs1/credentials/crt.der[0m
+[1;32muart:~$ [m[8D[J[00:01:19.318,768] [0m<inf> cert_provisioning: Read 121 bytes from /lfs1/credentials/key.der[0m
+[1;32muart:~$ [m[8D[J[00:01:19.319,052] [0m<inf> golioth_mbox: Mbox created, bufsize: 1232, num_items: 10, item_size: 112[0m
+[1;32muart:~$ [m[8D[J[00:01:22.485,683] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:01:22.485,792] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:01:26.485,896] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:01:26.486,166] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:01:26.486,213] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:01:27.099,271] [1;31m<err> golioth_coap_client_zephyr: Failed to connect to socket: -116[0m
+[1;32muart:~$ [m[8D[J[00:01:27.100,074] [1;31m<err> golioth_coap_client_zephyr: Failed to connect: -116[0m
+[1;32muart:~$ [m[8D[J[00:01:27.100,099] [1;33m<wrn> golioth_coap_client_zephyr: Failed to connect: -116[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:35.138,098] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:01:35.138,239] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:01:35.245,724] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:01:35.245,942] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:01:35.246,385] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:01:35.246,479] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:01:39.246,519] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:01:39.246,601] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:01:39.862,498] [1;31m<err> golioth_coap_client_zephyr: Failed to connect to socket: -116[0m
+[1;32muart:~$ [m[8D[J[00:01:39.863,295] [1;31m<err> golioth_coap_client_zephyr: Failed to connect: -116[0m
+[1;32muart:~$ [m[8D[J[00:01:39.863,323] [1;33m<wrn> golioth_coap_client_zephyr: Failed to connect: -116[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:39.910,479] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:47.911,803] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:01:47.911,931] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:01:47.991,929] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:01:47.992,230] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:01:47.992,275] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:01:51.992,659] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:01:51.992,948] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:01:51.992,989] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:01:52.606,856] [1;31m<err> golioth_coap_client_zephyr: Failed to connect to socket: -116[0m
+[1;32muart:~$ [m[8D[J[00:01:52.607,661] [1;31m<err> golioth_coap_client_zephyr: Failed to connect: -116[0m
+[1;32muart:~$ [m[8D[J[00:01:52.607,688] [1;33m<wrn> golioth_coap_client_zephyr: Failed to connect: -116[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:52.644,903] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:00.645,624] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:00.645,741] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:00.645,791] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:00.762,799] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:00.762,887] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:00.762,952] [1;31m<err> net_pkt: Data buffer (1239) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:04.763,210] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:04.763,285] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:05.379,550] [1;31m<err> golioth_coap_client_zephyr: Failed to connect to socket: -116[0m
+[1;32muart:~$ [m[8D[J[00:02:05.380,339] [1;31m<err> golioth_coap_client_zephyr: Failed to connect: -116[0m
+[1;32muart:~$ [m[8D[J[00:02:05.380,363] [1;33m<wrn> golioth_coap_client_zephyr: Failed to connect: -116[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:05.430,341] [1;31m<err> net_pkt: Data buffer (1239) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:13.430,660] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:13.430,821] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:13.518,149] [1;31m<err> net_pkt: Data buffer (1239) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:13.518,372] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:13.518,429] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:13.518,466] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:17.519,523] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:17.519,606] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:18.133,917] [1;31m<err> golioth_coap_client_zephyr: Failed to connect to socket: -116[0m
+[1;32muart:~$ [m[8D[J[00:02:18.134,698] [1;31m<err> golioth_coap_client_zephyr: Failed to connect: -116[0m
+[1;32muart:~$ [m[8D[J[00:02:18.134,708] [1;33m<wrn> golioth_coap_client_zephyr: Failed to connect: -116[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:18.172,661] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:26.173,069] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:26.173,241] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:26.173,916] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:26.265,910] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:26.266,004] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:26.266,097] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:30.266,667] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:30.266,764] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:30.880,863] [1;31m<err> golioth_coap_client_zephyr: Failed to connect to socket: -116[0m
+[1;32muart:~$ [m[8D[J[00:02:30.881,636] [1;31m<err> golioth_coap_client_zephyr: Failed to connect: -116[0m
+[1;32muart:~$ [m[8D[J[00:02:30.881,661] [1;33m<wrn> golioth_coap_client_zephyr: Failed to connect: -116[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:30.918,021] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:38.918,196] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:38.918,336] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:39.037,095] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:39.037,336] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:39.037,392] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:39.037,428] [1;31m<err> net_pkt: Data buffer (1239) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:42.912,527] [1;31m<err> net_pkt: Data buffer (350) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:42.917,740] [1;31m<err> net_pkt: Data buffer (350) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:43.038,002] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:43.038,179] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:43.038,231] [1;31m<err> net_pkt: Data buffer (1239) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:43.265,028] [1;31m<err> net_pkt: Data buffer (113) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:43.415,660] [1;31m<err> net_pkt: Data buffer (60) allocation failed.[0m
+[1;32muart:~$ [m[8D[J[00:02:43.654,618] [1;31m<err> golioth_coap_client_zephyr: Failed to connect to socket: -116[0m
+[1;32muart:~$ [m[8D[J[00:02:43.655,423] [1;31m<err> golioth_coap_client_zephyr: Failed to connect: -116[0m
+[1;32muart:~$ [m[8D[J[00:02:43.655,434] [1;33m<wrn> golioth_coap_client_zephyr: Failed to connect: -116[0m
