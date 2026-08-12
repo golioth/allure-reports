@@ -1,0 +1,1022 @@
+
+==== Test test_fw_update started at 2026-08-12 15:42:57.634279 ====
+*** Booting MCUboot 96576b341ee1 ***
+*** Using Zephyr OS build 3568e1b6d5cd ***
+I: Starting bootloader
+I: Image index: 0, Swap type: none
+I: Image index: 0, Swap type: none
+I: Primary image: magic=unset, swap_type=0x1, copy_done=0x3, image_ok=0x3
+I: Secondary image: magic=unset, swap_type=0x1, copy_done=0x3, image_ok=0x3
+I: Boot source: none
+I: Image index: 0, Swap type: none
+I: Image index: 0, Swap type: none
+I: Image index: 0, Swap type: none
+I: Image index: 0, Swap type: none
+I: Bootloader chainload address offset: 0x20000
+I: Image version: v1.2.3
+I: Jumping to the first image slot
+[m
+[1;32muart:~$ [m
+[1;32muart:~$ [m
+[1;32muart:~$ [m
+[1;32muart:~$ [m
+[1;32muart:~$ [m
+[1;32muart:~$ [m
+[1;32muart:~$ [m[8D[JSTA MAC Address: [1;32muart:~$ [m[8D[JC0:95:DA:01:7B:F9 [1;32muart:~$ [m[8D[J
+[1;32muart:~$ [m[8D[Jboard_type: 2, board_type mapping: 
+[1;32muart:~$ [m[8D[J0----QFN
+[1;32muart:~$ [m[8D[J1----CSP
+[1;32muart:~$ [m[8D[J2----BGA
+[1;32muart:~$ [m[8D[J[00:01:29.211,286] [0m<inf> fs_nvs: 8 Sectors of 4096 bytes[0m
+[1;32muart:~$ [m[8D[J[00:01:29.211,302] [0m<inf> fs_nvs: alloc wra: 0, fe8[0m
+[1;32muart:~$ [m[8D[J[00:01:29.211,304] [0m<inf> fs_nvs: data wra: 0, 0[0m
+[1;32muart:~$ [m[8D[J*** Booting Zephyr OS build 3568e1b6d5cd ***
+[1;32muart:~$ [m[8D[J*** Golioth Firmware SDK 44b1b3761cbd ***
+[1;32muart:~$ [m[8D[J[00:01:29.211,716] [0m<inf> golioth_settings_autoload: Initializing settings subsystem[0m
+[1;32muart:~$ [m[8D[J[00:01:29.211,723] [0m<inf> golioth_settings_autoload: Loading settings[0m
+[1;32muart:~$ [m[8D[J[00:01:29.211,865] [0m<dbg> fw_update_sample: main: Start FW Update sample[0m
+[1;32muart:~$ [m[8D[J[00:01:29.211,885] [0m<inf> golioth_samples: Bringing up network interface[0m
+[1;32muart:~$ [m[8D[J[00:01:29.211,893] [0m<inf> golioth_samples: Starting DHCP to obtain IP address[0m
+[1;32muart:~$ [m[8D[J[00:01:29.211,957] [0m<inf> golioth_samples: Waiting to obtain IP address[0m
+[1;32muart:~$ [m[8D[J[00:01:29.212,294] [0m<inf> golioth_wifi: Connecting to stored WiFi network[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[1;32muart:~$ [msettings set golioth/psk-id generated-zakLefRhoDlVjZqe@firmware_ci
+Setting golioth/psk-id to generated-zakLefRhoDlVjZqe@firmware_ci
+Setting golioth/psk-id saved as generated-zakLefRhoDlVjZqe@firmware_ci
+[1;32muart:~$ [m
+[1;32muart:~$ [msettings set golioth/psk generated-zakLefRhoDlVjZqe
+Setting golioth/psk to generated-zakLefRhoDlVjZqe
+Setting golioth/psk saved as generated-zakLefRhoDlVjZqe
+[1;32muart:~$ [m
+[1;32muart:~$ [mwifi cred add -k 1 -s "***MIKES_ORANGE_PI_WIFI_SSID***" -p "***MIKES_ORANGE_PI_WIFI_PSK***"
+[1;32muart:~$ [m
+[1;32muart:~$ [mwifi cred auto_connect
+[1;32muart:~$ [m
+[1;32muart:~$ [m[8D[J[00:01:30.688,358] [0m<inf> net_wifi_mgmt: Connection requested[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[Jboard_type: 2, board_type mapping: 
+[1;32muart:~$ [m[8D[J0----QFN
+[1;32muart:~$ [m[8D[J1----CSP
+[1;32muart:~$ [m[8D[J2----BGA
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:44.025,952] [0m<inf> net_dhcpv4: Received: 192.168.8.206[0m
+[1;32muart:~$ [m[8D[J[00:01:44.026,373] [0m<inf> golioth_mbox: Mbox created, bufsize: 1232, num_items: 10, item_size: 112[0m
+[1;32muart:~$ [m[8D[JConnected
+[1;32muart:~$ [m[8D[J[00:01:44.248,196] [0m<inf> golioth_coap_client_zephyr: Golioth CoAP client connected[0m
+[1;32muart:~$ [m[8D[J[00:01:44.248,477] [0m<inf> fw_update: Current firmware version: frdm_rw612_wifi - 1.2.3[0m
+[1;32muart:~$ [m[8D[J[00:01:44.248,771] [0m<inf> fw_update: State = Idle[0m
+[1;32muart:~$ [m[8D[J[00:01:44.248,960] [0m<inf> fw_update: Waiting to receive OTA manifest[0m
+[1;32muart:~$ [m[8D[J[00:01:44.248,989] [0m<inf> fw_update: State = Idle[0m
+[1;32muart:~$ [m[8D[J[00:01:44.249,138] [0m<inf> fw_update_sample: Golioth client connected[0m
+[1;32muart:~$ [m[8D[J[00:01:44.249,184] [0m<inf> golioth_coap_client_zephyr: Entering CoAP I/O loop[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:44.299,994] [0m<inf> fw_update: Received OTA manifest[0m
+[1;32muart:~$ [m[8D[J[00:01:44.300,076] [0m<inf> fw_update: Manifest does not contain target component: frdm_rw612_wifi[0m
+[1;32muart:~$ [m[8D[J[00:01:44.300,121] [0m<inf> fw_update: Manifest does not contain different firmware version. Nothing to do.[0m
+[1;32muart:~$ [m[8D[J[00:01:44.300,128] [0m<inf> fw_update: State = Idle[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:46.071,245] [0m<inf> fw_update: Received OTA manifest[0m
+[1;32muart:~$ [m[8D[J[00:01:46.071,368] [0m<inf> fw_update: Current version = 1.2.3, Target version = 255.8.9[0m
+[1;32muart:~$ [m[8D[J[00:01:46.071,483] [0m<inf> mcuboot_util: Image index: 0, Swap type: none[0m
+[1;32muart:~$ [m[8D[J[00:01:46.071,608] [0m<dbg> mcuboot_dfu: boot_get_image_start_offset: Start offset for area 2: 0x1000[0m
+[1;32muart:~$ [m[8D[J[00:01:46.435,617] [0m<inf> fw_update: State = Downloading[0m
+[1;32muart:~$ [m[8D[J[00:01:46.689,975] [0m<inf> fw_update: Received block 0/896[0m
+[1;32muart:~$ [m[8D[J[00:01:46.690,075] [0m<inf> mcuboot_util: Image index: 0, Swap type: none[0m
+[1;32muart:~$ [m[8D[J[00:01:46.690,163] [0m<inf> fw_update: swap type: none[0m
+[1;32muart:~$ [m[8D[J[00:01:46.995,395] [0m<inf> fw_update: Received block 1/896[0m
+[1;32muart:~$ [m[8D[J[00:01:47.053,397] [0m<inf> fw_update: Received block 2/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:47.110,330] [0m<inf> fw_update: Received block 3/896[0m
+[1;32muart:~$ [m[8D[J[00:01:47.310,838] [0m<inf> fw_update: Received block 4/896[0m
+[1;32muart:~$ [m[8D[J[00:01:47.437,600] [0m<inf> fw_update: Received block 5/896[0m
+[1;32muart:~$ [m[8D[J[00:01:47.495,098] [0m<inf> fw_update: Received block 6/896[0m
+[1;32muart:~$ [m[8D[J[00:01:47.550,706] [0m<inf> fw_update: Received block 7/896[0m
+[1;32muart:~$ [m[8D[J[00:01:47.608,082] [0m<inf> fw_update: Received block 8/896[0m
+[1;32muart:~$ [m[8D[J[00:01:47.743,078] [0m<inf> fw_update: Received block 9/896[0m
+[1;32muart:~$ [m[8D[J[00:01:47.802,311] [0m<inf> fw_update: Received block 10/896[0m
+[1;32muart:~$ [m[8D[J[00:01:47.861,815] [0m<inf> fw_update: Received block 11/896[0m
+[1;32muart:~$ [m[8D[J[00:01:47.921,924] [0m<inf> fw_update: Received block 12/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:48.050,948] [0m<inf> fw_update: Received block 13/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:49.073,065] [0m<inf> fw_update: Received block 14/896[0m
+[1;32muart:~$ [m[8D[J[00:01:49.127,069] [0m<inf> fw_update: Received block 15/896[0m
+[1;32muart:~$ [m[8D[J[00:01:49.180,977] [0m<inf> fw_update: Received block 16/896[0m
+[1;32muart:~$ [m[8D[J[00:01:49.309,196] [0m<inf> fw_update: Received block 17/896[0m
+[1;32muart:~$ [m[8D[J[00:01:49.365,544] [0m<inf> fw_update: Received block 18/896[0m
+[1;32muart:~$ [m[8D[J[00:01:49.420,219] [0m<inf> fw_update: Received block 19/896[0m
+[1;32muart:~$ [m[8D[J[00:01:49.474,329] [0m<inf> fw_update: Received block 20/896[0m
+[1;32muart:~$ [m[8D[J[00:01:49.608,441] [0m<inf> fw_update: Received block 21/896[0m
+[1;32muart:~$ [m[8D[J[00:01:49.662,477] [0m<inf> fw_update: Received block 22/896[0m
+[1;32muart:~$ [m[8D[J[00:01:49.720,433] [0m<inf> fw_update: Received block 23/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:49.779,630] [0m<inf> fw_update: Received block 24/896[0m
+[1;32muart:~$ [m[8D[J[00:01:49.964,320] [0m<inf> fw_update: Received block 25/896[0m
+[1;32muart:~$ [m[8D[J[00:01:50.020,499] [0m<inf> fw_update: Received block 26/896[0m
+[1;32muart:~$ [m[8D[J[00:01:50.076,137] [0m<inf> fw_update: Received block 27/896[0m
+[1;32muart:~$ [m[8D[J[00:01:50.132,978] [0m<inf> fw_update: Received block 28/896[0m
+[1;32muart:~$ [m[8D[J[00:01:50.257,285] [0m<inf> fw_update: Received block 29/896[0m
+[1;32muart:~$ [m[8D[J[00:01:50.312,418] [0m<inf> fw_update: Received block 30/896[0m
+[1;32muart:~$ [m[8D[J[00:01:50.369,073] [0m<inf> fw_update: Received block 31/896[0m
+[1;32muart:~$ [m[8D[J[00:01:50.425,130] [0m<inf> fw_update: Received block 32/896[0m
+[1;32muart:~$ [m[8D[J[00:01:50.553,542] [0m<inf> fw_update: Received block 33/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:50.611,042] [0m<inf> fw_update: Received block 34/896[0m
+[1;32muart:~$ [m[8D[J[00:01:50.841,487] [0m<inf> fw_update: Received block 35/896[0m
+[1;32muart:~$ [m[8D[J[00:01:50.898,341] [0m<inf> fw_update: Received block 36/896[0m
+[1;32muart:~$ [m[8D[J[00:01:51.024,186] [0m<inf> fw_update: Received block 37/896[0m
+[1;32muart:~$ [m[8D[J[00:01:51.079,530] [0m<inf> fw_update: Received block 38/896[0m
+[1;32muart:~$ [m[8D[J[00:01:51.135,093] [0m<inf> fw_update: Received block 39/896[0m
+[1;32muart:~$ [m[8D[J[00:01:51.195,410] [0m<inf> fw_update: Received block 40/896[0m
+[1;32muart:~$ [m[8D[J[00:01:51.345,260] [0m<inf> fw_update: Received block 41/896[0m
+[1;32muart:~$ [m[8D[J[00:01:51.400,079] [0m<inf> fw_update: Received block 42/896[0m
+[1;32muart:~$ [m[8D[J[00:01:51.453,533] [0m<inf> fw_update: Received block 43/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:51.511,203] [0m<inf> fw_update: Received block 44/896[0m
+[1;32muart:~$ [m[8D[J[00:01:51.661,856] [0m<inf> fw_update: Received block 45/896[0m
+[1;32muart:~$ [m[8D[J[00:01:51.718,833] [0m<inf> fw_update: Received block 46/896[0m
+[1;32muart:~$ [m[8D[J[00:01:51.773,484] [0m<inf> fw_update: Received block 47/896[0m
+[1;32muart:~$ [m[8D[J[00:01:51.827,379] [0m<inf> fw_update: Received block 48/896[0m
+[1;32muart:~$ [m[8D[J[00:01:51.957,002] [0m<inf> fw_update: Received block 49/896[0m
+[1;32muart:~$ [m[8D[J[00:01:52.018,125] [0m<inf> fw_update: Received block 50/896[0m
+[1;32muart:~$ [m[8D[J[00:01:52.072,726] [0m<inf> fw_update: Received block 51/896[0m
+[1;32muart:~$ [m[8D[J[00:01:52.133,108] [0m<inf> fw_update: Received block 52/896[0m
+[1;32muart:~$ [m[8D[J[00:01:52.261,752] [0m<inf> fw_update: Received block 53/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:52.318,926] [0m<inf> fw_update: Received block 54/896[0m
+[1;32muart:~$ [m[8D[J[00:01:52.504,120] [0m<inf> fw_update: Received block 55/896[0m
+[1;32muart:~$ [m[8D[J[00:01:52.561,169] [0m<inf> fw_update: Received block 56/896[0m
+[1;32muart:~$ [m[8D[J[00:01:52.686,484] [0m<inf> fw_update: Received block 57/896[0m
+[1;32muart:~$ [m[8D[J[00:01:52.741,111] [0m<inf> fw_update: Received block 58/896[0m
+[1;32muart:~$ [m[8D[J[00:01:52.797,557] [0m<inf> fw_update: Received block 59/896[0m
+[1;32muart:~$ [m[8D[J[00:01:52.854,226] [0m<inf> fw_update: Received block 60/896[0m
+[1;32muart:~$ [m[8D[J[00:01:52.981,177] [0m<inf> fw_update: Received block 61/896[0m
+[1;32muart:~$ [m[8D[J[00:01:53.039,440] [0m<inf> fw_update: Received block 62/896[0m
+[1;32muart:~$ [m[8D[J[00:01:53.093,264] [0m<inf> fw_update: Received block 63/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:53.151,389] [0m<inf> fw_update: Received block 64/896[0m
+[1;32muart:~$ [m[8D[J[00:01:53.313,009] [0m<inf> fw_update: Received block 65/896[0m
+[1;32muart:~$ [m[8D[J[00:01:53.366,560] [0m<inf> fw_update: Received block 66/896[0m
+[1;32muart:~$ [m[8D[J[00:01:53.424,146] [0m<inf> fw_update: Received block 67/896[0m
+[1;32muart:~$ [m[8D[J[00:01:53.481,941] [0m<inf> fw_update: Received block 68/896[0m
+[1;32muart:~$ [m[8D[J[00:01:53.625,022] [0m<inf> fw_update: Received block 69/896[0m
+[1;32muart:~$ [m[8D[J[00:01:53.684,012] [0m<inf> fw_update: Received block 70/896[0m
+[1;32muart:~$ [m[8D[J[00:01:53.739,434] [0m<inf> fw_update: Received block 71/896[0m
+[1;32muart:~$ [m[8D[J[00:01:53.793,187] [0m<inf> fw_update: Received block 72/896[0m
+[1;32muart:~$ [m[8D[J[00:01:53.920,850] [0m<inf> fw_update: Received block 73/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:53.975,630] [0m<inf> fw_update: Received block 74/896[0m
+[1;32muart:~$ [m[8D[J[00:01:54.185,993] [0m<inf> fw_update: Received block 75/896[0m
+[1;32muart:~$ [m[8D[J[00:01:54.242,518] [0m<inf> fw_update: Received block 76/896[0m
+[1;32muart:~$ [m[8D[J[00:01:54.370,183] [0m<inf> fw_update: Received block 77/896[0m
+[1;32muart:~$ [m[8D[J[00:01:54.424,573] [0m<inf> fw_update: Received block 78/896[0m
+[1;32muart:~$ [m[8D[J[00:01:54.481,679] [0m<inf> fw_update: Received block 79/896[0m
+[1;32muart:~$ [m[8D[J[00:01:54.536,716] [0m<inf> fw_update: Received block 80/896[0m
+[1;32muart:~$ [m[8D[J[00:01:54.667,644] [0m<inf> fw_update: Received block 81/896[0m
+[1;32muart:~$ [m[8D[J[00:01:54.721,768] [0m<inf> fw_update: Received block 82/896[0m
+[1;32muart:~$ [m[8D[J[00:01:54.778,120] [0m<inf> fw_update: Received block 83/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:54.837,774] [0m<inf> fw_update: Received block 84/896[0m
+[1;32muart:~$ [m[8D[J[00:01:55.058,702] [0m<inf> fw_update: Received block 85/896[0m
+[1;32muart:~$ [m[8D[J[00:01:55.114,415] [0m<inf> fw_update: Received block 86/896[0m
+[1;32muart:~$ [m[8D[J[00:01:55.171,783] [0m<inf> fw_update: Received block 87/896[0m
+[1;32muart:~$ [m[8D[J[00:01:55.229,468] [0m<inf> fw_update: Received block 88/896[0m
+[1;32muart:~$ [m[8D[J[00:01:55.359,311] [0m<inf> fw_update: Received block 89/896[0m
+[1;32muart:~$ [m[8D[J[00:01:55.413,423] [0m<inf> fw_update: Received block 90/896[0m
+[1;32muart:~$ [m[8D[J[00:01:55.467,888] [0m<inf> fw_update: Received block 91/896[0m
+[1;32muart:~$ [m[8D[J[00:01:55.525,415] [0m<inf> fw_update: Received block 92/896[0m
+[1;32muart:~$ [m[8D[J[00:01:55.659,508] [0m<inf> fw_update: Received block 93/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:55.715,019] [0m<inf> fw_update: Received block 94/896[0m
+[1;32muart:~$ [m[8D[J[00:01:55.879,969] [0m<inf> fw_update: Received block 95/896[0m
+[1;32muart:~$ [m[8D[J[00:01:55.935,362] [0m<inf> fw_update: Received block 96/896[0m
+[1;32muart:~$ [m[8D[J[00:01:56.062,988] [0m<inf> fw_update: Received block 97/896[0m
+[1;32muart:~$ [m[8D[J[00:01:56.120,431] [0m<inf> fw_update: Received block 98/896[0m
+[1;32muart:~$ [m[8D[J[00:01:56.174,580] [0m<inf> fw_update: Received block 99/896[0m
+[1;32muart:~$ [m[8D[J[00:01:56.228,228] [0m<inf> fw_update: Received block 100/896[0m
+[1;32muart:~$ [m[8D[J[00:01:56.351,422] [0m<inf> fw_update: Received block 101/896[0m
+[1;32muart:~$ [m[8D[J[00:01:56.414,648] [0m<inf> fw_update: Received block 102/896[0m
+[1;32muart:~$ [m[8D[J[00:01:56.474,286] [0m<inf> fw_update: Received block 103/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:56.531,472] [0m<inf> fw_update: Received block 104/896[0m
+[1;32muart:~$ [m[8D[J[00:01:56.685,193] [0m<inf> fw_update: Received block 105/896[0m
+[1;32muart:~$ [m[8D[J[00:01:56.739,469] [0m<inf> fw_update: Received block 106/896[0m
+[1;32muart:~$ [m[8D[J[00:01:56.795,700] [0m<inf> fw_update: Received block 107/896[0m
+[1;32muart:~$ [m[8D[J[00:01:56.851,446] [0m<inf> fw_update: Received block 108/896[0m
+[1;32muart:~$ [m[8D[J[00:01:56.978,994] [0m<inf> fw_update: Received block 109/896[0m
+[1;32muart:~$ [m[8D[J[00:01:57.035,045] [0m<inf> fw_update: Received block 110/896[0m
+[1;32muart:~$ [m[8D[J[00:01:57.090,936] [0m<inf> fw_update: Received block 111/896[0m
+[1;32muart:~$ [m[8D[J[00:01:57.147,316] [0m<inf> fw_update: Received block 112/896[0m
+[1;32muart:~$ [m[8D[J[00:01:57.281,552] [0m<inf> fw_update: Received block 113/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:57.340,279] [0m<inf> fw_update: Received block 114/896[0m
+[1;32muart:~$ [m[8D[J[00:01:57.551,829] [0m<inf> fw_update: Received block 115/896[0m
+[1;32muart:~$ [m[8D[J[00:01:57.605,181] [0m<inf> fw_update: Received block 116/896[0m
+[1;32muart:~$ [m[8D[J[00:01:57.731,617] [0m<inf> fw_update: Received block 117/896[0m
+[1;32muart:~$ [m[8D[J[00:01:57.788,363] [0m<inf> fw_update: Received block 118/896[0m
+[1;32muart:~$ [m[8D[J[00:01:57.842,620] [0m<inf> fw_update: Received block 119/896[0m
+[1;32muart:~$ [m[8D[J[00:01:57.896,465] [0m<inf> fw_update: Received block 120/896[0m
+[1;32muart:~$ [m[8D[J[00:01:58.024,256] [0m<inf> fw_update: Received block 121/896[0m
+[1;32muart:~$ [m[8D[J[00:01:58.080,408] [0m<inf> fw_update: Received block 122/896[0m
+[1;32muart:~$ [m[8D[J[00:01:58.135,276] [0m<inf> fw_update: Received block 123/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:58.188,620] [0m<inf> fw_update: Received block 124/896[0m
+[1;32muart:~$ [m[8D[J[00:01:58.776,798] [0m<inf> fw_update: Received block 125/896[0m
+[1;32muart:~$ [m[8D[J[00:01:58.833,054] [0m<inf> fw_update: Received block 126/896[0m
+[1;32muart:~$ [m[8D[J[00:01:58.889,158] [0m<inf> fw_update: Received block 127/896[0m
+[1;32muart:~$ [m[8D[J[00:01:58.944,127] [0m<inf> fw_update: Received block 128/896[0m
+[1;32muart:~$ [m[8D[J[00:01:59.068,073] [0m<inf> fw_update: Received block 129/896[0m
+[1;32muart:~$ [m[8D[J[00:01:59.122,561] [0m<inf> fw_update: Received block 130/896[0m
+[1;32muart:~$ [m[8D[J[00:01:59.176,391] [0m<inf> fw_update: Received block 131/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:59.230,707] [0m<inf> fw_update: Received block 132/896[0m
+[1;32muart:~$ [m[8D[J[00:01:59.311,762] [1;33m<wrn> golioth_zephyr_coap_req: 1 resends in last 10 seconds[0m
+[1;32muart:~$ [m[8D[J[00:01:59.409,686] [0m<inf> fw_update: Received block 133/896[0m
+[1;32muart:~$ [m[8D[J[00:01:59.465,066] [0m<inf> fw_update: Received block 134/896[0m
+[1;32muart:~$ [m[8D[J[00:01:59.520,386] [0m<inf> fw_update: Received block 135/896[0m
+[1;32muart:~$ [m[8D[J[00:01:59.574,300] [0m<inf> fw_update: Received block 136/896[0m
+[1;32muart:~$ [m[8D[J[00:01:59.702,336] [0m<inf> fw_update: Received block 137/896[0m
+[1;32muart:~$ [m[8D[J[00:01:59.758,079] [0m<inf> fw_update: Received block 138/896[0m
+[1;32muart:~$ [m[8D[J[00:01:59.814,711] [0m<inf> fw_update: Received block 139/896[0m
+[1;32muart:~$ [m[8D[J[00:01:59.874,060] [0m<inf> fw_update: Received block 140/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:00.003,559] [0m<inf> fw_update: Received block 141/896[0m
+[1;32muart:~$ [m[8D[J[00:02:00.193,172] [0m<inf> fw_update: Received block 142/896[0m
+[1;32muart:~$ [m[8D[J[00:02:00.251,625] [0m<inf> fw_update: Received block 143/896[0m
+[1;32muart:~$ [m[8D[J[00:02:00.310,010] [0m<inf> fw_update: Received block 144/896[0m
+[1;32muart:~$ [m[8D[J[00:02:00.441,260] [0m<inf> fw_update: Received block 145/896[0m
+[1;32muart:~$ [m[8D[J[00:02:00.496,531] [0m<inf> fw_update: Received block 146/896[0m
+[1;32muart:~$ [m[8D[J[00:02:00.552,897] [0m<inf> fw_update: Received block 147/896[0m
+[1;32muart:~$ [m[8D[J[00:02:00.608,038] [0m<inf> fw_update: Received block 148/896[0m
+[1;32muart:~$ [m[8D[J[00:02:00.732,125] [0m<inf> fw_update: Received block 149/896[0m
+[1;32muart:~$ [m[8D[J[00:02:00.789,982] [0m<inf> fw_update: Received block 150/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:00.847,529] [0m<inf> fw_update: Received block 151/896[0m
+[1;32muart:~$ [m[8D[J[00:02:01.052,037] [0m<inf> fw_update: Received block 152/896[0m
+[1;32muart:~$ [m[8D[J[00:02:01.180,170] [0m<inf> fw_update: Received block 153/896[0m
+[1;32muart:~$ [m[8D[J[00:02:01.235,579] [0m<inf> fw_update: Received block 154/896[0m
+[1;32muart:~$ [m[8D[J[00:02:01.293,698] [0m<inf> fw_update: Received block 155/896[0m
+[1;32muart:~$ [m[8D[J[00:02:01.352,024] [0m<inf> fw_update: Received block 156/896[0m
+[1;32muart:~$ [m[8D[J[00:02:01.471,866] [0m<inf> fw_update: Received block 157/896[0m
+[1;32muart:~$ [m[8D[J[00:02:01.527,736] [0m<inf> fw_update: Received block 158/896[0m
+[1;32muart:~$ [m[8D[J[00:02:01.589,614] [0m<inf> fw_update: Received block 159/896[0m
+[1;32muart:~$ [m[8D[J[00:02:01.644,610] [0m<inf> fw_update: Received block 160/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:01.773,838] [0m<inf> fw_update: Received block 161/896[0m
+[1;32muart:~$ [m[8D[J[00:02:01.976,901] [0m<inf> fw_update: Received block 162/896[0m
+[1;32muart:~$ [m[8D[J[00:02:02.033,806] [0m<inf> fw_update: Received block 163/896[0m
+[1;32muart:~$ [m[8D[J[00:02:02.092,306] [0m<inf> fw_update: Received block 164/896[0m
+[1;32muart:~$ [m[8D[J[00:02:02.218,997] [0m<inf> fw_update: Received block 165/896[0m
+[1;32muart:~$ [m[8D[J[00:02:02.275,725] [0m<inf> fw_update: Received block 166/896[0m
+[1;32muart:~$ [m[8D[J[00:02:02.330,874] [0m<inf> fw_update: Received block 167/896[0m
+[1;32muart:~$ [m[8D[J[00:02:02.385,998] [0m<inf> fw_update: Received block 168/896[0m
+[1;32muart:~$ [m[8D[J[00:02:02.515,762] [0m<inf> fw_update: Received block 169/896[0m
+[1;32muart:~$ [m[8D[J[00:02:02.572,815] [0m<inf> fw_update: Received block 170/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:02.626,803] [0m<inf> fw_update: Received block 171/896[0m
+[1;32muart:~$ [m[8D[J[00:02:02.843,113] [0m<inf> fw_update: Received block 172/896[0m
+[1;32muart:~$ [m[8D[J[00:02:02.973,120] [0m<inf> fw_update: Received block 173/896[0m
+[1;32muart:~$ [m[8D[J[00:02:03.030,732] [0m<inf> fw_update: Received block 174/896[0m
+[1;32muart:~$ [m[8D[J[00:02:03.086,352] [0m<inf> fw_update: Received block 175/896[0m
+[1;32muart:~$ [m[8D[J[00:02:03.142,037] [0m<inf> fw_update: Received block 176/896[0m
+[1;32muart:~$ [m[8D[J[00:02:03.270,279] [0m<inf> fw_update: Received block 177/896[0m
+[1;32muart:~$ [m[8D[J[00:02:03.324,617] [0m<inf> fw_update: Received block 178/896[0m
+[1;32muart:~$ [m[8D[J[00:02:03.380,058] [0m<inf> fw_update: Received block 179/896[0m
+[1;32muart:~$ [m[8D[J[00:02:03.436,203] [0m<inf> fw_update: Received block 180/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:03.561,682] [0m<inf> fw_update: Received block 181/896[0m
+[1;32muart:~$ [m[8D[J[00:02:03.794,738] [0m<inf> fw_update: Received block 182/896[0m
+[1;32muart:~$ [m[8D[J[00:02:03.862,131] [0m<inf> fw_update: Received block 183/896[0m
+[1;32muart:~$ [m[8D[J[00:02:03.919,248] [0m<inf> fw_update: Received block 184/896[0m
+[1;32muart:~$ [m[8D[J[00:02:04.043,217] [0m<inf> fw_update: Received block 185/896[0m
+[1;32muart:~$ [m[8D[J[00:02:04.096,847] [0m<inf> fw_update: Received block 186/896[0m
+[1;32muart:~$ [m[8D[J[00:02:04.157,581] [0m<inf> fw_update: Received block 187/896[0m
+[1;32muart:~$ [m[8D[J[00:02:04.213,674] [0m<inf> fw_update: Received block 188/896[0m
+[1;32muart:~$ [m[8D[J[00:02:04.337,272] [0m<inf> fw_update: Received block 189/896[0m
+[1;32muart:~$ [m[8D[J[00:02:04.391,757] [0m<inf> fw_update: Received block 190/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:04.447,171] [0m<inf> fw_update: Received block 191/896[0m
+[1;32muart:~$ [m[8D[J[00:02:04.603,382] [0m<inf> fw_update: Received block 192/896[0m
+[1;32muart:~$ [m[8D[J[00:02:04.728,187] [0m<inf> fw_update: Received block 193/896[0m
+[1;32muart:~$ [m[8D[J[00:02:04.789,240] [0m<inf> fw_update: Received block 194/896[0m
+[1;32muart:~$ [m[8D[J[00:02:04.843,933] [0m<inf> fw_update: Received block 195/896[0m
+[1;32muart:~$ [m[8D[J[00:02:04.899,559] [0m<inf> fw_update: Received block 196/896[0m
+[1;32muart:~$ [m[8D[J[00:02:05.026,421] [0m<inf> fw_update: Received block 197/896[0m
+[1;32muart:~$ [m[8D[J[00:02:05.080,418] [0m<inf> fw_update: Received block 198/896[0m
+[1;32muart:~$ [m[8D[J[00:02:05.135,301] [0m<inf> fw_update: Received block 199/896[0m
+[1;32muart:~$ [m[8D[J[00:02:05.190,853] [0m<inf> fw_update: Received block 200/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:05.320,631] [0m<inf> fw_update: Received block 201/896[0m
+[1;32muart:~$ [m[8D[J[00:02:05.557,796] [0m<inf> fw_update: Received block 202/896[0m
+[1;32muart:~$ [m[8D[J[00:02:05.613,681] [0m<inf> fw_update: Received block 203/896[0m
+[1;32muart:~$ [m[8D[J[00:02:05.673,846] [0m<inf> fw_update: Received block 204/896[0m
+[1;32muart:~$ [m[8D[J[00:02:05.799,898] [0m<inf> fw_update: Received block 205/896[0m
+[1;32muart:~$ [m[8D[J[00:02:05.853,627] [0m<inf> fw_update: Received block 206/896[0m
+[1;32muart:~$ [m[8D[J[00:02:05.909,130] [0m<inf> fw_update: Received block 207/896[0m
+[1;32muart:~$ [m[8D[J[00:02:05.965,179] [0m<inf> fw_update: Received block 208/896[0m
+[1;32muart:~$ [m[8D[J[00:02:06.089,869] [0m<inf> fw_update: Received block 209/896[0m
+[1;32muart:~$ [m[8D[J[00:02:06.146,373] [0m<inf> fw_update: Received block 210/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:06.203,817] [0m<inf> fw_update: Received block 211/896[0m
+[1;32muart:~$ [m[8D[J[00:02:06.405,959] [0m<inf> fw_update: Received block 212/896[0m
+[1;32muart:~$ [m[8D[J[00:02:06.529,831] [0m<inf> fw_update: Received block 213/896[0m
+[1;32muart:~$ [m[8D[J[00:02:06.584,981] [0m<inf> fw_update: Received block 214/896[0m
+[1;32muart:~$ [m[8D[J[00:02:06.640,195] [0m<inf> fw_update: Received block 215/896[0m
+[1;32muart:~$ [m[8D[J[00:02:06.697,559] [0m<inf> fw_update: Received block 216/896[0m
+[1;32muart:~$ [m[8D[J[00:02:06.824,139] [0m<inf> fw_update: Received block 217/896[0m
+[1;32muart:~$ [m[8D[J[00:02:06.880,967] [0m<inf> fw_update: Received block 218/896[0m
+[1;32muart:~$ [m[8D[J[00:02:06.945,111] [0m<inf> fw_update: Received block 219/896[0m
+[1;32muart:~$ [m[8D[J[00:02:07.000,848] [0m<inf> fw_update: Received block 220/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:07.128,826] [0m<inf> fw_update: Received block 221/896[0m
+[1;32muart:~$ [m[8D[J[00:02:07.299,077] [0m<inf> fw_update: Received block 222/896[0m
+[1;32muart:~$ [m[8D[J[00:02:07.355,150] [0m<inf> fw_update: Received block 223/896[0m
+[1;32muart:~$ [m[8D[J[00:02:07.411,385] [0m<inf> fw_update: Received block 224/896[0m
+[1;32muart:~$ [m[8D[J[00:02:07.543,835] [0m<inf> fw_update: Received block 225/896[0m
+[1;32muart:~$ [m[8D[J[00:02:07.598,468] [0m<inf> fw_update: Received block 226/896[0m
+[1;32muart:~$ [m[8D[J[00:02:07.653,613] [0m<inf> fw_update: Received block 227/896[0m
+[1;32muart:~$ [m[8D[J[00:02:07.710,865] [0m<inf> fw_update: Received block 228/896[0m
+[1;32muart:~$ [m[8D[J[00:02:07.837,019] [0m<inf> fw_update: Received block 229/896[0m
+[1;32muart:~$ [m[8D[J[00:02:07.900,097] [0m<inf> fw_update: Received block 230/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:07.956,717] [0m<inf> fw_update: Received block 231/896[0m
+[1;32muart:~$ [m[8D[J[00:02:08.171,645] [0m<inf> fw_update: Received block 232/896[0m
+[1;32muart:~$ [m[8D[J[00:02:08.302,079] [0m<inf> fw_update: Received block 233/896[0m
+[1;32muart:~$ [m[8D[J[00:02:08.359,584] [0m<inf> fw_update: Received block 234/896[0m
+[1;32muart:~$ [m[8D[J[00:02:08.415,562] [0m<inf> fw_update: Received block 235/896[0m
+[1;32muart:~$ [m[8D[J[00:02:08.470,199] [0m<inf> fw_update: Received block 236/896[0m
+[1;32muart:~$ [m[8D[J[00:02:08.594,378] [0m<inf> fw_update: Received block 237/896[0m
+[1;32muart:~$ [m[8D[J[00:02:08.649,695] [0m<inf> fw_update: Received block 238/896[0m
+[1;32muart:~$ [m[8D[J[00:02:08.703,504] [0m<inf> fw_update: Received block 239/896[0m
+[1;32muart:~$ [m[8D[J[00:02:08.758,116] [0m<inf> fw_update: Received block 240/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:08.885,126] [0m<inf> fw_update: Received block 241/896[0m
+[1;32muart:~$ [m[8D[J[00:02:09.056,727] [0m<inf> fw_update: Received block 242/896[0m
+[1;32muart:~$ [m[8D[J[00:02:09.117,894] [0m<inf> fw_update: Received block 243/896[0m
+[1;32muart:~$ [m[8D[J[00:02:09.175,951] [0m<inf> fw_update: Received block 244/896[0m
+[1;32muart:~$ [m[8D[J[00:02:09.300,666] [0m<inf> fw_update: Received block 245/896[0m
+[1;32muart:~$ [m[8D[J[00:02:09.355,822] [0m<inf> fw_update: Received block 246/896[0m
+[1;32muart:~$ [m[8D[J[00:02:09.413,349] [0m<inf> fw_update: Received block 247/896[0m
+[1;32muart:~$ [m[8D[J[00:02:09.467,814] [0m<inf> fw_update: Received block 248/896[0m
+[1;32muart:~$ [m[8D[J[00:02:09.595,788] [0m<inf> fw_update: Received block 249/896[0m
+[1;32muart:~$ [m[8D[J[00:02:09.652,530] [0m<inf> fw_update: Received block 250/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:09.707,654] [0m<inf> fw_update: Received block 251/896[0m
+[1;32muart:~$ [m[8D[J[00:02:09.910,907] [0m<inf> fw_update: Received block 252/896[0m
+[1;32muart:~$ [m[8D[J[00:02:10.038,015] [0m<inf> fw_update: Received block 253/896[0m
+[1;32muart:~$ [m[8D[J[00:02:10.094,220] [0m<inf> fw_update: Received block 254/896[0m
+[1;32muart:~$ [m[8D[J[00:02:10.154,391] [0m<inf> fw_update: Received block 255/896[0m
+[1;32muart:~$ [m[8D[J[00:02:10.209,980] [0m<inf> fw_update: Received block 256/896[0m
+[1;32muart:~$ [m[8D[J[00:02:10.335,984] [0m<inf> fw_update: Received block 257/896[0m
+[1;32muart:~$ [m[8D[J[00:02:10.392,866] [0m<inf> fw_update: Received block 258/896[0m
+[1;32muart:~$ [m[8D[J[00:02:10.449,664] [0m<inf> fw_update: Received block 259/896[0m
+[1;32muart:~$ [m[8D[J[00:02:10.503,355] [0m<inf> fw_update: Received block 260/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:10.631,976] [0m<inf> fw_update: Received block 261/896[0m
+[1;32muart:~$ [m[8D[J[00:02:10.821,925] [0m<inf> fw_update: Received block 262/896[0m
+[1;32muart:~$ [m[8D[J[00:02:10.876,381] [0m<inf> fw_update: Received block 263/896[0m
+[1;32muart:~$ [m[8D[J[00:02:10.931,037] [0m<inf> fw_update: Received block 264/896[0m
+[1;32muart:~$ [m[8D[J[00:02:11.061,875] [0m<inf> fw_update: Received block 265/896[0m
+[1;32muart:~$ [m[8D[J[00:02:11.116,056] [0m<inf> fw_update: Received block 266/896[0m
+[1;32muart:~$ [m[8D[J[00:02:11.174,652] [0m<inf> fw_update: Received block 267/896[0m
+[1;32muart:~$ [m[8D[J[00:02:11.229,768] [0m<inf> fw_update: Received block 268/896[0m
+[1;32muart:~$ [m[8D[J[00:02:11.358,951] [0m<inf> fw_update: Received block 269/896[0m
+[1;32muart:~$ [m[8D[J[00:02:11.413,603] [0m<inf> fw_update: Received block 270/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:11.469,105] [0m<inf> fw_update: Received block 271/896[0m
+[1;32muart:~$ [m[8D[J[00:02:11.679,364] [0m<inf> fw_update: Received block 272/896[0m
+[1;32muart:~$ [m[8D[J[00:02:11.804,225] [0m<inf> fw_update: Received block 273/896[0m
+[1;32muart:~$ [m[8D[J[00:02:11.860,131] [0m<inf> fw_update: Received block 274/896[0m
+[1;32muart:~$ [m[8D[J[00:02:11.917,300] [0m<inf> fw_update: Received block 275/896[0m
+[1;32muart:~$ [m[8D[J[00:02:11.974,703] [0m<inf> fw_update: Received block 276/896[0m
+[1;32muart:~$ [m[8D[J[00:02:12.111,520] [0m<inf> fw_update: Received block 277/896[0m
+[1;32muart:~$ [m[8D[J[00:02:12.165,981] [0m<inf> fw_update: Received block 278/896[0m
+[1;32muart:~$ [m[8D[J[00:02:12.223,673] [0m<inf> fw_update: Received block 279/896[0m
+[1;32muart:~$ [m[8D[J[00:02:12.277,506] [0m<inf> fw_update: Received block 280/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:12.402,635] [0m<inf> fw_update: Received block 281/896[0m
+[1;32muart:~$ [m[8D[J[00:02:12.624,478] [0m<inf> fw_update: Received block 282/896[0m
+[1;32muart:~$ [m[8D[J[00:02:12.678,985] [0m<inf> fw_update: Received block 283/896[0m
+[1;32muart:~$ [m[8D[J[00:02:12.735,442] [0m<inf> fw_update: Received block 284/896[0m
+[1;32muart:~$ [m[8D[J[00:02:12.868,754] [0m<inf> fw_update: Received block 285/896[0m
+[1;32muart:~$ [m[8D[J[00:02:12.926,678] [0m<inf> fw_update: Received block 286/896[0m
+[1;32muart:~$ [m[8D[J[00:02:12.980,917] [0m<inf> fw_update: Received block 287/896[0m
+[1;32muart:~$ [m[8D[J[00:02:13.035,283] [0m<inf> fw_update: Received block 288/896[0m
+[1;32muart:~$ [m[8D[J[00:02:13.164,875] [0m<inf> fw_update: Received block 289/896[0m
+[1;32muart:~$ [m[8D[J[00:02:13.218,671] [0m<inf> fw_update: Received block 290/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:13.274,401] [0m<inf> fw_update: Received block 291/896[0m
+[1;32muart:~$ [m[8D[J[00:02:13.461,633] [0m<inf> fw_update: Received block 292/896[0m
+[1;32muart:~$ [m[8D[J[00:02:13.585,582] [0m<inf> fw_update: Received block 293/896[0m
+[1;32muart:~$ [m[8D[J[00:02:13.645,338] [0m<inf> fw_update: Received block 294/896[0m
+[1;32muart:~$ [m[8D[J[00:02:13.701,518] [0m<inf> fw_update: Received block 295/896[0m
+[1;32muart:~$ [m[8D[J[00:02:13.759,455] [0m<inf> fw_update: Received block 296/896[0m
+[1;32muart:~$ [m[8D[J[00:02:13.888,820] [0m<inf> fw_update: Received block 297/896[0m
+[1;32muart:~$ [m[8D[J[00:02:13.944,988] [0m<inf> fw_update: Received block 298/896[0m
+[1;32muart:~$ [m[8D[J[00:02:13.997,204] [0m<inf> fw_update: Received block 299/896[0m
+[1;32muart:~$ [m[8D[J[00:02:14.055,137] [0m<inf> fw_update: Received block 300/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:14.184,785] [0m<inf> fw_update: Received block 301/896[0m
+[1;32muart:~$ [m[8D[J[00:02:14.368,290] [0m<inf> fw_update: Received block 302/896[0m
+[1;32muart:~$ [m[8D[J[00:02:14.423,729] [0m<inf> fw_update: Received block 303/896[0m
+[1;32muart:~$ [m[8D[J[00:02:14.479,664] [0m<inf> fw_update: Received block 304/896[0m
+[1;32muart:~$ [m[8D[J[00:02:14.604,483] [0m<inf> fw_update: Received block 305/896[0m
+[1;32muart:~$ [m[8D[J[00:02:14.660,557] [0m<inf> fw_update: Received block 306/896[0m
+[1;32muart:~$ [m[8D[J[00:02:14.715,902] [0m<inf> fw_update: Received block 307/896[0m
+[1;32muart:~$ [m[8D[J[00:02:14.775,586] [0m<inf> fw_update: Received block 308/896[0m
+[1;32muart:~$ [m[8D[J[00:02:14.902,296] [0m<inf> fw_update: Received block 309/896[0m
+[1;32muart:~$ [m[8D[J[00:02:14.956,190] [0m<inf> fw_update: Received block 310/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:15.011,274] [0m<inf> fw_update: Received block 311/896[0m
+[1;32muart:~$ [m[8D[J[00:02:15.189,581] [0m<inf> fw_update: Received block 312/896[0m
+[1;32muart:~$ [m[8D[J[00:02:15.320,504] [0m<inf> fw_update: Received block 313/896[0m
+[1;32muart:~$ [m[8D[J[00:02:15.374,418] [0m<inf> fw_update: Received block 314/896[0m
+[1;32muart:~$ [m[8D[J[00:02:15.431,552] [0m<inf> fw_update: Received block 315/896[0m
+[1;32muart:~$ [m[8D[J[00:02:15.492,595] [0m<inf> fw_update: Received block 316/896[0m
+[1;32muart:~$ [m[8D[J[00:02:15.621,955] [0m<inf> fw_update: Received block 317/896[0m
+[1;32muart:~$ [m[8D[J[00:02:15.679,431] [0m<inf> fw_update: Received block 318/896[0m
+[1;32muart:~$ [m[8D[J[00:02:15.734,586] [0m<inf> fw_update: Received block 319/896[0m
+[1;32muart:~$ [m[8D[J[00:02:15.789,255] [0m<inf> fw_update: Received block 320/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:15.913,559] [0m<inf> fw_update: Received block 321/896[0m
+[1;32muart:~$ [m[8D[J[00:02:16.091,893] [0m<inf> fw_update: Received block 322/896[0m
+[1;32muart:~$ [m[8D[J[00:02:16.148,764] [0m<inf> fw_update: Received block 323/896[0m
+[1;32muart:~$ [m[8D[J[00:02:16.205,575] [0m<inf> fw_update: Received block 324/896[0m
+[1;32muart:~$ [m[8D[J[00:02:16.333,860] [0m<inf> fw_update: Received block 325/896[0m
+[1;32muart:~$ [m[8D[J[00:02:16.392,495] [0m<inf> fw_update: Received block 326/896[0m
+[1;32muart:~$ [m[8D[J[00:02:16.450,794] [0m<inf> fw_update: Received block 327/896[0m
+[1;32muart:~$ [m[8D[J[00:02:16.512,420] [0m<inf> fw_update: Received block 328/896[0m
+[1;32muart:~$ [m[8D[J[00:02:16.634,007] [0m<inf> fw_update: Received block 329/896[0m
+[1;32muart:~$ [m[8D[J[00:02:16.692,821] [0m<inf> fw_update: Received block 330/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:16.748,487] [0m<inf> fw_update: Received block 331/896[0m
+[1;32muart:~$ [m[8D[J[00:02:16.940,981] [0m<inf> fw_update: Received block 332/896[0m
+[1;32muart:~$ [m[8D[J[00:02:17.064,614] [0m<inf> fw_update: Received block 333/896[0m
+[1;32muart:~$ [m[8D[J[00:02:17.119,340] [0m<inf> fw_update: Received block 334/896[0m
+[1;32muart:~$ [m[8D[J[00:02:17.185,909] [0m<inf> fw_update: Received block 335/896[0m
+[1;32muart:~$ [m[8D[J[00:02:17.240,746] [0m<inf> fw_update: Received block 336/896[0m
+[1;32muart:~$ [m[8D[J[00:02:17.375,691] [0m<inf> fw_update: Received block 337/896[0m
+[1;32muart:~$ [m[8D[J[00:02:17.429,720] [0m<inf> fw_update: Received block 338/896[0m
+[1;32muart:~$ [m[8D[J[00:02:17.492,495] [0m<inf> fw_update: Received block 339/896[0m
+[1;32muart:~$ [m[8D[J[00:02:17.553,579] [0m<inf> fw_update: Received block 340/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:17.677,533] [0m<inf> fw_update: Received block 341/896[0m
+[1;32muart:~$ [m[8D[J[00:02:17.905,422] [0m<inf> fw_update: Received block 342/896[0m
+[1;32muart:~$ [m[8D[J[00:02:17.961,455] [0m<inf> fw_update: Received block 343/896[0m
+[1;32muart:~$ [m[8D[J[00:02:18.021,127] [0m<inf> fw_update: Received block 344/896[0m
+[1;32muart:~$ [m[8D[J[00:02:18.147,065] [0m<inf> fw_update: Received block 345/896[0m
+[1;32muart:~$ [m[8D[J[00:02:18.201,219] [0m<inf> fw_update: Received block 346/896[0m
+[1;32muart:~$ [m[8D[J[00:02:18.258,653] [0m<inf> fw_update: Received block 347/896[0m
+[1;32muart:~$ [m[8D[J[00:02:18.313,349] [0m<inf> fw_update: Received block 348/896[0m
+[1;32muart:~$ [m[8D[J[00:02:18.436,564] [0m<inf> fw_update: Received block 349/896[0m
+[1;32muart:~$ [m[8D[J[00:02:18.494,225] [0m<inf> fw_update: Received block 350/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:18.550,138] [0m<inf> fw_update: Received block 351/896[0m
+[1;32muart:~$ [m[8D[J[00:02:18.759,419] [0m<inf> fw_update: Received block 352/896[0m
+[1;32muart:~$ [m[8D[J[00:02:18.889,432] [0m<inf> fw_update: Received block 353/896[0m
+[1;32muart:~$ [m[8D[J[00:02:18.948,471] [0m<inf> fw_update: Received block 354/896[0m
+[1;32muart:~$ [m[8D[J[00:02:19.003,747] [0m<inf> fw_update: Received block 355/896[0m
+[1;32muart:~$ [m[8D[J[00:02:19.062,613] [0m<inf> fw_update: Received block 356/896[0m
+[1;32muart:~$ [m[8D[J[00:02:19.188,412] [0m<inf> fw_update: Received block 357/896[0m
+[1;32muart:~$ [m[8D[J[00:02:19.244,496] [0m<inf> fw_update: Received block 358/896[0m
+[1;32muart:~$ [m[8D[J[00:02:19.299,964] [0m<inf> fw_update: Received block 359/896[0m
+[1;32muart:~$ [m[8D[J[00:02:19.358,285] [0m<inf> fw_update: Received block 360/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:19.488,364] [0m<inf> fw_update: Received block 361/896[0m
+[1;32muart:~$ [m[8D[J[00:02:19.684,147] [0m<inf> fw_update: Received block 362/896[0m
+[1;32muart:~$ [m[8D[J[00:02:19.738,943] [0m<inf> fw_update: Received block 363/896[0m
+[1;32muart:~$ [m[8D[J[00:02:19.799,604] [0m<inf> fw_update: Received block 364/896[0m
+[1;32muart:~$ [m[8D[J[00:02:19.925,884] [0m<inf> fw_update: Received block 365/896[0m
+[1;32muart:~$ [m[8D[J[00:02:19.981,144] [0m<inf> fw_update: Received block 366/896[0m
+[1;32muart:~$ [m[8D[J[00:02:20.036,282] [0m<inf> fw_update: Received block 367/896[0m
+[1;32muart:~$ [m[8D[J[00:02:20.096,685] [0m<inf> fw_update: Received block 368/896[0m
+[1;32muart:~$ [m[8D[J[00:02:20.220,144] [0m<inf> fw_update: Received block 369/896[0m
+[1;32muart:~$ [m[8D[J[00:02:20.273,912] [0m<inf> fw_update: Received block 370/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:20.327,407] [0m<inf> fw_update: Received block 371/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:21.353,368] [0m<inf> fw_update: Received block 372/896[0m
+[1;32muart:~$ [m[8D[J[00:02:21.479,316] [0m<inf> fw_update: Received block 373/896[0m
+[1;32muart:~$ [m[8D[J[00:02:21.533,483] [0m<inf> fw_update: Received block 374/896[0m
+[1;32muart:~$ [m[8D[J[00:02:21.587,958] [0m<inf> fw_update: Received block 375/896[0m
+[1;32muart:~$ [m[8D[J[00:02:21.646,173] [0m<inf> fw_update: Received block 376/896[0m
+[1;32muart:~$ [m[8D[J[00:02:21.769,012] [0m<inf> fw_update: Received block 377/896[0m
+[1;32muart:~$ [m[8D[J[00:02:21.822,977] [0m<inf> fw_update: Received block 378/896[0m
+[1;32muart:~$ [m[8D[J[00:02:21.877,010] [0m<inf> fw_update: Received block 379/896[0m
+[1;32muart:~$ [m[8D[J[00:02:21.939,671] [0m<inf> fw_update: Received block 380/896[0m
+[1;32muart:~$ [m[8D[J[00:02:22.072,077] [0m<inf> fw_update: Received block 381/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:22.125,520] [0m<inf> fw_update: Received block 382/896[0m
+[1;32muart:~$ [m[8D[J[00:02:22.309,373] [0m<inf> fw_update: Received block 383/896[0m
+[1;32muart:~$ [m[8D[J[00:02:22.363,181] [0m<inf> fw_update: Received block 384/896[0m
+[1;32muart:~$ [m[8D[J[00:02:22.492,195] [0m<inf> fw_update: Received block 385/896[0m
+[1;32muart:~$ [m[8D[J[00:02:22.547,930] [0m<inf> fw_update: Received block 386/896[0m
+[1;32muart:~$ [m[8D[J[00:02:22.605,894] [0m<inf> fw_update: Received block 387/896[0m
+[1;32muart:~$ [m[8D[J[00:02:22.665,107] [0m<inf> fw_update: Received block 388/896[0m
+[1;32muart:~$ [m[8D[J[00:02:22.790,406] [0m<inf> fw_update: Received block 389/896[0m
+[1;32muart:~$ [m[8D[J[00:02:22.844,757] [0m<inf> fw_update: Received block 390/896[0m
+[1;32muart:~$ [m[8D[J[00:02:22.899,590] [0m<inf> fw_update: Received block 391/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:22.953,046] [0m<inf> fw_update: Received block 392/896[0m
+[1;32muart:~$ [m[8D[J[00:02:23.139,280] [0m<inf> fw_update: Received block 393/896[0m
+[1;32muart:~$ [m[8D[J[00:02:23.195,436] [0m<inf> fw_update: Received block 394/896[0m
+[1;32muart:~$ [m[8D[J[00:02:23.249,822] [0m<inf> fw_update: Received block 395/896[0m
+[1;32muart:~$ [m[8D[J[00:02:23.304,371] [0m<inf> fw_update: Received block 396/896[0m
+[1;32muart:~$ [m[8D[J[00:02:23.437,785] [0m<inf> fw_update: Received block 397/896[0m
+[1;32muart:~$ [m[8D[J[00:02:23.495,198] [0m<inf> fw_update: Received block 398/896[0m
+[1;32muart:~$ [m[8D[J[00:02:23.559,244] [0m<inf> fw_update: Received block 399/896[0m
+[1;32muart:~$ [m[8D[J[00:02:23.616,334] [0m<inf> fw_update: Received block 400/896[0m
+[1;32muart:~$ [m[8D[J[00:02:23.751,469] [0m<inf> fw_update: Received block 401/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:23.807,196] [0m<inf> fw_update: Received block 402/896[0m
+[1;32muart:~$ [m[8D[J[00:02:24.050,960] [0m<inf> fw_update: Received block 403/896[0m
+[1;32muart:~$ [m[8D[J[00:02:24.106,854] [0m<inf> fw_update: Received block 404/896[0m
+[1;32muart:~$ [m[8D[J[00:02:24.236,309] [0m<inf> fw_update: Received block 405/896[0m
+[1;32muart:~$ [m[8D[J[00:02:24.297,097] [0m<inf> fw_update: Received block 406/896[0m
+[1;32muart:~$ [m[8D[J[00:02:24.353,212] [0m<inf> fw_update: Received block 407/896[0m
+[1;32muart:~$ [m[8D[J[00:02:24.408,357] [0m<inf> fw_update: Received block 408/896[0m
+[1;32muart:~$ [m[8D[J[00:02:24.826,494] [0m<inf> fw_update: Received block 409/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:24.967,262] [0m<inf> fw_update: Received block 410/896[0m
+[1;32muart:~$ [m[8D[J[00:02:25.062,546] [0m<inf> fw_update: Received block 411/896[0m
+[1;32muart:~$ [m[8D[J[00:02:25.118,610] [0m<inf> fw_update: Received block 412/896[0m
+[1;32muart:~$ [m[8D[J[00:02:25.255,729] [0m<inf> fw_update: Received block 413/896[0m
+[1;32muart:~$ [m[8D[J[00:02:25.308,972] [0m<inf> fw_update: Received block 414/896[0m
+[1;32muart:~$ [m[8D[J[00:02:25.363,896] [0m<inf> fw_update: Received block 415/896[0m
+[1;32muart:~$ [m[8D[J[00:02:25.417,889] [0m<inf> fw_update: Received block 416/896[0m
+[1;32muart:~$ [m[8D[J[00:02:25.986,485] [0m<inf> fw_update: Received block 417/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:26.095,707] [0m<inf> fw_update: Received block 418/896[0m
+[1;32muart:~$ [m[8D[J[00:02:26.182,981] [0m<inf> fw_update: Received block 419/896[0m
+[1;32muart:~$ [m[8D[J[00:02:26.240,896] [0m<inf> fw_update: Received block 420/896[0m
+[1;32muart:~$ [m[8D[J[00:02:26.367,445] [0m<inf> fw_update: Received block 421/896[0m
+[1;32muart:~$ [m[8D[J[00:02:26.429,444] [0m<inf> fw_update: Received block 422/896[0m
+[1;32muart:~$ [m[8D[J[00:02:26.483,640] [0m<inf> fw_update: Received block 423/896[0m
+[1;32muart:~$ [m[8D[J[00:02:26.537,911] [0m<inf> fw_update: Received block 424/896[0m
+[1;32muart:~$ [m[8D[J[00:02:26.664,563] [0m<inf> fw_update: Received block 425/896[0m
+[1;32muart:~$ [m[8D[J[00:02:26.722,079] [0m<inf> fw_update: Received block 426/896[0m
+[1;32muart:~$ [m[8D[J[00:02:26.776,166] [0m<inf> fw_update: Received block 427/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:26.833,096] [0m<inf> fw_update: Received block 428/896[0m
+[1;32muart:~$ [m[8D[J[00:02:27.005,427] [0m<inf> fw_update: Received block 429/896[0m
+[1;32muart:~$ [m[8D[J[00:02:27.061,745] [0m<inf> fw_update: Received block 430/896[0m
+[1;32muart:~$ [m[8D[J[00:02:27.117,139] [0m<inf> fw_update: Received block 431/896[0m
+[1;32muart:~$ [m[8D[J[00:02:27.173,519] [0m<inf> fw_update: Received block 432/896[0m
+[1;32muart:~$ [m[8D[J[00:02:27.299,916] [0m<inf> fw_update: Received block 433/896[0m
+[1;32muart:~$ [m[8D[J[00:02:27.354,308] [0m<inf> fw_update: Received block 434/896[0m
+[1;32muart:~$ [m[8D[J[00:02:27.408,912] [0m<inf> fw_update: Received block 435/896[0m
+[1;32muart:~$ [m[8D[J[00:02:27.463,385] [0m<inf> fw_update: Received block 436/896[0m
+[1;32muart:~$ [m[8D[J[00:02:27.596,467] [0m<inf> fw_update: Received block 437/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:27.652,096] [0m<inf> fw_update: Received block 438/896[0m
+[1;32muart:~$ [m[8D[J[00:02:27.847,889] [0m<inf> fw_update: Received block 439/896[0m
+[1;32muart:~$ [m[8D[J[00:02:27.901,969] [0m<inf> fw_update: Received block 440/896[0m
+[1;32muart:~$ [m[8D[J[00:02:28.033,670] [0m<inf> fw_update: Received block 441/896[0m
+[1;32muart:~$ [m[8D[J[00:02:28.088,828] [0m<inf> fw_update: Received block 442/896[0m
+[1;32muart:~$ [m[8D[J[00:02:28.143,718] [0m<inf> fw_update: Received block 443/896[0m
+[1;32muart:~$ [m[8D[J[00:02:28.202,536] [0m<inf> fw_update: Received block 444/896[0m
+[1;32muart:~$ [m[8D[J[00:02:28.329,555] [0m<inf> fw_update: Received block 445/896[0m
+[1;32muart:~$ [m[8D[J[00:02:28.384,205] [0m<inf> fw_update: Received block 446/896[0m
+[1;32muart:~$ [m[8D[J[00:02:28.439,119] [0m<inf> fw_update: Received block 447/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:28.500,593] [0m<inf> fw_update: Received block 448/896[0m
+[1;32muart:~$ [m[8D[J[00:02:28.674,439] [0m<inf> fw_update: Received block 449/896[0m
+[1;32muart:~$ [m[8D[J[00:02:28.728,309] [0m<inf> fw_update: Received block 450/896[0m
+[1;32muart:~$ [m[8D[J[00:02:28.786,166] [0m<inf> fw_update: Received block 451/896[0m
+[1;32muart:~$ [m[8D[J[00:02:28.841,526] [0m<inf> fw_update: Received block 452/896[0m
+[1;32muart:~$ [m[8D[J[00:02:28.968,767] [0m<inf> fw_update: Received block 453/896[0m
+[1;32muart:~$ [m[8D[J[00:02:29.029,744] [0m<inf> fw_update: Received block 454/896[0m
+[1;32muart:~$ [m[8D[J[00:02:29.084,009] [0m<inf> fw_update: Received block 455/896[0m
+[1;32muart:~$ [m[8D[J[00:02:29.137,849] [0m<inf> fw_update: Received block 456/896[0m
+[1;32muart:~$ [m[8D[J[00:02:29.265,433] [0m<inf> fw_update: Received block 457/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:29.320,730] [0m<inf> fw_update: Received block 458/896[0m
+[1;32muart:~$ [m[8D[J[00:02:29.503,276] [0m<inf> fw_update: Received block 459/896[0m
+[1;32muart:~$ [m[8D[J[00:02:29.556,987] [0m<inf> fw_update: Received block 460/896[0m
+[1;32muart:~$ [m[8D[J[00:02:29.682,632] [0m<inf> fw_update: Received block 461/896[0m
+[1;32muart:~$ [m[8D[J[00:02:29.736,919] [0m<inf> fw_update: Received block 462/896[0m
+[1;32muart:~$ [m[8D[J[00:02:29.792,285] [0m<inf> fw_update: Received block 463/896[0m
+[1;32muart:~$ [m[8D[J[00:02:29.848,152] [0m<inf> fw_update: Received block 464/896[0m
+[1;32muart:~$ [m[8D[J[00:02:29.974,907] [0m<inf> fw_update: Received block 465/896[0m
+[1;32muart:~$ [m[8D[J[00:02:30.032,701] [0m<inf> fw_update: Received block 466/896[0m
+[1;32muart:~$ [m[8D[J[00:02:30.086,536] [0m<inf> fw_update: Received block 467/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:30.144,909] [0m<inf> fw_update: Received block 468/896[0m
+[1;32muart:~$ [m[8D[J[00:02:30.351,887] [0m<inf> fw_update: Received block 469/896[0m
+[1;32muart:~$ [m[8D[J[00:02:30.407,877] [0m<inf> fw_update: Received block 470/896[0m
+[1;32muart:~$ [m[8D[J[00:02:30.515,778] [0m<inf> fw_update: Received block 471/896[0m
+[1;32muart:~$ [m[8D[J[00:02:30.573,559] [0m<inf> fw_update: Received block 472/896[0m
+[1;32muart:~$ [m[8D[J[00:02:30.700,405] [0m<inf> fw_update: Received block 473/896[0m
+[1;32muart:~$ [m[8D[J[00:02:30.768,039] [0m<inf> fw_update: Received block 474/896[0m
+[1;32muart:~$ [m[8D[J[00:02:30.824,727] [0m<inf> fw_update: Received block 475/896[0m
+[1;32muart:~$ [m[8D[J[00:02:30.881,870] [0m<inf> fw_update: Received block 476/896[0m
+[1;32muart:~$ [m[8D[J[00:02:31.005,297] [0m<inf> fw_update: Received block 477/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:31.063,412] [0m<inf> fw_update: Received block 478/896[0m
+[1;32muart:~$ [m[8D[J[00:02:31.250,665] [0m<inf> fw_update: Received block 479/896[0m
+[1;32muart:~$ [m[8D[J[00:02:31.309,296] [0m<inf> fw_update: Received block 480/896[0m
+[1;32muart:~$ [m[8D[J[00:02:31.442,950] [0m<inf> fw_update: Received block 481/896[0m
+[1;32muart:~$ [m[8D[J[00:02:31.499,529] [0m<inf> fw_update: Received block 482/896[0m
+[1;32muart:~$ [m[8D[J[00:02:31.557,044] [0m<inf> fw_update: Received block 483/896[0m
+[1;32muart:~$ [m[8D[J[00:02:31.612,410] [0m<inf> fw_update: Received block 484/896[0m
+[1;32muart:~$ [m[8D[J[00:02:31.742,914] [0m<inf> fw_update: Received block 485/896[0m
+[1;32muart:~$ [m[8D[J[00:02:31.798,230] [0m<inf> fw_update: Received block 486/896[0m
+[1;32muart:~$ [m[8D[J[00:02:31.852,964] [0m<inf> fw_update: Received block 487/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:31.906,712] [0m<inf> fw_update: Received block 488/896[0m
+[1;32muart:~$ [m[8D[J[00:02:32.079,291] [0m<inf> fw_update: Received block 489/896[0m
+[1;32muart:~$ [m[8D[J[00:02:32.133,261] [0m<inf> fw_update: Received block 490/896[0m
+[1;32muart:~$ [m[8D[J[00:02:32.189,903] [0m<inf> fw_update: Received block 491/896[0m
+[1;32muart:~$ [m[8D[J[00:02:32.248,713] [0m<inf> fw_update: Received block 492/896[0m
+[1;32muart:~$ [m[8D[J[00:02:32.380,737] [0m<inf> fw_update: Received block 493/896[0m
+[1;32muart:~$ [m[8D[J[00:02:32.437,203] [0m<inf> fw_update: Received block 494/896[0m
+[1;32muart:~$ [m[8D[J[00:02:32.493,873] [0m<inf> fw_update: Received block 495/896[0m
+[1;32muart:~$ [m[8D[J[00:02:32.547,973] [0m<inf> fw_update: Received block 496/896[0m
+[1;32muart:~$ [m[8D[J[00:02:32.672,652] [0m<inf> fw_update: Received block 497/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:32.732,174] [0m<inf> fw_update: Received block 498/896[0m
+[1;32muart:~$ [m[8D[J[00:02:32.916,746] [0m<inf> fw_update: Received block 499/896[0m
+[1;32muart:~$ [m[8D[J[00:02:32.975,212] [0m<inf> fw_update: Received block 500/896[0m
+[1;32muart:~$ [m[8D[J[00:02:33.103,512] [0m<inf> fw_update: Received block 501/896[0m
+[1;32muart:~$ [m[8D[J[00:02:33.156,882] [0m<inf> fw_update: Received block 502/896[0m
+[1;32muart:~$ [m[8D[J[00:02:33.212,813] [0m<inf> fw_update: Received block 503/896[0m
+[1;32muart:~$ [m[8D[J[00:02:33.274,153] [0m<inf> fw_update: Received block 504/896[0m
+[1;32muart:~$ [m[8D[J[00:02:33.399,692] [0m<inf> fw_update: Received block 505/896[0m
+[1;32muart:~$ [m[8D[J[00:02:33.453,847] [0m<inf> fw_update: Received block 506/896[0m
+[1;32muart:~$ [m[8D[J[00:02:33.511,276] [0m<inf> fw_update: Received block 507/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:33.566,772] [0m<inf> fw_update: Received block 508/896[0m
+[1;32muart:~$ [m[8D[J[00:02:33.777,962] [0m<inf> fw_update: Received block 509/896[0m
+[1;32muart:~$ [m[8D[J[00:02:33.832,808] [0m<inf> fw_update: Received block 510/896[0m
+[1;32muart:~$ [m[8D[J[00:02:33.887,271] [0m<inf> fw_update: Received block 511/896[0m
+[1;32muart:~$ [m[8D[J[00:02:33.941,522] [0m<inf> fw_update: Received block 512/896[0m
+[1;32muart:~$ [m[8D[J[00:02:34.586,218] [0m<inf> fw_update: Received block 513/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:34.688,023] [0m<inf> fw_update: Received block 514/896[0m
+[1;32muart:~$ [m[8D[J[00:02:34.747,210] [0m<inf> fw_update: Received block 515/896[0m
+[1;32muart:~$ [m[8D[J[00:02:34.803,634] [0m<inf> fw_update: Received block 516/896[0m
+[1;32muart:~$ [m[8D[J[00:02:34.928,960] [0m<inf> fw_update: Received block 517/896[0m
+[1;32muart:~$ [m[8D[J[00:02:34.983,436] [0m<inf> fw_update: Received block 518/896[0m
+[1;32muart:~$ [m[8D[J[00:02:35.036,842] [0m<inf> fw_update: Received block 519/896[0m
+[1;32muart:~$ [m[8D[J[00:02:35.097,774] [0m<inf> fw_update: Received block 520/896[0m
+[1;32muart:~$ [m[8D[J[00:02:35.227,061] [0m<inf> fw_update: Received block 521/896[0m
+[1;32muart:~$ [m[8D[J[00:02:35.285,716] [0m<inf> fw_update: Received block 522/896[0m
+[1;32muart:~$ [m[8D[J[00:02:35.343,817] [0m<inf> fw_update: Received block 523/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:35.398,038] [0m<inf> fw_update: Received block 524/896[0m
+[1;32muart:~$ [m[8D[J[00:02:35.600,739] [0m<inf> fw_update: Received block 525/896[0m
+[1;32muart:~$ [m[8D[J[00:02:35.658,309] [0m<inf> fw_update: Received block 526/896[0m
+[1;32muart:~$ [m[8D[J[00:02:35.715,356] [0m<inf> fw_update: Received block 527/896[0m
+[1;32muart:~$ [m[8D[J[00:02:35.770,597] [0m<inf> fw_update: Received block 528/896[0m
+[1;32muart:~$ [m[8D[J[00:02:35.895,214] [0m<inf> fw_update: Received block 529/896[0m
+[1;32muart:~$ [m[8D[J[00:02:35.951,844] [0m<inf> fw_update: Received block 530/896[0m
+[1;32muart:~$ [m[8D[J[00:02:36.005,664] [0m<inf> fw_update: Received block 531/896[0m
+[1;32muart:~$ [m[8D[J[00:02:36.060,116] [0m<inf> fw_update: Received block 532/896[0m
+[1;32muart:~$ [m[8D[J[00:02:36.185,138] [0m<inf> fw_update: Received block 533/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:36.239,572] [0m<inf> fw_update: Received block 534/896[0m
+[1;32muart:~$ [m[8D[J[00:02:36.412,917] [0m<inf> fw_update: Received block 535/896[0m
+[1;32muart:~$ [m[8D[J[00:02:36.469,040] [0m<inf> fw_update: Received block 536/896[0m
+[1;32muart:~$ [m[8D[J[00:02:36.592,913] [0m<inf> fw_update: Received block 537/896[0m
+[1;32muart:~$ [m[8D[J[00:02:36.654,385] [0m<inf> fw_update: Received block 538/896[0m
+[1;32muart:~$ [m[8D[J[00:02:36.708,416] [0m<inf> fw_update: Received block 539/896[0m
+[1;32muart:~$ [m[8D[J[00:02:36.773,040] [0m<inf> fw_update: Received block 540/896[0m
+[1;32muart:~$ [m[8D[J[00:02:36.897,658] [0m<inf> fw_update: Received block 541/896[0m
+[1;32muart:~$ [m[8D[J[00:02:36.951,346] [0m<inf> fw_update: Received block 542/896[0m
+[1;32muart:~$ [m[8D[J[00:02:37.259,006] [0m<inf> fw_update: Received block 543/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:37.353,956] [0m<inf> fw_update: Received block 544/896[0m
+[1;32muart:~$ [m[8D[J[00:02:37.480,851] [0m<inf> fw_update: Received block 545/896[0m
+[1;32muart:~$ [m[8D[J[00:02:37.535,386] [0m<inf> fw_update: Received block 546/896[0m
+[1;32muart:~$ [m[8D[J[00:02:37.597,631] [0m<inf> fw_update: Received block 547/896[0m
+[1;32muart:~$ [m[8D[J[00:02:37.652,092] [0m<inf> fw_update: Received block 548/896[0m
+[1;32muart:~$ [m[8D[J[00:02:37.775,214] [0m<inf> fw_update: Received block 549/896[0m
+[1;32muart:~$ [m[8D[J[00:02:37.833,421] [0m<inf> fw_update: Received block 550/896[0m
+[1;32muart:~$ [m[8D[J[00:02:37.891,110] [0m<inf> fw_update: Received block 551/896[0m
+[1;32muart:~$ [m[8D[J[00:02:37.957,348] [0m<inf> fw_update: Received block 552/896[0m
+[1;32muart:~$ [m[8D[J[00:02:38.093,347] [0m<inf> fw_update: Received block 553/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:38.148,884] [0m<inf> fw_update: Received block 554/896[0m
+[1;32muart:~$ [m[8D[J[00:02:38.351,478] [0m<inf> fw_update: Received block 555/896[0m
+[1;32muart:~$ [m[8D[J[00:02:38.409,561] [0m<inf> fw_update: Received block 556/896[0m
+[1;32muart:~$ [m[8D[J[00:02:38.536,141] [0m<inf> fw_update: Received block 557/896[0m
+[1;32muart:~$ [m[8D[J[00:02:38.591,139] [0m<inf> fw_update: Received block 558/896[0m
+[1;32muart:~$ [m[8D[J[00:02:38.645,743] [0m<inf> fw_update: Received block 559/896[0m
+[1;32muart:~$ [m[8D[J[00:02:38.703,236] [0m<inf> fw_update: Received block 560/896[0m
+[1;32muart:~$ [m[8D[J[00:02:38.831,000] [0m<inf> fw_update: Received block 561/896[0m
+[1;32muart:~$ [m[8D[J[00:02:38.885,423] [0m<inf> fw_update: Received block 562/896[0m
+[1;32muart:~$ [m[8D[J[00:02:38.946,450] [0m<inf> fw_update: Received block 563/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:39.002,153] [0m<inf> fw_update: Received block 564/896[0m
+[1;32muart:~$ [m[8D[J[00:02:39.237,620] [0m<inf> fw_update: Received block 565/896[0m
+[1;32muart:~$ [m[8D[J[00:02:39.295,810] [0m<inf> fw_update: Received block 566/896[0m
+[1;32muart:~$ [m[8D[J[00:02:39.351,259] [0m<inf> fw_update: Received block 567/896[0m
+[1;32muart:~$ [m[8D[J[00:02:39.405,912] [0m<inf> fw_update: Received block 568/896[0m
+[1;32muart:~$ [m[8D[J[00:02:39.536,969] [0m<inf> fw_update: Received block 569/896[0m
+[1;32muart:~$ [m[8D[J[00:02:39.590,848] [0m<inf> fw_update: Received block 570/896[0m
+[1;32muart:~$ [m[8D[J[00:02:39.645,711] [0m<inf> fw_update: Received block 571/896[0m
+[1;32muart:~$ [m[8D[J[00:02:39.700,256] [0m<inf> fw_update: Received block 572/896[0m
+[1;32muart:~$ [m[8D[J[00:02:39.827,593] [0m<inf> fw_update: Received block 573/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:39.884,296] [0m<inf> fw_update: Received block 574/896[0m
+[1;32muart:~$ [m[8D[J[00:02:40.098,385] [0m<inf> fw_update: Received block 575/896[0m
+[1;32muart:~$ [m[8D[J[00:02:40.153,764] [0m<inf> fw_update: Received block 576/896[0m
+[1;32muart:~$ [m[8D[J[00:02:40.291,194] [0m<inf> fw_update: Received block 577/896[0m
+[1;32muart:~$ [m[8D[J[00:02:40.347,251] [0m<inf> fw_update: Received block 578/896[0m
+[1;32muart:~$ [m[8D[J[00:02:40.405,850] [0m<inf> fw_update: Received block 579/896[0m
+[1;32muart:~$ [m[8D[J[00:02:40.552,733] [0m<inf> fw_update: Received block 580/896[0m
+[1;32muart:~$ [m[8D[J[00:02:40.679,258] [0m<inf> fw_update: Received block 581/896[0m
+[1;32muart:~$ [m[8D[J[00:02:40.734,671] [0m<inf> fw_update: Received block 582/896[0m
+[1;32muart:~$ [m[8D[J[00:02:40.789,344] [0m<inf> fw_update: Received block 583/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:40.845,513] [0m<inf> fw_update: Received block 584/896[0m
+[1;32muart:~$ [m[8D[J[00:02:41.031,246] [0m<inf> fw_update: Received block 585/896[0m
+[1;32muart:~$ [m[8D[J[00:02:41.089,249] [0m<inf> fw_update: Received block 586/896[0m
+[1;32muart:~$ [m[8D[J[00:02:41.144,887] [0m<inf> fw_update: Received block 587/896[0m
+[1;32muart:~$ [m[8D[J[00:02:41.202,267] [0m<inf> fw_update: Received block 588/896[0m
+[1;32muart:~$ [m[8D[J[00:02:41.330,070] [0m<inf> fw_update: Received block 589/896[0m
+[1;32muart:~$ [m[8D[J[00:02:41.397,955] [0m<inf> fw_update: Received block 590/896[0m
+[1;32muart:~$ [m[8D[J[00:02:41.457,358] [0m<inf> fw_update: Received block 591/896[0m
+[1;32muart:~$ [m[8D[J[00:02:41.513,103] [0m<inf> fw_update: Received block 592/896[0m
+[1;32muart:~$ [m[8D[J[00:02:41.640,498] [0m<inf> fw_update: Received block 593/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:41.696,335] [0m<inf> fw_update: Received block 594/896[0m
+[1;32muart:~$ [m[8D[J[00:02:41.898,524] [0m<inf> fw_update: Received block 595/896[0m
+[1;32muart:~$ [m[8D[J[00:02:41.955,242] [0m<inf> fw_update: Received block 596/896[0m
+[1;32muart:~$ [m[8D[J[00:02:42.085,273] [0m<inf> fw_update: Received block 597/896[0m
+[1;32muart:~$ [m[8D[J[00:02:42.141,641] [0m<inf> fw_update: Received block 598/896[0m
+[1;32muart:~$ [m[8D[J[00:02:42.197,727] [0m<inf> fw_update: Received block 599/896[0m
+[1;32muart:~$ [m[8D[J[00:02:42.256,387] [0m<inf> fw_update: Received block 600/896[0m
+[1;32muart:~$ [m[8D[J[00:02:42.386,599] [0m<inf> fw_update: Received block 601/896[0m
+[1;32muart:~$ [m[8D[J[00:02:42.445,488] [0m<inf> fw_update: Received block 602/896[0m
+[1;32muart:~$ [m[8D[J[00:02:42.503,415] [0m<inf> fw_update: Received block 603/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:42.563,086] [0m<inf> fw_update: Received block 604/896[0m
+[1;32muart:~$ [m[8D[J[00:02:42.740,919] [0m<inf> fw_update: Received block 605/896[0m
+[1;32muart:~$ [m[8D[J[00:02:42.796,787] [0m<inf> fw_update: Received block 606/896[0m
+[1;32muart:~$ [m[8D[J[00:02:42.853,232] [0m<inf> fw_update: Received block 607/896[0m
+[1;32muart:~$ [m[8D[J[00:02:42.907,387] [0m<inf> fw_update: Received block 608/896[0m
+[1;32muart:~$ [m[8D[J[00:02:43.038,895] [0m<inf> fw_update: Received block 609/896[0m
+[1;32muart:~$ [m[8D[J[00:02:43.098,891] [0m<inf> fw_update: Received block 610/896[0m
+[1;32muart:~$ [m[8D[J[00:02:43.156,025] [0m<inf> fw_update: Received block 611/896[0m
+[1;32muart:~$ [m[8D[J[00:02:43.212,770] [0m<inf> fw_update: Received block 612/896[0m
+[1;32muart:~$ [m[8D[J[00:02:43.342,715] [0m<inf> fw_update: Received block 613/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:43.401,569] [0m<inf> fw_update: Received block 614/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:45.463,475] [1;33m<wrn> golioth_zephyr_coap_req: 1 resends in last 10 seconds[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:48.965,591] [0m<inf> fw_update: Received block 615/896[0m
+[1;32muart:~$ [m[8D[J[00:02:48.983,291] [1;33m<wrn> golioth_zephyr_coap_req: Block at 629760 already received, ignoring[0m
+[1;32muart:~$ [m[8D[J[00:02:49.022,235] [0m<inf> fw_update: Received block 616/896[0m
+[1;32muart:~$ [m[8D[J[00:02:49.153,781] [0m<inf> fw_update: Received block 617/896[0m
+[1;32muart:~$ [m[8D[J[00:02:49.209,800] [0m<inf> fw_update: Received block 618/896[0m
+[1;32muart:~$ [m[8D[J[00:02:49.267,085] [0m<inf> fw_update: Received block 619/896[0m
+[1;32muart:~$ [m[8D[J[00:02:49.321,713] [0m<inf> fw_update: Received block 620/896[0m
+[1;32muart:~$ [m[8D[J[00:02:49.452,064] [0m<inf> fw_update: Received block 621/896[0m
+[1;32muart:~$ [m[8D[J[00:02:49.509,536] [0m<inf> fw_update: Received block 622/896[0m
+[1;32muart:~$ [m[8D[J[00:02:49.569,956] [0m<inf> fw_update: Received block 623/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:49.633,743] [0m<inf> fw_update: Received block 624/896[0m
+[1;32muart:~$ [m[8D[J[00:02:49.814,214] [0m<inf> fw_update: Received block 625/896[0m
+[1;32muart:~$ [m[8D[J[00:02:49.870,627] [0m<inf> fw_update: Received block 626/896[0m
+[1;32muart:~$ [m[8D[J[00:02:49.925,981] [0m<inf> fw_update: Received block 627/896[0m
+[1;32muart:~$ [m[8D[J[00:02:49.985,366] [0m<inf> fw_update: Received block 628/896[0m
+[1;32muart:~$ [m[8D[J[00:02:50.109,564] [0m<inf> fw_update: Received block 629/896[0m
+[1;32muart:~$ [m[8D[J[00:02:50.165,139] [0m<inf> fw_update: Received block 630/896[0m
+[1;32muart:~$ [m[8D[J[00:02:50.219,805] [0m<inf> fw_update: Received block 631/896[0m
+[1;32muart:~$ [m[8D[J[00:02:50.289,452] [0m<inf> fw_update: Received block 632/896[0m
+[1;32muart:~$ [m[8D[J[00:02:50.654,782] [0m<inf> fw_update: Received block 633/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:50.773,300] [0m<inf> fw_update: Received block 634/896[0m
+[1;32muart:~$ [m[8D[J[00:02:50.867,438] [0m<inf> fw_update: Received block 635/896[0m
+[1;32muart:~$ [m[8D[J[00:02:50.926,589] [0m<inf> fw_update: Received block 636/896[0m
+[1;32muart:~$ [m[8D[J[00:02:51.051,629] [0m<inf> fw_update: Received block 637/896[0m
+[1;32muart:~$ [m[8D[J[00:02:51.111,257] [0m<inf> fw_update: Received block 638/896[0m
+[1;32muart:~$ [m[8D[J[00:02:51.169,183] [0m<inf> fw_update: Received block 639/896[0m
+[1;32muart:~$ [m[8D[J[00:02:51.223,856] [0m<inf> fw_update: Received block 640/896[0m
+[1;32muart:~$ [m[8D[J[00:02:51.348,261] [0m<inf> fw_update: Received block 641/896[0m
+[1;32muart:~$ [m[8D[J[00:02:51.403,748] [0m<inf> fw_update: Received block 642/896[0m
+[1;32muart:~$ [m[8D[J[00:02:51.466,300] [0m<inf> fw_update: Received block 643/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:51.525,448] [0m<inf> fw_update: Received block 644/896[0m
+[1;32muart:~$ [m[8D[J[00:02:51.698,927] [0m<inf> fw_update: Received block 645/896[0m
+[1;32muart:~$ [m[8D[J[00:02:51.754,061] [0m<inf> fw_update: Received block 646/896[0m
+[1;32muart:~$ [m[8D[J[00:02:51.808,634] [0m<inf> fw_update: Received block 647/896[0m
+[1;32muart:~$ [m[8D[J[00:02:51.868,133] [0m<inf> fw_update: Received block 648/896[0m
+[1;32muart:~$ [m[8D[J[00:02:51.995,273] [0m<inf> fw_update: Received block 649/896[0m
+[1;32muart:~$ [m[8D[J[00:02:52.052,590] [0m<inf> fw_update: Received block 650/896[0m
+[1;32muart:~$ [m[8D[J[00:02:52.107,437] [0m<inf> fw_update: Received block 651/896[0m
+[1;32muart:~$ [m[8D[J[00:02:52.162,833] [0m<inf> fw_update: Received block 652/896[0m
+[1;32muart:~$ [m[8D[J[00:02:52.290,781] [0m<inf> fw_update: Received block 653/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:52.348,275] [0m<inf> fw_update: Received block 654/896[0m
+[1;32muart:~$ [m[8D[J[00:02:52.551,222] [0m<inf> fw_update: Received block 655/896[0m
+[1;32muart:~$ [m[8D[J[00:02:52.612,729] [0m<inf> fw_update: Received block 656/896[0m
+[1;32muart:~$ [m[8D[J[00:02:52.736,331] [0m<inf> fw_update: Received block 657/896[0m
+[1;32muart:~$ [m[8D[J[00:02:52.800,096] [0m<inf> fw_update: Received block 658/896[0m
+[1;32muart:~$ [m[8D[J[00:02:52.859,217] [0m<inf> fw_update: Received block 659/896[0m
+[1;32muart:~$ [m[8D[J[00:02:52.918,893] [0m<inf> fw_update: Received block 660/896[0m
+[1;32muart:~$ [m[8D[J[00:02:53.046,541] [0m<inf> fw_update: Received block 661/896[0m
+[1;32muart:~$ [m[8D[J[00:02:53.106,119] [0m<inf> fw_update: Received block 662/896[0m
+[1;32muart:~$ [m[8D[J[00:02:53.167,319] [0m<inf> fw_update: Received block 663/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:53.222,033] [0m<inf> fw_update: Received block 664/896[0m
+[1;32muart:~$ [m[8D[J[00:02:53.425,625] [0m<inf> fw_update: Received block 665/896[0m
+[1;32muart:~$ [m[8D[J[00:02:53.487,999] [0m<inf> fw_update: Received block 666/896[0m
+[1;32muart:~$ [m[8D[J[00:02:53.541,720] [0m<inf> fw_update: Received block 667/896[0m
+[1;32muart:~$ [m[8D[J[00:02:53.597,207] [0m<inf> fw_update: Received block 668/896[0m
+[1;32muart:~$ [m[8D[J[00:02:53.721,378] [0m<inf> fw_update: Received block 669/896[0m
+[1;32muart:~$ [m[8D[J[00:02:53.776,997] [0m<inf> fw_update: Received block 670/896[0m
+[1;32muart:~$ [m[8D[J[00:02:53.841,111] [0m<inf> fw_update: Received block 671/896[0m
+[1;32muart:~$ [m[8D[J[00:02:53.899,053] [0m<inf> fw_update: Received block 672/896[0m
+[1;32muart:~$ [m[8D[J[00:02:54.025,974] [0m<inf> fw_update: Received block 673/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:54.080,954] [0m<inf> fw_update: Received block 674/896[0m
+[1;32muart:~$ [m[8D[J[00:02:54.255,025] [0m<inf> fw_update: Received block 675/896[0m
+[1;32muart:~$ [m[8D[J[00:02:54.309,825] [0m<inf> fw_update: Received block 676/896[0m
+[1;32muart:~$ [m[8D[J[00:02:54.437,003] [0m<inf> fw_update: Received block 677/896[0m
+[1;32muart:~$ [m[8D[J[00:02:54.491,082] [0m<inf> fw_update: Received block 678/896[0m
+[1;32muart:~$ [m[8D[J[00:02:54.545,483] [0m<inf> fw_update: Received block 679/896[0m
+[1;32muart:~$ [m[8D[J[00:02:54.602,242] [0m<inf> fw_update: Received block 680/896[0m
+[1;32muart:~$ [m[8D[J[00:02:54.728,591] [0m<inf> fw_update: Received block 681/896[0m
+[1;32muart:~$ [m[8D[J[00:02:54.783,073] [0m<inf> fw_update: Received block 682/896[0m
+[1;32muart:~$ [m[8D[J[00:02:54.840,244] [0m<inf> fw_update: Received block 683/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:54.900,294] [0m<inf> fw_update: Received block 684/896[0m
+[1;32muart:~$ [m[8D[J[00:02:55.093,599] [0m<inf> fw_update: Received block 685/896[0m
+[1;32muart:~$ [m[8D[J[00:02:55.148,773] [0m<inf> fw_update: Received block 686/896[0m
+[1;32muart:~$ [m[8D[J[00:02:55.208,467] [0m<inf> fw_update: Received block 687/896[0m
+[1;32muart:~$ [m[8D[J[00:02:55.262,373] [0m<inf> fw_update: Received block 688/896[0m
+[1;32muart:~$ [m[8D[J[00:02:55.391,532] [0m<inf> fw_update: Received block 689/896[0m
+[1;32muart:~$ [m[8D[J[00:02:55.505,238] [0m<inf> fw_update: Received block 690/896[0m
+[1;32muart:~$ [m[8D[J[00:02:55.508,306] [1;33m<wrn> golioth_zephyr_coap_req: 11 resends in last 10 seconds[0m
+[1;32muart:~$ [m[8D[J[00:02:55.560,262] [0m<inf> fw_update: Received block 691/896[0m
+[1;32muart:~$ [m[8D[J[00:02:55.624,138] [0m<inf> fw_update: Received block 692/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:55.752,610] [0m<inf> fw_update: Received block 693/896[0m
+[1;32muart:~$ [m[8D[J[00:02:55.942,257] [0m<inf> fw_update: Received block 694/896[0m
+[1;32muart:~$ [m[8D[J[00:02:55.999,768] [0m<inf> fw_update: Received block 695/896[0m
+[1;32muart:~$ [m[8D[J[00:02:56.055,908] [0m<inf> fw_update: Received block 696/896[0m
+[1;32muart:~$ [m[8D[J[00:02:56.180,962] [0m<inf> fw_update: Received block 697/896[0m
+[1;32muart:~$ [m[8D[J[00:02:56.244,629] [0m<inf> fw_update: Received block 698/896[0m
+[1;32muart:~$ [m[8D[J[00:02:56.298,771] [0m<inf> fw_update: Received block 699/896[0m
+[1;32muart:~$ [m[8D[J[00:02:56.358,435] [0m<inf> fw_update: Received block 700/896[0m
+[1;32muart:~$ [m[8D[J[00:02:56.527,363] [0m<inf> fw_update: Received block 701/896[0m
+[1;32muart:~$ [m[8D[J[00:02:56.588,166] [0m<inf> fw_update: Received block 702/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:56.644,566] [0m<inf> fw_update: Received block 703/896[0m
+[1;32muart:~$ [m[8D[J[00:02:56.816,392] [0m<inf> fw_update: Received block 704/896[0m
+[1;32muart:~$ [m[8D[J[00:02:56.945,624] [0m<inf> fw_update: Received block 705/896[0m
+[1;32muart:~$ [m[8D[J[00:02:57.000,445] [0m<inf> fw_update: Received block 706/896[0m
+[1;32muart:~$ [m[8D[J[00:02:57.054,958] [0m<inf> fw_update: Received block 707/896[0m
+[1;32muart:~$ [m[8D[J[00:02:57.111,169] [0m<inf> fw_update: Received block 708/896[0m
+[1;32muart:~$ [m[8D[J[00:02:57.236,661] [0m<inf> fw_update: Received block 709/896[0m
+[1;32muart:~$ [m[8D[J[00:02:57.300,399] [0m<inf> fw_update: Received block 710/896[0m
+[1;32muart:~$ [m[8D[J[00:02:57.357,465] [0m<inf> fw_update: Received block 711/896[0m
+[1;32muart:~$ [m[8D[J[00:02:57.419,341] [0m<inf> fw_update: Received block 712/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:57.552,984] [0m<inf> fw_update: Received block 713/896[0m
+[1;32muart:~$ [m[8D[J[00:02:57.721,791] [0m<inf> fw_update: Received block 714/896[0m
+[1;32muart:~$ [m[8D[J[00:02:57.780,648] [0m<inf> fw_update: Received block 715/896[0m
+[1;32muart:~$ [m[8D[J[00:02:57.838,767] [0m<inf> fw_update: Received block 716/896[0m
+[1;32muart:~$ [m[8D[J[00:02:57.967,335] [0m<inf> fw_update: Received block 717/896[0m
+[1;32muart:~$ [m[8D[J[00:02:58.025,297] [0m<inf> fw_update: Received block 718/896[0m
+[1;32muart:~$ [m[8D[J[00:02:58.087,479] [0m<inf> fw_update: Received block 719/896[0m
+[1;32muart:~$ [m[8D[J[00:02:58.141,216] [0m<inf> fw_update: Received block 720/896[0m
+[1;32muart:~$ [m[8D[J[00:02:58.265,885] [0m<inf> fw_update: Received block 721/896[0m
+[1;32muart:~$ [m[8D[J[00:02:58.323,150] [0m<inf> fw_update: Received block 722/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:58.378,350] [0m<inf> fw_update: Received block 723/896[0m
+[1;32muart:~$ [m[8D[J[00:02:58.562,512] [0m<inf> fw_update: Received block 724/896[0m
+[1;32muart:~$ [m[8D[J[00:02:58.691,294] [0m<inf> fw_update: Received block 725/896[0m
+[1;32muart:~$ [m[8D[J[00:02:58.744,821] [0m<inf> fw_update: Received block 726/896[0m
+[1;32muart:~$ [m[8D[J[00:02:58.800,865] [0m<inf> fw_update: Received block 727/896[0m
+[1;32muart:~$ [m[8D[J[00:02:58.857,588] [0m<inf> fw_update: Received block 728/896[0m
+[1;32muart:~$ [m[8D[J[00:02:58.981,692] [0m<inf> fw_update: Received block 729/896[0m
+[1;32muart:~$ [m[8D[J[00:02:59.037,977] [0m<inf> fw_update: Received block 730/896[0m
+[1;32muart:~$ [m[8D[J[00:02:59.097,366] [0m<inf> fw_update: Received block 731/896[0m
+[1;32muart:~$ [m[8D[J[00:02:59.152,769] [0m<inf> fw_update: Received block 732/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:59.297,343] [0m<inf> fw_update: Received block 733/896[0m
+[1;32muart:~$ [m[8D[J[00:02:59.468,326] [0m<inf> fw_update: Received block 734/896[0m
+[1;32muart:~$ [m[8D[J[00:02:59.525,391] [0m<inf> fw_update: Received block 735/896[0m
+[1;32muart:~$ [m[8D[J[00:02:59.580,132] [0m<inf> fw_update: Received block 736/896[0m
+[1;32muart:~$ [m[8D[J[00:02:59.706,862] [0m<inf> fw_update: Received block 737/896[0m
+[1;32muart:~$ [m[8D[J[00:02:59.764,190] [0m<inf> fw_update: Received block 738/896[0m
+[1;32muart:~$ [m[8D[J[00:02:59.818,946] [0m<inf> fw_update: Received block 739/896[0m
+[1;32muart:~$ [m[8D[J[00:02:59.872,595] [0m<inf> fw_update: Received block 740/896[0m
+[1;32muart:~$ [m[8D[J[00:03:00.007,177] [0m<inf> fw_update: Received block 741/896[0m
+[1;32muart:~$ [m[8D[J[00:03:00.064,096] [0m<inf> fw_update: Received block 742/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:03:00.118,815] [0m<inf> fw_update: Received block 743/896[0m
+[1;32muart:~$ [m[8D[J[00:03:00.384,699] [0m<inf> fw_update: Received block 744/896[0m
+[1;32muart:~$ [m[8D[J[00:03:00.513,776] [0m<inf> fw_update: Received block 745/896[0m
+[1;32muart:~$ [m[8D[J[00:03:00.569,067] [0m<inf> fw_update: Received block 746/896[0m
+[1;32muart:~$ [m[8D[J[00:03:00.624,114] [0m<inf> fw_update: Received block 747/896[0m
+[1;32muart:~$ [m[8D[J[00:03:00.680,960] [0m<inf> fw_update: Received block 748/896[0m
+[1;32muart:~$ [m[8D[J[00:03:00.805,952] [0m<inf> fw_update: Received block 749/896[0m
+[1;32muart:~$ [m[8D[J[00:03:00.863,286] [0m<inf> fw_update: Received block 750/896[0m
+[1;32muart:~$ [m[8D[J[00:03:00.918,067] [0m<inf> fw_update: Received block 751/896[0m
+[1;32muart:~$ [m[8D[J[00:03:00.974,591] [0m<inf> fw_update: Received block 752/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:03:01.098,895] [0m<inf> fw_update: Received block 753/896[0m
+[1;32muart:~$ [m[8D[J[00:03:01.291,841] [0m<inf> fw_update: Received block 754/896[0m
+[1;32muart:~$ [m[8D[J[00:03:01.353,200] [0m<inf> fw_update: Received block 755/896[0m
+[1;32muart:~$ [m[8D[J[00:03:01.410,433] [0m<inf> fw_update: Received block 756/896[0m
+[1;32muart:~$ [m[8D[J[00:03:01.552,836] [0m<inf> fw_update: Received block 757/896[0m
+[1;32muart:~$ [m[8D[J[00:03:01.607,561] [0m<inf> fw_update: Received block 758/896[0m
+[1;32muart:~$ [m[8D[J[00:03:01.662,816] [0m<inf> fw_update: Received block 759/896[0m
+[1;32muart:~$ [m[8D[J[00:03:01.721,649] [0m<inf> fw_update: Received block 760/896[0m
+[1;32muart:~$ [m[8D[J[00:03:01.851,164] [0m<inf> fw_update: Received block 761/896[0m
+[1;32muart:~$ [m[8D[J[00:03:01.907,739] [0m<inf> fw_update: Received block 762/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:03:01.963,971] [0m<inf> fw_update: Received block 763/896[0m
+[1;32muart:~$ [m[8D[J[00:03:02.189,415] [0m<inf> fw_update: Received block 764/896[0m
+[1;32muart:~$ [m[8D[J[00:03:02.321,052] [0m<inf> fw_update: Received block 765/896[0m
+[1;32muart:~$ [m[8D[J[00:03:02.374,478] [0m<inf> fw_update: Received block 766/896[0m
+[1;32muart:~$ [m[8D[J[00:03:02.428,523] [0m<inf> fw_update: Received block 767/896[0m
+[1;32muart:~$ [m[8D[J[00:03:02.497,813] [0m<inf> fw_update: Received block 768/896[0m
+[1;32muart:~$ [m[8D[J[00:03:02.623,253] [0m<inf> fw_update: Received block 769/896[0m
+[1;32muart:~$ [m[8D[J[00:03:02.678,311] [0m<inf> fw_update: Received block 770/896[0m
+[1;32muart:~$ [m[8D[J[00:03:02.732,240] [0m<inf> fw_update: Received block 771/896[0m
+[1;32muart:~$ [m[8D[J[00:03:02.790,218] [0m<inf> fw_update: Received block 772/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:03:02.919,553] [0m<inf> fw_update: Received block 773/896[0m
+[1;32muart:~$ [m[8D[J[00:03:03.095,264] [0m<inf> fw_update: Received block 774/896[0m
+[1;32muart:~$ [m[8D[J[00:03:03.151,509] [0m<inf> fw_update: Received block 775/896[0m
+[1;32muart:~$ [m[8D[J[00:03:03.215,311] [0m<inf> fw_update: Received block 776/896[0m
+[1;32muart:~$ [m[8D[J[00:03:03.344,960] [0m<inf> fw_update: Received block 777/896[0m
+[1;32muart:~$ [m[8D[J[00:03:03.399,467] [0m<inf> fw_update: Received block 778/896[0m
+[1;32muart:~$ [m[8D[J[00:03:03.455,199] [0m<inf> fw_update: Received block 779/896[0m
+[1;32muart:~$ [m[8D[J[00:03:03.511,624] [0m<inf> fw_update: Received block 780/896[0m
+[1;32muart:~$ [m[8D[J[00:03:03.638,575] [0m<inf> fw_update: Received block 781/896[0m
+[1;32muart:~$ [m[8D[J[00:03:03.693,354] [0m<inf> fw_update: Received block 782/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:03:03.750,352] [0m<inf> fw_update: Received block 783/896[0m
+[1;32muart:~$ [m[8D[J[00:03:03.922,470] [0m<inf> fw_update: Received block 784/896[0m
+[1;32muart:~$ [m[8D[J[00:03:04.046,479] [0m<inf> fw_update: Received block 785/896[0m
+[1;32muart:~$ [m[8D[J[00:03:04.102,863] [0m<inf> fw_update: Received block 786/896[0m
+[1;32muart:~$ [m[8D[J[00:03:04.168,323] [0m<inf> fw_update: Received block 787/896[0m
+[1;32muart:~$ [m[8D[J[00:03:04.231,771] [0m<inf> fw_update: Received block 788/896[0m
+[1;32muart:~$ [m[8D[J[00:03:04.358,674] [0m<inf> fw_update: Received block 789/896[0m
+[1;32muart:~$ [m[8D[J[00:03:04.415,584] [0m<inf> fw_update: Received block 790/896[0m
+[1;32muart:~$ [m[8D[J[00:03:04.471,894] [0m<inf> fw_update: Received block 791/896[0m
+[1;32muart:~$ [m[8D[J[00:03:04.526,337] [0m<inf> fw_update: Received block 792/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:03:04.653,759] [0m<inf> fw_update: Received block 793/896[0m
+[1;32muart:~$ [m[8D[J[00:03:04.810,572] [0m<inf> fw_update: Received block 794/896[0m
+[1;32muart:~$ [m[8D[J[00:03:04.868,596] [0m<inf> fw_update: Received block 795/896[0m
+[1;32muart:~$ [m[8D[J[00:03:04.924,050] [0m<inf> fw_update: Received block 796/896[0m
+[1;32muart:~$ [m[8D[J[00:03:05.050,918] [0m<inf> fw_update: Received block 797/896[0m
+[1;32muart:~$ [m[8D[J[00:03:05.109,157] [0m<inf> fw_update: Received block 798/896[0m
+[1;32muart:~$ [m[8D[J[00:03:05.164,491] [0m<inf> fw_update: Received block 799/896[0m
+[1;32muart:~$ [m[8D[J[00:03:05.222,088] [0m<inf> fw_update: Received block 800/896[0m
+[1;32muart:~$ [m[8D[J[00:03:05.351,050] [0m<inf> fw_update: Received block 801/896[0m
+[1;32muart:~$ [m[8D[J[00:03:05.406,716] [0m<inf> fw_update: Received block 802/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:03:05.465,967] [0m<inf> fw_update: Received block 803/896[0m
+[1;32muart:~$ [m[8D[J[00:03:05.527,347] [1;33m<wrn> golioth_zephyr_coap_req: 1 resends in last 10 seconds[0m
+[1;32muart:~$ [m[8D[J[00:03:05.689,933] [0m<inf> fw_update: Received block 804/896[0m
+[1;32muart:~$ [m[8D[J[00:03:05.815,343] [0m<inf> fw_update: Received block 805/896[0m
+[1;32muart:~$ [m[8D[J[00:03:05.873,220] [0m<inf> fw_update: Received block 806/896[0m
+[1;32muart:~$ [m[8D[J[00:03:05.927,436] [0m<inf> fw_update: Received block 807/896[0m
+[1;32muart:~$ [m[8D[J[00:03:05.984,601] [0m<inf> fw_update: Received block 808/896[0m
+[1;32muart:~$ [m[8D[J[00:03:06.112,694] [0m<inf> fw_update: Received block 809/896[0m
+[1;32muart:~$ [m[8D[J[00:03:06.167,271] [0m<inf> fw_update: Received block 810/896[0m
+[1;32muart:~$ [m[8D[J[00:03:06.223,130] [0m<inf> fw_update: Received block 811/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:03:06.280,003] [0m<inf> fw_update: Received block 812/896[0m
+[1;32muart:~$ [m[8D[J[00:03:06.488,562] [0m<inf> fw_update: Received block 813/896[0m
+[1;32muart:~$ [m[8D[J[00:03:06.549,464] [0m<inf> fw_update: Received block 814/896[0m
+[1;32muart:~$ [m[8D[J[00:03:06.605,181] [0m<inf> fw_update: Received block 815/896[0m
+[1;32muart:~$ [m[8D[J[00:03:06.665,708] [0m<inf> fw_update: Received block 816/896[0m
+[1;32muart:~$ [m[8D[J[00:03:06.792,132] [0m<inf> fw_update: Received block 817/896[0m
+[1;32muart:~$ [m[8D[J[00:03:06.847,025] [0m<inf> fw_update: Received block 818/896[0m
+[1;32muart:~$ [m[8D[J[00:03:06.908,073] [0m<inf> fw_update: Received block 819/896[0m
+[1;32muart:~$ [m[8D[J[00:03:06.965,727] [0m<inf> fw_update: Received block 820/896[0m
+[1;32muart:~$ [m[8D[J[00:03:07.093,211] [0m<inf> fw_update: Received block 821/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:03:07.149,378] [0m<inf> fw_update: Received block 822/896[0m
+[1;32muart:~$ [m[8D[J[00:03:07.395,331] [0m<inf> fw_update: Received block 823/896[0m
+[1;32muart:~$ [m[8D[J[00:03:07.449,865] [0m<inf> fw_update: Received block 824/896[0m
+[1;32muart:~$ [m[8D[J[00:03:07.577,265] [0m<inf> fw_update: Received block 825/896[0m
+[1;32muart:~$ [m[8D[J[00:03:07.637,250] [0m<inf> fw_update: Received block 826/896[0m
+[1;32muart:~$ [m[8D[J[00:03:07.691,289] [0m<inf> fw_update: Received block 827/896[0m
+[1;32muart:~$ [m[8D[J[00:03:07.747,356] [0m<inf> fw_update: Received block 828/896[0m
+[1;32muart:~$ [m[8D[J[00:03:07.872,704] [0m<inf> fw_update: Received block 829/896[0m
+[1;32muart:~$ [m[8D[J[00:03:07.929,719] [0m<inf> fw_update: Received block 830/896[0m
+[1;32muart:~$ [m[8D[J[00:03:07.988,572] [0m<inf> fw_update: Received block 831/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:03:08.044,787] [0m<inf> fw_update: Received block 832/896[0m
+[1;32muart:~$ [m[8D[J[00:03:08.264,419] [0m<inf> fw_update: Received block 833/896[0m
+[1;32muart:~$ [m[8D[J[00:03:08.322,667] [0m<inf> fw_update: Received block 834/896[0m
+[1;32muart:~$ [m[8D[J[00:03:08.377,122] [0m<inf> fw_update: Received block 835/896[0m
+[1;32muart:~$ [m[8D[J[00:03:08.435,788] [0m<inf> fw_update: Received block 836/896[0m
+[1;32muart:~$ [m[8D[J[00:03:08.566,967] [0m<inf> fw_update: Received block 837/896[0m
+[1;32muart:~$ [m[8D[J[00:03:08.620,990] [0m<inf> fw_update: Received block 838/896[0m
+[1;32muart:~$ [m[8D[J[00:03:08.674,519] [0m<inf> fw_update: Received block 839/896[0m
+[1;32muart:~$ [m[8D[J[00:03:08.729,295] [0m<inf> fw_update: Received block 840/896[0m
+[1;32muart:~$ [m[8D[J[00:03:08.866,316] [0m<inf> fw_update: Received block 841/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:03:08.924,791] [0m<inf> fw_update: Received block 842/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:03:09.953,254] [0m<inf> fw_update: Received block 843/896[0m
+[1;32muart:~$ [m[8D[J[00:03:10.008,486] [0m<inf> fw_update: Received block 844/896[0m
+[1;32muart:~$ [m[8D[J[00:03:10.137,171] [0m<inf> fw_update: Received block 845/896[0m
+[1;32muart:~$ [m[8D[J[00:03:10.191,930] [0m<inf> fw_update: Received block 846/896[0m
+[1;32muart:~$ [m[8D[J[00:03:10.249,010] [0m<inf> fw_update: Received block 847/896[0m
+[1;32muart:~$ [m[8D[J[00:03:10.303,777] [0m<inf> fw_update: Received block 848/896[0m
+[1;32muart:~$ [m[8D[J[00:03:10.430,286] [0m<inf> fw_update: Received block 849/896[0m
+[1;32muart:~$ [m[8D[J[00:03:10.488,969] [0m<inf> fw_update: Received block 850/896[0m
+[1;32muart:~$ [m[8D[J[00:03:10.554,599] [0m<inf> fw_update: Received block 851/896[0m
+[1;32muart:~$ [m[8D[J[00:03:10.609,334] [0m<inf> fw_update: Received block 852/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:03:10.737,692] [0m<inf> fw_update: Received block 853/896[0m
+[1;32muart:~$ [m[8D[J[00:03:10.922,772] [0m<inf> fw_update: Received block 854/896[0m
+[1;32muart:~$ [m[8D[J[00:03:10.978,614] [0m<inf> fw_update: Received block 855/896[0m
+[1;32muart:~$ [m[8D[J[00:03:11.033,576] [0m<inf> fw_update: Received block 856/896[0m
+[1;32muart:~$ [m[8D[J[00:03:11.161,295] [0m<inf> fw_update: Received block 857/896[0m
+[1;32muart:~$ [m[8D[J[00:03:11.219,422] [0m<inf> fw_update: Received block 858/896[0m
+[1;32muart:~$ [m[8D[J[00:03:11.275,380] [0m<inf> fw_update: Received block 859/896[0m
+[1;32muart:~$ [m[8D[J[00:03:11.329,732] [0m<inf> fw_update: Received block 860/896[0m
+[1;32muart:~$ [m[8D[J[00:03:11.458,901] [0m<inf> fw_update: Received block 861/896[0m
+[1;32muart:~$ [m[8D[J[00:03:11.512,997] [0m<inf> fw_update: Received block 862/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:03:11.571,525] [0m<inf> fw_update: Received block 863/896[0m
+[1;32muart:~$ [m[8D[J[00:03:12.306,459] [0m<inf> fw_update: Received block 864/896[0m
+[1;32muart:~$ [m[8D[J[00:03:12.437,061] [0m<inf> fw_update: Received block 865/896[0m
+[1;32muart:~$ [m[8D[J[00:03:12.494,560] [0m<inf> fw_update: Received block 866/896[0m
+[1;32muart:~$ [m[8D[J[00:03:12.553,071] [0m<inf> fw_update: Received block 867/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:03:12.607,513] [0m<inf> fw_update: Received block 868/896[0m
+[1;32muart:~$ [m[8D[J[00:03:12.779,798] [0m<inf> fw_update: Received block 869/896[0m
+[1;32muart:~$ [m[8D[J[00:03:12.836,174] [0m<inf> fw_update: Received block 870/896[0m
+[1;32muart:~$ [m[8D[J[00:03:12.891,951] [0m<inf> fw_update: Received block 871/896[0m
+[1;32muart:~$ [m[8D[J[00:03:12.948,421] [0m<inf> fw_update: Received block 872/896[0m
+[1;32muart:~$ [m[8D[J[00:03:13.074,237] [0m<inf> fw_update: Received block 873/896[0m
+[1;32muart:~$ [m[8D[J[00:03:13.130,655] [0m<inf> fw_update: Received block 874/896[0m
+[1;32muart:~$ [m[8D[J[00:03:13.184,963] [0m<inf> fw_update: Received block 875/896[0m
+[1;32muart:~$ [m[8D[J[00:03:13.245,931] [0m<inf> fw_update: Received block 876/896[0m
+[1;32muart:~$ [m[8D[J[00:03:13.370,077] [0m<inf> fw_update: Received block 877/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:03:13.426,408] [0m<inf> fw_update: Received block 878/896[0m
+[1;32muart:~$ [m[8D[J[00:03:13.596,665] [0m<inf> fw_update: Received block 879/896[0m
+[1;32muart:~$ [m[8D[J[00:03:13.653,109] [0m<inf> fw_update: Received block 880/896[0m
+[1;32muart:~$ [m[8D[J[00:03:13.780,409] [0m<inf> fw_update: Received block 881/896[0m
+[1;32muart:~$ [m[8D[J[00:03:13.836,572] [0m<inf> fw_update: Received block 882/896[0m
+[1;32muart:~$ [m[8D[J[00:03:13.897,402] [0m<inf> fw_update: Received block 883/896[0m
+[1;32muart:~$ [m[8D[J[00:03:13.952,235] [0m<inf> fw_update: Received block 884/896[0m
+[1;32muart:~$ [m[8D[J[00:03:14.081,377] [0m<inf> fw_update: Received block 885/896[0m
+[1;32muart:~$ [m[8D[J[00:03:14.139,327] [0m<inf> fw_update: Received block 886/896[0m
+[1;32muart:~$ [m[8D[J[00:03:14.193,989] [0m<inf> fw_update: Received block 887/896[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:03:14.248,526] [0m<inf> fw_update: Received block 888/896[0m
+[1;32muart:~$ [m[8D[J[00:03:14.450,854] [0m<inf> fw_update: Received block 889/896[0m
+[1;32muart:~$ [m[8D[J[00:03:14.507,608] [0m<inf> fw_update: Received block 890/896[0m
+[1;32muart:~$ [m[8D[J[00:03:14.564,672] [0m<inf> fw_update: Received block 891/896[0m
+[1;32muart:~$ [m[8D[J[00:03:14.620,139] [0m<inf> fw_update: Received block 892/896[0m
+[1;32muart:~$ [m[8D[J[00:03:14.754,361] [0m<inf> fw_update: Received block 893/896[0m
+[1;32muart:~$ [m[8D[J[00:03:14.812,186] [0m<inf> fw_update: Received block 894/896[0m
+[1;32muart:~$ [m[8D[J[00:03:14.866,864] [0m<inf> fw_update: Received block 895/896[0m
+[1;32muart:~$ [m[8D[J[00:03:14.919,747] [0m<inf> fw_update: Received block 896/896[0m
+[1;32muart:~$ [m[8D[J[00:03:14.985,386] [0m<inf> fw_update: Successfully downloaded 917656 bytes in 88537 ms[0m
+[1;32muart:~$ [m[8D[J[00:03:14.985,400] [0m<inf> fw_update: State = Downloaded[0m
+[1;32muart:~$ [m[8D[J[00:03:14.985,638] [0m<inf> fw_update: State = Updating[0m
+[1;32muart:~$ [m[8D[J[00:03:14.985,948] [0m<inf> fw_update: Rebooting into new image in 5 seconds[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:03:15.986,093] [0m<inf> fw_update: Rebooting into new image in 4 seconds[0m
+[1;32muart:~$ [m[8D[J[00:03:16.986,331] [0m<inf> fw_update: Rebooting into new image in 3 seconds[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:03:17.986,406] [0m<inf> fw_update: Rebooting into new image in 2 seconds[0m
+[1;32muart:~$ [m[8D[J[00:03:18.986,647] [0m<inf> fw_update: Rebooting into new image in 1 seconds[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m*** Booting MCUboot 96576b341ee1 ***
+*** Using Zephyr OS build 3568e1b6d5cd ***
+I: Starting bootloader
+I: Image index: 0, Swap type: test
+I: Primary image: magic=unset, swap_type=0x1, copy_done=0x3, image_ok=0x3
+I: Secondary image: magic=good, swap_type=0x2, copy_done=0x3, image_ok=0x3
+I: Boot source: none
+I: Image index: 0, Swap type: test
+I: Image index: 0, Swap type: test
+I: Image index: 0, Swap type: test
+I: Starting swap using offset algorithm.
+I: Image index: 0, Swap type: none
+I: Image index: 0, Swap type: revert
+I: Bootloader chainload address offset: 0x20000
+I: Image version: v255.8.9
+I: Jumping to the first image slot
+[m
+[1;32muart:~$ [m[8D[JSTA MAC Address: [1;32muart:~$ [m[8D[JC0:95:DA:01:7B:F9 [1;32muart:~$ [m[8D[J
+[1;32muart:~$ [m[8D[Jboard_type: 2, board_type mapping: 
+[1;32muart:~$ [m[8D[J0----QFN
+[1;32muart:~$ [m[8D[J1----CSP
+[1;32muart:~$ [m[8D[J2----BGA
+[1;32muart:~$ [m[8D[J[00:03:59.674,243] [0m<inf> fs_nvs: 8 Sectors of 4096 bytes[0m
+[1;32muart:~$ [m[8D[J[00:03:59.674,266] [0m<inf> fs_nvs: alloc wra: 0, fa0[0m
+[1;32muart:~$ [m[8D[J[00:03:59.674,268] [0m<inf> fs_nvs: data wra: 0, 14a[0m
+[1;32muart:~$ [m[8D[J*** Booting Zephyr OS build v4.3.0 ***
+[1;32muart:~$ [m[8D[J*** Golioth Firmware SDK v0.22.0-71-gd5a54177c4f4 ***
+[1;32muart:~$ [m[8D[J[00:03:59.674,773] [0m<inf> golioth_settings_autoload: Initializing settings subsystem[0m
+[1;32muart:~$ [m[8D[J[00:03:59.674,780] [0m<inf> golioth_settings_autoload: Loading settings[0m
+[1;32muart:~$ [m[8D[J[00:03:59.674,927] [0m<dbg> fw_update_sample: main: Start FW Update sample[0m
+[1;32muart:~$ [m[8D[J[00:03:59.674,945] [0m<inf> golioth_samples: Bringing up network interface[0m
+[1;32muart:~$ [m[8D[J[00:03:59.674,948] [0m<inf> golioth_samples: Starting DHCP to obtain IP address[0m
+[1;32muart:~$ [m[8D[J[00:03:59.675,043] [0m<inf> golioth_samples: Waiting to obtain IP address[0m
