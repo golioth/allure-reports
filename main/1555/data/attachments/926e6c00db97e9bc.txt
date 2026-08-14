@@ -1,0 +1,218 @@
+DEBUG    twister_harness.device.factory:factory.py:37 Get device type "hardware"
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffffb2489be0>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0xffffb2491270> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffffb24311d0>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'projects 0-1/1'), (b'content-type', b'application/json'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Fri, 14 Aug 2026 01:07:08 GMT'), (b'content-length', b'188'), (b'x-envoy-upstream-service-time', b'30'), (b'server', b'envoy'), (b'via', b'1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffffb2432c10>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0xffffb24931b0> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffffb2476650>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'POST']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'POST']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'POST']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Fri, 14 Aug 2026 01:07:09 GMT'), (b'content-length', b'829'), (b'x-envoy-upstream-service-time', b'106'), (b'server', b'envoy'), (b'via', b'1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: POST https://api.golioth.io/v1/projects/firmware_ci/certificates "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'POST']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+INFO     test_sample:test_sample.py:36 Flashing LFS image
+DEBUG    test_sample:utils.py:37 Flashing LFS command: /root/venv/bin/west flash --skip-rebuild --build-dir /__w/golioth-firmware-sdk/golioth-firmware-sdk/twister-out/frdm_rw612_rw612/zephyr/sample.golioth.certificate_provisioning.psa_crypto -- --dev-id=1064258321 --hex-file /__w/golioth-firmware-sdk/golioth-firmware-sdk/twister-out/frdm_rw612_rw612/zephyr/sample.golioth.certificate_provisioning.psa_crypto/lfs.hex
+INFO     test_sample:test_sample.py:22 LFS flash stdout: -- west flash: using runner jlink
+-- runners.jlink: reset after flashing requested
+-- runners.jlink: JLink version: 7.94e
+-- runners.jlink: Flashing file: /__w/golioth-firmware-sdk/golioth-firmware-sdk/twister-out/frdm_rw612_rw612/zephyr/sample.golioth.certificate_provisioning.psa_crypto/lfs.hex
+
+ERROR    test_sample:test_sample.py:24 LFS flash stderr: WARNING: --skip-rebuild is deprecated. Please use --no-rebuild instead
+WARNING: runners: Argument --hex-file is deprecated for your runner jlink, use -f/--file instead.
+
+DEBUG    twister_harness.device.hardware_adapter:hardware_adapter.py:158 Opening serial connection for /dev/serial/by-id/usb-SEGGER_J-Link_001064258321-if00
+DEBUG    twister_harness.device.hardware_adapter:utils.py:37 Flashing command: /root/venv/bin/west flash --skip-rebuild --build-dir /__w/golioth-firmware-sdk/golioth-firmware-sdk/twister-out/frdm_rw612_rw612/zephyr/sample.golioth.certificate_provisioning.psa_crypto -- --dev-id=1064258321
+DEBUG    twister_harness.device.hardware_adapter:hardware_adapter.py:150 Flashing finished
+DEBUG    twister_harness.helpers.utils:utils.py:22 Found matching key: CONFIG_SHELL_PROMPT_UART="uart:~$ "
+INFO     twister_harness.fixtures:fixtures.py:79 Wait for prompt
+DEBUG    twister_harness.helpers.shell:shell.py:49 Got prompt
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffffb24768b0>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0xffffb2493890> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffffb24b8830>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'devices 0-0/0'), (b'content-type', b'application/json'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Fri, 14 Aug 2026 01:07:29 GMT'), (b'content-length', b'44'), (b'x-envoy-upstream-service-time', b'21'), (b'server', b'envoy'), (b'via', b'1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/devices?deviceName=certificate-SAJpEOsJbtVxXYKi "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [mwifi cred add -k 1 -s "***MIKES_ORANGE_PI_WIFI_SSID***" -p "***MIKES_ORANGE_PI_WIFI_PSK***"
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;31mwifi: command not found
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [m[1;32muart:~$ [m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [mwifi cred auto_connect
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;31mwifi: command not found
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [m[1;32muart:~$ [m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:11.556,170] [0m<inf> eth_nxp_enet_mac: Link is up[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:11.556,202] [0m<inf> phy_mc_ksz8081: PHY 2 is up[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:11.556,218] [0m<inf> phy_mc_ksz8081: PHY (2) Link speed 100 Mb, full duplex
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:12.129,949] [0m<inf> net_dhcpv4: Received: 192.168.200.5[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:12.130,497] [1;33m<wrn> cert_provisioning: Could not stat /lfs1/credentials/crt.der, err: -2[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [mfs mkdir /lfs1/credentials
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [mlog halt
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m
+INFO     test_sample:test_sample.py:22 mcumgr crt stdout: 310
+438
+Done
+
+INFO     test_sample:test_sample.py:22 mcumgr key stdout: 121
+Done
+
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [mlog go
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:17.131,385] [0m<inf> cert_provisioning: Read 438 bytes from /lfs1/credentials/crt.der[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:17.131,804] [0m<inf> cert_provisioning: Read 121 bytes from /lfs1/credentials/key.der[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:17.132,095] [0m<inf> golioth_mbox: Mbox created, bufsize: 1232, num_items: 10, item_size: 112[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:20.327,864] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:20.327,986] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:22.173,915] [1;31m<err> net_pkt: Data buffer (1241) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:23.174,055] [1;31m<err> net_pkt: Data buffer (60) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:24.328,097] [1;31m<err> net_pkt: Data buffer (113) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:24.328,188] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:24.943,201] [1;31m<err> golioth_coap_client_zephyr: Failed to connect to socket: -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:24.943,999] [1;31m<err> golioth_coap_client_zephyr: Failed to connect: -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:24.944,006] [1;33m<wrn> golioth_coap_client_zephyr: Failed to connect: -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:25.000,521] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:25.000,625] [1;31m<err> net_pkt: Data buffer (1241) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:33.001,155] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:33.001,323] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:33.090,387] [1;31m<err> net_pkt: Data buffer (1241) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:33.090,591] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:33.090,648] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:33.090,696] [1;31m<err> net_pkt: Data buffer (1239) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:37.090,889] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:37.090,960] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:37.704,692] [1;31m<err> golioth_coap_client_zephyr: Failed to connect to socket: -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:37.705,464] [1;31m<err> golioth_coap_client_zephyr: Failed to connect: -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:37.705,488] [1;33m<wrn> golioth_coap_client_zephyr: Failed to connect: -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:37.755,173] [1;31m<err> net_pkt: Data buffer (1239) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:45.756,204] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:45.756,344] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:45.852,677] [1;31m<err> net_pkt: Data buffer (1239) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:45.852,893] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:45.852,936] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:47.742,197] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:48.742,329] [1;31m<err> net_pkt: Data buffer (60) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:49.853,356] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:49.853,434] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:49.853,506] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:50.470,468] [1;31m<err> golioth_coap_client_zephyr: Failed to connect to socket: -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:50.471,258] [1;31m<err> golioth_coap_client_zephyr: Failed to connect: -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:50.471,268] [1;33m<wrn> golioth_coap_client_zephyr: Failed to connect: -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:58.520,659] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:58.520,784] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:58.620,804] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:58.621,023] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:58.621,105] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:58.621,152] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:02.621,749] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:02.621,812] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:03.237,495] [1;31m<err> golioth_coap_client_zephyr: Failed to connect to socket: -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:03.238,293] [1;31m<err> golioth_coap_client_zephyr: Failed to connect: -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:03.238,320] [1;33m<wrn> golioth_coap_client_zephyr: Failed to connect: -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:03.288,188] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:11.288,142] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:11.288,289] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:11.381,776] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:11.381,994] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:11.382,034] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:13.278,529] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:14.278,694] [1;31m<err> net_pkt: Data buffer (60) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:15.382,324] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:15.382,425] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:15.998,671] [1;31m<err> golioth_coap_client_zephyr: Failed to connect to socket: -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:15.999,468] [1;31m<err> golioth_coap_client_zephyr: Failed to connect: -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:15.999,475] [1;33m<wrn> golioth_coap_client_zephyr: Failed to connect: -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:16.049,715] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:24.050,327] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:24.050,496] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:24.145,619] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:24.145,850] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:24.145,927] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:28.146,295] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:28.146,605] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:28.146,674] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:28.762,727] [1;31m<err> golioth_coap_client_zephyr: Failed to connect to socket: -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:28.763,494] [1;31m<err> golioth_coap_client_zephyr: Failed to connect: -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:28.763,515] [1;33m<wrn> golioth_coap_client_zephyr: Failed to connect: -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:28.810,319] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:36.810,404] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:36.810,554] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:36.906,363] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:36.906,636] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:36.906,691] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:38.798,836] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:39.799,001] [1;31m<err> net_pkt: Data buffer (60) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:40.907,056] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:40.907,152] [1;31m<err> net_pkt: Data buffer (1267) allocation failed.[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:41.522,431] [1;31m<err> golioth_coap_client_zephyr: Failed to connect to socket: -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:41.523,197] [1;31m<err> golioth_coap_client_zephyr: Failed to connect: -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:02:41.523,207] [1;33m<wrn> golioth_coap_client_zephyr: Failed to connect: -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:02:41.571,146] [1;31m<err> net_pkt: Data buffer (1240) allocation failed.[0m
+ERROR    twister_harness.device.device_adapter:device_adapter.py:191 Read from device timeout occurred
+DEBUG    twister_harness.device.hardware_adapter:hardware_adapter.py:205 Closed serial connection for /dev/serial/by-id/usb-SEGGER_J-Link_001064258321-if00
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffffb247a7a0>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0xffffb2491590> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffffb247a8b0>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Fri, 14 Aug 2026 01:09:04 GMT'), (b'content-length', b'2'), (b'x-envoy-upstream-service-time', b'15'), (b'server', b'envoy'), (b'via', b'1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: DELETE https://api.golioth.io/v1/projects/firmware_ci/certificates/6a7e6a3d74b331969791421f "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffffb2466f50>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0xffffb2493cf0> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffffb2467050>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'devices 0-0/0'), (b'content-type', b'application/json'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Fri, 14 Aug 2026 01:09:04 GMT'), (b'content-length', b'44'), (b'x-envoy-upstream-service-time', b'25'), (b'server', b'envoy'), (b'via', b'1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/devices?deviceName=certificate-SAJpEOsJbtVxXYKi "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
