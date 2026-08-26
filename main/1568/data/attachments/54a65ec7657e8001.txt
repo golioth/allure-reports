@@ -1,0 +1,217 @@
+DEBUG    twister_harness.device.factory:factory.py:37 Get device type "hardware"
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffffb8fca7b0>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0xffffb8feae90> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffffb9137c50>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'projects 0-1/1'), (b'content-type', b'application/json'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Wed, 26 Aug 2026 02:29:05 GMT'), (b'content-length', b'188'), (b'x-envoy-upstream-service-time', b'35'), (b'server', b'envoy'), (b'via', b'1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffffb90256d0>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0xffffb9014d70> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffffb901cc30>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'POST']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'POST']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'POST']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Wed, 26 Aug 2026 02:29:05 GMT'), (b'content-length', b'829'), (b'x-envoy-upstream-service-time', b'21'), (b'server', b'envoy'), (b'via', b'1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: POST https://api.golioth.io/v1/projects/firmware_ci/certificates "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'POST']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+INFO     test_sample:test_sample.py:36 Flashing LFS image
+DEBUG    test_sample:utils.py:37 Flashing LFS command: /root/venv/bin/west flash --skip-rebuild --build-dir /__w/golioth-firmware-sdk/golioth-firmware-sdk/twister-out/nrf52840dk_nrf52840/zephyr/sample.golioth.certificate_provisioning --runner nrfjprog -- --dev-id=1050257254 --hex-file /__w/golioth-firmware-sdk/golioth-firmware-sdk/twister-out/nrf52840dk_nrf52840/zephyr/sample.golioth.certificate_provisioning/lfs.hex
+INFO     test_sample:test_sample.py:22 LFS flash stdout: -- west flash: using runner nrfjprog
+-- runners.nrfjprog: reset after flashing requested
+-- runners.nrfjprog: Flashing file: /__w/golioth-firmware-sdk/golioth-firmware-sdk/twister-out/nrf52840dk_nrf52840/zephyr/sample.golioth.certificate_provisioning/lfs.hex
+
+[ ######               ]   0.000s | Erase file - Check image                                                           
+
+[ #####                ]   0.000s | Check image validity - Initialize device info                                      
+
+[ ##########           ]   0.000s | Check image validity - Check region 0 settings                                     
+
+[ ###############      ]   0.000s | Check image validity - block 1 of 2                                                
+
+[ #################### ]   0.024s | Check image validity - Finished                                                    
+
+[ #############        ]   0.000s | Erase file - Erasing                                                               
+
+[ ##########           ]   0.000s | Erasing non-volatile memory - block 1 of 1                                         
+
+[ #################### ]   0.000s | Erasing non-volatile memory - Erase successful                                     
+
+[ #################### ]   0.220s | Erase file - Done erasing                                                          
+
+[ ######               ]   0.000s | Program file - Checking image                                                      
+
+[ #####                ]   0.000s | Check image validity - Initialize device info                                      
+
+[ ##########           ]   0.000s | Check image validity - Check region 0 settings                                     
+
+[ ###############      ]   0.103s | Check image validity - block 1 of 2                                                
+
+[ #################### ]   0.019s | Check image validity - Finished                                                    
+
+[ #############        ]   0.000s | Program file - Programming                                                         
+
+[ ##########           ]   0.000s | Programming image - block 1 of 1                                                   
+
+[ #################### ]   0.000s | Programming image - Write successful                                               
+
+[ #################### ]   0.058s | Program file - Done programming                                                    
+
+[ ######               ]   0.000s | Verify file - Check image                                                          
+
+[ #####                ]   0.000s | Check image validity - Initialize device info                                      
+
+[ ##########           ]   0.000s | Check image validity - Check region 0 settings                                     
+
+[ ###############      ]   0.151s | Check image validity - block 1 of 2                                                
+
+[ #################### ]   0.019s | Check image validity - Finished                                                    
+
+[ #############        ]   0.000s | Verify file - Verifying                                                            
+
+[ ##########           ]   0.000s | Verifying image - block 1 of 1                                                     
+
+[ #################### ]   0.000s | Verifying image - Verify successful                                                
+
+[ #################### ]   0.055s | Verify file - Done verifying                                                       
+Applying system reset.
+Run.
+-- runners.nrfjprog: Board(s) with serial number(s) 1050257254 flashed successfully.
+
+ERROR    test_sample:test_sample.py:24 LFS flash stderr: WARNING: --skip-rebuild is deprecated. Please use --no-rebuild instead
+
+DEBUG    twister_harness.device.hardware_adapter:hardware_adapter.py:158 Opening serial connection for /dev/serial/by-id/usb-SEGGER_J-Link_001050257254-if00
+DEBUG    twister_harness.device.hardware_adapter:utils.py:37 Flashing command: /root/venv/bin/west flash --skip-rebuild --build-dir /__w/golioth-firmware-sdk/golioth-firmware-sdk/twister-out/nrf52840dk_nrf52840/zephyr/sample.golioth.certificate_provisioning --runner nrfjprog -- --dev-id=1050257254
+DEBUG    twister_harness.device.hardware_adapter:hardware_adapter.py:150 Flashing finished
+DEBUG    twister_harness.helpers.utils:utils.py:22 Found matching key: CONFIG_SHELL_PROMPT_UART="uart:~$ "
+INFO     twister_harness.fixtures:fixtures.py:79 Wait for prompt
+DEBUG    twister_harness.helpers.shell:shell.py:49 Got prompt
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffffb901ce90>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0xffffb9015630> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffffb8ff1250>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'devices 0-0/0'), (b'content-type', b'application/json'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Wed, 26 Aug 2026 02:29:43 GMT'), (b'content-length', b'44'), (b'x-envoy-upstream-service-time', b'16'), (b'server', b'envoy'), (b'via', b'1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/devices?deviceName=certificate-KFwyiYebBOAhzSse "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[1;32muart:~$ [mwifi cred add -k 1 -s "***MIKES_ORANGE_PI_WIFI_SSID***" -p "***MIKES_ORANGE_PI_WIFI_PSK***"
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [mwifi cred auto_connect
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:00:04.064,300] [1;31m<err> fs: file open error (-2)[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:00:04.194,854] [0m<inf> net_wifi_mgmt: Connection requested[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[JConnected
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:00:05.173,614] [0m<inf> golioth_wifi: Connecting to stored WiFi network[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:00:05.174,316] [1;31m<err> net_wifi_mgmt: Connection request failed (-120)[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:00:06.176,269] [1;33m<wrn> cert_provisioning: Could not stat /lfs1/credentials/crt.der, err: -2[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [mfs mkdir /lfs1/credentials
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [mlog halt
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m
+INFO     test_sample:test_sample.py:22 mcumgr crt stdout: 310
+437
+Done
+
+INFO     test_sample:test_sample.py:22 mcumgr key stdout: 121
+Done
+
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [mlog go
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:00:11.178,344] [0m<inf> cert_provisioning: Read 437 bytes from /lfs1/credentials/crt.der[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:00:11.180,084] [0m<inf> cert_provisioning: Read 121 bytes from /lfs1/credentials/key.der[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:00:11.180,480] [0m<inf> golioth_mbox: Mbox created, bufsize: 1232, num_items: 10, item_size: 112[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:00:17.927,276] [1;31m<err> wifi_esp_at: Failed to get net_pkt: len 1198[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:00:22.928,436] [1;31m<err> wifi_esp_at: Failed to get net_pkt: len 71[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:00:27.928,649] [1;31m<err> wifi_esp_at: Failed to get net_pkt: len 80[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:00:32.929,138] [1;31m<err> wifi_esp_at: Failed to get net_pkt: len 1225[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:00:37.930,358] [1;31m<err> wifi_esp_at: Failed to get net_pkt: len 1225[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:00:42.931,579] [1;31m<err> wifi_esp_at: Failed to get net_pkt: len 1198[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:00:47.932,495] [1;31m<err> wifi_esp_at: Failed to get net_pkt: len 71[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:00:50.531,890] [1;31m<err> golioth_coap_client_zephyr: Failed to connect to socket: -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:00.531,921] [1;31m<err> wifi_esp_at_offload: Failed to send data: link 1, ret -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:10.533,294] [1;31m<err> wifi_esp_at: Failed to close link 1, ret -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:10.535,491] [1;31m<err> wifi_esp_at: No socket for link 1[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:10.537,048] [1;31m<err> wifi_esp_at: No socket for link 1[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:10.546,783] [1;31m<err> golioth_coap_client_zephyr: Failed to connect: -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:10.546,813] [1;33m<wrn> golioth_coap_client_zephyr: Failed to connect: -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:10.588,043] [1;31m<err> wifi_esp_at: No socket for link 1[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:10.695,068] [1;31m<err> wifi_esp_at: No socket for link 1[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:10.704,284] [1;31m<err> wifi_esp_at: No socket for link 1[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:10.714,447] [1;31m<err> wifi_esp_at: No socket for link 1[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:10.823,974] [1;31m<err> wifi_esp_at: No socket for link 1[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:10.933,502] [1;31m<err> wifi_esp_at: No socket for link 1[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:11.040,527] [1;31m<err> wifi_esp_at: No socket for link 1[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:17.547,210] [1;31m<err> golioth_coap_client_zephyr: Fail to get address (coap.golioth.io 5684) -101[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:17.547,241] [1;31m<err> golioth_coap_client_zephyr: Failed to connect: -11[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:17.547,241] [1;33m<wrn> golioth_coap_client_zephyr: Failed to connect: -11[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:24.547,637] [1;31m<err> golioth_coap_client_zephyr: Fail to get address (coap.golioth.io 5684) -101[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:24.547,637] [1;31m<err> golioth_coap_client_zephyr: Failed to connect: -11[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:24.547,668] [1;33m<wrn> golioth_coap_client_zephyr: Failed to connect: -11[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:25.549,896] [1;31m<err> wifi_esp_at_offload: Failed to send data: link 0, ret -116[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:31.548,065] [1;31m<err> golioth_coap_client_zephyr: Fail to get address (coap.golioth.io 5684) -101[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:31.548,095] [1;31m<err> golioth_coap_client_zephyr: Failed to connect: -11[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[00:01:31.548,095] [1;33m<wrn> golioth_coap_client_zephyr: Failed to connect: -11[0m
+DEBUG    twister_harness.device.device_adapter:device_adapter.py:150 #: [1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:01:35.552,612] [1;31m<err> wifi_esp_at_offload: Failed to send data: link 0, ret -116[0m
+ERROR    twister_harness.device.device_adapter:device_adapter.py:191 Read from device timeout occurred
+DEBUG    twister_harness.device.hardware_adapter:hardware_adapter.py:205 Closed serial connection for /dev/serial/by-id/usb-SEGGER_J-Link_001050257254-if00
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffffb9049f20>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0xffffb90149b0> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffffb904a030>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'content-type', b'application/json'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Wed, 26 Aug 2026 02:31:17 GMT'), (b'content-length', b'2'), (b'x-envoy-upstream-service-time', b'15'), (b'server', b'envoy'), (b'via', b'1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: DELETE https://api.golioth.io/v1/projects/firmware_ci/certificates/6a8e4f71505c48a6a8395b08 "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'DELETE']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.started host='api.golioth.io' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG    httpcore.connection:_trace.py:87 connect_tcp.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffffb8fdf450>
+DEBUG    httpcore.connection:_trace.py:87 start_tls.started ssl_context=<ssl.SSLContext object at 0xffffb9017f70> server_hostname='api.golioth.io' timeout=5.0
+DEBUG    httpcore.connection:_trace.py:87 start_tls.complete return_value=<httpcore._backends.trio.TrioStream object at 0xffffb8fdf550>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_headers.complete
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 send_request_body.complete
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'access-control-expose-headers', b'Content-Range'), (b'content-range', b'devices 0-0/0'), (b'content-type', b'application/json'), (b'grpc-metadata-access-control-expose-headers', b'Content-Range'), (b'grpc-metadata-content-type', b'application/grpc'), (b'date', b'Wed, 26 Aug 2026 02:31:17 GMT'), (b'content-length', b'44'), (b'x-envoy-upstream-service-time', b'10'), (b'server', b'envoy'), (b'via', b'1.1 google')])
+INFO     httpx:_client.py:1740 HTTP Request: GET https://api.golioth.io/v1/projects/firmware_ci/devices?deviceName=certificate-KFwyiYebBOAhzSse "HTTP/1.1 200 OK"
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.started request=<Request [b'GET']>
+DEBUG    httpcore.http11:_trace.py:87 receive_response_body.complete
+DEBUG    httpcore.http11:_trace.py:87 response_closed.started
+DEBUG    httpcore.http11:_trace.py:87 response_closed.complete
+DEBUG    httpcore.connection:_trace.py:87 close.started
+DEBUG    httpcore.connection:_trace.py:87 close.complete
