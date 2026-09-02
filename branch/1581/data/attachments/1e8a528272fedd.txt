@@ -1,0 +1,22 @@
+
+==== Test test_lightdb_get started at 2026-09-02 00:20:53.589660 ====
+WARNING: --skip-rebuild is deprecated. Please use --no-rebuild instead
+-- west flash: using runner nrfjprog
+-- runners.nrfjprog: reset after flashing requested
+-- runners.nrfjprog: Flashing file: /__w/golioth-firmware-sdk/golioth-firmware-sdk/twister-out/nrf52840dk_nrf52840/zephyr/sample.golioth.lightdb_get/zephyr/zephyr.hex
+[error] [ Worker] - Access protection is enabled, can't read device version.
+[error] [ Client] - Encountered error -90: Command read_device_info executed for 39 milliseconds with result -90
+[error] [ Client] - Encountered error -90: Command read_memory_descriptors executed for 3 milliseconds with result -90
+[error] [ Worker] - Can't read memory descriptors, ap-protection is enabled.
+[error] [ Client] - Encountered error -90: Command erase_file executed for 237 milliseconds with result -90
+[ ######               ]   0.000s | Erase file - Check image                                                           [ ####                 ]   0.000s | Check image validity - Initialize device info                                      [ ########             ]   0.000s | Check image validity - Check region 0 settings                                     [ ############         ]   0.000s | Check image validity - block 1 of 3                                                [error] [  nRF52] - Failed while detecting device memory block protection status!
+[error] [  nRF52] - Failed while erasing device. -90: Access protection is enabled, can't read device version.
+[error] [ Worker] - Access protection is enabled, can't read device version.
+ERROR: The operation attempted is unavailable due to readback protection in
+ERROR: your device. Please use --recover to unlock the device.
+NOTE: For additional output, try running again with logging enabled (--log).
+NOTE: Any generated log error messages will be displayed.
+ERROR: runners.nrfjprog: Flashing failed because the target must be recovered.
+  To fix, run "west flash --recover" instead.
+  Note: this will recover and erase all flash memory prior to reflashing.
+FATAL ERROR: command exited with status 24: nrfjprog --program /__w/golioth-firmware-sdk/golioth-firmware-sdk/twister-out/nrf52840dk_nrf52840/zephyr/sample.golioth.lightdb_get/zephyr/zephyr.hex --sectoranduicrerase --verify -f NRF52 --snr 1050257254
