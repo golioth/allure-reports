@@ -1,0 +1,58 @@
+
+==== Test test_fw_update started at 2026-10-28 01:02:19.315494 ====
+I (84) boot: Image index: 0, Swap type: none
+I (84) boot: Loading image 0 - slot 0 from flash, area id: 2
+I (84) boot: Application start=4037dc58h
+I (86) boot: DRAM	: lma=0002e9c4h vma=3fc92960h size=04f0ch ( 20236) load
+I (94) boot: IRAM	: lma=00020080h vma=40374000h size=0e944h ( 59716) load
+I (110) boot: IROM	: lma=00040000h vma=42000000h size=839B4h (539060) map
+I (110) boot: DROM	: lma=000d0000h vma=3c090000h size=1D240h (119360) map
+I (123) boot: libc heap size 175 kB.
+I (124) spi_flash: detected chip: generic
+I (124) spi_flash: flash io: dio
+[m
+[1;32muart:~$ [m[8D[J[00:00:00.160,000] [0m<inf> wifi_init: rx ba win: 6[0m
+[1;32muart:~$ [m
+[1;32muart:~$ [m
+[1;32muart:~$ [m
+[1;32muart:~$ [m
+[1;32muart:~$ [m
+[1;32muart:~$ [msettings set golioth/psk-id generated-GBlnzrZktuIqPCii@firmware_ci
+Setting golioth/psk-id to generated-GBlnzrZktuIqPCii@firmware_ci
+Setting golioth/psk-id saved as generated-GBlnzrZktuIqPCii@firmware_ci
+[1;32muart:~$ [m
+[1;32muart:~$ [msettings set golioth/psk generated-GBlnzrZktuIqPCii
+Setting golioth/psk to generated-GBlnzrZktuIqPCii
+Setting golioth/psk saved as generated-GBlnzrZktuIqPCii
+[1;32muart:~$ [m
+[1;32muart:~$ [mwifi cred add -k 1 -s "***MNIESTROJ_HP_WIFI_SSID***" -p "***MNIESTROJ_HP_WIFI_PSK***"
+[1;32muart:~$ [m
+[1;32muart:~$ [mwifi cred auto_connect
+[1;32muart:~$ [m
+[1;32muart:~$ [m[8D[J[00:00:00.174,000] [0m<inf> fs_nvs: 8 Sectors of 4096 bytes[0m
+[1;32muart:~$ [m[8D[J[00:00:00.174,000] [0m<inf> fs_nvs: alloc wra: 0, fe8[0m
+[1;32muart:~$ [m[8D[J[00:00:00.174,000] [0m<inf> fs_nvs: data wra: 0, 0[0m
+[1;32muart:~$ [m[8D[J*** Booting Zephyr OS build 3568e1b6d5cd ***
+[1;32muart:~$ [m[8D[J*** Golioth Firmware SDK 033c129a1722 ***
+[1;32muart:~$ [m[8D[J[00:00:00.174,000] [0m<inf> golioth_settings_autoload: Initializing settings subsystem[0m
+[1;32muart:~$ [m[8D[J[00:00:00.174,000] [0m<inf> golioth_settings_autoload: Loading settings[0m
+[1;32muart:~$ [m[8D[J[00:00:00.174,000] [0m<dbg> fw_update_sample: main: Start FW Update sample[0m
+[1;32muart:~$ [m[8D[J[00:00:00.174,000] [0m<inf> golioth_samples: Bringing up network interface[0m
+[1;32muart:~$ [m[8D[J[00:00:00.174,000] [0m<inf> golioth_samples: Waiting to obtain IP address[0m
+[1;32muart:~$ [m[8D[J[00:00:00.174,000] [0m<inf> golioth_wifi: Connecting to stored WiFi network[0m
+[1;32muart:~$ [m[8D[J[00:00:11.441,000] [0m<inf> net_wifi_mgmt: Connection requested[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:00:18.826,000] [0m<inf> net_dhcpv4: Received: 192.168.147.171[0m
+[1;32muart:~$ [m[8D[JConnected
+[1;32muart:~$ [m[8D[J[00:00:18.827,000] [0m<inf> golioth_mbox: Mbox created, bufsize: 1320, num_items: 10, item_size: 120[0m
+[1;32muart:~$ [m[8D[J[00:00:19.668,000] [0m<inf> golioth_coap_client_zephyr: Golioth CoAP client connected[0m
+[1;32muart:~$ [m[8D[J[00:00:19.668,000] [0m<inf> fw_update: Current firmware version: esp32s3_devkitc - 1.2.3[0m
+[1;32muart:~$ [m[8D[J[00:00:19.668,000] [0m<inf> fw_update: State = Idle[0m
+[1;32muart:~$ [m[8D[J[00:00:19.668,000] [0m<inf> fw_update: Waiting to receive OTA manifest[0m
+[1;32muart:~$ [m[8D[J[00:00:19.668,000] [0m<inf> fw_update: State = Idle[0m
+[1;32muart:~$ [m[8D[J[00:00:19.669,000] [0m<inf> fw_update_sample: Golioth client connected[0m
+[1;32muart:~$ [m[8D[J[00:00:19.669,000] [0m<inf> golioth_coap_client_zephyr: Entering CoAP I/O loop[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:00:20.692,000] [0m<inf> fw_update: Received OTA manifest[0m
+[1;32muart:~$ [m[8D[J[00:00:20.692,000] [0m<inf> fw_update: Manifest does not contain target component: esp32s3_devkitc[0m
+[1;32muart:~$ [m[8D[J[00:00:20.692,000] [0m<inf> fw_update: Manifest does not contain different firmware version. Nothing to do.[0m
+[1;32muart:~$ [m[8D[J[00:00:20.692,000] [0m<inf> fw_update: State = Idle[0m
+[1;32muart:~$ [m[8D[J[1;32muart:~$ [m[8D[J[00:00:21.877,000] [1;33m<wrn> golioth_zephyr_coap_req: 1 resends in last 10 seconds[0m
